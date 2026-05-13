@@ -1,0 +1,3122 @@
+[
+  {
+    "order": 1,
+    "title": "Necessidade Básica (Verbo: Querer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I want.",
+        "translation": "Eu quero.",
+        "image_hint": "Alguém apontando para si e para algo"
+      },
+      {
+        "level": 2,
+        "text": "I want water.",
+        "translation": "Eu quero água.",
+        "image_hint": "A pessoa com um copo d'água"
+      },
+      {
+        "level": 3,
+        "text": "I want water now.",
+        "translation": "Eu quero água agora.",
+        "image_hint": "Relógio indicando o momento atual"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-001-necessidade-b-sica-verbo-want"
+  },
+  {
+    "order": 2,
+    "title": "Ação de Movimento (Verbo: Ir)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I go.",
+        "translation": "Eu vou.",
+        "image_hint": "Pessoa caminhando"
+      },
+      {
+        "level": 2,
+        "text": "I go home.",
+        "translation": "Eu vou para casa.",
+        "image_hint": "Pessoa chegando em uma casa"
+      },
+      {
+        "level": 3,
+        "text": "I go home with my friend.",
+        "translation": "Eu vou para casa com meu amigo.",
+        "image_hint": "Duas pessoas caminhando para a casa"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-002-a-o-de-movimento-verbo-go"
+  },
+  {
+    "order": 3,
+    "title": "Capacidade (Verbo: Poder/Fazer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I can.",
+        "translation": "Eu consigo.",
+        "image_hint": "Alguém fazendo sinal de \"positivo\" ou força"
+      },
+      {
+        "level": 2,
+        "text": "I can do this.",
+        "translation": "Eu consigo fazer isso.",
+        "image_hint": "Alguém completando uma tarefa simples"
+      },
+      {
+        "level": 3,
+        "text": "I can do this today.",
+        "translation": "Eu consigo fazer isso hoje.",
+        "image_hint": "Calendário com o dia de hoje marcado"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-003-capacidade-verbo-can-do"
+  },
+  {
+    "order": 4,
+    "title": "Percepção (Verbo: Ver)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I see.",
+        "translation": "Eu vejo.",
+        "image_hint": "Olhos abertos ou alguém olhando"
+      },
+      {
+        "level": 2,
+        "text": "I see the car.",
+        "translation": "Eu vejo o carro.",
+        "image_hint": "Um carro na rua"
+      },
+      {
+        "level": 3,
+        "text": "I see the car but it is far.",
+        "translation": "Eu vejo o carro, mas ele está longe.",
+        "image_hint": "Carro pequeno ao fundo na estrada"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-004-percep-o-verbo-see"
+  },
+  {
+    "order": 5,
+    "title": "Posse/Estado (Verbo: Ter)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I have.",
+        "translation": "Eu tenho.",
+        "image_hint": "Mãos segurando algo"
+      },
+      {
+        "level": 2,
+        "text": "I have a book.",
+        "translation": "Eu tenho um livro.",
+        "image_hint": "Alguém com um livro"
+      },
+      {
+        "level": 3,
+        "text": "I have a book and I read.",
+        "translation": "Eu tenho um livro e eu leio.",
+        "image_hint": "Pessoa lendo o livro"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-005-posse-estado-verbo-have"
+  },
+  {
+    "order": 6,
+    "title": "Comunicação (Verbo: Dizer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "You say.",
+        "translation": "Você diz.",
+        "image_hint": "Alguém falando/balão de fala"
+      },
+      {
+        "level": 2,
+        "text": "You say \"hello\".",
+        "translation": "Você diz \"olá\".",
+        "image_hint": "Aceno de mão e a palavra escrita"
+      },
+      {
+        "level": 3,
+        "text": "You say \"hello\" because you are good.",
+        "translation": "Você diz \"olá\" porque você é bom.",
+        "image_hint": "Sorriso e sinal de amizade"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-006-comunica-o-verbo-say"
+  },
+  {
+    "order": 7,
+    "title": "Cognição (Verbo: Saber/Conhecer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I know.",
+        "translation": "Eu sei.",
+        "image_hint": "Lâmpada acesa sobre a cabeça"
+      },
+      {
+        "level": 2,
+        "text": "I know your name.",
+        "translation": "Eu sei o seu nome.",
+        "image_hint": "Crachá ou alguém se apresentando"
+      },
+      {
+        "level": 3,
+        "text": "I know your name because we are friends.",
+        "translation": "Eu sei o seu nome porque somos amigos.",
+        "image_hint": "Duas pessoas abraçadas"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-007-cogni-o-verbo-know"
+  },
+  {
+    "order": 8,
+    "title": "Localização (Verbo: Ser/Estar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "She is.",
+        "translation": "Ela está.",
+        "image_hint": "Uma mulher"
+      },
+      {
+        "level": 2,
+        "text": "She is here.",
+        "translation": "Ela está aqui.",
+        "image_hint": "Ela em um local específico marcado com \"X\""
+      },
+      {
+        "level": 3,
+        "text": "She is here at work.",
+        "translation": "Ela está aqui no trabalho.",
+        "image_hint": "Ela em um escritório/mesa"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-008-localiza-o-verbo-be"
+  },
+  {
+    "order": 9,
+    "title": "Pensamento (Verbo: Pensar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "We think.",
+        "translation": "Nós pensamos.",
+        "image_hint": "Grupo de pessoas com a mão no queixo"
+      },
+      {
+        "level": 2,
+        "text": "We think about food.",
+        "translation": "Nós pensamos em comida.",
+        "image_hint": "Balão de pensamento com um prato de comida"
+      },
+      {
+        "level": 3,
+        "text": "We think about food if we are hungry.",
+        "translation": "Nós pensamos em comida se estamos com fome.",
+        "image_hint": "Pessoa com a mão na barriga vazia"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-009-pensamento-verbo-think"
+  },
+  {
+    "order": 10,
+    "title": "Intenção/Futuro (Verbo: Ir/Fazer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "They will.",
+        "translation": "Eles vão.",
+        "image_hint": "Grupo apontando para o futuro"
+      },
+      {
+        "level": 2,
+        "text": "They will make it.",
+        "translation": "Eles vão conseguir.",
+        "image_hint": "Grupo construindo algo ou vencendo"
+      },
+      {
+        "level": 3,
+        "text": "They will make it tomorrow.",
+        "translation": "Eles vão conseguir amanhã.",
+        "image_hint": "Sol nascendo no horizonte"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-010-inten-o-futuro-verbo-will-make"
+  },
+  {
+    "order": 11,
+    "title": "O Verbo de Retorno (Vir)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "You come.",
+        "translation": "Você vem.",
+        "image_hint": "Alguém fazendo sinal de \"venha\""
+      },
+      {
+        "level": 2,
+        "text": "You come here.",
+        "translation": "Você vem aqui.",
+        "image_hint": "Uma seta apontando para o chão onde o falante está"
+      },
+      {
+        "level": 3,
+        "text": "You come here every day.",
+        "translation": "Você vem aqui todo dia.",
+        "image_hint": "Um calendário com todos os dias marcados"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-011-o-verbo-de-movimento-reversivo-come"
+  },
+  {
+    "order": 12,
+    "title": "Ação de Pegar/Levar (Pegar/Levar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I take.",
+        "translation": "Eu pego.",
+        "image_hint": "Uma mão pegando uma chave"
+      },
+      {
+        "level": 2,
+        "text": "I take the car.",
+        "translation": "Eu pego o carro.",
+        "image_hint": "Alguém entrando no carro ou segurando a chave do carro"
+      },
+      {
+        "level": 3,
+        "text": "I take the car to work.",
+        "translation": "Eu pego o carro para o trabalho.",
+        "image_hint": "O carro em frente a um prédio de escritórios"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-012-a-o-de-pegar-levar-take"
+  },
+  {
+    "order": 13,
+    "title": "Tempo e Existência (Tempo/É)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "It is.",
+        "translation": "É.",
+        "image_hint": "Um relógio ou um conceito neutro"
+      },
+      {
+        "level": 2,
+        "text": "It is time.",
+        "translation": "É hora.",
+        "image_hint": "O relógio marcando a hora de um compromisso"
+      },
+      {
+        "level": 3,
+        "text": "It is time to speak.",
+        "translation": "É hora de falar.",
+        "image_hint": "Alguém com um microfone ou em uma reunião"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-013-tempo-e-exist-ncia-time-is"
+  },
+  {
+    "order": 14,
+    "title": "O Verbo de Dar (Dar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Give me.",
+        "translation": "Me dê.",
+        "image_hint": "Uma mão aberta esperando algo"
+      },
+      {
+        "level": 2,
+        "text": "Give me the money.",
+        "translation": "Me dê o dinheiro.",
+        "image_hint": "Alguém entregando uma nota ou moeda"
+      },
+      {
+        "level": 3,
+        "text": "Give me the money for the food.",
+        "translation": "Me dê o dinheiro para a comida.",
+        "image_hint": "Uma nota de dinheiro ao lado de um prato de comida"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-014-o-verbo-de-dar-give"
+  },
+  {
+    "order": 15,
+    "title": "Pensamento e Dúvida (Perguntar/Se)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I ask.",
+        "translation": "Eu pergunto.",
+        "image_hint": "Alguém levantando a mão na sala de aula"
+      },
+      {
+        "level": 2,
+        "text": "I ask why.",
+        "translation": "Eu pergunto por quê.",
+        "image_hint": "Um ponto de interrogação acima da cabeça"
+      },
+      {
+        "level": 3,
+        "text": "I ask why if I don't know.",
+        "translation": "Eu pergunto por quê se eu não sei.",
+        "image_hint": "Pessoa dando de ombros, sem entender"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-015-pensamento-e-d-vida-ask-if"
+  },
+  {
+    "order": 16,
+    "title": "Localização Relativa (Embaixo/Em cima)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "It is here.",
+        "translation": "Está aqui.",
+        "image_hint": "Um objeto em cima de uma mesa"
+      },
+      {
+        "level": 2,
+        "text": "It is on the table.",
+        "translation": "Está em cima da mesa.",
+        "image_hint": "Zoom no objeto em cima da mesa"
+      },
+      {
+        "level": 3,
+        "text": "It is not under the table.",
+        "translation": "Não está debaixo da mesa.",
+        "image_hint": "A mesma mesa, mas mostrando o espaço vazio embaixo dela"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-016-localiza-o-relativa-under-on"
+  },
+  {
+    "order": 17,
+    "title": "O Verbo de Ouvir (Ouvir/Sobre)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "We listen.",
+        "translation": "Nós ouvimos.",
+        "image_hint": "Grupo de pessoas com a mão no ouvido"
+      },
+      {
+        "level": 2,
+        "text": "We listen to you.",
+        "translation": "Nós ouvimos você.",
+        "image_hint": "O grupo olhando para uma pessoa que fala"
+      },
+      {
+        "level": 3,
+        "text": "We listen to you about the problem.",
+        "translation": "Nós ouvimos você sobre o problema.",
+        "image_hint": "O grupo com feição de preocupação ouvindo a explicação"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-017-o-verbo-de-ouvir-listen-about"
+  },
+  {
+    "order": 18,
+    "title": "Frequência e Ação (Frequentemente/Usar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I use.",
+        "translation": "Eu uso.",
+        "image_hint": "Alguém usando um celular ou ferramenta"
+      },
+      {
+        "level": 2,
+        "text": "I use the phone.",
+        "translation": "Eu uso o telefone.",
+        "image_hint": "Alguém digitando no celular"
+      },
+      {
+        "level": 3,
+        "text": "I use the phone often.",
+        "translation": "Eu uso o telefone com frequência.",
+        "image_hint": "Vários ícones de relógio ao redor do celular"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-018-frequ-ncia-e-a-o-often-use"
+  },
+  {
+    "order": 19,
+    "title": "Condição e Sentimento (Sentir/Mas)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I feel.",
+        "translation": "Eu sinto.",
+        "image_hint": "Alguém com a mão no coração"
+      },
+      {
+        "level": 2,
+        "text": "I feel good.",
+        "translation": "Eu me sinto bem.",
+        "image_hint": "Alguém sorrindo e feliz"
+      },
+      {
+        "level": 3,
+        "text": "I feel good but I am tired.",
+        "translation": "Eu me sinto bem, mas estou cansado.",
+        "image_hint": "Alguém sorrindo, mas bocejando/com sono"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-019-condi-o-e-sentimento-feel-but"
+  },
+  {
+    "order": 20,
+    "title": "Finalização e Resultado (Encontrar/Caminho)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "They find.",
+        "translation": "Eles encontram.",
+        "image_hint": "Alguém encontrando um tesouro ou uma chave perdida"
+      },
+      {
+        "level": 2,
+        "text": "They find the way.",
+        "translation": "Eles encontram o caminho.",
+        "image_hint": "Alguém olhando um mapa ou bússola"
+      },
+      {
+        "level": 3,
+        "text": "They find the way through the city.",
+        "translation": "Eles encontram o caminho pela cidade.",
+        "image_hint": "Uma linha traçada cruzando o mapa de uma cidade"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-020-finaliza-o-e-resultado-find-way"
+  },
+  {
+    "order": 21,
+    "title": "Intenção e Ajuda (Verbo: Ajudar / Precisar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I help.",
+        "translation": "Eu ajudo.",
+        "image_hint": "Alguém estendendo a mão"
+      },
+      {
+        "level": 2,
+        "text": "I help my family.",
+        "translation": "Eu ajudo minha família.",
+        "image_hint": "Pessoa ajudando um idoso ou criança"
+      },
+      {
+        "level": 3,
+        "text": "I help my family because they need me.",
+        "translation": "Eu ajudo minha família porque eles precisam de mim.",
+        "image_hint": "Grupo familiar unido"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-021-inten-o-e-ajuda-verbo-help-need"
+  },
+  {
+    "order": 22,
+    "title": "Movimento e Destino (Verbo: Correr / Para)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "He runs.",
+        "translation": "Ele corre.",
+        "image_hint": "Um homem correndo"
+      },
+      {
+        "level": 2,
+        "text": "He runs to the school.",
+        "translation": "Ele corre para a escola.",
+        "image_hint": "Homem correndo em direção a um prédio escolar"
+      },
+      {
+        "level": 3,
+        "text": "He runs to the school before it closes.",
+        "translation": "Ele corre para a escola antes dela fechar.",
+        "image_hint": "Homem olhando o relógio e correndo para a porta"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-022-movimento-e-destino-verbo-run-to"
+  },
+  {
+    "order": 23,
+    "title": "Descoberta e Objeto (Verbo: Procurar / Encontrar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I look for.",
+        "translation": "Eu procuro.",
+        "image_hint": "Alguém procurando algo com uma lupa"
+      },
+      {
+        "level": 2,
+        "text": "I look for my keys.",
+        "translation": "Eu procuro minhas chaves.",
+        "image_hint": "Pessoa procurando chaves no sofá"
+      },
+      {
+        "level": 3,
+        "text": "I look for my keys until I find them.",
+        "translation": "Eu procuro minhas chaves até encontrá-las.",
+        "image_hint": "Pessoa sorrindo com as chaves na mão"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-023-descoberta-e-objeto-verbo-look-for-find"
+  },
+  {
+    "order": 24,
+    "title": "Pensamento Coletivo (Verbo: Acreditar / Que)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "We believe.",
+        "translation": "Nós acreditamos.",
+        "image_hint": "Pessoas com expressão de confiança/fé"
+      },
+      {
+        "level": 2,
+        "text": "We believe that idea.",
+        "translation": "Nós acreditamos nessa ideia.",
+        "image_hint": "Grupo apontando para um quadro com um plano/ideia"
+      },
+      {
+        "level": 3,
+        "text": "We believe that idea is good.",
+        "translation": "Nós acreditamos que essa ideia é boa.",
+        "image_hint": "Sinal de \"joinha\" para o quadro"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-024-pensamento-coletivo-verbo-believe-that"
+  },
+  {
+    "order": 25,
+    "title": "Escrita e Memória (Verbo: Escrever / Sobre)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "She writes.",
+        "translation": "Ela escreve.",
+        "image_hint": "Mulher escrevendo em um caderno"
+      },
+      {
+        "level": 2,
+        "text": "She writes about her life.",
+        "translation": "Ela escreve sobre a vida dela.",
+        "image_hint": "Fotos de infância e viagens ao lado do caderno"
+      },
+      {
+        "level": 3,
+        "text": "She writes about her life in a book.",
+        "translation": "Ela escreve sobre a vida dela em um livro.",
+        "image_hint": "A mulher segurando um livro pronto"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-025-escrita-e-mem-ria-verbo-write-about"
+  },
+  {
+    "order": 26,
+    "title": "Quantidade e Posse (Verbo: Ter / Muitos)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "They have.",
+        "translation": "Eles têm.",
+        "image_hint": "Pessoas segurando caixas"
+      },
+      {
+        "level": 2,
+        "text": "They have many things.",
+        "translation": "Eles têm muitas coisas.",
+        "image_hint": "Muitas caixas e objetos ao redor delas"
+      },
+      {
+        "level": 3,
+        "text": "They have many things but no space.",
+        "translation": "Eles têm muitas coisas, mas sem espaço.",
+        "image_hint": "Pessoas espremidas entre as caixas"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-026-quantidade-e-posse-verbo-have-many"
+  },
+  {
+    "order": 27,
+    "title": "Tentativa e Erro (Verbo: Tentar / Novamente)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I try.",
+        "translation": "Eu tento.",
+        "image_hint": "Alguém tentando abrir um pote ou resolver um puzzle"
+      },
+      {
+        "level": 2,
+        "text": "I try to do this.",
+        "translation": "Eu tento fazer isso.",
+        "image_hint": "Foco na ação sendo executada"
+      },
+      {
+        "level": 3,
+        "text": "I try to do this again and again.",
+        "translation": "Eu tento fazer isso de novo e de novo.",
+        "image_hint": "Sequência de imagens da mesma pessoa repetindo a ação"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-027-tentativa-e-erro-verbo-try-again"
+  },
+  {
+    "order": 28,
+    "title": "Mudança de Estado (Verbo: Tornar-se / Pegar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "It gets.",
+        "translation": "Fica.",
+        "image_hint": "O céu mudando de cor"
+      },
+      {
+        "level": 2,
+        "text": "It gets dark.",
+        "translation": "Fica escuro.",
+        "image_hint": "O pôr do sol, ficando noite"
+      },
+      {
+        "level": 3,
+        "text": "It gets dark after 6 PM.",
+        "translation": "Fica escuro depois das 6 da tarde.",
+        "image_hint": "Relógio marcando 18:00 e o céu escuro"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-028-mudan-a-de-estado-verbo-become-get"
+  },
+  {
+    "order": 29,
+    "title": "Comunicação Direta (Verbo: Dizer / Verdade)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Tell me.",
+        "translation": "Me diga.",
+        "image_hint": "Pessoa com a mão na orelha esperando ouvir algo"
+      },
+      {
+        "level": 2,
+        "text": "Tell me the truth.",
+        "translation": "Me diga a verdade.",
+        "image_hint": "Olhar sério e honesto entre duas pessoas"
+      },
+      {
+        "level": 3,
+        "text": "Tell me the truth always.",
+        "translation": "Me diga a verdade sempre.",
+        "image_hint": "Símbolo de infinito ou repetição"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-029-comunica-o-direta-verbo-tell-truth"
+  },
+  {
+    "order": 30,
+    "title": "Preferência (Verbo: Gostar / Melhor)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I like.",
+        "translation": "Eu gosto.",
+        "image_hint": "Alguém comendo algo gostoso"
+      },
+      {
+        "level": 2,
+        "text": "I like this apple.",
+        "translation": "Eu gosto dessa maçã.",
+        "image_hint": "Pessoa segurando uma maçã vermelha"
+      },
+      {
+        "level": 3,
+        "text": "I like this apple better than that one.",
+        "translation": "Eu gosto mais dessa maçã do que daquela.",
+        "image_hint": "Pessoa comparando uma maçã bonita com uma estragada"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-030-prefer-ncia-verbo-like-better"
+  },
+  {
+    "order": 31,
+    "title": "Permanência (Verbo: Ficar / Lugar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "We stay.",
+        "translation": "Nós ficamos.",
+        "image_hint": "Pessoas sentadas em um banco"
+      },
+      {
+        "level": 2,
+        "text": "We stay in this place.",
+        "translation": "Nós ficamos neste lugar.",
+        "image_hint": "O banco em um parque bonito"
+      },
+      {
+        "level": 3,
+        "text": "We stay in this place during the day.",
+        "translation": "Nós ficamos neste lugar durante o dia.",
+        "image_hint": "O sol brilhando sobre o parque"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-031-perman-ncia-verbo-stay-place"
+  },
+  {
+    "order": 32,
+    "title": "Trabalho e Ferramentas (Verbo: Trabalhar / Com)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "You work.",
+        "translation": "Você trabalha.",
+        "image_hint": "Alguém em frente a um computador"
+      },
+      {
+        "level": 2,
+        "text": "You work with a computer.",
+        "translation": "Você trabalha com um computador.",
+        "image_hint": "Foco nas mãos e no teclado"
+      },
+      {
+        "level": 3,
+        "text": "You work with a computer every week.",
+        "translation": "Você trabalha com um computador toda semana.",
+        "image_hint": "Sete ícones de computador (um para cada dia)"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-032-trabalho-e-ferramentas-verbo-work-with"
+  },
+  {
+    "order": 33,
+    "title": "Início e Fim (Verbo: Começar / Terminar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I start.",
+        "translation": "Eu começo.",
+        "image_hint": "Alguém na linha de partida ou abrindo um livro"
+      },
+      {
+        "level": 2,
+        "text": "I start the work.",
+        "translation": "Eu começo o trabalho.",
+        "image_hint": "Pessoa começando a digitar ou construir algo"
+      },
+      {
+        "level": 3,
+        "text": "I start the work when I arrive.",
+        "translation": "Eu começo o trabalho quando chego.",
+        "image_hint": "Pessoa abrindo a porta do escritório e sentando"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-033-in-cio-e-fim-verbo-start-finish"
+  },
+  {
+    "order": 34,
+    "title": "Parte e Todo (Substantivo: Parte / Mundo)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "This is a part.",
+        "translation": "Isso é uma parte.",
+        "image_hint": "Uma peça de um quebra-cabeça"
+      },
+      {
+        "level": 2,
+        "text": "This is a part of the world.",
+        "translation": "Isso é uma parte do mundo.",
+        "image_hint": "Um mapa de um país"
+      },
+      {
+        "level": 3,
+        "text": "This is a part of the world where I live.",
+        "translation": "Essa é a parte do mundo onde eu moro.",
+        "image_hint": "Alguém apontando para a sua casa no mapa"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-034-parte-e-todo-substantivo-part-world"
+  },
+  {
+    "order": 35,
+    "title": "Chamado e Nome (Verbo: Chamar / Nome)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I call.",
+        "translation": "Eu chamo.",
+        "image_hint": "Alguém gritando ou usando o telefone"
+      },
+      {
+        "level": 2,
+        "text": "I call your name.",
+        "translation": "Eu chamo o seu nome.",
+        "image_hint": "Balão de fala com o nome de alguém"
+      },
+      {
+        "level": 3,
+        "text": "I call your name through the door.",
+        "translation": "Eu chamo o seu nome pela porta.",
+        "image_hint": "Pessoa chamando outra que está atrás de uma porta fechada"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-035-chamado-e-nome-verbo-call-name"
+  },
+  {
+    "order": 36,
+    "title": "Compreensão (Verbo: Entender / Por quê)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "You understand.",
+        "translation": "Você entende.",
+        "image_hint": "Expressão de \"Ah, entendi!\" - o clique"
+      },
+      {
+        "level": 2,
+        "text": "You understand the problem.",
+        "translation": "Você entende o problema.",
+        "image_hint": "Alguém olhando para um motor quebrado ou conta difícil"
+      },
+      {
+        "level": 3,
+        "text": "You understand the problem now.",
+        "translation": "Você entende o problema agora.",
+        "image_hint": "Pessoa sorrindo e começando a consertar/resolver"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-036-compreens-o-verbo-understand-why"
+  },
+  {
+    "order": 37,
+    "title": "Lembrança (Verbo: Lembrar / Rosto)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I remember.",
+        "translation": "Eu me lembro.",
+        "image_hint": "Pessoa tocando a têmpora, pensando"
+      },
+      {
+        "level": 2,
+        "text": "I remember your face.",
+        "translation": "Eu me lembro do seu rosto.",
+        "image_hint": "O rosto de uma pessoa embaçado ficando nítido"
+      },
+      {
+        "level": 3,
+        "text": "I remember your face from the school.",
+        "translation": "Eu me lembro do seu rosto da escola.",
+        "image_hint": "Foto antiga de formatura/sala de aula"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-037-lembran-a-verbo-remember-face"
+  },
+  {
+    "order": 38,
+    "title": "Espaço e Distância (Adj: Alto / Baixo)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "It is high.",
+        "translation": "Está alto.",
+        "image_hint": "Um pássaro voando alto"
+      },
+      {
+        "level": 2,
+        "text": "The bird is high.",
+        "translation": "O pássaro está alto.",
+        "image_hint": "O pássaro acima das nuvens"
+      },
+      {
+        "level": 3,
+        "text": "The bird is high above the house.",
+        "translation": "O pássaro está alto acima da casa.",
+        "image_hint": "O pássaro lá no alto e uma casa pequena lá embaixo"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-038-espa-o-e-dist-ncia-adjetivo-high-low"
+  },
+  {
+    "order": 39,
+    "title": "Utilidade (Verbo: Usar / Caminho)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I use.",
+        "translation": "Eu uso.",
+        "image_hint": "Alguém com um martelo ou ferramenta"
+      },
+      {
+        "level": 2,
+        "text": "I use it this way.",
+        "translation": "Eu uso assim.",
+        "image_hint": "Demonstração do uso correto da ferramenta"
+      },
+      {
+        "level": 3,
+        "text": "I use it this way to fix things.",
+        "translation": "Eu uso assim para consertar coisas.",
+        "image_hint": "O objeto sendo consertado"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-039-utilidade-verbo-use-way"
+  },
+  {
+    "order": 40,
+    "title": "Diferenciação (Adj: Mesmo / Diferente)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "They are the same.",
+        "translation": "Eles são iguais.",
+        "image_hint": "Duas bolas vermelhas iguais"
+      },
+      {
+        "level": 2,
+        "text": "These things are the same.",
+        "translation": "Essas coisas são iguais.",
+        "image_hint": "Dois celulares idênticos"
+      },
+      {
+        "level": 3,
+        "text": "These things are the same but different colors.",
+        "translation": "Essas coisas são iguais, mas de cores diferentes.",
+        "image_hint": "Um celular preto e um branco do mesmo modelo"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-040-diferencia-o-adjetivo-same-different"
+  },
+  {
+    "order": 41,
+    "title": "Movimento e Finalidade (Revisão: Ir, Trabalhar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I leave.",
+        "translation": "Eu saio.",
+        "image_hint": "Alguém saindo por uma porta"
+      },
+      {
+        "level": 2,
+        "text": "I leave home.",
+        "translation": "Eu saio de casa.",
+        "image_hint": "Pessoa saindo de casa com uma mochila"
+      },
+      {
+        "level": 3,
+        "text": "I leave home to go to work.",
+        "translation": "Eu saio de casa para ir trabalhar.",
+        "image_hint": "Pessoa caminhando de casa para o escritório"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-041-movimento-e-finalidade-revisitando-go-work"
+  },
+  {
+    "order": 42,
+    "title": "Percepção e Tempo (Revisão: Ver, Tempo)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I watch.",
+        "translation": "Eu assisto.",
+        "image_hint": "Alguém observando atentamente, como TV ou um jogo"
+      },
+      {
+        "level": 2,
+        "text": "I watch the time.",
+        "translation": "Eu olho as horas.",
+        "image_hint": "Alguém olhando o relógio constantemente"
+      },
+      {
+        "level": 3,
+        "text": "I watch the time while I wait.",
+        "translation": "Eu olho as horas enquanto espero.",
+        "image_hint": "Pessoa sentada em uma sala de espera olhando o relógio"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-042-percep-o-e-tempo-revisitando-see-time"
+  },
+  {
+    "order": 43,
+    "title": "Posse e Quantidade (Revisão: Ter, Muitos)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "There is.",
+        "translation": "Tem.",
+        "image_hint": "Um dedo apontando para a existência de algo"
+      },
+      {
+        "level": 2,
+        "text": "There is water.",
+        "translation": "Tem água.",
+        "image_hint": "Um copo ou garrafa sobre a mesa"
+      },
+      {
+        "level": 3,
+        "text": "There is enough water for many people.",
+        "translation": "Tem água suficiente para muitas pessoas.",
+        "image_hint": "Um galão grande de água e vários copos vazios ao redor"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-043-posse-e-quantidade-revisitando-have-many"
+  },
+  {
+    "order": 44,
+    "title": "Ação e Consequência (Revisão: Fazer, Bom)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "You help.",
+        "translation": "Você ajuda.",
+        "image_hint": "Alguém oferecendo apoio"
+      },
+      {
+        "level": 2,
+        "text": "You do good things.",
+        "translation": "Você faz coisas boas.",
+        "image_hint": "Alguém plantando uma árvore ou ajudando um amigo"
+      },
+      {
+        "level": 3,
+        "text": "You do good things because you are a friend.",
+        "translation": "Você faz coisas boas porque é um amigo.",
+        "image_hint": "Duas pessoas sorrindo e se abraçando"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-044-a-o-e-consequ-ncia-revisitando-do-good"
+  },
+  {
+    "order": 45,
+    "title": "Espaço e Localização (Revisão: Lugar, Encontrar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "It is near.",
+        "translation": "É perto.",
+        "image_hint": "Dois objetos bem próximos um do outro"
+      },
+      {
+        "level": 2,
+        "text": "The place is near.",
+        "translation": "O lugar é perto.",
+        "image_hint": "Um mapa mostrando o destino a poucos metros"
+      },
+      {
+        "level": 3,
+        "text": "I can find the place because it is near.",
+        "translation": "Eu consigo achar o lugar porque é perto.",
+        "image_hint": "Pessoa vendo o prédio de destino logo à frente"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-045-espa-o-e-localiza-o-revisitando-place-find"
+  },
+  {
+    "order": 46,
+    "title": "Necessidade e Objeto (Revisão: Precisar, Dinheiro)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "We buy.",
+        "translation": "Nós compramos.",
+        "image_hint": "Alguém entregando um cartão ou dinheiro no caixa"
+      },
+      {
+        "level": 2,
+        "text": "We buy food.",
+        "translation": "Nós compramos comida.",
+        "image_hint": "Carrinho de supermercado com frutas e pão"
+      },
+      {
+        "level": 3,
+        "text": "We need money to buy food.",
+        "translation": "Nós precisamos de dinheiro para comprar comida.",
+        "image_hint": "Pessoa olhando para a carteira e depois para a comida"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-046-necessidade-e-objeto-revisitando-need-money"
+  },
+  {
+    "order": 47,
+    "title": "Cognição e Dúvida (Revisão: Saber, Perguntar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I don't know.",
+        "translation": "Eu não sei.",
+        "image_hint": "Pessoa com as mãos abertas e expressão de dúvida"
+      },
+      {
+        "level": 2,
+        "text": "I don't know the way.",
+        "translation": "Eu não sei o caminho.",
+        "image_hint": "Pessoa em uma encruzilhada olhando para um mapa confuso"
+      },
+      {
+        "level": 3,
+        "text": "I ask for help when I don't know the way.",
+        "translation": "Eu peço ajuda quando não sei o caminho.",
+        "image_hint": "Pessoa parando um policial para pedir informação"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-047-cogni-o-e-d-vida-revisitando-know-ask"
+  },
+  {
+    "order": 48,
+    "title": "Sentimento e Razão (Revisão: Sentir, Por quê)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "You seem.",
+        "translation": "Você parece.",
+        "image_hint": "Alguém observando a expressão de outra pessoa"
+      },
+      {
+        "level": 2,
+        "text": "You seem tired.",
+        "translation": "Você parece cansado.",
+        "image_hint": "Alguém bocejando com olheiras"
+      },
+      {
+        "level": 3,
+        "text": "I understand why you seem tired.",
+        "translation": "Eu entendo por que você parece cansado.",
+        "image_hint": "A pessoa apontando para uma pilha enorme de trabalho"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-048-sentimento-e-raz-o-revisitando-feel-why"
+  },
+  {
+    "order": 49,
+    "title": "Mudança e Futuro (Revisão: Tornar-se, Querer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "It changes.",
+        "translation": "Muda.",
+        "image_hint": "Uma lagarta e uma borboleta"
+      },
+      {
+        "level": 2,
+        "text": "The world changes.",
+        "translation": "O mundo muda.",
+        "image_hint": "Um mapa múndi antigo e um digital moderno"
+      },
+      {
+        "level": 3,
+        "text": "The world will change again.",
+        "translation": "O mundo vai mudar de novo.",
+        "image_hint": "Um robô ou cidade futurista com um ponto de interrogação"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-049-mudan-a-e-futuro-revisitando-become-will"
+  },
+  {
+    "order": 50,
+    "title": "Comunicação e Intensidade (Revisão: Dizer, Realmente)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I mean.",
+        "translation": "Eu quero dizer.",
+        "image_hint": "Alguém tentando explicar melhor um ponto"
+      },
+      {
+        "level": 2,
+        "text": "I really mean this.",
+        "translation": "Eu realmente quero dizer isso.",
+        "image_hint": "Olhar firme e sincero"
+      },
+      {
+        "level": 3,
+        "text": "I say \"hello\" but I mean \"I love you\".",
+        "translation": "Eu digo \"olá\", mas quero dizer \"eu te amo\".",
+        "image_hint": "Alguém dizendo olá com um coração no balão de pensamento"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-050-comunica-o-e-intensidade-revisitando-say-really"
+  },
+  {
+    "order": 51,
+    "title": "Permanência e Condição (Revisão: Ficar, Se)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I wait.",
+        "translation": "Eu espero.",
+        "image_hint": "Alguém sentado em um banco de praça"
+      },
+      {
+        "level": 2,
+        "text": "I wait for you.",
+        "translation": "Eu espero por você.",
+        "image_hint": "Pessoa olhando para o horizonte esperando alguém chegar"
+      },
+      {
+        "level": 3,
+        "text": "I will stay here if you come.",
+        "translation": "Eu vou ficar aqui se você vier.",
+        "image_hint": "Pessoa apontando para o banco e para o relógio"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-051-perman-ncia-e-condi-o-revisitando-stay-if"
+  },
+  {
+    "order": 52,
+    "title": "Parte e Totalidade (Revisão: Parte, Vida)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Every part.",
+        "translation": "Cada parte.",
+        "image_hint": "Todas as peças de um motor espalhadas"
+      },
+      {
+        "level": 2,
+        "text": "Every part of my life.",
+        "translation": "Cada parte da minha vida.",
+        "image_hint": "Colagem de fotos: infância, trabalho, família"
+      },
+      {
+        "level": 3,
+        "text": "You are a part of my life.",
+        "translation": "Você é uma parte da minha vida.",
+        "image_hint": "O usuário olhando para uma foto de um amigo/parceiro"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-052-parte-e-totalidade-revisitando-part-life"
+  },
+  {
+    "order": 53,
+    "title": "Preferência e Comparação (Revisão: Gostar, Melhor)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "This is small.",
+        "translation": "Isso é pequeno.",
+        "image_hint": "Uma semente na mão"
+      },
+      {
+        "level": 2,
+        "text": "This thing is small.",
+        "translation": "Essa coisa é pequena.",
+        "image_hint": "Um celular muito antigo e pequeno"
+      },
+      {
+        "level": 3,
+        "text": "I like it because small is better.",
+        "translation": "Eu gosto porque pequeno é melhor.",
+        "image_hint": "Pessoa guardando o celular pequeno facilmente no bolso"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-053-prefer-ncia-e-compara-o-revisitando-like-better"
+  },
+  {
+    "order": 54,
+    "title": "Movimento e Acompanhamento (Revisão: Ir, Com)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Walk with me.",
+        "translation": "Caminhe comigo.",
+        "image_hint": "Uma mão estendida para caminhar junto"
+      },
+      {
+        "level": 2,
+        "text": "Walk with me through the city.",
+        "translation": "Caminhe comigo pela cidade.",
+        "image_hint": "Duas pessoas andando por uma rua movimentada"
+      },
+      {
+        "level": 3,
+        "text": "We go to the park to walk.",
+        "translation": "Nós vamos ao parque caminhar.",
+        "image_hint": "As duas pessoas entrando em uma área verde"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-054-movimento-e-acompanhamento-revisitando-go-with"
+  },
+  {
+    "order": 55,
+    "title": "Intenção e Ação (Revisão: Querer, Fazer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I try to make.",
+        "translation": "Eu tento fazer.",
+        "image_hint": "Alguém com as mãos na massa, cozinhando"
+      },
+      {
+        "level": 2,
+        "text": "I want to make food.",
+        "translation": "Eu quero fazer comida.",
+        "image_hint": "Ingredientes sobre a mesa: tomate, massa"
+      },
+      {
+        "level": 3,
+        "text": "I try to make food for my family.",
+        "translation": "Eu tento fazer comida para minha família.",
+        "image_hint": "A pessoa servindo a mesa para a família"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-055-inten-o-e-a-o-revisitando-want-make"
+  },
+  {
+    "order": 56,
+    "title": "Verbo de Uso (Revisão: Usar, Frequentemente)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Don't use.",
+        "translation": "Não use.",
+        "image_hint": "Sinal de proibido sobre uma mão mexendo em algo"
+      },
+      {
+        "level": 2,
+        "text": "Don't use that phone.",
+        "translation": "Não use aquele telefone.",
+        "image_hint": "Um telefone com a tela quebrada ou perigoso"
+      },
+      {
+        "level": 3,
+        "text": "I often use this one instead.",
+        "translation": "Eu geralmente uso esse aqui no lugar.",
+        "image_hint": "Pessoa apontando para um telefone novo e funcionando"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-056-verbo-de-uso-revisitando-use-often"
+  },
+  {
+    "order": 57,
+    "title": "Percepção Auditiva (Revisão: Ouvir, Voz)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I hear.",
+        "translation": "Eu ouço.",
+        "image_hint": "Alguém com a mão atrás da orelha"
+      },
+      {
+        "level": 2,
+        "text": "I hear a voice.",
+        "translation": "Eu ouço uma voz.",
+        "image_hint": "Ondas sonoras vindo de uma direção"
+      },
+      {
+        "level": 3,
+        "text": "I hear your voice every day.",
+        "translation": "Eu ouço a sua voz todo dia.",
+        "image_hint": "Alguém ouvindo um áudio no celular com um sorriso"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-057-percep-o-auditiva-revisitando-hear-voice"
+  },
+  {
+    "order": 58,
+    "title": "Espaço Vertical (Revisão: Embaixo, Alto)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Put it.",
+        "translation": "Coloque.",
+        "image_hint": "Uma mão colocando um livro em algum lugar"
+      },
+      {
+        "level": 2,
+        "text": "Put it under the table.",
+        "translation": "Coloque debaixo da mesa.",
+        "image_hint": "O livro sendo guardado em uma prateleira baixa sob a mesa"
+      },
+      {
+        "level": 3,
+        "text": "Don't put it high up.",
+        "translation": "Não coloque lá no alto.",
+        "image_hint": "Alguém tentando alcançar uma prateleira muito alta e não conseguindo"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-058-espa-o-vertical-revisitando-under-high"
+  },
+  {
+    "order": 59,
+    "title": "Finalização (Revisão: Terminar, Agora)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "We finish.",
+        "translation": "Nós terminamos.",
+        "image_hint": "Corredores cruzando a linha de chegada"
+      },
+      {
+        "level": 2,
+        "text": "We finish the work.",
+        "translation": "Nós terminamos o trabalho.",
+        "image_hint": "Alguém fechando o laptop com satisfação"
+      },
+      {
+        "level": 3,
+        "text": "We finish the work now and go home.",
+        "translation": "Nós terminamos o trabalho agora e vamos para casa.",
+        "image_hint": "Pessoa pegando a chave do carro e saindo do escritório"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-059-finaliza-o-revisitando-finish-now"
+  },
+  {
+    "order": 60,
+    "title": "Identidade e Nome (Revisão: Chamar, Nome)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "What is...?",
+        "translation": "O que é...?",
+        "image_hint": "Um ponto de interrogação flutuante"
+      },
+      {
+        "level": 2,
+        "text": "What is the name?",
+        "translation": "Qual é o nome?",
+        "image_hint": "Pessoa apontando para um objeto desconhecido"
+      },
+      {
+        "level": 3,
+        "text": "How do you call this thing?",
+        "translation": "Como você chama essa coisa?",
+        "image_hint": "Pessoa segurando uma ferramenta estranha e perguntando a outra"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-060-identidade-e-nome-revisitando-call-name"
+  },
+  {
+    "order": 61,
+    "title": "Opinião e Qualidade (Revisão: Pensar, Bom)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I think so.",
+        "translation": "Eu acho que sim.",
+        "image_hint": "Alguém balançando a cabeça positivamente"
+      },
+      {
+        "level": 2,
+        "text": "I think this is good.",
+        "translation": "Eu acho que isso é bom.",
+        "image_hint": "Alguém provando uma comida ou vendo um projeto"
+      },
+      {
+        "level": 3,
+        "text": "I think this is good for the world.",
+        "translation": "Eu acho que isso é bom para o mundo.",
+        "image_hint": "Uma lâmpada LED ou símbolo de reciclagem"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-061-opini-o-e-qualidade-revisitando-think-good"
+  },
+  {
+    "order": 62,
+    "title": "Possibilidade e Lugar (Revisão: Poder, Lugar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "You can stay.",
+        "translation": "Você pode ficar.",
+        "image_hint": "Alguém indicando uma cadeira/assento"
+      },
+      {
+        "level": 2,
+        "text": "You can stay in this place.",
+        "translation": "Você pode ficar neste lugar.",
+        "image_hint": "Um hotel aconchegante ou uma sala"
+      },
+      {
+        "level": 3,
+        "text": "You can stay here until the time to go.",
+        "translation": "Você pode ficar aqui até a hora de ir.",
+        "image_hint": "Pessoa descansando e olhando para o relógio"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-062-possibilidade-e-lugar-revisitando-can-place"
+  },
+  {
+    "order": 63,
+    "title": "Movimento Coletivo (Revisão: Vir, Com)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Come with us.",
+        "translation": "Venha com a gente.",
+        "image_hint": "Grupo de amigos chamando com a mão"
+      },
+      {
+        "level": 2,
+        "text": "Come with us to the city.",
+        "translation": "Venha com a gente para a cidade.",
+        "image_hint": "O grupo em frente a um trem ou ônibus"
+      },
+      {
+        "level": 3,
+        "text": "We go to the city every week.",
+        "translation": "Nós vamos para a cidade toda semana.",
+        "image_hint": "O grupo repetindo a viagem no calendário"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-063-movimento-coletivo-revisitando-come-with"
+  },
+  {
+    "order": 64,
+    "title": "Desejo e Tempo (Revisão: Querer, Agora)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I want to see.",
+        "translation": "Eu quero ver.",
+        "image_hint": "Alguém tentando olhar por cima de um muro ou cortina"
+      },
+      {
+        "level": 2,
+        "text": "I want to see you now.",
+        "translation": "Eu quero te ver agora.",
+        "image_hint": "Alguém fazendo uma chamada de vídeo no celular"
+      },
+      {
+        "level": 3,
+        "text": "I want to see you because I miss my friend.",
+        "translation": "Eu quero te ver porque sinto falta do meu amigo.",
+        "image_hint": "Foto de dois amigos juntos"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-064-desejo-e-tempo-revisitando-want-now"
+  },
+  {
+    "order": 65,
+    "title": "Ação e Conhecimento (Revisão: Fazer, Saber)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I do what I know.",
+        "translation": "Eu faço o que eu sei.",
+        "image_hint": "Alguém consertando algo que domina"
+      },
+      {
+        "level": 2,
+        "text": "I do what I know at work.",
+        "translation": "Eu faço o que eu sei no trabalho.",
+        "image_hint": "A pessoa em seu ambiente profissional"
+      },
+      {
+        "level": 3,
+        "text": "I always do my work this way.",
+        "translation": "Eu sempre faço meu trabalho assim.",
+        "image_hint": "A pessoa seguindo um processo padrão"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-065-a-o-e-conhecimento-revisitando-do-know"
+  },
+  {
+    "order": 66,
+    "title": "Posse e Necessidade (Revisão: Ter, Dinheiro)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I have enough.",
+        "translation": "Eu tenho o suficiente.",
+        "image_hint": "Uma mão fazendo sinal de \"cheio\" ou \"satisfeito\""
+      },
+      {
+        "level": 2,
+        "text": "I have enough money.",
+        "translation": "Eu tenho dinheiro suficiente.",
+        "image_hint": "Uma carteira com a quantia exata para uma conta"
+      },
+      {
+        "level": 3,
+        "text": "I have enough money to buy a home.",
+        "translation": "Eu tenho dinheiro suficiente para comprar uma casa.",
+        "image_hint": "Pessoa segurando a chave de uma casa nova"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-066-posse-e-necessidade-revisitando-have-money"
+  },
+  {
+    "order": 67,
+    "title": "Percepção de Mudança (Revisão: Olhar, Diferente)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "You look different.",
+        "translation": "Você está diferente.",
+        "image_hint": "Alguém que cortou o cabelo ou trocou de roupa"
+      },
+      {
+        "level": 2,
+        "text": "This place looks different now.",
+        "translation": "Esse lugar está diferente agora.",
+        "image_hint": "Uma rua que antes era vazia e agora tem prédios"
+      },
+      {
+        "level": 3,
+        "text": "Everything looks different after many years.",
+        "translation": "Tudo parece diferente depois de muitos anos.",
+        "image_hint": "Comparação de foto antiga (preto e branco) e atual"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-067-percep-o-de-mudan-a-revisitando-look-different"
+  },
+  {
+    "order": 68,
+    "title": "Comunicação de Problemas (Revisão: Dizer, Problema)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Tell me why.",
+        "translation": "Me diga por quê.",
+        "image_hint": "Alguém com expressão de interrogação"
+      },
+      {
+        "level": 2,
+        "text": "Tell me why there is a problem.",
+        "translation": "Me diga por que tem um problema.",
+        "image_hint": "Alguém apontando para um computador travado"
+      },
+      {
+        "level": 3,
+        "text": "I need to know the problem to help you.",
+        "translation": "Eu preciso saber o problema para te ajudar.",
+        "image_hint": "A pessoa abrindo uma caixa de ferramentas"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-068-comunica-o-de-problemas-revisitando-tell-problem"
+  },
+  {
+    "order": 69,
+    "title": "Esforço e Repetição (Revisão: Tentar, Novamente)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I will try.",
+        "translation": "Eu vou tentar.",
+        "image_hint": "Alguém se preparando para uma corrida ou desafio"
+      },
+      {
+        "level": 2,
+        "text": "I will try again tomorrow.",
+        "translation": "Eu vou tentar de novo amanhã.",
+        "image_hint": "Pessoa indo dormir com um bilhete de \"tente de novo\" no despertador"
+      },
+      {
+        "level": 3,
+        "text": "I never stop until I finish.",
+        "translation": "Eu nunca paro até terminar.",
+        "image_hint": "Pessoa cruzando a linha de chegada"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-069-esfor-o-e-repeti-o-revisitando-try-again"
+  },
+  {
+    "order": 70,
+    "title": "Sentido e Direção (Revisão: Sentir, Caminho)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I feel the way.",
+        "translation": "Eu sinto o caminho.",
+        "image_hint": "Alguém tocando uma parede no escuro ou seguindo uma trilha"
+      },
+      {
+        "level": 2,
+        "text": "I feel the way home.",
+        "translation": "Eu sinto o caminho de casa.",
+        "image_hint": "Alguém caminhando por uma rua familiar à noite"
+      },
+      {
+        "level": 3,
+        "text": "I know the way because I live here.",
+        "translation": "Eu sei o caminho porque moro aqui.",
+        "image_hint": "A pessoa apontando para a própria casa"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-070-sentido-e-dire-o-revisitando-feel-way"
+  },
+  {
+    "order": 71,
+    "title": "Uso e Frequência (Revisão: Usar, Frequentemente)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "We use it.",
+        "translation": "Nós usamos.",
+        "image_hint": "Pessoas usando um aplicativo ou eletrodoméstico"
+      },
+      {
+        "level": 2,
+        "text": "We use it often at home.",
+        "translation": "Nós usamos bastante em casa.",
+        "image_hint": "Família reunida usando um tablet ou cafeteira"
+      },
+      {
+        "level": 3,
+        "text": "It is a good thing for the family.",
+        "translation": "É uma coisa boa para a família.",
+        "image_hint": "Todos sorrindo ao redor do objeto"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-071-uso-e-frequ-ncia-revisitando-use-often"
+  },
+  {
+    "order": 72,
+    "title": "Parte do Todo (Revisão: Parte, Vida)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Only a part.",
+        "translation": "Apenas uma parte.",
+        "image_hint": "Uma fatia de uma pizza ou uma peça de motor"
+      },
+      {
+        "level": 2,
+        "text": "Only a part of the story.",
+        "translation": "Apenas uma parte da história.",
+        "image_hint": "Alguém lendo apenas a primeira página de um livro"
+      },
+      {
+        "level": 3,
+        "text": "You only know a part of my life.",
+        "translation": "Você só conhece uma parte da minha vida.",
+        "image_hint": "Um iceberg (uma parte fora da água, a maioria escondida)"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-072-parte-do-todo-revisitando-part-life"
+  },
+  {
+    "order": 73,
+    "title": "Audição e Compreensão (Revisão: Ouvir, Entender)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I hear you.",
+        "translation": "Eu te ouço.",
+        "image_hint": "Alguém com fones de ouvido ou atento"
+      },
+      {
+        "level": 2,
+        "text": "I hear you but I don't understand.",
+        "translation": "Eu te ouço, mas não entendo.",
+        "image_hint": "Pessoa ouvindo alguém falar uma língua estrangeira"
+      },
+      {
+        "level": 3,
+        "text": "Can you speak slow please?",
+        "translation": "Você pode falar devagar, por favor?",
+        "image_hint": "Sinal de \"devagar\" com as mãos"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-073-audi-o-e-compreens-o-revisitando-hear-understand"
+  },
+  {
+    "order": 74,
+    "title": "Existência e Quantidade (Revisão: Há, Muitos)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "There are many.",
+        "translation": "Tem muitos.",
+        "image_hint": "Uma multidão ou muitos objetos"
+      },
+      {
+        "level": 2,
+        "text": "There are many people here.",
+        "translation": "Tem muitas pessoas aqui.",
+        "image_hint": "Uma praça cheia de gente"
+      },
+      {
+        "level": 3,
+        "text": "There are many people waiting to go.",
+        "translation": "Tem muitas pessoas esperando para ir.",
+        "image_hint": "Fila no aeroporto ou rodoviária"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-074-exist-ncia-e-quantidade-revisitando-there-is-many"
+  },
+  {
+    "order": 75,
+    "title": "Pensamento e Futuro (Revisão: Pensar, Querer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I think I will.",
+        "translation": "Acho que vou.",
+        "image_hint": "Pessoa com o dedo no queixo decidindo algo"
+      },
+      {
+        "level": 2,
+        "text": "I think I will take the car.",
+        "translation": "Acho que vou pegar o carro.",
+        "image_hint": "Pessoa segurando a chave do carro e olhando para a chuva"
+      },
+      {
+        "level": 3,
+        "text": "I will take the car if it starts.",
+        "translation": "Eu vou pegar o carro se ele ligar.",
+        "image_hint": "Pessoa tentando ligar a ignição"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-075-pensamento-e-futuro-revisitando-think-will"
+  },
+  {
+    "order": 76,
+    "title": "Localização e Estado (Revisão: Ser/Estar, Embaixo)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "It is under.",
+        "translation": "Está debaixo.",
+        "image_hint": "Um gato embaixo da cama"
+      },
+      {
+        "level": 2,
+        "text": "It is under the water.",
+        "translation": "Está debaixo da água.",
+        "image_hint": "Um mergulhador ou um peixe"
+      },
+      {
+        "level": 3,
+        "text": "You can see it if you look down.",
+        "translation": "Você pode ver se olhar para baixo.",
+        "image_hint": "Alguém apontando para dentro de uma piscina ou mar"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-076-localiza-o-e-estado-revisitando-be-under"
+  },
+  {
+    "order": 77,
+    "title": "Trabalho e Ferramenta (Revisão: Trabalhar, Chamar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Don't call me.",
+        "translation": "Não me ligue.",
+        "image_hint": "Sinal de \"silêncio\" ou telefone desligado"
+      },
+      {
+        "level": 2,
+        "text": "Don't call me at work.",
+        "translation": "Não me ligue no trabalho.",
+        "image_hint": "Pessoa concentrada em frente ao computador"
+      },
+      {
+        "level": 3,
+        "text": "I need to finish this today.",
+        "translation": "Eu preciso terminar isso hoje.",
+        "image_hint": "Pessoa suando e trabalhando rápido contra o relógio"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-077-trabalho-e-ferramenta-revisitando-work-call"
+  },
+  {
+    "order": 78,
+    "title": "Dar e Receber (Revisão: Dar, Comida)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Give some.",
+        "translation": "Dê um pouco.",
+        "image_hint": "Alguém repartindo um pão"
+      },
+      {
+        "level": 2,
+        "text": "Give some food to the child.",
+        "translation": "Dê comida para a criança.",
+        "image_hint": "Adulto entregando uma maçã para uma criança"
+      },
+      {
+        "level": 3,
+        "text": "The child is hungry and needs to eat.",
+        "translation": "A criança está com fome e precisa comer.",
+        "image_hint": "Criança com a mão na barriguinha"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-078-dar-e-receber-revisitando-give-food"
+  },
+  {
+    "order": 79,
+    "title": "Começo e Fim (Revisão: Começar, Tempo)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "When does it start?",
+        "translation": "Quando começa?",
+        "image_hint": "Pessoa olhando para o palco de um teatro ou cinema"
+      },
+      {
+        "level": 2,
+        "text": "It starts at the same time.",
+        "translation": "Começa no mesmo horário.",
+        "image_hint": "Dois relógios marcando 08:00"
+      },
+      {
+        "level": 3,
+        "text": "It starts every day at 8 AM.",
+        "translation": "Começa todo dia às 8 da manhã.",
+        "image_hint": "Sol nascendo e o relógio despertando"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-079-come-o-e-fim-revisitando-start-time"
+  },
+  {
+    "order": 80,
+    "title": "Identidade e Verdade (Revisão: Dizer, Verdade)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "He says it.",
+        "translation": "Ele diz.",
+        "image_hint": "Alguém falando em um palanque ou para um amigo"
+      },
+      {
+        "level": 2,
+        "text": "He says the truth.",
+        "translation": "Ele diz a verdade.",
+        "image_hint": "Alguém com a mão no peito, expressão honesta"
+      },
+      {
+        "level": 3,
+        "text": "I believe him because he is my friend.",
+        "translation": "Eu acredito nele porque ele é meu amigo.",
+        "image_hint": "Aperto de mão amigável"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-080-identidade-e-verdade-revisitando-say-truth"
+  },
+  {
+    "order": 81,
+    "title": "Contraste e Persistência (Revisão: Tentar, Ainda)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I still try.",
+        "translation": "Eu ainda tento.",
+        "image_hint": "Alguém cansado, mas se levantando"
+      },
+      {
+        "level": 2,
+        "text": "I still try to understand.",
+        "translation": "Eu ainda tento entender.",
+        "image_hint": "Pessoa olhando para um livro complexo com a mão na testa"
+      },
+      {
+        "level": 3,
+        "text": "Although it is hard, I still try.",
+        "translation": "Embora seja difícil, eu ainda tento.",
+        "image_hint": "Uma montanha alta e a pessoa começando a subir"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-081-contraste-e-persist-ncia-revisitando-try-still"
+  },
+  {
+    "order": 82,
+    "title": "Frequência e Hábito (Revisão: Frequentemente, Usar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I usually use.",
+        "translation": "Eu geralmente uso.",
+        "image_hint": "Pessoa pegando algo que usa todo dia, como óculos"
+      },
+      {
+        "level": 2,
+        "text": "I usually use my phone to work.",
+        "translation": "Eu geralmente uso meu celular para trabalhar.",
+        "image_hint": "Pessoa enviando e-mails pelo celular no café"
+      },
+      {
+        "level": 3,
+        "text": "I often do this when I am home.",
+        "translation": "Eu geralmente faço isso quando estou em casa.",
+        "image_hint": "Pessoa relaxada no sofá com o telefone"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-082-frequ-ncia-e-h-bito-revisitando-often-use"
+  },
+  {
+    "order": 83,
+    "title": "O Verbo de Parecer (Revisão: Parecer, Bom)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "It seems.",
+        "translation": "Parece.",
+        "image_hint": "Alguém analisando algo de longe"
+      },
+      {
+        "level": 2,
+        "text": "It seems like a good idea.",
+        "translation": "Parece uma boa ideia.",
+        "image_hint": "Alguém olhando para um esboço de um projeto e sorrindo"
+      },
+      {
+        "level": 3,
+        "text": "It seems good, but we need more time.",
+        "translation": "Parece bom, mas precisamos de mais tempo.",
+        "image_hint": "A pessoa apontando para um relógio de areia/ampulheta"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-083-o-verbo-de-parecer-revisitando-seem-good"
+  },
+  {
+    "order": 84,
+    "title": "Ação Concluída (Revisão: Terminar, Já)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I already finished.",
+        "translation": "Eu já terminei.",
+        "image_hint": "Alguém com os braços para cima em sinal de vitória"
+      },
+      {
+        "level": 2,
+        "text": "I already finished my work.",
+        "translation": "Eu já terminei meu trabalho.",
+        "image_hint": "Mesa limpa e computador desligado"
+      },
+      {
+        "level": 3,
+        "text": "I can go home now because I already finished.",
+        "translation": "Eu posso ir para casa agora porque já terminei.",
+        "image_hint": "Pessoa pegando o casaco e saindo"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-084-a-o-conclu-da-revisitando-finish-already"
+  },
+  {
+    "order": 85,
+    "title": "Possibilidade e Escolha (Revisão: Talvez, Qual)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I might go.",
+        "translation": "Talvez eu vá.",
+        "image_hint": "Pessoa em dúvida entre duas portas"
+      },
+      {
+        "level": 2,
+        "text": "I might go to the place you know.",
+        "translation": "Talvez eu vá para o lugar que você conhece.",
+        "image_hint": "Imagem do parque ou café usado em blocos anteriores"
+      },
+      {
+        "level": 3,
+        "text": "I don't know which way is better.",
+        "translation": "Eu não sei qual caminho é melhor.",
+        "image_hint": "Pessoa olhando para um mapa com dois caminhos coloridos"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-085-possibilidade-e-escolha-revisitando-might-which"
+  },
+  {
+    "order": 86,
+    "title": "Cuidado e Atenção (Revisão: Olhar, Cuidado)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Be careful.",
+        "translation": "Tenha cuidado.",
+        "image_hint": "Placa de \"piso molhado\" ou perigo"
+      },
+      {
+        "level": 2,
+        "text": "Be careful with that thing.",
+        "translation": "Tenha cuidado com essa coisa.",
+        "image_hint": "Alguém segurando uma caixa de vidro frágil"
+      },
+      {
+        "level": 3,
+        "text": "You need to look where you go.",
+        "translation": "Você precisa olhar por onde anda.",
+        "image_hint": "Pessoa caminhando e olhando para o chão"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-086-cuidado-e-aten-o-revisitando-look-careful"
+  },
+  {
+    "order": 87,
+    "title": "Relações Humanas (Revisão: Amigo, Dizer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I will tell.",
+        "translation": "Eu vou contar.",
+        "image_hint": "Alguém cochichando ou falando ao telefone"
+      },
+      {
+        "level": 2,
+        "text": "I will tell my friend.",
+        "translation": "Eu vou contar para meu amigo.",
+        "image_hint": "Duas pessoas conversando em um banco"
+      },
+      {
+        "level": 3,
+        "text": "I will tell him everything I know.",
+        "translation": "Eu vou contar para ele tudo que eu sei.",
+        "image_hint": "Um balão de fala cheio de pequenos ícones/ideias"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-087-rela-es-humanas-revisitando-friend-tell"
+  },
+  {
+    "order": 88,
+    "title": "Descoberta de Soluções (Revisão: Encontrar, Caminho)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Find a way.",
+        "translation": "Ache um jeito.",
+        "image_hint": "Alguém em um labirinto vendo a saída"
+      },
+      {
+        "level": 2,
+        "text": "Find a way to help them.",
+        "translation": "Ache um jeito de ajudá-los.",
+        "image_hint": "Pessoa entregando uma ferramenta ou recurso para um grupo"
+      },
+      {
+        "level": 3,
+        "text": "There is always a way if you try.",
+        "translation": "Sempre tem um jeito se você tentar.",
+        "image_hint": "Uma luz brilhando no fim de um túnel"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-088-descoberta-de-solu-es-revisitando-find-way"
+  },
+  {
+    "order": 89,
+    "title": "Pensamento Abstrato (Revisão: Pensar, Vida)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I think about.",
+        "translation": "Eu penso sobre.",
+        "image_hint": "Pessoa olhando para as estrelas ou para o mar"
+      },
+      {
+        "level": 2,
+        "text": "I think about my life.",
+        "translation": "Eu penso sobre a minha vida.",
+        "image_hint": "Flashbacks de momentos felizes e de trabalho"
+      },
+      {
+        "level": 3,
+        "text": "I think about my life every day.",
+        "translation": "Eu penso sobre a minha vida todo dia.",
+        "image_hint": "Calendário com a silhueta da pessoa pensando em cada dia"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-089-pensamento-abstrato-revisitando-think-life"
+  },
+  {
+    "order": 90,
+    "title": "Mudança e Crescimento (Revisão: Tornar-se, Grande)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "It becomes.",
+        "translation": "Se torna.",
+        "image_hint": "Uma semente virando broto"
+      },
+      {
+        "level": 2,
+        "text": "The problem becomes big.",
+        "translation": "O problema se torna grande.",
+        "image_hint": "Uma pequena rachadura virando um buraco grande"
+      },
+      {
+        "level": 3,
+        "text": "It becomes big because we don't work on it.",
+        "translation": "Se torna grande porque não trabalhamos nisso.",
+        "image_hint": "Pessoa ignorando o problema enquanto ele cresce"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-090-mudan-a-e-crescimento-revisitando-become-big"
+  },
+  {
+    "order": 91,
+    "title": "Estados Emocionais (Revisão: Sentir, Feliz/Triste)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I feel.",
+        "translation": "Eu sinto.",
+        "image_hint": "Rosto neutro"
+      },
+      {
+        "level": 2,
+        "text": "I feel happy today.",
+        "translation": "Eu me sinto feliz hoje.",
+        "image_hint": "Rosto sorridente e sol brilhando"
+      },
+      {
+        "level": 3,
+        "text": "I feel happy when I am with you.",
+        "translation": "Eu me sinto feliz quando estou com você.",
+        "image_hint": "Duas pessoas rindo juntas"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-091-estados-emocionais-revisitando-feel-happy-sad"
+  },
+  {
+    "order": 92,
+    "title": "Espaço e Ordem (Revisão: Lugar, Ao lado)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Put it next to.",
+        "translation": "Coloque ao lado.",
+        "image_hint": "Uma mão colocando uma cadeira ao lado de outra"
+      },
+      {
+        "level": 2,
+        "text": "Put it next to the water.",
+        "translation": "Coloque ao lado da água.",
+        "image_hint": "Colocar um copo ao lado de uma jarra"
+      },
+      {
+        "level": 3,
+        "text": "The place is near the table.",
+        "translation": "O lugar é perto da mesa.",
+        "image_hint": "Foto de um restaurante mostrando a proximidade dos objetos"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-092-espa-o-e-ordem-revisitando-place-next-to"
+  },
+  {
+    "order": 93,
+    "title": "Necessidade de Mudança (Revisão: Precisar, Mudar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I need to change.",
+        "translation": "Eu preciso mudar.",
+        "image_hint": "Pessoa olhando para um guarda-roupa ou para um hábito antigo"
+      },
+      {
+        "level": 2,
+        "text": "I need to change my way.",
+        "translation": "Eu preciso mudar meu jeito.",
+        "image_hint": "Pessoa mudando a direção em que está caminhando"
+      },
+      {
+        "level": 3,
+        "text": "I need to change because this is bad.",
+        "translation": "Eu preciso mudar porque isso é ruim.",
+        "image_hint": "Pessoa olhando para algo quebrado ou uma situação negativa"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-093-necessidade-de-mudan-a-revisitando-need-change"
+  },
+  {
+    "order": 94,
+    "title": "Comunicação Verbal (Revisão: Falar, Bem)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "You speak.",
+        "translation": "Você fala.",
+        "image_hint": "Pessoa em um palco ou conversando"
+      },
+      {
+        "level": 2,
+        "text": "You speak well.",
+        "translation": "Você fala bem.",
+        "image_hint": "Público aplaudindo ou pessoa com sinal de \"legal\""
+      },
+      {
+        "level": 3,
+        "text": "I understand you because you speak well.",
+        "translation": "Eu entendo você porque você fala bem.",
+        "image_hint": "Alguém ouvindo com atenção e balançando a cabeça"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-094-comunica-o-verbal-revisitando-speak-well"
+  },
+  {
+    "order": 95,
+    "title": "Parte e Pertencimento (Revisão: Parte, Grupo)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I am a part.",
+        "translation": "Eu faço parte.",
+        "image_hint": "Uma peça de quebra-cabeça encaixando"
+      },
+      {
+        "level": 2,
+        "text": "I am a part of this group.",
+        "translation": "Eu faço parte desse grupo.",
+        "image_hint": "Foto de equipe ou grupo de amigos"
+      },
+      {
+        "level": 3,
+        "text": "This group is important in my life.",
+        "translation": "Esse grupo é importante na minha vida.",
+        "image_hint": "Coração em volta da foto do grupo"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-095-parte-e-pertencimento-revisitando-part-group"
+  },
+  {
+    "order": 96,
+    "title": "Memória e Esquecimento (Revisão: Lembrar, Esquecer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Don't forget.",
+        "translation": "Não esqueça.",
+        "image_hint": "Nó no dedo ou alarme no celular"
+      },
+      {
+        "level": 2,
+        "text": "Don't forget the money.",
+        "translation": "Não esqueça o dinheiro.",
+        "image_hint": "Carteira em cima da mesa com um lembrete"
+      },
+      {
+        "level": 3,
+        "text": "I always remember it now.",
+        "translation": "Eu sempre me lembro agora.",
+        "image_hint": "Pessoa saindo de casa e pegando a carteira com confiança"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-096-mem-ria-e-esquecimento-revisitando-remember-forget"
+  },
+  {
+    "order": 97,
+    "title": "Intenção e Movimento (Revisão: Querer, Trazer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I want to bring.",
+        "translation": "Eu quero trazer.",
+        "image_hint": "Alguém com uma sacola ou presente"
+      },
+      {
+        "level": 2,
+        "text": "I want to bring my friend here.",
+        "translation": "Eu quero trazer meu amigo aqui.",
+        "image_hint": "Pessoa apontando para o lugar onde está e pensando no amigo"
+      },
+      {
+        "level": 3,
+        "text": "He will like this place.",
+        "translation": "Ele vai gostar desse lugar.",
+        "image_hint": "O amigo sorrindo na imaginação da pessoa"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-097-inten-o-e-movimento-revisitando-want-bring"
+  },
+  {
+    "order": 98,
+    "title": "Percepção Auditiva (Revisão: Ouvir, Escutar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Listen!",
+        "translation": "Escute!",
+        "image_hint": "Pessoa com o dedo na boca pedindo silêncio"
+      },
+      {
+        "level": 2,
+        "text": "Listen to the world.",
+        "translation": "Escute o mundo.",
+        "image_hint": "Pessoa em meio à natureza ou cidade ouvindo os sons"
+      },
+      {
+        "level": 3,
+        "text": "You can hear many things if you are still.",
+        "translation": "Você pode ouvir muitas coisas se ficar quieto.",
+        "image_hint": "Pessoa imóvel e serena ouvindo passarinho ou vento"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-098-percep-o-auditiva-revisitando-hear-listen"
+  },
+  {
+    "order": 99,
+    "title": "Tempo Futuro e Certeza (Revisão: Querer, Acontecer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "It will happen.",
+        "translation": "Vai acontecer.",
+        "image_hint": "Uma semente prestes a brotar ou um evento marcado"
+      },
+      {
+        "level": 2,
+        "text": "It will happen soon.",
+        "translation": "Vai acontecer em breve.",
+        "image_hint": "Relógio marcando quase a hora"
+      },
+      {
+        "level": 3,
+        "text": "We know it will happen today.",
+        "translation": "Nós sabemos que vai acontecer hoje.",
+        "image_hint": "Alguém apontando para a data de hoje no calendário"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-099-tempo-futuro-e-certeza-revisitando-will-happen"
+  },
+  {
+    "order": 100,
+    "title": "Conclusão do Primeiro Ciclo (Revisão: Tudo, Feito)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Everything is.",
+        "translation": "Tudo é.",
+        "image_hint": "Braços abertos englobando tudo ao redor"
+      },
+      {
+        "level": 2,
+        "text": "Everything is done.",
+        "translation": "Tudo está feito.",
+        "image_hint": "Lista de tarefas toda marcada com \"check\""
+      },
+      {
+        "level": 3,
+        "text": "I feel good because everything is done.",
+        "translation": "Eu me sinto bem porque tudo está feito.",
+        "image_hint": "Pessoa relaxando com os pés para cima"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-100-conclus-o-do-primeiro-ciclo-revisitando-everything-done"
+  },
+  {
+    "order": 101,
+    "title": "Escolha e Consequência (Qual / Melhor)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Which one?",
+        "translation": "Qual?",
+        "image_hint": "Pessoa apontando para duas opções"
+      },
+      {
+        "level": 2,
+        "text": "Which way is better?",
+        "translation": "Qual caminho é melhor?",
+        "image_hint": "Bifurcação em uma estrada"
+      },
+      {
+        "level": 3,
+        "text": "I need to know which way is better to go.",
+        "translation": "Eu preciso saber qual caminho é melhor para ir.",
+        "image_hint": "Pessoa olhando para o GPS no celular"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-101-escolha-e-consequ-ncia-which-better"
+  },
+  {
+    "order": 102,
+    "title": "Perspectiva e Tempo (Ainda / Ainda não)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Not yet.",
+        "translation": "Ainda não.",
+        "image_hint": "Um sinal de \"espere\" ou relógio batendo"
+      },
+      {
+        "level": 2,
+        "text": "I am not yet at home.",
+        "translation": "Eu ainda não estou em casa.",
+        "image_hint": "Pessoa ainda no ônibus ou carro"
+      },
+      {
+        "level": 3,
+        "text": "I am still at work, but I will leave soon.",
+        "translation": "Eu ainda estou no trabalho, mas vou sair logo.",
+        "image_hint": "Pessoa fechando o escritório tarde da noite"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-102-perspectiva-e-tempo-still-not-yet"
+  },
+  {
+    "order": 103,
+    "title": "Possibilidade e Ajuda (Talvez / Dar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I might.",
+        "translation": "Talvez.",
+        "image_hint": "Alguém com expressão de \"talvez\""
+      },
+      {
+        "level": 2,
+        "text": "I might give you a call.",
+        "translation": "Talvez eu te ligue.",
+        "image_hint": "Pessoa segurando o telefone e pensando"
+      },
+      {
+        "level": 3,
+        "text": "I might give you a call if I have the time.",
+        "translation": "Talvez eu te ligue se eu tiver tempo.",
+        "image_hint": "Agenda cheia com um espaço livre no fim do dia"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-103-possibilidade-e-ajuda-might-give"
+  },
+  {
+    "order": 104,
+    "title": "Diferenciação e Valor (Diferente / Dinheiro)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "It is different.",
+        "translation": "É diferente.",
+        "image_hint": "Dois objetos distintos lado a lado"
+      },
+      {
+        "level": 2,
+        "text": "This thing is different.",
+        "translation": "Essa coisa é diferente.",
+        "image_hint": "Comparação entre algo barato e algo de luxo"
+      },
+      {
+        "level": 3,
+        "text": "It costs more money because it is different.",
+        "translation": "Custa mais dinheiro porque é diferente.",
+        "image_hint": "Etiqueta de preço alta em um objeto artesanal"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-104-diferencia-o-e-valor-different-money"
+  },
+  {
+    "order": 105,
+    "title": "Intenção e Movimento (Tentar / Seguir)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Follow me.",
+        "translation": "Me siga.",
+        "image_hint": "Alguém fazendo sinal para ser seguido"
+      },
+      {
+        "level": 2,
+        "text": "Follow the way I show you.",
+        "translation": "Siga o caminho que eu te mostrar.",
+        "image_hint": "Guia apontando para uma trilha"
+      },
+      {
+        "level": 3,
+        "text": "You will find the place if you follow me.",
+        "translation": "Você vai achar o lugar se me seguir.",
+        "image_hint": "Destino aparecendo ao fim do caminho"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-105-inten-o-e-movimento-try-follow"
+  },
+  {
+    "order": 106,
+    "title": "Cognição e Verdade (Acreditar / Real)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Is it real?",
+        "translation": "É real?",
+        "image_hint": "Alguém tocando algo para ver se existe"
+      },
+      {
+        "level": 2,
+        "text": "I believe it is real.",
+        "translation": "Eu acredito que é real.",
+        "image_hint": "Olhar de admiração diante de algo incrível"
+      },
+      {
+        "level": 3,
+        "text": "I believe it because I can see it.",
+        "translation": "Eu acredito porque consigo ver.",
+        "image_hint": "Alguém olhando bem de perto para o objeto"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-106-cogni-o-e-verdade-believe-real"
+  },
+  {
+    "order": 107,
+    "title": "Uso de Ferramentas (Usar / Encontrar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Use this.",
+        "translation": "Use isso.",
+        "image_hint": "Alguém entregando uma chave ou controle remoto"
+      },
+      {
+        "level": 2,
+        "text": "Use this to find the problem.",
+        "translation": "Use isso para achar o problema.",
+        "image_hint": "Lanterna iluminando um motor"
+      },
+      {
+        "level": 3,
+        "text": "It is the only way to help now.",
+        "translation": "É o único jeito de ajudar agora.",
+        "image_hint": "Pessoa consertando o problema com sucesso"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-107-uso-de-ferramentas-use-find"
+  },
+  {
+    "order": 108,
+    "title": "Relação de Espaço (Entre / Pessoas)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Between them.",
+        "translation": "Entre eles.",
+        "image_hint": "Um objeto no meio de dois outros"
+      },
+      {
+        "level": 2,
+        "text": "Between these two people.",
+        "translation": "Entre essas duas pessoas.",
+        "image_hint": "Uma criança entre os pais"
+      },
+      {
+        "level": 3,
+        "text": "There is a big love between them.",
+        "translation": "Existe um grande amor entre eles.",
+        "image_hint": "Um coração unindo as três pessoas"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-108-rela-o-de-espa-o-between-people"
+  },
+  {
+    "order": 109,
+    "title": "Condição e Frequência (Sempre / Se)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Always do it.",
+        "translation": "Sempre faça.",
+        "image_hint": "Escovar os dentes ou algo rotineiro"
+      },
+      {
+        "level": 2,
+        "text": "Always do it this way.",
+        "translation": "Sempre faça assim.",
+        "image_hint": "Manual de instruções aberto"
+      },
+      {
+        "level": 3,
+        "text": "It will work if you always do it this way.",
+        "translation": "Vai funcionar se você sempre fizer assim.",
+        "image_hint": "O resultado final perfeito"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-109-condi-o-e-frequ-ncia-always-if"
+  },
+  {
+    "order": 110,
+    "title": "Fim e Início (Terminar / Começar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Finish first.",
+        "translation": "Termine primeiro.",
+        "image_hint": "Número \"1\" em destaque antes do \"2\""
+      },
+      {
+        "level": 2,
+        "text": "Finish this part first.",
+        "translation": "Termine essa parte primeiro.",
+        "image_hint": "Alguém terminando a base de uma construção"
+      },
+      {
+        "level": 3,
+        "text": "Then you can start the new one.",
+        "translation": "Depois você pode começar o novo.",
+        "image_hint": "Alguém pegando novos materiais para a próxima etapa"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-110-fim-e-in-cio-finish-start"
+  },
+  {
+    "order": 111,
+    "title": "O 'Porquê' das Coisas (Razão / Por quê)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "The reason is.",
+        "translation": "O motivo é.",
+        "image_hint": "Alguém explicando algo com as mãos"
+      },
+      {
+        "level": 2,
+        "text": "This is the reason why.",
+        "translation": "Esse é o motivo.",
+        "image_hint": "Um quadro negro com uma seta ligando causa e efeito"
+      },
+      {
+        "level": 3,
+        "text": "You are the reason why I am happy.",
+        "translation": "Você é o motivo de eu ser feliz.",
+        "image_hint": "Pessoa sorrindo para um amigo"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-111-o-porqu-das-coisas-reason-why"
+  },
+  {
+    "order": 112,
+    "title": "Quantidade Abstrata (Suficiente / Tudo)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Is it enough?",
+        "translation": "É o suficiente?",
+        "image_hint": "Alguém olhando para um prato ou tanque de combustível"
+      },
+      {
+        "level": 2,
+        "text": "I have enough for everything.",
+        "translation": "Eu tenho o suficiente para tudo.",
+        "image_hint": "Pessoa com mala pronta e carteira organizada"
+      },
+      {
+        "level": 3,
+        "text": "I don't need more than this.",
+        "translation": "Eu não preciso de mais do que isso.",
+        "image_hint": "Pessoa fechando a mala com tranquilidade"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-112-quantidade-abstrata-enough-everything"
+  },
+  {
+    "order": 113,
+    "title": "O Verbo de Parecer (Parecer / Mesmo)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "It looks like.",
+        "translation": "Parece.",
+        "image_hint": "Alguém comparando duas fotos"
+      },
+      {
+        "level": 2,
+        "text": "It looks like the same thing.",
+        "translation": "Parece a mesma coisa.",
+        "image_hint": "Duas chaves quase idênticas"
+      },
+      {
+        "level": 3,
+        "text": "But they are different if you look close.",
+        "translation": "Mas eles são diferentes se você olhar de perto.",
+        "image_hint": "Lupa mostrando detalhes diferentes"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-113-o-verbo-de-parecer-look-like-same"
+  },
+  {
+    "order": 114,
+    "title": "Expressão de Desejo Futuro (Gostaria / Ir)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "I would like.",
+        "translation": "Eu gostaria.",
+        "image_hint": "Alguém sonhando acordado com uma nuvem sobre a cabeça"
+      },
+      {
+        "level": 2,
+        "text": "I would like to go there.",
+        "translation": "Eu gostaria de ir lá.",
+        "image_hint": "Foto de uma praia ou cidade famosa"
+      },
+      {
+        "level": 3,
+        "text": "Maybe next year we can go.",
+        "translation": "Talvez ano que vem a gente possa ir.",
+        "image_hint": "Calendário do ano que vem com um círculo"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-114-express-o-de-desejo-futuro-would-like-go"
+  },
+  {
+    "order": 115,
+    "title": "Comunicação e Silêncio (Ouvir / Palavra)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "No words.",
+        "translation": "Sem palavras.",
+        "image_hint": "Pessoa com o dedo nos lábios"
+      },
+      {
+        "level": 2,
+        "text": "I have no words to say.",
+        "translation": "Eu não tenho palavras para dizer.",
+        "image_hint": "Pessoa emocionada ou surpresa"
+      },
+      {
+        "level": 3,
+        "text": "Just listen to my heart.",
+        "translation": "Apenas escute meu coração.",
+        "image_hint": "Mão no peito e expressão sincera"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-115-comunica-o-e-sil-ncio-listen-word"
+  },
+  {
+    "order": 116,
+    "title": "Mudança e Vida (Mudar / Vida)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Change is good.",
+        "translation": "Mudança é bom.",
+        "image_hint": "Planta crescendo ou lagarta virando borboleta"
+      },
+      {
+        "level": 2,
+        "text": "A big change in my life.",
+        "translation": "Uma grande mudança na minha vida.",
+        "image_hint": "Mudança de casa ou novo emprego"
+      },
+      {
+        "level": 3,
+        "text": "Everything is new and I feel great.",
+        "translation": "Tudo é novo e eu me sinto ótimo.",
+        "image_hint": "Pessoa de braços abertos na frente de uma nova vista"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-116-mudan-a-e-vida-change-life"
+  },
+  {
+    "order": 117,
+    "title": "Localização e Direção (Através / Lugar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Go through.",
+        "translation": "Passe por.",
+        "image_hint": "Carro entrando em um túnel"
+      },
+      {
+        "level": 2,
+        "text": "Go through the city.",
+        "translation": "Passe pela cidade.",
+        "image_hint": "Linha cruzando o mapa urbano"
+      },
+      {
+        "level": 3,
+        "text": "It is the fast way to the park.",
+        "translation": "É o caminho rápido para o parque.",
+        "image_hint": "O parque aparecendo do outro lado da cidade"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-117-localiza-o-e-dire-o-through-place"
+  },
+  {
+    "order": 118,
+    "title": "Certeza e Dúvida (Certeza / Saber)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Are you sure?",
+        "translation": "Você tem certeza?",
+        "image_hint": "Alguém perguntando com a sobrancelha levantada"
+      },
+      {
+        "level": 2,
+        "text": "I am sure about this.",
+        "translation": "Eu tenho certeza disso.",
+        "image_hint": "Alguém assinando um documento com firmeza"
+      },
+      {
+        "level": 3,
+        "text": "I know this is the right thing to do.",
+        "translation": "Eu sei que isso é a coisa certa a fazer.",
+        "image_hint": "Sinal de \"positivo\" e olhar confiante"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-118-certeza-e-d-vida-sure-know"
+  },
+  {
+    "order": 119,
+    "title": "Necessidade Coletiva (Precisar / Um ao outro)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "We need.",
+        "translation": "Nós precisamos.",
+        "image_hint": "Duas pessoas tentando carregar algo pesado"
+      },
+      {
+        "level": 2,
+        "text": "We need each other.",
+        "translation": "Nós precisamos um do outro.",
+        "image_hint": "Duas pessoas se dando as mãos para subir um degrau"
+      },
+      {
+        "level": 3,
+        "text": "We are strong when we are together.",
+        "translation": "Nós somos fortes quando estamos juntos.",
+        "image_hint": "Punhos cerrados juntos em sinal de união"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-119-necessidade-coletiva-need-each-other"
+  },
+  {
+    "order": 120,
+    "title": "O Fechamento do Ciclo (Tudo / Feito)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "It is done.",
+        "translation": "Está feito.",
+        "image_hint": "Ponto final em um texto ou carimbo de \"concluído\""
+      },
+      {
+        "level": 2,
+        "text": "Everything we wanted is done.",
+        "translation": "Tudo que a gente queria está feito.",
+        "image_hint": "A casa pronta ou o projeto finalizado"
+      },
+      {
+        "level": 3,
+        "text": "Now we can start a new story.",
+        "translation": "Agora podemos começar uma nova história.",
+        "image_hint": "Pessoa fechando um livro e pegando um novo em branco"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-120-o-fechamento-do-ciclo-everything-done"
+  }
+]

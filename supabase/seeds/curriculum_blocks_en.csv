@@ -1,0 +1,362 @@
+block_order,phase,slug,title,level,text,image_hint
+1,survival,block-001-necessidade-b-sica-verbo-want,Necessidade Básica (Verbo: Want),1,I want.,Alguém apontando para si e para algo
+1,survival,block-001-necessidade-b-sica-verbo-want,Necessidade Básica (Verbo: Want),2,I want water.,A pessoa com um copo d'água
+1,survival,block-001-necessidade-b-sica-verbo-want,Necessidade Básica (Verbo: Want),3,I want water now.,Relógio indicando o momento atual
+2,survival,block-002-a-o-de-movimento-verbo-go,Ação de Movimento (Verbo: Go),1,I go.,Pessoa caminhando
+2,survival,block-002-a-o-de-movimento-verbo-go,Ação de Movimento (Verbo: Go),2,I go home.,Pessoa chegando em uma casa
+2,survival,block-002-a-o-de-movimento-verbo-go,Ação de Movimento (Verbo: Go),3,I go home with my friend.,Duas pessoas caminhando para a casa
+3,survival,block-003-capacidade-verbo-can-do,Capacidade (Verbo: Can/Do),1,I can.,"Alguém fazendo sinal de ""positivo"" ou força"
+3,survival,block-003-capacidade-verbo-can-do,Capacidade (Verbo: Can/Do),2,I can do this.,Alguém completando uma tarefa simples
+3,survival,block-003-capacidade-verbo-can-do,Capacidade (Verbo: Can/Do),3,I can do this today.,Calendário com o dia de hoje marcado
+4,survival,block-004-percep-o-verbo-see,Percepção (Verbo: See),1,I see.,Olhos abertos ou alguém olhando
+4,survival,block-004-percep-o-verbo-see,Percepção (Verbo: See),2,I see the car.,Um carro na rua
+4,survival,block-004-percep-o-verbo-see,Percepção (Verbo: See),3,I see the car but it is far.,Carro pequeno ao fundo na estrada
+5,survival,block-005-posse-estado-verbo-have,Posse/Estado (Verbo: Have),1,I have.,Mãos segurando algo
+5,survival,block-005-posse-estado-verbo-have,Posse/Estado (Verbo: Have),2,I have a book.,Alguém com um livro
+5,survival,block-005-posse-estado-verbo-have,Posse/Estado (Verbo: Have),3,I have a book and I read.,Pessoa lendo o livro
+6,survival,block-006-comunica-o-verbo-say,Comunicação (Verbo: Say),1,You say.,Alguém falando/balão de fala
+6,survival,block-006-comunica-o-verbo-say,Comunicação (Verbo: Say),2,"You say ""hello"".",Aceno de mão e a palavra escrita
+6,survival,block-006-comunica-o-verbo-say,Comunicação (Verbo: Say),3,"You say ""hello"" because you are good.",Sorriso e sinal de amizade
+7,survival,block-007-cogni-o-verbo-know,Cognição (Verbo: Know),1,I know.,Lâmpada acesa sobre a cabeça
+7,survival,block-007-cogni-o-verbo-know,Cognição (Verbo: Know),2,I know your name.,Crachá ou alguém se apresentando
+7,survival,block-007-cogni-o-verbo-know,Cognição (Verbo: Know),3,I know your name because we are friends.,Duas pessoas abraçadas
+8,survival,block-008-localiza-o-verbo-be,Localização (Verbo: Be),1,She is.,Uma mulher
+8,survival,block-008-localiza-o-verbo-be,Localização (Verbo: Be),2,She is here.,"Ela em um local específico marcado com ""X"""
+8,survival,block-008-localiza-o-verbo-be,Localização (Verbo: Be),3,She is here at work.,Ela em um escritório/mesa
+9,survival,block-009-pensamento-verbo-think,Pensamento (Verbo: Think),1,We think.,Grupo de pessoas com a mão no queixo
+9,survival,block-009-pensamento-verbo-think,Pensamento (Verbo: Think),2,We think about food.,Balão de pensamento com um prato de comida
+9,survival,block-009-pensamento-verbo-think,Pensamento (Verbo: Think),3,We think about food if we are hungry.,Pessoa com a mão na barriga vazia
+10,survival,block-010-inten-o-futuro-verbo-will-make,Intenção/Futuro (Verbo: Will/Make),1,They will.,Grupo apontando para o futuro
+10,survival,block-010-inten-o-futuro-verbo-will-make,Intenção/Futuro (Verbo: Will/Make),2,They will make it.,Grupo construindo algo ou vencendo
+10,survival,block-010-inten-o-futuro-verbo-will-make,Intenção/Futuro (Verbo: Will/Make),3,They will make it tomorrow.,Sol nascendo no horizonte
+11,survival,block-011-o-verbo-de-movimento-reversivo-come,O Verbo de Movimento Reversivo (Come),1,You come.,"Alguém fazendo sinal de ""venha"""
+11,survival,block-011-o-verbo-de-movimento-reversivo-come,O Verbo de Movimento Reversivo (Come),2,You come here.,Uma seta apontando para o chão onde o falante está
+11,survival,block-011-o-verbo-de-movimento-reversivo-come,O Verbo de Movimento Reversivo (Come),3,You come here every day.,Um calendário com todos os dias marcados
+12,survival,block-012-a-o-de-pegar-levar-take,Ação de Pegar/Levar (Take),1,I take.,Uma mão pegando uma chave
+12,survival,block-012-a-o-de-pegar-levar-take,Ação de Pegar/Levar (Take),2,I take the car.,Alguém entrando no carro ou segurando a chave do carro
+12,survival,block-012-a-o-de-pegar-levar-take,Ação de Pegar/Levar (Take),3,I take the car to work.,O carro em frente a um prédio de escritórios
+13,survival,block-013-tempo-e-exist-ncia-time-is,Tempo e Existência (Time/Is),1,It is.,Um relógio ou um conceito neutro
+13,survival,block-013-tempo-e-exist-ncia-time-is,Tempo e Existência (Time/Is),2,It is time.,O relógio marcando a hora de um compromisso
+13,survival,block-013-tempo-e-exist-ncia-time-is,Tempo e Existência (Time/Is),3,It is time to speak.,Alguém com um microfone ou em uma reunião
+14,survival,block-014-o-verbo-de-dar-give,O Verbo de Dar (Give),1,Give me.,Uma mão aberta esperando algo
+14,survival,block-014-o-verbo-de-dar-give,O Verbo de Dar (Give),2,Give me the money.,Alguém entregando uma nota ou moeda
+14,survival,block-014-o-verbo-de-dar-give,O Verbo de Dar (Give),3,Give me the money for the food.,Uma nota de dinheiro ao lado de um prato de comida
+15,survival,block-015-pensamento-e-d-vida-ask-if,Pensamento e Dúvida (Ask/If),1,I ask.,Alguém levantando a mão na sala de aula
+15,survival,block-015-pensamento-e-d-vida-ask-if,Pensamento e Dúvida (Ask/If),2,I ask why.,Um ponto de interrogação acima da cabeça
+15,survival,block-015-pensamento-e-d-vida-ask-if,Pensamento e Dúvida (Ask/If),3,I ask why if I don't know.,"Pessoa dando de ombros, sem entender"
+16,survival,block-016-localiza-o-relativa-under-on,Localização Relativa (Under/On),1,It is here.,Um objeto em cima de uma mesa
+16,survival,block-016-localiza-o-relativa-under-on,Localização Relativa (Under/On),2,It is on the table.,Zoom no objeto em cima da mesa
+16,survival,block-016-localiza-o-relativa-under-on,Localização Relativa (Under/On),3,It is not under the table.,"A mesma mesa, mas mostrando o espaço vazio embaixo dela"
+17,survival,block-017-o-verbo-de-ouvir-listen-about,O Verbo de Ouvir (Listen/About),1,We listen.,Grupo de pessoas com a mão no ouvido
+17,survival,block-017-o-verbo-de-ouvir-listen-about,O Verbo de Ouvir (Listen/About),2,We listen to you.,O grupo olhando para uma pessoa que fala
+17,survival,block-017-o-verbo-de-ouvir-listen-about,O Verbo de Ouvir (Listen/About),3,We listen to you about the problem.,O grupo com feição de preocupação ouvindo a explicação
+18,survival,block-018-frequ-ncia-e-a-o-often-use,Frequência e Ação (Often/Use),1,I use.,Alguém usando um celular ou ferramenta
+18,survival,block-018-frequ-ncia-e-a-o-often-use,Frequência e Ação (Often/Use),2,I use the phone.,Alguém digitando no celular
+18,survival,block-018-frequ-ncia-e-a-o-often-use,Frequência e Ação (Often/Use),3,I use the phone often.,Vários ícones de relógio ao redor do celular
+19,survival,block-019-condi-o-e-sentimento-feel-but,Condição e Sentimento (Feel/But),1,I feel.,Alguém com a mão no coração
+19,survival,block-019-condi-o-e-sentimento-feel-but,Condição e Sentimento (Feel/But),2,I feel good.,Alguém sorrindo e feliz
+19,survival,block-019-condi-o-e-sentimento-feel-but,Condição e Sentimento (Feel/But),3,I feel good but I am tired.,"Alguém sorrindo, mas bocejando/com sono"
+20,survival,block-020-finaliza-o-e-resultado-find-way,Finalização e Resultado (Find/Way),1,They find.,Alguém encontrando um tesouro ou uma chave perdida
+20,survival,block-020-finaliza-o-e-resultado-find-way,Finalização e Resultado (Find/Way),2,They find the way.,Alguém olhando um mapa ou bússola
+20,survival,block-020-finaliza-o-e-resultado-find-way,Finalização e Resultado (Find/Way),3,They find the way through the city.,Uma linha traçada cruzando o mapa de uma cidade
+21,survival,block-021-inten-o-e-ajuda-verbo-help-need,Intenção e Ajuda (Verbo: Help / Need),1,I help.,Alguém estendendo a mão
+21,survival,block-021-inten-o-e-ajuda-verbo-help-need,Intenção e Ajuda (Verbo: Help / Need),2,I help my family.,Pessoa ajudando um idoso ou criança
+21,survival,block-021-inten-o-e-ajuda-verbo-help-need,Intenção e Ajuda (Verbo: Help / Need),3,I help my family because they need me.,Grupo familiar unido
+22,survival,block-022-movimento-e-destino-verbo-run-to,Movimento e Destino (Verbo: Run / To),1,He runs.,Um homem correndo
+22,survival,block-022-movimento-e-destino-verbo-run-to,Movimento e Destino (Verbo: Run / To),2,He runs to the school.,Homem correndo em direção a um prédio escolar
+22,survival,block-022-movimento-e-destino-verbo-run-to,Movimento e Destino (Verbo: Run / To),3,He runs to the school before it closes.,Homem olhando o relógio e correndo para a porta
+23,survival,block-023-descoberta-e-objeto-verbo-look-for-find,Descoberta e Objeto (Verbo: Look for / Find),1,I look for.,Alguém procurando algo com uma lupa
+23,survival,block-023-descoberta-e-objeto-verbo-look-for-find,Descoberta e Objeto (Verbo: Look for / Find),2,I look for my keys.,Pessoa procurando chaves no sofá
+23,survival,block-023-descoberta-e-objeto-verbo-look-for-find,Descoberta e Objeto (Verbo: Look for / Find),3,I look for my keys until I find them.,Pessoa sorrindo com as chaves na mão
+24,survival,block-024-pensamento-coletivo-verbo-believe-that,Pensamento Coletivo (Verbo: Believe / That),1,We believe.,Pessoas com expressão de confiança/fé
+24,survival,block-024-pensamento-coletivo-verbo-believe-that,Pensamento Coletivo (Verbo: Believe / That),2,We believe that idea.,Grupo apontando para um quadro com um plano/ideia
+24,survival,block-024-pensamento-coletivo-verbo-believe-that,Pensamento Coletivo (Verbo: Believe / That),3,We believe that idea is good.,"Sinal de ""joinha"" para o quadro"
+25,survival,block-025-escrita-e-mem-ria-verbo-write-about,Escrita e Memória (Verbo: Write / About),1,She writes.,Mulher escrevendo em um caderno
+25,survival,block-025-escrita-e-mem-ria-verbo-write-about,Escrita e Memória (Verbo: Write / About),2,She writes about her life.,Fotos de infância e viagens ao lado do caderno
+25,survival,block-025-escrita-e-mem-ria-verbo-write-about,Escrita e Memória (Verbo: Write / About),3,She writes about her life in a book.,A mulher segurando um livro pronto
+26,survival,block-026-quantidade-e-posse-verbo-have-many,Quantidade e Posse (Verbo: Have / Many),1,They have.,Pessoas segurando caixas
+26,survival,block-026-quantidade-e-posse-verbo-have-many,Quantidade e Posse (Verbo: Have / Many),2,They have many things.,Muitas caixas e objetos ao redor delas
+26,survival,block-026-quantidade-e-posse-verbo-have-many,Quantidade e Posse (Verbo: Have / Many),3,They have many things but no space.,Pessoas espremidas entre as caixas
+27,survival,block-027-tentativa-e-erro-verbo-try-again,Tentativa e Erro (Verbo: Try / Again),1,I try.,Alguém tentando abrir um pote ou resolver um puzzle
+27,survival,block-027-tentativa-e-erro-verbo-try-again,Tentativa e Erro (Verbo: Try / Again),2,I try to do this.,Foco na ação sendo executada
+27,survival,block-027-tentativa-e-erro-verbo-try-again,Tentativa e Erro (Verbo: Try / Again),3,I try to do this again and again.,Sequência de imagens da mesma pessoa repetindo a ação
+28,survival,block-028-mudan-a-de-estado-verbo-become-get,Mudança de Estado (Verbo: Become / Get),1,It gets.,O céu mudando de cor
+28,survival,block-028-mudan-a-de-estado-verbo-become-get,Mudança de Estado (Verbo: Become / Get),2,It gets dark.,"O pôr do sol, ficando noite"
+28,survival,block-028-mudan-a-de-estado-verbo-become-get,Mudança de Estado (Verbo: Become / Get),3,It gets dark after 6 PM.,Relógio marcando 18:00 e o céu escuro
+29,survival,block-029-comunica-o-direta-verbo-tell-truth,Comunicação Direta (Verbo: Tell / Truth),1,Tell me.,Pessoa com a mão na orelha esperando ouvir algo
+29,survival,block-029-comunica-o-direta-verbo-tell-truth,Comunicação Direta (Verbo: Tell / Truth),2,Tell me the truth.,Olhar sério e honesto entre duas pessoas
+29,survival,block-029-comunica-o-direta-verbo-tell-truth,Comunicação Direta (Verbo: Tell / Truth),3,Tell me the truth always.,Símbolo de infinito ou repetição
+30,survival,block-030-prefer-ncia-verbo-like-better,Preferência (Verbo: Like / Better),1,I like.,"Alguém comendo algo gostoso).
+
+** Nível 2: I like this apple. (Imagem: Pessoa segurando uma maçã vermelha"
+30,survival,block-030-prefer-ncia-verbo-like-better,Preferência (Verbo: Like / Better),3,I like this apple better than that one.,Pessoa comparando uma maçã bonita com uma estragada
+31,expansion,block-031-perman-ncia-verbo-stay-place,Permanência (Verbo: Stay / Place),1,We stay.,Pessoas sentadas em um banco
+31,expansion,block-031-perman-ncia-verbo-stay-place,Permanência (Verbo: Stay / Place),2,We stay in this place.,O banco em um parque bonito
+31,expansion,block-031-perman-ncia-verbo-stay-place,Permanência (Verbo: Stay / Place),3,We stay in this place during the day.,O sol brilhando sobre o parque
+32,expansion,block-032-trabalho-e-ferramentas-verbo-work-with,Trabalho e Ferramentas (Verbo: Work / With),1,You work.,Alguém em frente a um computador
+32,expansion,block-032-trabalho-e-ferramentas-verbo-work-with,Trabalho e Ferramentas (Verbo: Work / With),2,You work with a computer.,Foco nas mãos e no teclado
+32,expansion,block-032-trabalho-e-ferramentas-verbo-work-with,Trabalho e Ferramentas (Verbo: Work / With),3,You work with a computer every week.,Sete ícones de computador (um para cada dia)
+33,expansion,block-033-in-cio-e-fim-verbo-start-finish,Início e Fim (Verbo: Start / Finish),1,I start.,Alguém na linha de partida ou abrindo um livro
+33,expansion,block-033-in-cio-e-fim-verbo-start-finish,Início e Fim (Verbo: Start / Finish),2,I start the work.,Pessoa começando a digitar ou construir algo
+33,expansion,block-033-in-cio-e-fim-verbo-start-finish,Início e Fim (Verbo: Start / Finish),3,I start the work when I arrive.,Pessoa abrindo a porta do escritório e sentando
+34,expansion,block-034-parte-e-todo-substantivo-part-world,Parte e Todo (Substantivo: Part / World),1,This is a part.,Uma peça de um quebra-cabeça
+34,expansion,block-034-parte-e-todo-substantivo-part-world,Parte e Todo (Substantivo: Part / World),2,This is a part of the world.,Um mapa de um país
+34,expansion,block-034-parte-e-todo-substantivo-part-world,Parte e Todo (Substantivo: Part / World),3,This is a part of the world where I live.,Alguém apontando para a sua casa no mapa
+35,expansion,block-035-chamado-e-nome-verbo-call-name,Chamado e Nome (Verbo: Call / Name),1,I call.,Alguém gritando ou usando o telefone
+35,expansion,block-035-chamado-e-nome-verbo-call-name,Chamado e Nome (Verbo: Call / Name),2,I call your name.,Balão de fala com o nome de alguém
+35,expansion,block-035-chamado-e-nome-verbo-call-name,Chamado e Nome (Verbo: Call / Name),3,I call your name through the door.,Pessoa chamando outra que está atrás de uma porta fechada
+36,expansion,block-036-compreens-o-verbo-understand-why,Compreensão (Verbo: Understand / Why),1,You understand.,"Expressão de ""Ah, entendi!"" - o clique"
+36,expansion,block-036-compreens-o-verbo-understand-why,Compreensão (Verbo: Understand / Why),2,You understand the problem.,Alguém olhando para um motor quebrado ou conta difícil
+36,expansion,block-036-compreens-o-verbo-understand-why,Compreensão (Verbo: Understand / Why),3,You understand the problem now.,Pessoa sorrindo e começando a consertar/resolver
+37,expansion,block-037-lembran-a-verbo-remember-face,Lembrança (Verbo: Remember / Face),1,I remember.,"Pessoa tocando a têmpora, pensando"
+37,expansion,block-037-lembran-a-verbo-remember-face,Lembrança (Verbo: Remember / Face),2,I remember your face.,O rosto de uma pessoa embaçado ficando nítido
+37,expansion,block-037-lembran-a-verbo-remember-face,Lembrança (Verbo: Remember / Face),3,I remember your face from the school.,Foto antiga de formatura/sala de aula
+38,expansion,block-038-espa-o-e-dist-ncia-adjetivo-high-low,Espaço e Distância (Adjetivo: High / Low),1,It is high.,Um pássaro voando alto
+38,expansion,block-038-espa-o-e-dist-ncia-adjetivo-high-low,Espaço e Distância (Adjetivo: High / Low),2,The bird is high.,O pássaro acima das nuvens
+38,expansion,block-038-espa-o-e-dist-ncia-adjetivo-high-low,Espaço e Distância (Adjetivo: High / Low),3,The bird is high above the house.,O pássaro lá no alto e uma casa pequena lá embaixo
+39,expansion,block-039-utilidade-verbo-use-way,Utilidade (Verbo: Use / Way),1,I use.,Alguém com um martelo ou ferramenta
+39,expansion,block-039-utilidade-verbo-use-way,Utilidade (Verbo: Use / Way),2,I use it this way.,Demonstração do uso correto da ferramenta
+39,expansion,block-039-utilidade-verbo-use-way,Utilidade (Verbo: Use / Way),3,I use it this way to fix things.,O objeto sendo consertado
+40,expansion,block-040-diferencia-o-adjetivo-same-different,Diferenciação (Adjetivo: Same / Different),1,They are the same.,Duas bolas vermelhas iguais
+40,expansion,block-040-diferencia-o-adjetivo-same-different,Diferenciação (Adjetivo: Same / Different),2,These things are the same.,Dois celulares idênticos
+40,expansion,block-040-diferencia-o-adjetivo-same-different,Diferenciação (Adjetivo: Same / Different),3,These things are the same but different colors.,Um celular preto e um branco do mesmo modelo
+41,expansion,block-041-movimento-e-finalidade-revisitando-go-work,"Movimento e Finalidade (Revisitando: Go, Work)",1,I leave.,Alguém saindo por uma porta
+41,expansion,block-041-movimento-e-finalidade-revisitando-go-work,"Movimento e Finalidade (Revisitando: Go, Work)",2,I leave home.,Pessoa saindo de casa com uma mochila
+41,expansion,block-041-movimento-e-finalidade-revisitando-go-work,"Movimento e Finalidade (Revisitando: Go, Work)",3,I leave home to go to work.,Pessoa caminhando de casa para o escritório
+42,expansion,block-042-percep-o-e-tempo-revisitando-see-time,"Percepção e Tempo (Revisitando: See, Time)",1,I watch.,"Alguém observando atentamente, como TV ou um jogo"
+42,expansion,block-042-percep-o-e-tempo-revisitando-see-time,"Percepção e Tempo (Revisitando: See, Time)",2,I watch the time.,Alguém olhando o relógio constantemente
+42,expansion,block-042-percep-o-e-tempo-revisitando-see-time,"Percepção e Tempo (Revisitando: See, Time)",3,I watch the time while I wait.,Pessoa sentada em uma sala de espera olhando o relógio
+43,expansion,block-043-posse-e-quantidade-revisitando-have-many,"Posse e Quantidade (Revisitando: Have, Many)",1,There is.,Um dedo apontando para a existência de algo
+43,expansion,block-043-posse-e-quantidade-revisitando-have-many,"Posse e Quantidade (Revisitando: Have, Many)",2,There is water.,Um copo ou garrafa sobre a mesa
+43,expansion,block-043-posse-e-quantidade-revisitando-have-many,"Posse e Quantidade (Revisitando: Have, Many)",3,There is enough water for many people.,Um galão grande de água e vários copos vazios ao redor
+44,expansion,block-044-a-o-e-consequ-ncia-revisitando-do-good,"Ação e Consequência (Revisitando: Do, Good)",1,You help.,Alguém oferecendo apoio
+44,expansion,block-044-a-o-e-consequ-ncia-revisitando-do-good,"Ação e Consequência (Revisitando: Do, Good)",2,You do good things.,Alguém plantando uma árvore ou ajudando um amigo
+44,expansion,block-044-a-o-e-consequ-ncia-revisitando-do-good,"Ação e Consequência (Revisitando: Do, Good)",3,You do good things because you are a friend.,Duas pessoas sorrindo e se abraçando
+45,expansion,block-045-espa-o-e-localiza-o-revisitando-place-find,"Espaço e Localização (Revisitando: Place, Find)",1,It is near.,Dois objetos bem próximos um do outro
+45,expansion,block-045-espa-o-e-localiza-o-revisitando-place-find,"Espaço e Localização (Revisitando: Place, Find)",2,The place is near.,Um mapa mostrando o destino a poucos metros
+45,expansion,block-045-espa-o-e-localiza-o-revisitando-place-find,"Espaço e Localização (Revisitando: Place, Find)",3,I can find the place because it is near.,Pessoa vendo o prédio de destino logo à frente
+46,expansion,block-046-necessidade-e-objeto-revisitando-need-money,"Necessidade e Objeto (Revisitando: Need, Money)",1,We buy.,Alguém entregando um cartão ou dinheiro no caixa
+46,expansion,block-046-necessidade-e-objeto-revisitando-need-money,"Necessidade e Objeto (Revisitando: Need, Money)",2,We buy food.,Carrinho de supermercado com frutas e pão
+46,expansion,block-046-necessidade-e-objeto-revisitando-need-money,"Necessidade e Objeto (Revisitando: Need, Money)",3,We need money to buy food.,Pessoa olhando para a carteira e depois para a comida
+47,expansion,block-047-cogni-o-e-d-vida-revisitando-know-ask,"Cognição e Dúvida (Revisitando: Know, Ask)",1,I don't know.,Pessoa com as mãos abertas e expressão de dúvida
+47,expansion,block-047-cogni-o-e-d-vida-revisitando-know-ask,"Cognição e Dúvida (Revisitando: Know, Ask)",2,I don't know the way.,Pessoa em uma encruzilhada olhando para um mapa confuso
+47,expansion,block-047-cogni-o-e-d-vida-revisitando-know-ask,"Cognição e Dúvida (Revisitando: Know, Ask)",3,I ask for help when I don't know the way.,Pessoa parando um policial para pedir informação
+48,expansion,block-048-sentimento-e-raz-o-revisitando-feel-why,"Sentimento e Razão (Revisitando: Feel, Why)",1,You seem.,Alguém observando a expressão de outra pessoa
+48,expansion,block-048-sentimento-e-raz-o-revisitando-feel-why,"Sentimento e Razão (Revisitando: Feel, Why)",2,You seem tired.,Alguém bocejando com olheiras
+48,expansion,block-048-sentimento-e-raz-o-revisitando-feel-why,"Sentimento e Razão (Revisitando: Feel, Why)",3,I understand why you seem tired.,A pessoa apontando para uma pilha enorme de trabalho
+49,expansion,block-049-mudan-a-e-futuro-revisitando-become-will,"Mudança e Futuro (Revisitando: Become, Will)",1,It changes.,Uma lagarta e uma borboleta
+49,expansion,block-049-mudan-a-e-futuro-revisitando-become-will,"Mudança e Futuro (Revisitando: Become, Will)",2,The world changes.,Um mapa múndi antigo e um digital moderno
+49,expansion,block-049-mudan-a-e-futuro-revisitando-become-will,"Mudança e Futuro (Revisitando: Become, Will)",3,The world will change again.,Um robô ou cidade futurista com um ponto de interrogação
+50,expansion,block-050-comunica-o-e-intensidade-revisitando-say-really,"Comunicação e Intensidade (Revisitando: Say, Really)",1,I mean.,Alguém tentando explicar melhor um ponto
+50,expansion,block-050-comunica-o-e-intensidade-revisitando-say-really,"Comunicação e Intensidade (Revisitando: Say, Really)",2,I really mean this.,Olhar firme e sincero
+50,expansion,block-050-comunica-o-e-intensidade-revisitando-say-really,"Comunicação e Intensidade (Revisitando: Say, Really)",3,"I say ""hello"" but I mean ""I love you"".",Alguém dizendo olá com um coração no balão de pensamento
+51,expansion,block-051-perman-ncia-e-condi-o-revisitando-stay-if,"Permanência e Condição (Revisitando: Stay, If)",1,I wait.,Alguém sentado em um banco de praça
+51,expansion,block-051-perman-ncia-e-condi-o-revisitando-stay-if,"Permanência e Condição (Revisitando: Stay, If)",2,I wait for you.,Pessoa olhando para o horizonte esperando alguém chegar
+51,expansion,block-051-perman-ncia-e-condi-o-revisitando-stay-if,"Permanência e Condição (Revisitando: Stay, If)",3,I will stay here if you come.,Pessoa apontando para o banco e para o relógio
+52,expansion,block-052-parte-e-totalidade-revisitando-part-life,"Parte e Totalidade (Revisitando: Part, Life)",1,Every part.,Todas as peças de um motor espalhadas
+52,expansion,block-052-parte-e-totalidade-revisitando-part-life,"Parte e Totalidade (Revisitando: Part, Life)",2,Every part of my life.,"Colagem de fotos: infância, trabalho, família"
+52,expansion,block-052-parte-e-totalidade-revisitando-part-life,"Parte e Totalidade (Revisitando: Part, Life)",3,You are a part of my life.,O usuário olhando para uma foto de um amigo/parceiro
+53,expansion,block-053-prefer-ncia-e-compara-o-revisitando-like-better,"Preferência e Comparação (Revisitando: Like, Better)",1,This is small.,Uma semente na mão
+53,expansion,block-053-prefer-ncia-e-compara-o-revisitando-like-better,"Preferência e Comparação (Revisitando: Like, Better)",2,This thing is small.,Um celular muito antigo e pequeno
+53,expansion,block-053-prefer-ncia-e-compara-o-revisitando-like-better,"Preferência e Comparação (Revisitando: Like, Better)",3,I like it because small is better.,Pessoa guardando o celular pequeno facilmente no bolso
+54,expansion,block-054-movimento-e-acompanhamento-revisitando-go-with,"Movimento e Acompanhamento (Revisitando: Go, With)",1,Walk with me.,Uma mão estendida para caminhar junto
+54,expansion,block-054-movimento-e-acompanhamento-revisitando-go-with,"Movimento e Acompanhamento (Revisitando: Go, With)",2,Walk with me through the city.,Duas pessoas andando por uma rua movimentada
+54,expansion,block-054-movimento-e-acompanhamento-revisitando-go-with,"Movimento e Acompanhamento (Revisitando: Go, With)",3,We go to the park to walk.,As duas pessoas entrando em uma área verde
+55,expansion,block-055-inten-o-e-a-o-revisitando-want-make,"Intenção e Ação (Revisitando: Want, Make)",1,I try to make.,"Alguém com as mãos na massa, cozinhando"
+55,expansion,block-055-inten-o-e-a-o-revisitando-want-make,"Intenção e Ação (Revisitando: Want, Make)",2,I want to make food.,"Ingredientes sobre a mesa: tomate, massa"
+55,expansion,block-055-inten-o-e-a-o-revisitando-want-make,"Intenção e Ação (Revisitando: Want, Make)",3,I try to make food for my family.,A pessoa servindo a mesa para a família
+56,expansion,block-056-verbo-de-uso-revisitando-use-often,"Verbo de Uso (Revisitando: Use, Often)",1,Don't use.,Sinal de proibido sobre uma mão mexendo em algo
+56,expansion,block-056-verbo-de-uso-revisitando-use-often,"Verbo de Uso (Revisitando: Use, Often)",2,Don't use that phone.,Um telefone com a tela quebrada ou perigoso
+56,expansion,block-056-verbo-de-uso-revisitando-use-often,"Verbo de Uso (Revisitando: Use, Often)",3,I often use this one instead.,Pessoa apontando para um telefone novo e funcionando
+57,expansion,block-057-percep-o-auditiva-revisitando-hear-voice,"Percepção Auditiva (Revisitando: Hear, Voice)",1,I hear.,Alguém com a mão atrás da orelha
+57,expansion,block-057-percep-o-auditiva-revisitando-hear-voice,"Percepção Auditiva (Revisitando: Hear, Voice)",2,I hear a voice.,Ondas sonoras vindo de uma direção
+57,expansion,block-057-percep-o-auditiva-revisitando-hear-voice,"Percepção Auditiva (Revisitando: Hear, Voice)",3,I hear your voice every day.,Alguém ouvindo um áudio no celular com um sorriso
+58,expansion,block-058-espa-o-vertical-revisitando-under-high,"Espaço Vertical (Revisitando: Under, High)",1,Put it.,Uma mão colocando um livro em algum lugar
+58,expansion,block-058-espa-o-vertical-revisitando-under-high,"Espaço Vertical (Revisitando: Under, High)",2,Put it under the table.,O livro sendo guardado em uma prateleira baixa sob a mesa
+58,expansion,block-058-espa-o-vertical-revisitando-under-high,"Espaço Vertical (Revisitando: Under, High)",3,Don't put it high up.,Alguém tentando alcançar uma prateleira muito alta e não conseguindo
+59,expansion,block-059-finaliza-o-revisitando-finish-now,"Finalização (Revisitando: Finish, Now)",1,We finish.,Corredores cruzando a linha de chegada
+59,expansion,block-059-finaliza-o-revisitando-finish-now,"Finalização (Revisitando: Finish, Now)",2,We finish the work.,Alguém fechando o laptop com satisfação
+59,expansion,block-059-finaliza-o-revisitando-finish-now,"Finalização (Revisitando: Finish, Now)",3,We finish the work now and go home.,Pessoa pegando a chave do carro e saindo do escritório
+60,expansion,block-060-identidade-e-nome-revisitando-call-name,"Identidade e Nome (Revisitando: Call, Name)",1,What is...?,Um ponto de interrogação flutuante
+60,expansion,block-060-identidade-e-nome-revisitando-call-name,"Identidade e Nome (Revisitando: Call, Name)",2,What is the name?,Pessoa apontando para um objeto desconhecido
+60,expansion,block-060-identidade-e-nome-revisitando-call-name,"Identidade e Nome (Revisitando: Call, Name)",3,How do you call this thing?,Pessoa segurando uma ferramenta estranha e perguntando a outra
+61,conversation,block-061-opini-o-e-qualidade-revisitando-think-good,"Opinião e Qualidade (Revisitando: Think, Good)",1,I think so.,Alguém balançando a cabeça positivamente
+61,conversation,block-061-opini-o-e-qualidade-revisitando-think-good,"Opinião e Qualidade (Revisitando: Think, Good)",2,I think this is good.,Alguém provando uma comida ou vendo um projeto
+61,conversation,block-061-opini-o-e-qualidade-revisitando-think-good,"Opinião e Qualidade (Revisitando: Think, Good)",3,I think this is good for the world.,Uma lâmpada LED ou símbolo de reciclagem
+62,conversation,block-062-possibilidade-e-lugar-revisitando-can-place,"Possibilidade e Lugar (Revisitando: Can, Place)",1,You can stay.,Alguém indicando uma cadeira/assento
+62,conversation,block-062-possibilidade-e-lugar-revisitando-can-place,"Possibilidade e Lugar (Revisitando: Can, Place)",2,You can stay in this place.,Um hotel aconchegante ou uma sala
+62,conversation,block-062-possibilidade-e-lugar-revisitando-can-place,"Possibilidade e Lugar (Revisitando: Can, Place)",3,You can stay here until the time to go.,Pessoa descansando e olhando para o relógio
+63,conversation,block-063-movimento-coletivo-revisitando-come-with,"Movimento Coletivo (Revisitando: Come, With)",1,Come with us.,Grupo de amigos chamando com a mão
+63,conversation,block-063-movimento-coletivo-revisitando-come-with,"Movimento Coletivo (Revisitando: Come, With)",2,Come with us to the city.,O grupo em frente a um trem ou ônibus
+63,conversation,block-063-movimento-coletivo-revisitando-come-with,"Movimento Coletivo (Revisitando: Come, With)",3,We go to the city every week.,O grupo repetindo a viagem no calendário
+64,conversation,block-064-desejo-e-tempo-revisitando-want-now,"Desejo e Tempo (Revisitando: Want, Now)",1,I want to see.,Alguém tentando olhar por cima de um muro ou cortina
+64,conversation,block-064-desejo-e-tempo-revisitando-want-now,"Desejo e Tempo (Revisitando: Want, Now)",2,I want to see you now.,Alguém fazendo uma chamada de vídeo no celular
+64,conversation,block-064-desejo-e-tempo-revisitando-want-now,"Desejo e Tempo (Revisitando: Want, Now)",3,I want to see you because I miss my friend.,Foto de dois amigos juntos
+65,conversation,block-065-a-o-e-conhecimento-revisitando-do-know,"Ação e Conhecimento (Revisitando: Do, Know)",1,I do what I know.,Alguém consertando algo que domina
+65,conversation,block-065-a-o-e-conhecimento-revisitando-do-know,"Ação e Conhecimento (Revisitando: Do, Know)",2,I do what I know at work.,A pessoa em seu ambiente profissional
+65,conversation,block-065-a-o-e-conhecimento-revisitando-do-know,"Ação e Conhecimento (Revisitando: Do, Know)",3,I always do my work this way.,A pessoa seguindo um processo padrão
+66,conversation,block-066-posse-e-necessidade-revisitando-have-money,"Posse e Necessidade (Revisitando: Have, Money)",1,I have enough.,"Uma mão fazendo sinal de ""cheio"" ou ""satisfeito"""
+66,conversation,block-066-posse-e-necessidade-revisitando-have-money,"Posse e Necessidade (Revisitando: Have, Money)",2,I have enough money.,Uma carteira com a quantia exata para uma conta
+66,conversation,block-066-posse-e-necessidade-revisitando-have-money,"Posse e Necessidade (Revisitando: Have, Money)",3,I have enough money to buy a home.,Pessoa segurando a chave de uma casa nova
+67,conversation,block-067-percep-o-de-mudan-a-revisitando-look-different,"Percepção de Mudança (Revisitando: Look, Different)",1,You look different.,Alguém que cortou o cabelo ou trocou de roupa
+67,conversation,block-067-percep-o-de-mudan-a-revisitando-look-different,"Percepção de Mudança (Revisitando: Look, Different)",2,This place looks different now.,Uma rua que antes era vazia e agora tem prédios
+67,conversation,block-067-percep-o-de-mudan-a-revisitando-look-different,"Percepção de Mudança (Revisitando: Look, Different)",3,Everything looks different after many years.,Comparação de foto antiga (preto e branco) e atual
+68,conversation,block-068-comunica-o-de-problemas-revisitando-tell-problem,"Comunicação de Problemas (Revisitando: Tell, Problem)",1,Tell me why.,Alguém com expressão de interrogação
+68,conversation,block-068-comunica-o-de-problemas-revisitando-tell-problem,"Comunicação de Problemas (Revisitando: Tell, Problem)",2,Tell me why there is a problem.,Alguém apontando para um computador travado
+68,conversation,block-068-comunica-o-de-problemas-revisitando-tell-problem,"Comunicação de Problemas (Revisitando: Tell, Problem)",3,I need to know the problem to help you.,A pessoa abrindo uma caixa de ferramentas
+69,conversation,block-069-esfor-o-e-repeti-o-revisitando-try-again,"Esforço e Repetição (Revisitando: Try, Again)",1,I will try.,Alguém se preparando para uma corrida ou desafio
+69,conversation,block-069-esfor-o-e-repeti-o-revisitando-try-again,"Esforço e Repetição (Revisitando: Try, Again)",2,I will try again tomorrow.,"Pessoa indo dormir com um bilhete de ""tente de novo"" no despertador"
+69,conversation,block-069-esfor-o-e-repeti-o-revisitando-try-again,"Esforço e Repetição (Revisitando: Try, Again)",3,I never stop until I finish.,Pessoa cruzando a linha de chegada
+70,conversation,block-070-sentido-e-dire-o-revisitando-feel-way,"Sentido e Direção (Revisitando: Feel, Way)",1,I feel the way.,Alguém tocando uma parede no escuro ou seguindo uma trilha
+70,conversation,block-070-sentido-e-dire-o-revisitando-feel-way,"Sentido e Direção (Revisitando: Feel, Way)",2,I feel the way home.,Alguém caminhando por uma rua familiar à noite
+70,conversation,block-070-sentido-e-dire-o-revisitando-feel-way,"Sentido e Direção (Revisitando: Feel, Way)",3,I know the way because I live here.,A pessoa apontando para a própria casa
+71,conversation,block-071-uso-e-frequ-ncia-revisitando-use-often,"Uso e Frequência (Revisitando: Use, Often)",1,We use it.,Pessoas usando um aplicativo ou eletrodoméstico
+71,conversation,block-071-uso-e-frequ-ncia-revisitando-use-often,"Uso e Frequência (Revisitando: Use, Often)",2,We use it often at home.,Família reunida usando um tablet ou cafeteira
+71,conversation,block-071-uso-e-frequ-ncia-revisitando-use-often,"Uso e Frequência (Revisitando: Use, Often)",3,It is a good thing for the family.,Todos sorrindo ao redor do objeto
+72,conversation,block-072-parte-do-todo-revisitando-part-life,"Parte do Todo (Revisitando: Part, Life)",1,Only a part.,Uma fatia de uma pizza ou uma peça de motor
+72,conversation,block-072-parte-do-todo-revisitando-part-life,"Parte do Todo (Revisitando: Part, Life)",2,Only a part of the story.,Alguém lendo apenas a primeira página de um livro
+72,conversation,block-072-parte-do-todo-revisitando-part-life,"Parte do Todo (Revisitando: Part, Life)",3,You only know a part of my life.,"Um iceberg (uma parte fora da água, a maioria escondida)"
+73,conversation,block-073-audi-o-e-compreens-o-revisitando-hear-understand,"Audição e Compreensão (Revisitando: Hear, Understand)",1,I hear you.,Alguém com fones de ouvido ou atento
+73,conversation,block-073-audi-o-e-compreens-o-revisitando-hear-understand,"Audição e Compreensão (Revisitando: Hear, Understand)",2,I hear you but I don't understand.,Pessoa ouvindo alguém falar uma língua estrangeira
+73,conversation,block-073-audi-o-e-compreens-o-revisitando-hear-understand,"Audição e Compreensão (Revisitando: Hear, Understand)",3,Can you speak slow please?,"Sinal de ""devagar"" com as mãos"
+74,conversation,block-074-exist-ncia-e-quantidade-revisitando-there-is-many,"Existência e Quantidade (Revisitando: There is, Many)",1,There are many.,Uma multidão ou muitos objetos
+74,conversation,block-074-exist-ncia-e-quantidade-revisitando-there-is-many,"Existência e Quantidade (Revisitando: There is, Many)",2,There are many people here.,Uma praça cheia de gente
+74,conversation,block-074-exist-ncia-e-quantidade-revisitando-there-is-many,"Existência e Quantidade (Revisitando: There is, Many)",3,There are many people waiting to go.,Fila no aeroporto ou rodoviária
+75,conversation,block-075-pensamento-e-futuro-revisitando-think-will,"Pensamento e Futuro (Revisitando: Think, Will)",1,I think I will.,Pessoa com o dedo no queixo decidindo algo
+75,conversation,block-075-pensamento-e-futuro-revisitando-think-will,"Pensamento e Futuro (Revisitando: Think, Will)",2,I think I will take the car.,Pessoa segurando a chave do carro e olhando para a chuva
+75,conversation,block-075-pensamento-e-futuro-revisitando-think-will,"Pensamento e Futuro (Revisitando: Think, Will)",3,I will take the car if it starts.,Pessoa tentando ligar a ignição
+76,conversation,block-076-localiza-o-e-estado-revisitando-be-under,"Localização e Estado (Revisitando: Be, Under)",1,It is under.,Um gato embaixo da cama
+76,conversation,block-076-localiza-o-e-estado-revisitando-be-under,"Localização e Estado (Revisitando: Be, Under)",2,It is under the water.,Um mergulhador ou um peixe
+76,conversation,block-076-localiza-o-e-estado-revisitando-be-under,"Localização e Estado (Revisitando: Be, Under)",3,You can see it if you look down.,Alguém apontando para dentro de uma piscina ou mar
+77,conversation,block-077-trabalho-e-ferramenta-revisitando-work-call,"Trabalho e Ferramenta (Revisitando: Work, Call)",1,Don't call me.,"Sinal de ""silêncio"" ou telefone desligado"
+77,conversation,block-077-trabalho-e-ferramenta-revisitando-work-call,"Trabalho e Ferramenta (Revisitando: Work, Call)",2,Don't call me at work.,Pessoa concentrada em frente ao computador
+77,conversation,block-077-trabalho-e-ferramenta-revisitando-work-call,"Trabalho e Ferramenta (Revisitando: Work, Call)",3,I need to finish this today.,Pessoa suando e trabalhando rápido contra o relógio
+78,conversation,block-078-dar-e-receber-revisitando-give-food,"Dar e Receber (Revisitando: Give, Food)",1,Give some.,Alguém repartindo um pão
+78,conversation,block-078-dar-e-receber-revisitando-give-food,"Dar e Receber (Revisitando: Give, Food)",2,Give some food to the child.,Adulto entregando uma maçã para uma criança
+78,conversation,block-078-dar-e-receber-revisitando-give-food,"Dar e Receber (Revisitando: Give, Food)",3,The child is hungry and needs to eat.,Criança com a mão na barriguinha
+79,conversation,block-079-come-o-e-fim-revisitando-start-time,"Começo e Fim (Revisitando: Start, Time)",1,When does it start?,Pessoa olhando para o palco de um teatro ou cinema
+79,conversation,block-079-come-o-e-fim-revisitando-start-time,"Começo e Fim (Revisitando: Start, Time)",2,It starts at the same time.,Dois relógios marcando 08:00
+79,conversation,block-079-come-o-e-fim-revisitando-start-time,"Começo e Fim (Revisitando: Start, Time)",3,It starts every day at 8 AM.,Sol nascendo e o relógio despertando
+80,conversation,block-080-identidade-e-verdade-revisitando-say-truth,"Identidade e Verdade (Revisitando: Say, Truth)",1,He says it.,Alguém falando em um palanque ou para um amigo
+80,conversation,block-080-identidade-e-verdade-revisitando-say-truth,"Identidade e Verdade (Revisitando: Say, Truth)",2,He says the truth.,"Alguém com a mão no peito, expressão honesta"
+80,conversation,block-080-identidade-e-verdade-revisitando-say-truth,"Identidade e Verdade (Revisitando: Say, Truth)",3,I believe him because he is my friend.,Aperto de mão amigável
+81,conversation,block-081-contraste-e-persist-ncia-revisitando-try-still,"Contraste e Persistência (Revisitando: Try, Still)",1,I still try.,"Alguém cansado, mas se levantando"
+81,conversation,block-081-contraste-e-persist-ncia-revisitando-try-still,"Contraste e Persistência (Revisitando: Try, Still)",2,I still try to understand.,Pessoa olhando para um livro complexo com a mão na testa
+81,conversation,block-081-contraste-e-persist-ncia-revisitando-try-still,"Contraste e Persistência (Revisitando: Try, Still)",3,"Although it is hard, I still try.",Uma montanha alta e a pessoa começando a subir
+82,conversation,block-082-frequ-ncia-e-h-bito-revisitando-often-use,"Frequência e Hábito (Revisitando: Often, Use)",1,I usually use.,"Pessoa pegando algo que usa todo dia, como óculos"
+82,conversation,block-082-frequ-ncia-e-h-bito-revisitando-often-use,"Frequência e Hábito (Revisitando: Often, Use)",2,I usually use my phone to work.,Pessoa enviando e-mails pelo celular no café
+82,conversation,block-082-frequ-ncia-e-h-bito-revisitando-often-use,"Frequência e Hábito (Revisitando: Often, Use)",3,I often do this when I am home.,Pessoa relaxada no sofá com o telefone
+83,conversation,block-083-o-verbo-de-parecer-revisitando-seem-good,"O Verbo de Parecer (Revisitando: Seem, Good)",1,It seems.,Alguém analisando algo de longe
+83,conversation,block-083-o-verbo-de-parecer-revisitando-seem-good,"O Verbo de Parecer (Revisitando: Seem, Good)",2,It seems like a good idea.,Alguém olhando para um esboço de um projeto e sorrindo
+83,conversation,block-083-o-verbo-de-parecer-revisitando-seem-good,"O Verbo de Parecer (Revisitando: Seem, Good)",3,"It seems good, but we need more time.",A pessoa apontando para um relógio de areia/ampulheta
+84,conversation,block-084-a-o-conclu-da-revisitando-finish-already,"Ação Concluída (Revisitando: Finish, Already)",1,I already finished.,Alguém com os braços para cima em sinal de vitória
+84,conversation,block-084-a-o-conclu-da-revisitando-finish-already,"Ação Concluída (Revisitando: Finish, Already)",2,I already finished my work.,Mesa limpa e computador desligado
+84,conversation,block-084-a-o-conclu-da-revisitando-finish-already,"Ação Concluída (Revisitando: Finish, Already)",3,I can go home now because I already finished.,Pessoa pegando o casaco e saindo
+85,conversation,block-085-possibilidade-e-escolha-revisitando-might-which,"Possibilidade e Escolha (Revisitando: Might, Which)",1,I might go.,Pessoa em dúvida entre duas portas
+85,conversation,block-085-possibilidade-e-escolha-revisitando-might-which,"Possibilidade e Escolha (Revisitando: Might, Which)",2,I might go to the place you know.,Imagem do parque ou café usado em blocos anteriores
+85,conversation,block-085-possibilidade-e-escolha-revisitando-might-which,"Possibilidade e Escolha (Revisitando: Might, Which)",3,I don't know which way is better.,Pessoa olhando para um mapa com dois caminhos coloridos
+86,conversation,block-086-cuidado-e-aten-o-revisitando-look-careful,"Cuidado e Atenção (Revisitando: Look, Careful)",1,Be careful.,"Placa de ""piso molhado"" ou perigo"
+86,conversation,block-086-cuidado-e-aten-o-revisitando-look-careful,"Cuidado e Atenção (Revisitando: Look, Careful)",2,Be careful with that thing.,Alguém segurando uma caixa de vidro frágil
+86,conversation,block-086-cuidado-e-aten-o-revisitando-look-careful,"Cuidado e Atenção (Revisitando: Look, Careful)",3,You need to look where you go.,Pessoa caminhando e olhando para o chão
+87,conversation,block-087-rela-es-humanas-revisitando-friend-tell,"Relações Humanas (Revisitando: Friend, Tell)",1,I will tell.,Alguém cochichando ou falando ao telefone
+87,conversation,block-087-rela-es-humanas-revisitando-friend-tell,"Relações Humanas (Revisitando: Friend, Tell)",2,I will tell my friend.,Duas pessoas conversando em um banco
+87,conversation,block-087-rela-es-humanas-revisitando-friend-tell,"Relações Humanas (Revisitando: Friend, Tell)",3,I will tell him everything I know.,Um balão de fala cheio de pequenos ícones/ideias
+88,conversation,block-088-descoberta-de-solu-es-revisitando-find-way,"Descoberta de Soluções (Revisitando: Find, Way)",1,Find a way.,Alguém em um labirinto vendo a saída
+88,conversation,block-088-descoberta-de-solu-es-revisitando-find-way,"Descoberta de Soluções (Revisitando: Find, Way)",2,Find a way to help them.,Pessoa entregando uma ferramenta ou recurso para um grupo
+88,conversation,block-088-descoberta-de-solu-es-revisitando-find-way,"Descoberta de Soluções (Revisitando: Find, Way)",3,There is always a way if you try.,Uma luz brilhando no fim de um túnel
+89,conversation,block-089-pensamento-abstrato-revisitando-think-life,"Pensamento Abstrato (Revisitando: Think, Life)",1,I think about.,Pessoa olhando para as estrelas ou para o mar
+89,conversation,block-089-pensamento-abstrato-revisitando-think-life,"Pensamento Abstrato (Revisitando: Think, Life)",2,I think about my life.,Flashbacks de momentos felizes e de trabalho
+89,conversation,block-089-pensamento-abstrato-revisitando-think-life,"Pensamento Abstrato (Revisitando: Think, Life)",3,I think about my life every day.,Calendário com a silhueta da pessoa pensando em cada dia
+90,conversation,block-090-mudan-a-e-crescimento-revisitando-become-big,"Mudança e Crescimento (Revisitando: Become, Big)",1,It becomes.,Uma semente virando broto
+90,conversation,block-090-mudan-a-e-crescimento-revisitando-become-big,"Mudança e Crescimento (Revisitando: Become, Big)",2,The problem becomes big.,Uma pequena rachadura virando um buraco grande
+90,conversation,block-090-mudan-a-e-crescimento-revisitando-become-big,"Mudança e Crescimento (Revisitando: Become, Big)",3,It becomes big because we don't work on it.,Pessoa ignorando o problema enquanto ele cresce
+91,fluency,block-091-estados-emocionais-revisitando-feel-happy-sad,"Estados Emocionais (Revisitando: Feel, Happy/Sad)",1,I feel.,Rosto neutro
+91,fluency,block-091-estados-emocionais-revisitando-feel-happy-sad,"Estados Emocionais (Revisitando: Feel, Happy/Sad)",2,I feel happy today.,Rosto sorridente e sol brilhando
+91,fluency,block-091-estados-emocionais-revisitando-feel-happy-sad,"Estados Emocionais (Revisitando: Feel, Happy/Sad)",3,I feel happy when I am with you.,Duas pessoas rindo juntas
+92,fluency,block-092-espa-o-e-ordem-revisitando-place-next-to,"Espaço e Ordem (Revisitando: Place, Next to)",1,Put it next to.,Uma mão colocando uma cadeira ao lado de outra
+92,fluency,block-092-espa-o-e-ordem-revisitando-place-next-to,"Espaço e Ordem (Revisitando: Place, Next to)",2,Put it next to the water.,Colocar um copo ao lado de uma jarra
+92,fluency,block-092-espa-o-e-ordem-revisitando-place-next-to,"Espaço e Ordem (Revisitando: Place, Next to)",3,The place is near the table.,Foto de um restaurante mostrando a proximidade dos objetos
+93,fluency,block-093-necessidade-de-mudan-a-revisitando-need-change,"Necessidade de Mudança (Revisitando: Need, Change)",1,I need to change.,Pessoa olhando para um guarda-roupa ou para um hábito antigo
+93,fluency,block-093-necessidade-de-mudan-a-revisitando-need-change,"Necessidade de Mudança (Revisitando: Need, Change)",2,I need to change my way.,Pessoa mudando a direção em que está caminhando
+93,fluency,block-093-necessidade-de-mudan-a-revisitando-need-change,"Necessidade de Mudança (Revisitando: Need, Change)",3,I need to change because this is bad.,Pessoa olhando para algo quebrado ou uma situação negativa
+94,fluency,block-094-comunica-o-verbal-revisitando-speak-well,"Comunicação Verbal (Revisitando: Speak, Well)",1,You speak.,Pessoa em um palco ou conversando
+94,fluency,block-094-comunica-o-verbal-revisitando-speak-well,"Comunicação Verbal (Revisitando: Speak, Well)",2,You speak well.,"Público aplaudindo ou pessoa com sinal de ""legal"""
+94,fluency,block-094-comunica-o-verbal-revisitando-speak-well,"Comunicação Verbal (Revisitando: Speak, Well)",3,I understand you because you speak well.,Alguém ouvindo com atenção e balançando a cabeça
+95,fluency,block-095-parte-e-pertencimento-revisitando-part-group,"Parte e Pertencimento (Revisitando: Part, Group)",1,I am a part.,Uma peça de quebra-cabeça encaixando
+95,fluency,block-095-parte-e-pertencimento-revisitando-part-group,"Parte e Pertencimento (Revisitando: Part, Group)",2,I am a part of this group.,Foto de equipe ou grupo de amigos
+95,fluency,block-095-parte-e-pertencimento-revisitando-part-group,"Parte e Pertencimento (Revisitando: Part, Group)",3,This group is important in my life.,Coração em volta da foto do grupo
+96,fluency,block-096-mem-ria-e-esquecimento-revisitando-remember-forget,"Memória e Esquecimento (Revisitando: Remember, Forget)",1,Don't forget.,Nó no dedo ou alarme no celular
+96,fluency,block-096-mem-ria-e-esquecimento-revisitando-remember-forget,"Memória e Esquecimento (Revisitando: Remember, Forget)",2,Don't forget the money.,Carteira em cima da mesa com um lembrete
+96,fluency,block-096-mem-ria-e-esquecimento-revisitando-remember-forget,"Memória e Esquecimento (Revisitando: Remember, Forget)",3,I always remember it now.,Pessoa saindo de casa e pegando a carteira com confiança
+97,fluency,block-097-inten-o-e-movimento-revisitando-want-bring,"Intenção e Movimento (Revisitando: Want, Bring)",1,I want to bring.,Alguém com uma sacola ou presente
+97,fluency,block-097-inten-o-e-movimento-revisitando-want-bring,"Intenção e Movimento (Revisitando: Want, Bring)",2,I want to bring my friend here.,Pessoa apontando para o lugar onde está e pensando no amigo
+97,fluency,block-097-inten-o-e-movimento-revisitando-want-bring,"Intenção e Movimento (Revisitando: Want, Bring)",3,He will like this place.,O amigo sorrindo na imaginação da pessoa
+98,fluency,block-098-percep-o-auditiva-revisitando-hear-listen,"Percepção Auditiva (Revisitando: Hear, Listen)",1,Listen!,Pessoa com o dedo na boca pedindo silêncio
+98,fluency,block-098-percep-o-auditiva-revisitando-hear-listen,"Percepção Auditiva (Revisitando: Hear, Listen)",2,Listen to the world.,Pessoa em meio à natureza ou cidade ouvindo os sons
+98,fluency,block-098-percep-o-auditiva-revisitando-hear-listen,"Percepção Auditiva (Revisitando: Hear, Listen)",3,You can hear many things if you are still.,Pessoa imóvel e serena ouvindo passarinho ou vento
+99,fluency,block-099-tempo-futuro-e-certeza-revisitando-will-happen,"Tempo Futuro e Certeza (Revisitando: Will, Happen)",1,It will happen.,Uma semente prestes a brotar ou um evento marcado
+99,fluency,block-099-tempo-futuro-e-certeza-revisitando-will-happen,"Tempo Futuro e Certeza (Revisitando: Will, Happen)",2,It will happen soon.,Relógio marcando quase a hora
+99,fluency,block-099-tempo-futuro-e-certeza-revisitando-will-happen,"Tempo Futuro e Certeza (Revisitando: Will, Happen)",3,We know it will happen today.,Alguém apontando para a data de hoje no calendário
+100,fluency,block-100-conclus-o-do-primeiro-ciclo-revisitando-everything-done,"Conclusão do Primeiro Ciclo (Revisitando: Everything, Done)",1,Everything is.,Braços abertos englobando tudo ao redor
+100,fluency,block-100-conclus-o-do-primeiro-ciclo-revisitando-everything-done,"Conclusão do Primeiro Ciclo (Revisitando: Everything, Done)",2,Everything is done.,"Lista de tarefas toda marcada com ""check"""
+100,fluency,block-100-conclus-o-do-primeiro-ciclo-revisitando-everything-done,"Conclusão do Primeiro Ciclo (Revisitando: Everything, Done)",3,I feel good because everything is done.,Pessoa relaxando com os pés para cima
+101,fluency,block-101-escolha-e-consequ-ncia-which-better,Escolha e Consequência (Which / Better),1,Which one?,Pessoa apontando para duas opções
+101,fluency,block-101-escolha-e-consequ-ncia-which-better,Escolha e Consequência (Which / Better),2,Which way is better?,Bifurcação em uma estrada
+101,fluency,block-101-escolha-e-consequ-ncia-which-better,Escolha e Consequência (Which / Better),3,I need to know which way is better to go.,Pessoa olhando para o GPS no celular
+102,fluency,block-102-perspectiva-e-tempo-still-not-yet,Perspectiva e Tempo (Still / Not yet),1,Not yet.,"Um sinal de ""espere"" ou relógio batendo"
+102,fluency,block-102-perspectiva-e-tempo-still-not-yet,Perspectiva e Tempo (Still / Not yet),2,I am not yet at home.,Pessoa ainda no ônibus ou carro
+102,fluency,block-102-perspectiva-e-tempo-still-not-yet,Perspectiva e Tempo (Still / Not yet),3,"I am still at work, but I will leave soon.",Pessoa fechando o escritório tarde da noite
+103,fluency,block-103-possibilidade-e-ajuda-might-give,Possibilidade e Ajuda (Might / Give),1,I might.,"Alguém com expressão de ""talvez"""
+103,fluency,block-103-possibilidade-e-ajuda-might-give,Possibilidade e Ajuda (Might / Give),2,I might give you a call.,Pessoa segurando o telefone e pensando
+103,fluency,block-103-possibilidade-e-ajuda-might-give,Possibilidade e Ajuda (Might / Give),3,I might give you a call if I have the time.,Agenda cheia com um espaço livre no fim do dia
+104,fluency,block-104-diferencia-o-e-valor-different-money,Diferenciação e Valor (Different / Money),1,It is different.,Dois objetos distintos lado a lado
+104,fluency,block-104-diferencia-o-e-valor-different-money,Diferenciação e Valor (Different / Money),2,This thing is different.,Comparação entre algo barato e algo de luxo
+104,fluency,block-104-diferencia-o-e-valor-different-money,Diferenciação e Valor (Different / Money),3,It costs more money because it is different.,Etiqueta de preço alta em um objeto artesanal
+105,fluency,block-105-inten-o-e-movimento-try-follow,Intenção e Movimento (Try / Follow),1,Follow me.,Alguém fazendo sinal para ser seguido
+105,fluency,block-105-inten-o-e-movimento-try-follow,Intenção e Movimento (Try / Follow),2,Follow the way I show you.,Guia apontando para uma trilha
+105,fluency,block-105-inten-o-e-movimento-try-follow,Intenção e Movimento (Try / Follow),3,You will find the place if you follow me.,Destino aparecendo ao fim do caminho
+106,fluency,block-106-cogni-o-e-verdade-believe-real,Cognição e Verdade (Believe / Real),1,Is it real?,Alguém tocando algo para ver se existe
+106,fluency,block-106-cogni-o-e-verdade-believe-real,Cognição e Verdade (Believe / Real),2,I believe it is real.,Olhar de admiração diante de algo incrível
+106,fluency,block-106-cogni-o-e-verdade-believe-real,Cognição e Verdade (Believe / Real),3,I believe it because I can see it.,Alguém olhando bem de perto para o objeto
+107,fluency,block-107-uso-de-ferramentas-use-find,Uso de Ferramentas (Use / Find),1,Use this.,Alguém entregando uma chave ou controle remoto
+107,fluency,block-107-uso-de-ferramentas-use-find,Uso de Ferramentas (Use / Find),2,Use this to find the problem.,Lanterna iluminando um motor
+107,fluency,block-107-uso-de-ferramentas-use-find,Uso de Ferramentas (Use / Find),3,It is the only way to help now.,Pessoa consertando o problema com sucesso
+108,fluency,block-108-rela-o-de-espa-o-between-people,Relação de Espaço (Between / People),1,Between them.,Um objeto no meio de dois outros
+108,fluency,block-108-rela-o-de-espa-o-between-people,Relação de Espaço (Between / People),2,Between these two people.,Uma criança entre os pais
+108,fluency,block-108-rela-o-de-espa-o-between-people,Relação de Espaço (Between / People),3,There is a big love between them.,Um coração unindo as três pessoas
+109,fluency,block-109-condi-o-e-frequ-ncia-always-if,Condição e Frequência (Always / If),1,Always do it.,Escovar os dentes ou algo rotineiro
+109,fluency,block-109-condi-o-e-frequ-ncia-always-if,Condição e Frequência (Always / If),2,Always do it this way.,Manual de instruções aberto
+109,fluency,block-109-condi-o-e-frequ-ncia-always-if,Condição e Frequência (Always / If),3,It will work if you always do it this way.,O resultado final perfeito
+110,fluency,block-110-fim-e-in-cio-finish-start,Fim e Início (Finish / Start),1,Finish first.,"Número ""1"" em destaque antes do ""2"""
+110,fluency,block-110-fim-e-in-cio-finish-start,Fim e Início (Finish / Start),2,Finish this part first.,Alguém terminando a base de uma construção
+110,fluency,block-110-fim-e-in-cio-finish-start,Fim e Início (Finish / Start),3,Then you can start the new one.,Alguém pegando novos materiais para a próxima etapa
+111,fluency,block-111-o-porqu-das-coisas-reason-why,"O ""Porquê"" das Coisas (Reason / Why)",1,The reason is.,Alguém explicando algo com as mãos
+111,fluency,block-111-o-porqu-das-coisas-reason-why,"O ""Porquê"" das Coisas (Reason / Why)",2,This is the reason why.,Um quadro negro com uma seta ligando causa e efeito
+111,fluency,block-111-o-porqu-das-coisas-reason-why,"O ""Porquê"" das Coisas (Reason / Why)",3,You are the reason why I am happy.,Pessoa sorrindo para um amigo
+112,fluency,block-112-quantidade-abstrata-enough-everything,Quantidade Abstrata (Enough / Everything),1,Is it enough?,Alguém olhando para um prato ou tanque de combustível
+112,fluency,block-112-quantidade-abstrata-enough-everything,Quantidade Abstrata (Enough / Everything),2,I have enough for everything.,Pessoa com mala pronta e carteira organizada
+112,fluency,block-112-quantidade-abstrata-enough-everything,Quantidade Abstrata (Enough / Everything),3,I don't need more than this.,Pessoa fechando a mala com tranquilidade
+113,fluency,block-113-o-verbo-de-parecer-look-like-same,O Verbo de Parecer (Look like / Same),1,It looks like.,Alguém comparando duas fotos
+113,fluency,block-113-o-verbo-de-parecer-look-like-same,O Verbo de Parecer (Look like / Same),2,It looks like the same thing.,Duas chaves quase idênticas
+113,fluency,block-113-o-verbo-de-parecer-look-like-same,O Verbo de Parecer (Look like / Same),3,But they are different if you look close.,Lupa mostrando detalhes diferentes
+114,fluency,block-114-express-o-de-desejo-futuro-would-like-go,Expressão de Desejo Futuro (Would like / Go),1,I would like.,Alguém sonhando acordado com uma nuvem sobre a cabeça
+114,fluency,block-114-express-o-de-desejo-futuro-would-like-go,Expressão de Desejo Futuro (Would like / Go),2,I would like to go there.,Foto de uma praia ou cidade famosa
+114,fluency,block-114-express-o-de-desejo-futuro-would-like-go,Expressão de Desejo Futuro (Would like / Go),3,Maybe next year we can go.,Calendário do ano que vem com um círculo
+115,fluency,block-115-comunica-o-e-sil-ncio-listen-word,Comunicação e Silêncio (Listen / Word),1,No words.,Pessoa com o dedo nos lábios
+115,fluency,block-115-comunica-o-e-sil-ncio-listen-word,Comunicação e Silêncio (Listen / Word),2,I have no words to say.,Pessoa emocionada ou surpresa
+115,fluency,block-115-comunica-o-e-sil-ncio-listen-word,Comunicação e Silêncio (Listen / Word),3,Just listen to my heart.,Mão no peito e expressão sincera
+116,fluency,block-116-mudan-a-e-vida-change-life,Mudança e Vida (Change / Life),1,Change is good.,Planta crescendo ou lagarta virando borboleta
+116,fluency,block-116-mudan-a-e-vida-change-life,Mudança e Vida (Change / Life),2,A big change in my life.,Mudança de casa ou novo emprego
+116,fluency,block-116-mudan-a-e-vida-change-life,Mudança e Vida (Change / Life),3,Everything is new and I feel great.,Pessoa de braços abertos na frente de uma nova vista
+117,fluency,block-117-localiza-o-e-dire-o-through-place,Localização e Direção (Through / Place),1,Go through.,Carro entrando em um túnel
+117,fluency,block-117-localiza-o-e-dire-o-through-place,Localização e Direção (Through / Place),2,Go through the city.,Linha cruzando o mapa urbano
+117,fluency,block-117-localiza-o-e-dire-o-through-place,Localização e Direção (Through / Place),3,It is the fast way to the park.,O parque aparecendo do outro lado da cidade
+118,fluency,block-118-certeza-e-d-vida-sure-know,Certeza e Dúvida (Sure / Know),1,Are you sure?,Alguém perguntando com a sobrancelha levantada
+118,fluency,block-118-certeza-e-d-vida-sure-know,Certeza e Dúvida (Sure / Know),2,I am sure about this.,Alguém assinando um documento com firmeza
+118,fluency,block-118-certeza-e-d-vida-sure-know,Certeza e Dúvida (Sure / Know),3,I know this is the right thing to do.,"Sinal de ""positivo"" e olhar confiante"
+119,fluency,block-119-necessidade-coletiva-need-each-other,Necessidade Coletiva (Need / Each other),1,We need.,Duas pessoas tentando carregar algo pesado
+119,fluency,block-119-necessidade-coletiva-need-each-other,Necessidade Coletiva (Need / Each other),2,We need each other.,Duas pessoas se dando as mãos para subir um degrau
+119,fluency,block-119-necessidade-coletiva-need-each-other,Necessidade Coletiva (Need / Each other),3,We are strong when we are together.,Punhos cerrados juntos em sinal de união
+120,fluency,block-120-o-fechamento-do-ciclo-everything-done,O Fechamento do Ciclo (Everything / Done),1,It is done.,"Ponto final em um texto ou carimbo de ""concluído"""
+120,fluency,block-120-o-fechamento-do-ciclo-everything-done,O Fechamento do Ciclo (Everything / Done),2,Everything we wanted is done.,A casa pronta ou o projeto finalizado
+120,fluency,block-120-o-fechamento-do-ciclo-everything-done,O Fechamento do Ciclo (Everything / Done),3,Now we can start a new story.,Pessoa fechando um livro e pegando um novo em branco

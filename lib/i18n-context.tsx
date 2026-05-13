@@ -1,0 +1,1225 @@
+"use client";
+import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
+
+export type LanguageCode = "pt" | "en" | "es" | "it" | "fr" | "de";
+
+interface TranslationDictionary {
+  [key: string]: string;
+}
+
+interface Dictionaries {
+  pt: TranslationDictionary;
+  en: TranslationDictionary;
+  es: TranslationDictionary;
+  it: TranslationDictionary;
+  fr: TranslationDictionary;
+  de: TranslationDictionary;
+}
+
+const dictionaries: Dictionaries = {
+  en: {
+    // ── Marketing (landing page) ──
+    "nav.brand": "OLA - Open Language Acquisition",
+    "nav.signin": "Sign in",
+    "hero.title": "belongs in the gym",
+    "hero.title2": "of the tongue.",
+    "hero.subtitle": "Train your brain and mouth at the same time. 300 words. 15 minutes a day. Real speech.",
+    "hero.cta_start": "Start learning",
+    "hero.cta_account": "I already have an account",
+    "feature1.title": "300 words",
+    "feature1.desc": "Focused core vocabulary for 70% of daily fluency.",
+    "feature2.title": "15 min",
+    "feature2.desc": "High-intensity intervals designed for the cognitive athlete.",
+    "feature3.title": "AI eval",
+    "feature3.desc": "Instant phonetic feedback to sharpen your accent.",
+    "method.subtitle": "Our Methodology",
+    "method.title": "The Science of Speed.",
+    "method.desc": "The tongue is a muscle. Just like any muscle in the body, it needs frequent training, repetition, and active use.",
+    "pillar1.title": "Natural Acquisition",
+    "pillar1.desc": "Stop memorizing rules. OLA prioritizes learning like a native through high-frequency context and intuitive pattern recognition.",
+    "pillar2.title": "Spaced Repetition",
+    "pillar2.desc": "We fight the forgetting curve. Our algorithm serves words exactly when your brain is about to lose them, ensuring long-term memory.",
+    "pillar3.title": "Active Training",
+    "pillar3.desc": "Treating the tongue like a muscle. OLA is speech-first, forcing you to produce sound to bridge the gap between knowing and speaking.",
+    "precision.subtitle": "Phonetic Precision",
+    "precision.title1": "Your mouth is a muscle.",
+    "precision.title2": "Train it like one.",
+    "precision.desc": "We use advanced speech recognition to ensure every syllable you utter hits the mark. No more passive tapping. Pure vocal performance.",
+    "footer.title": "Ready to train?",
+    "footer.desc": "Start your cognitive sprint today. 15 minutes is all it takes.",
+    "footer.cta": "Get started free",
+
+    // ── Shell / Navigation ──
+    "nav.today": "Today",
+    "nav.blocks": "Blocks",
+    "nav.progress": "Progress",
+    "nav.settings": "Settings",
+    "nav.start_session": "Start Session",
+    "nav.sign_out": "Sign out",
+    "nav.tagline": "The Cognitive Athlete",
+
+    // ── Home ──
+    "home.greeting.morning": "Good morning",
+    "home.greeting.afternoon": "Good afternoon",
+    "home.greeting.evening": "Good evening",
+    "home.subtitle": "Ready for your cognitive sprint?",
+    "home.streak.label": "day streak",
+    "home.streak.sub": "Keep the fire burning",
+    "home.streak.new": "Day 1!",
+    "home.streak.new_sub": "Start your streak today",
+    "home.streak.alive_sub": "Train today to keep it!",
+    "home.streak.broken": "Streak reset",
+    "home.streak.broken_sub": "Come back — start a new one!",
+    "home.session.badge": "Today's Session",
+    "home.session.title": "Cognitive Peak Performance",
+    "home.session.revision": "Revision",
+    "home.session.talk": "Talk",
+    "home.session.new": "New",
+    "home.session.cta": "START SESSION",
+    "home.block.label": "Active Block",
+    "home.block.queue": "Queue items",
+    "home.block.phrases": "phrases",
+    "home.block.view_curriculum": "View curriculum",
+    "home.block.view_progress": "View my progress",
+    "home.stats.words": "Words learned",
+    "home.stats.repeated": "Words repeated",
+    "home.stats.sessions": "Sessions done",
+    "home.stats.score": "Avg. score",
+
+    // ── Blocks ──
+    "blocks.section": "Curriculum",
+    "blocks.title": "120-Block Map",
+    "blocks.desc": "Your complete learning path. Each block contains themed vocabulary and sentences designed for progressive acquisition.",
+    "blocks.status.locked": "Locked",
+    "blocks.status.active": "Active",
+    "blocks.status.done": "Done",
+    "blocks.completion": "Completion",
+    "blocks.block": "Block",
+    "blocks.repeat": "Repeat",
+
+    // ── Session Player ──
+    "session.complete": "Session Complete",
+    "session.finished_ok": "finished successfully!",
+    "session.phrases": "Session Phrases",
+    "session.accuracy": "Accuracy Score",
+    "session.continue": "Continue",
+    "session.training_intensity": "Training Intensity",
+    "session.listening": "Listening...",
+    "session.hold_mic": "Hold the microphone to speak...",
+    "session.tap_continue": "Tap arrow to continue",
+    "session.hold_speak": "Hold to speak",
+
+    // ── Progress ──
+    "progress.section": "Analytics",
+    "progress.title": "Your Progress",
+    "progress.desc": "Track your cognitive performance across vocabulary retention, pronunciation accuracy, and session streaks.",
+    "progress.tracked": "Tracked items",
+    "progress.strength": "Average strength",
+    "progress.fluency": "Average fluency",
+    "progress.mastered": "Mastered items (review stage ≥ 5)",
+
+    // ── Settings ──
+    "settings.section": "Settings",
+    "settings.title": "Profile & Preferences",
+    "settings.source_lang": "Source language",
+    "settings.target_lang": "Target language",
+    "settings.change_pair": "Change language pair",
+    "settings.tagline": "Cognitive Athlete",
+    "settings.account": "Account",
+    "settings.signed_in": "Signed in as",
+    "settings.voice_title": "Narrator Voice",
+    "settings.voice_desc": "Choose the voice gender for audio narration during practice sessions.",
+    "settings.voice_female": "Feminine",
+    "settings.voice_male": "Masculine",
+    "settings.display_name": "Display Name",
+    "settings.save_profile": "Save Profile",
+    "settings.saved": "Saved!",
+    "settings.whatsapp_hint": "Used for WhatsApp notifications",
+    "home.voice_label": "Narrator voice",
+
+    // ── Science / Philosophy Section ──
+    "science.label": "The Science",
+    "science.title": "Built on giants' shoulders.",
+    "science.desc": "OLA didn't invent a new method. We took the two most proven language acquisition theories in history and encoded them into every single session.",
+    "science.krashen.name": "Stephen Krashen",
+    "science.krashen.role": "Linguist & Researcher · Input Hypothesis",
+    "science.krashen.p1.title": "Comprehensible Input (i+1)",
+    "science.krashen.p1.desc": "We acquire language when input is slightly above our current level — not through rote memorization. OLA keeps every new sentence one step ahead.",
+    "science.krashen.p2.title": "Low Affective Filter",
+    "science.krashen.p2.desc": "Stress and anxiety block acquisition. OLA removes grades, red marks and pressure — only gentle, forward momentum.",
+    "science.thomas.name": "Michel Thomas",
+    "science.thomas.role": "Master Language Teacher · Building Blocks Method",
+    "science.thomas.p1.title": "Language is Built, Not Memorized",
+    "science.thomas.p1.desc": "Modal verbs — want, need, can, go — act as engines. Mastering them unlocks infinite sentences from day one.",
+    "science.thomas.p2.title": "Pause for Production",
+    "science.thomas.p2.desc": "The brain learns by producing, not by receiving. OLA never reveals the answer before you attempt to speak.",
+    "science.forgetting.label": "Ebbinghaus Forgetting Curve",
+    "science.forgetting.title": "Without review, memory evaporates.",
+    "science.forgetting.stat1.value": "70%",
+    "science.forgetting.stat1.label": "forgotten in 24 hours",
+    "science.forgetting.stat2.value": "80%",
+    "science.forgetting.stat2.label": "forgotten in 7 days",
+    "science.forgetting.stat3.value": "4×",
+    "science.forgetting.stat3.label": "review intervals: 20 min · 1d · 7d · 30d",
+    "science.forgetting.answer": "OLA's algorithm schedules each sentence for review at the exact moment your brain is about to forget it.",
+    "science.pyramid.stat": "80%",
+    "science.pyramid.stat.label": "retention through active practice",
+    "science.pyramid.stat.vs": "vs 10% from passive reading",
+    "science.pyramid.desc": "The Learning Pyramid shows that we retain 80% of what we actively practice vs 10% of what we passively read. Every OLA session is built around speaking — not reading.",
+
+    // ── Language names (for display in the user's native language) ──
+    "lang.en": "English",
+    "lang.pt": "Portuguese",
+    "lang.es": "Spanish",
+    "lang.it": "Italian",
+    "lang.fr": "French",
+    "lang.de": "German",
+
+    // ── Home — training badge ──
+    "home.training_label": "Training",
+
+    // ── Onboarding ──
+    "onboarding.step": "STEP",
+    "onboarding.of": "OF",
+    "onboarding.source.question": "What language do you",
+    "onboarding.source.highlight": "already speak?",
+    "onboarding.target.question": "What language do you",
+    "onboarding.target.highlight": "want to learn?",
+    "onboarding.primary_lang": "Primary Language",
+    "onboarding.target_lang": "Target Language",
+    "onboarding.continue": "Continue",
+    "onboarding.start": "Start learning",
+    "onboarding.back": "← Back to source language",
+    "onboarding.change_hint": "You can change this anytime in",
+    "onboarding.settings": "Settings",
+    "onboarding.saving": "Saving...",
+    "onboarding.notify.title": "Stay in the loop!",
+    "onboarding.notify.subtitle": "Get daily training reminders — even when the app is closed.",
+    "onboarding.notify.b1": "Daily reminder at the perfect time",
+    "onboarding.notify.b2": "Alert when your streak is at risk",
+    "onboarding.notify.b3": "App updates and new features",
+    "onboarding.notify.enable": "Enable notifications",
+    "onboarding.notify.skip": "Not now",
+    "onboarding.notify.granted": "You're all set! Redirecting...",
+  },
+  pt: {
+    // ── Marketing ──
+    "nav.brand": "OLA - Open Language Acquisition",
+    "nav.signin": "Entrar",
+    "hero.title": "pertence à academia",
+    "hero.title2": "da língua.",
+    "hero.subtitle": "Treine o seu cérebro e a sua boca ao mesmo tempo. 300 palavras. 15 minutos por dia. Fala real.",
+    "hero.cta_start": "Começar a aprender",
+    "hero.cta_account": "Já tenho uma conta",
+    "feature1.title": "300 palavras",
+    "feature1.desc": "Vocabulário central focado para 70% da fluência diária.",
+    "feature2.title": "15 min",
+    "feature2.desc": "Intervalos de alta intensidade criados para o atleta cognitivo.",
+    "feature3.title": "Avaliação IA",
+    "feature3.desc": "Feedback fonético instantâneo para aperfeiçoar o seu sotaque.",
+    "method.subtitle": "Nossa Metodologia",
+    "method.title": "A Ciência da Velocidade.",
+    "method.desc": "A língua é um músculo. Como qualquer músculo no corpo, precisa de treino frequente, repetição e uso ativo.",
+    "pillar1.title": "Aquisição Natural",
+    "pillar1.desc": "Pare de memorizar regras. OLA prioriza aprender como um nativo por meio de contexto de alta frequência.",
+    "pillar2.title": "Repetição Espaçada",
+    "pillar2.desc": "Lutamos contra a curva do esquecimento. O nosso algoritmo traz palavras no momento exato.",
+    "pillar3.title": "Treino Ativo",
+    "pillar3.desc": "A nossa abordagem exige fala, forçando você a produzir som para conectar o conhecimento à fala.",
+    "precision.subtitle": "Precisão Fonética",
+    "precision.title1": "Sua boca é um músculo.",
+    "precision.title2": "Treine como tal.",
+    "precision.desc": "Usamos reconhecimento de fala avançado para garantir que cada sílaba seja perfeita. Sem cliques passivos.",
+    "footer.title": "Pronto para treinar?",
+    "footer.desc": "Comece seu sprint cognitivo hoje. 15 minutos é tudo que precisa.",
+    "footer.cta": "Começar grátis",
+
+    // ── Shell / Navigation ──
+    "nav.today": "Hoje",
+    "nav.blocks": "Blocos",
+    "nav.progress": "Progresso",
+    "nav.settings": "Configurações",
+    "nav.start_session": "Iniciar Sessão",
+    "nav.sign_out": "Sair",
+    "nav.tagline": "O Atleta Cognitivo",
+
+    // ── Home ──
+    "home.greeting.morning": "Bom dia",
+    "home.greeting.afternoon": "Boa tarde",
+    "home.greeting.evening": "Boa noite",
+    "home.subtitle": "Pronto para o seu sprint cognitivo?",
+    "home.streak.label": "dias seguidos",
+    "home.streak.sub": "Mantenha o fogo aceso",
+    "home.streak.new": "Dia 1!",
+    "home.streak.new_sub": "Comece sua sequência hoje",
+    "home.streak.alive_sub": "Treine hoje para manter!",
+    "home.streak.broken": "Sequência zerada",
+    "home.streak.broken_sub": "Volte — comece uma nova!",
+    "home.session.badge": "Sessão de Hoje",
+    "home.session.title": "Performance Cognitiva de Pico",
+    "home.session.revision": "Revisão",
+    "home.session.talk": "Fala",
+    "home.session.new": "Novo",
+    "home.session.cta": "INICIAR SESSÃO",
+    "home.block.label": "Bloco Ativo",
+    "home.block.queue": "Itens na fila",
+    "home.block.phrases": "frases",
+    "home.block.view_curriculum": "Ver currículo",
+    "home.block.view_progress": "Ver meu avanço",
+    "home.stats.words": "Palavras aprendidas",
+    "home.stats.repeated": "Palavras repetidas",
+    "home.stats.sessions": "Sessões concluídas",
+    "home.stats.score": "Pontuação média",
+
+    // ── Blocks ──
+    "blocks.section": "Currículo",
+    "blocks.title": "Mapa de 120 Blocos",
+    "blocks.desc": "Seu caminho de aprendizado completo. Cada bloco contém vocabulário e frases temáticas para aquisição progressiva.",
+    "blocks.status.locked": "Bloqueado",
+    "blocks.status.active": "Ativo",
+    "blocks.status.done": "Concluído",
+    "blocks.completion": "Conclusão",
+    "blocks.block": "Bloco",
+    "blocks.repeat": "Repetir",
+
+    // ── Session Player ──
+    "session.complete": "Sessão Concluída",
+    "session.finished_ok": "concluído com sucesso!",
+    "session.phrases": "Frases da Sessão",
+    "session.accuracy": "Pontuação de Precisão",
+    "session.continue": "Continuar",
+    "session.training_intensity": "Intensidade do Treino",
+    "session.listening": "Ouvindo...",
+    "session.hold_mic": "Segure o microfone para falar...",
+    "session.tap_continue": "Toque na seta para continuar",
+    "session.hold_speak": "Segure para falar",
+
+    // ── Progress ──
+    "progress.section": "Análises",
+    "progress.title": "Seu Progresso",
+    "progress.desc": "Acompanhe seu desempenho cognitivo em retenção de vocabulário, precisão de pronúncia e sequências de sessões.",
+    "progress.tracked": "Itens rastreados",
+    "progress.strength": "Força média",
+    "progress.fluency": "Fluência média",
+    "progress.mastered": "Itens dominados (nível de revisão ≥ 5)",
+
+    // ── Settings ──
+    "settings.section": "Configurações",
+    "settings.title": "Perfil e Preferências",
+    "settings.source_lang": "Idioma nativo",
+    "settings.target_lang": "Idioma alvo",
+    "settings.change_pair": "Alterar par de idiomas",
+    "settings.tagline": "Atleta Cognitivo",
+    "settings.account": "Conta",
+    "settings.signed_in": "Conectado como",
+    "settings.voice_title": "Voz do Narrador",
+    "settings.voice_desc": "Escolha o gênero da voz para a narração de áudio durante as sessões.",
+    "settings.voice_female": "Feminina",
+    "settings.voice_male": "Masculina",
+    "settings.display_name": "Nome de Exibição",
+    "settings.save_profile": "Salvar Perfil",
+    "settings.saved": "Salvo!",
+    "settings.whatsapp_hint": "Usado para notificações via WhatsApp",
+    "home.voice_label": "Voz do narrador",
+
+    // ── Science / Philosophy Section ──
+    "science.label": "A Ciência",
+    "science.title": "Construído sobre os ombros de gigantes.",
+    "science.desc": "OLA não inventou um método novo. Pegamos as duas teorias de aquisição de idiomas mais comprovadas da história e as codificamos em cada sessão.",
+    "science.krashen.name": "Stephen Krashen",
+    "science.krashen.role": "Linguista e Pesquisador · Hipótese do Input",
+    "science.krashen.p1.title": "Input Compreensível (i+1)",
+    "science.krashen.p1.desc": "Adquirimos o idioma quando o input está um nível acima do atual — não através de memorização. OLA mantém cada nova frase um passo à frente.",
+    "science.krashen.p2.title": "Filtro Afetivo Baixo",
+    "science.krashen.p2.desc": "Estresse e ansiedade bloqueiam a aquisição. OLA remove notas, marcações vermelhas e pressão — só progresso contínuo e gentil.",
+    "science.thomas.name": "Michel Thomas",
+    "science.thomas.role": "Mestre do Ensino de Idiomas · Método Building Blocks",
+    "science.thomas.p1.title": "Idioma é Construído, Não Memorizado",
+    "science.thomas.p1.desc": "Verbos modais — want, need, can, go — funcionam como motores. Dominar esses blocos fundamentais gera frases infinitas desde o primeiro dia.",
+    "science.thomas.p2.title": "Pausa para Produção",
+    "science.thomas.p2.desc": "O cérebro aprende produzindo, não recebendo. OLA nunca revela a resposta antes de você tentar falar.",
+    "science.forgetting.label": "Curva do Esquecimento de Ebbinghaus",
+    "science.forgetting.title": "Sem revisão, a memória evapora.",
+    "science.forgetting.stat1.value": "70%",
+    "science.forgetting.stat1.label": "esquecido em 24 horas",
+    "science.forgetting.stat2.value": "80%",
+    "science.forgetting.stat2.label": "esquecido em 7 dias",
+    "science.forgetting.stat3.value": "4×",
+    "science.forgetting.stat3.label": "intervalos de revisão: 20 min · 1d · 7d · 30d",
+    "science.forgetting.answer": "O algoritmo do OLA agenda cada frase para revisão no exato momento em que seu cérebro está prestes a esquecer.",
+    "science.pyramid.stat": "80%",
+    "science.pyramid.stat.label": "de retenção praticando ativamente",
+    "science.pyramid.stat.vs": "vs 10% na leitura passiva",
+    "science.pyramid.desc": "A Pirâmide de Aprendizagem mostra que retemos 80% do que praticamos ativamente vs 10% do que lemos passivamente. Cada sessão OLA é construída em torno da fala — não da leitura.",
+
+    // ── Language names ──
+    "lang.en": "Inglês",
+    "lang.pt": "Português",
+    "lang.es": "Espanhol",
+    "lang.it": "Italiano",
+    "lang.fr": "Francês",
+    "lang.de": "Alemão",
+
+    // ── Home — training badge ──
+    "home.training_label": "Treinando",
+
+    // ── Onboarding ──
+    "onboarding.step": "PASSO",
+    "onboarding.of": "DE",
+    "onboarding.source.question": "Qual idioma você",
+    "onboarding.source.highlight": "já fala?",
+    "onboarding.target.question": "Qual idioma você quer",
+    "onboarding.target.highlight": "aprender?",
+    "onboarding.primary_lang": "Idioma Principal",
+    "onboarding.target_lang": "Idioma Alvo",
+    "onboarding.continue": "Continuar",
+    "onboarding.start": "Começar a aprender",
+    "onboarding.back": "← Voltar ao idioma nativo",
+    "onboarding.change_hint": "Você pode alterar isso a qualquer momento em",
+    "onboarding.settings": "Configurações",
+    "onboarding.saving": "Salvando...",
+    "onboarding.notify.title": "Fique por dentro!",
+    "onboarding.notify.subtitle": "Receba lembretes diários de treino — mesmo com o app fechado.",
+    "onboarding.notify.b1": "Lembrete diário no horário ideal",
+    "onboarding.notify.b2": "Alerta quando sua sequência estiver em risco",
+    "onboarding.notify.b3": "Novidades e melhorias do app",
+    "onboarding.notify.enable": "Ativar notificações",
+    "onboarding.notify.skip": "Agora não",
+    "onboarding.notify.granted": "Tudo certo! Redirecionando...",
+  },
+  es: {
+    // ── Marketing ──
+    "nav.brand": "OLA - Open Language Acquisition",
+    "nav.signin": "Iniciar sesión",
+    "hero.title": "pertenece al gimnasio",
+    "hero.title2": "de la lengua.",
+    "hero.subtitle": "Entrena tu cerebro y tu boca al mismo tiempo. 300 palabras. 15 minutos al día. Habla real.",
+    "hero.cta_start": "Empezar a aprender",
+    "hero.cta_account": "Ya tengo una cuenta",
+    "feature1.title": "300 palabras",
+    "feature1.desc": "Vocabulario central enfocado para el 70% de fluidez diaria.",
+    "feature2.title": "15 min",
+    "feature2.desc": "Intervalos de alta intensidad diseñados para el atleta cognitivo.",
+    "feature3.title": "Evaluación IA",
+    "feature3.desc": "Retroalimentación fonética instantánea para afilar tu acento.",
+    "method.subtitle": "Nuestra Metodología",
+    "method.title": "La Ciencia de la Velocidad.",
+    "method.desc": "La lengua es un músculo. Como cualquier músculo del cuerpo, necesita entrenamiento frecuente, repetición y uso activo.",
+    "pillar1.title": "Adquisición Natural",
+    "pillar1.desc": "Deja de memorizar reglas. OLA prioriza el aprendizaje como un nativo a través de contextos de alta frecuencia.",
+    "pillar2.title": "Repetición Espaciada",
+    "pillar2.desc": "Luchamos contra la curva del olvido. Nuestro algoritmo presenta las palabras en el momento exacto.",
+    "pillar3.title": "Entrenamiento Activo",
+    "pillar3.desc": "Nuestro enfoque es ante todo el habla, obligándote a producir sonido para conectar el conocimiento con el habla.",
+    "precision.subtitle": "Precisión Fonética",
+    "precision.title1": "Tu boca es un músculo.",
+    "precision.title2": "Entrénala como tal.",
+    "precision.desc": "Utilizamos reconocimiento de voz avanzado para asegurar que cada sílaba sea perfecta. Sin toques pasivos.",
+    "footer.title": "¿Listo para entrenar?",
+    "footer.desc": "Comienza tu sprint cognitivo hoy. 15 minutos es todo lo que necesitas.",
+    "footer.cta": "Empezar gratis",
+
+    // ── Shell / Navigation ──
+    "nav.today": "Hoy",
+    "nav.blocks": "Bloques",
+    "nav.progress": "Progreso",
+    "nav.settings": "Configuración",
+    "nav.start_session": "Iniciar Sesión",
+    "nav.sign_out": "Cerrar sesión",
+    "nav.tagline": "El Atleta Cognitivo",
+
+    // ── Home ──
+    "home.greeting.morning": "Buenos días",
+    "home.greeting.afternoon": "Buenas tardes",
+    "home.greeting.evening": "Buenas noches",
+    "home.subtitle": "¿Listo para tu sprint cognitivo?",
+    "home.streak.label": "días seguidos",
+    "home.streak.sub": "Mantén el fuego encendido",
+    "home.streak.new": "¡Día 1!",
+    "home.streak.new_sub": "Empieza tu racha hoy",
+    "home.streak.alive_sub": "¡Entrena hoy para mantenerla!",
+    "home.streak.broken": "Racha reiniciada",
+    "home.streak.broken_sub": "¡Vuelve — empieza una nueva!",
+    "home.session.badge": "Sesión de Hoy",
+    "home.session.title": "Rendimiento Cognitivo Máximo",
+    "home.session.revision": "Revisión",
+    "home.session.talk": "Habla",
+    "home.session.new": "Nuevo",
+    "home.session.cta": "INICIAR SESIÓN",
+    "home.block.label": "Bloque Activo",
+    "home.block.queue": "Elementos en cola",
+    "home.block.phrases": "frases",
+    "home.block.view_curriculum": "Ver currículo",
+    "home.block.view_progress": "Ver mi progreso",
+    "home.stats.words": "Palabras aprendidas",
+    "home.stats.repeated": "Palabras repetidas",
+    "home.stats.sessions": "Sesiones completadas",
+    "home.stats.score": "Puntuación media",
+
+    // ── Blocks ──
+    "blocks.section": "Currículo",
+    "blocks.title": "Mapa de 120 Bloques",
+    "blocks.desc": "Tu ruta de aprendizaje completa. Cada bloque contiene vocabulario y frases temáticas para la adquisición progresiva.",
+    "blocks.status.locked": "Bloqueado",
+    "blocks.status.active": "Activo",
+    "blocks.status.done": "Hecho",
+    "blocks.completion": "Completado",
+    "blocks.block": "Bloque",
+    "blocks.repeat": "Repetir",
+
+    // ── Session Player ──
+    "session.complete": "Sesión Completada",
+    "session.finished_ok": "¡completado con éxito!",
+    "session.phrases": "Frases de la Sesión",
+    "session.accuracy": "Puntuación de Precisión",
+    "session.continue": "Continuar",
+    "session.training_intensity": "Intensidad del Entrenamiento",
+    "session.listening": "Escuchando...",
+    "session.hold_mic": "Mantén el micrófono para hablar...",
+    "session.tap_continue": "Toca la flecha para continuar",
+    "session.hold_speak": "Mantén para hablar",
+
+    // ── Progress ──
+    "progress.section": "Análisis",
+    "progress.title": "Tu Progreso",
+    "progress.desc": "Sigue tu rendimiento cognitivo en retención de vocabulario, precisión de pronunciación y rachas de sesiones.",
+    "progress.tracked": "Elementos rastreados",
+    "progress.strength": "Fuerza media",
+    "progress.fluency": "Fluidez media",
+    "progress.mastered": "Elementos dominados (etapa de revisión ≥ 5)",
+
+    // ── Settings ──
+    "settings.section": "Configuración",
+    "settings.title": "Perfil y Preferencias",
+    "settings.source_lang": "Idioma nativo",
+    "settings.target_lang": "Idioma objetivo",
+    "settings.change_pair": "Cambiar par de idiomas",
+    "settings.tagline": "Atleta Cognitivo",
+    "settings.account": "Cuenta",
+    "settings.signed_in": "Conectado como",
+    "settings.voice_title": "Voz del Narrador",
+    "settings.voice_desc": "Elige el género de la voz para la narración de audio durante las sesiones.",
+    "settings.voice_female": "Femenina",
+    "settings.voice_male": "Masculino",
+    "settings.display_name": "Nombre de Visualización",
+    "settings.save_profile": "Guardar Perfil",
+    "settings.saved": "¡Guardado!",
+    "settings.whatsapp_hint": "Usado para notificaciones de WhatsApp",
+    "home.voice_label": "Voz del narrador",
+
+    // ── Science / Philosophy Section ──
+    "science.label": "La Ciencia",
+    "science.title": "Construido sobre los hombros de gigantes.",
+    "science.desc": "OLA no inventó un nuevo método. Tomamos las dos teorías de adquisición de idiomas más comprobadas de la historia y las codificamos en cada sesión.",
+    "science.krashen.name": "Stephen Krashen",
+    "science.krashen.role": "Lingüista e Investigador · Hipótesis del Input",
+    "science.krashen.p1.title": "Input Comprensible (i+1)",
+    "science.krashen.p1.desc": "Adquirimos el idioma cuando el input está ligeramente por encima de nuestro nivel actual — no mediante memorización. OLA mantiene cada nueva frase un paso adelante.",
+    "science.krashen.p2.title": "Filtro Afectivo Bajo",
+    "science.krashen.p2.desc": "El estrés y la ansiedad bloquean la adquisición. OLA elimina calificaciones, marcas rojas y presión — solo impulso continuo y amable.",
+    "science.thomas.name": "Michel Thomas",
+    "science.thomas.role": "Maestro del Aprendizaje de Idiomas · Método Building Blocks",
+    "science.thomas.p1.title": "El Idioma se Construye, No se Memoriza",
+    "science.thomas.p1.desc": "Los verbos modales — want, need, can, go — actúan como motores. Dominar estos bloques fundamentales genera frases infinitas desde el primer día.",
+    "science.thomas.p2.title": "Pausa para la Producción",
+    "science.thomas.p2.desc": "El cerebro aprende produciendo, no recibiendo. OLA nunca revela la respuesta antes de que intentes hablar.",
+    "science.forgetting.label": "Curva del Olvido de Ebbinghaus",
+    "science.forgetting.title": "Sin revisión, la memoria se evapora.",
+    "science.forgetting.stat1.value": "70%",
+    "science.forgetting.stat1.label": "olvidado en 24 horas",
+    "science.forgetting.stat2.value": "80%",
+    "science.forgetting.stat2.label": "olvidado en 7 días",
+    "science.forgetting.stat3.value": "4×",
+    "science.forgetting.stat3.label": "intervalos de revisión: 20 min · 1d · 7d · 30d",
+    "science.forgetting.answer": "El algoritmo de OLA programa cada frase para revisión en el momento exacto en que tu cerebro está a punto de olvidarla.",
+    "science.pyramid.stat": "80%",
+    "science.pyramid.stat.label": "de retención practicando activamente",
+    "science.pyramid.stat.vs": "vs 10% en lectura pasiva",
+    "science.pyramid.desc": "La Pirámide del Aprendizaje muestra que retenemos el 80% de lo que practicamos activamente vs el 10% de lo que leemos pasivamente. Cada sesión de OLA está construida en torno al habla — no a la lectura.",
+
+    // ── Language names ──
+    "lang.en": "Inglés",
+    "lang.pt": "Portugués",
+    "lang.es": "Español",
+    "lang.it": "Italiano",
+    "lang.fr": "Francés",
+    "lang.de": "Alemán",
+
+    // ── Home — training badge ──
+    "home.training_label": "Entrenando",
+
+    // ── Onboarding ──
+    "onboarding.step": "PASO",
+    "onboarding.of": "DE",
+    "onboarding.source.question": "¿Qué idioma",
+    "onboarding.source.highlight": "ya hablas?",
+    "onboarding.target.question": "¿Qué idioma quieres",
+    "onboarding.target.highlight": "aprender?",
+    "onboarding.primary_lang": "Idioma Principal",
+    "onboarding.target_lang": "Idioma Objetivo",
+    "onboarding.continue": "Continuar",
+    "onboarding.start": "Empezar a aprender",
+    "onboarding.back": "← Volver al idioma nativo",
+    "onboarding.change_hint": "Puedes cambiar esto en cualquier momento en",
+    "onboarding.settings": "Configuración",
+    "onboarding.saving": "Guardando...",
+    "onboarding.notify.title": "¡Mantente al tanto!",
+    "onboarding.notify.subtitle": "Recibe recordatorios diarios de entrenamiento, incluso con la app cerrada.",
+    "onboarding.notify.b1": "Recordatorio diario a la hora ideal",
+    "onboarding.notify.b2": "Alerta cuando tu racha esté en riesgo",
+    "onboarding.notify.b3": "Novedades y mejoras de la app",
+    "onboarding.notify.enable": "Activar notificaciones",
+    "onboarding.notify.skip": "Ahora no",
+    "onboarding.notify.granted": "¡Todo listo! Redirigiendo...",
+  },
+  it: {
+    // ── Marketing ──
+    "nav.brand": "OLA - Open Language Acquisition",
+    "nav.signin": "Accedi",
+    "hero.title": "appartiene all'accademia",
+    "hero.title2": "della lingua.",
+    "hero.subtitle": "Allena il tuo cervello e la tua bocca allo stesso tempo. 300 parole. 15 minuti al giorno. Parlato reale.",
+    "hero.cta_start": "Inizia ad imparare",
+    "hero.cta_account": "Ho già un account",
+    "feature1.title": "300 parole",
+    "feature1.desc": "Vocabolario essenziale per il 70% della fluidità quotidiana.",
+    "feature2.title": "15 min",
+    "feature2.desc": "Intervalli ad alta intensità progettati per l'atleta cognitivo.",
+    "feature3.title": "Valutazione IA",
+    "feature3.desc": "Feedback fonetico istantaneo per perfezionare il tuo accento.",
+    "method.subtitle": "La Nostra Metodologia",
+    "method.title": "La Scienza della Velocità.",
+    "method.desc": "La lingua è un muscolo. Come qualsiasi muscolo del corpo, ha bisogno di allenamento frequente, ripetizione e uso attivo.",
+    "pillar1.title": "Acquisizione Naturale",
+    "pillar1.desc": "Smetti di memorizzare regole. OLA privilegia l'apprendimento come un madrelingua attraverso contesti ad alta frequenza.",
+    "pillar2.title": "Ripetizione Spaziata",
+    "pillar2.desc": "Combattiamo la curva dell'oblio. Il nostro algoritmo ripresenta le parole nel momento esatto.",
+    "pillar3.title": "Allenamento Attivo",
+    "pillar3.desc": "Il nostro approccio richiede il parlato, costringendoti a produrre suoni per connettere la conoscenza con il parlato.",
+    "precision.subtitle": "Precisione Fonetica",
+    "precision.title1": "La tua bocca è un muscolo.",
+    "precision.title2": "Allenala come tale.",
+    "precision.desc": "Usiamo il riconoscimento vocale avanzato per garantire che ogni sillaba sia perfetta. Nessun clic passivo.",
+    "footer.title": "Pronto ad allenarti?",
+    "footer.desc": "Inizia il tuo sprint cognitivo oggi. 15 minuti è tutto ciò che serve.",
+    "footer.cta": "Inizia gratis",
+
+    // ── Shell / Navigation ──
+    "nav.today": "Oggi",
+    "nav.blocks": "Blocchi",
+    "nav.progress": "Progresso",
+    "nav.settings": "Impostazioni",
+    "nav.start_session": "Inizia Sessione",
+    "nav.sign_out": "Esci",
+    "nav.tagline": "L'Atleta Cognitivo",
+
+    // ── Home ──
+    "home.greeting.morning": "Buongiorno",
+    "home.greeting.afternoon": "Buon pomeriggio",
+    "home.greeting.evening": "Buonasera",
+    "home.subtitle": "Pronto per il tuo sprint cognitivo?",
+    "home.streak.label": "giorni consecutivi",
+    "home.streak.sub": "Mantieni il fuoco acceso",
+    "home.streak.new": "Giorno 1!",
+    "home.streak.new_sub": "Inizia la tua serie oggi",
+    "home.streak.alive_sub": "Allenati oggi per mantenerla!",
+    "home.streak.broken": "Serie azzerata",
+    "home.streak.broken_sub": "Torna — iniziane una nuova!",
+    "home.session.badge": "Sessione di Oggi",
+    "home.session.title": "Performance Cognitiva di Picco",
+    "home.session.revision": "Revisione",
+    "home.session.talk": "Parlato",
+    "home.session.new": "Nuovo",
+    "home.session.cta": "INIZIA SESSIONE",
+    "home.block.label": "Blocco Attivo",
+    "home.block.queue": "Elementi in coda",
+    "home.block.phrases": "frasi",
+    "home.block.view_curriculum": "Vedi curriculum",
+    "home.block.view_progress": "Vedi i miei progressi",
+    "home.stats.words": "Parole imparate",
+    "home.stats.repeated": "Parole ripetute",
+    "home.stats.sessions": "Sessioni completate",
+    "home.stats.score": "Punteggio medio",
+
+    // ── Blocks ──
+    "blocks.section": "Curriculum",
+    "blocks.title": "Mappa di 120 Blocchi",
+    "blocks.desc": "Il tuo percorso di apprendimento completo. Ogni blocco contiene vocabolario e frasi tematiche per l'acquisizione progressiva.",
+    "blocks.status.locked": "Bloccato",
+    "blocks.status.active": "Attivo",
+    "blocks.status.done": "Completato",
+    "blocks.completion": "Completamento",
+    "blocks.block": "Blocco",
+    "blocks.repeat": "Ripeti",
+
+    // ── Session Player ──
+    "session.complete": "Sessione Completata",
+    "session.finished_ok": "completato con successo!",
+    "session.phrases": "Frasi della Sessione",
+    "session.accuracy": "Punteggio di Precisione",
+    "session.continue": "Continua",
+    "session.training_intensity": "Intensità dell'Allenamento",
+    "session.listening": "Ascolto...",
+    "session.hold_mic": "Tieni premuto il microfono per parlare...",
+    "session.tap_continue": "Tocca la freccia per continuare",
+    "session.hold_speak": "Tieni per parlare",
+
+    // ── Progress ──
+    "progress.section": "Analisi",
+    "progress.title": "Il Tuo Progresso",
+    "progress.desc": "Monitora le tue performance cognitive in termini di ritenzione del vocabolario, accuratezza della pronuncia e serie di sessioni.",
+    "progress.tracked": "Elementi monitorati",
+    "progress.strength": "Forza media",
+    "progress.fluency": "Fluidità media",
+    "progress.mastered": "Elementi padroneggiati (livello revisione ≥ 5)",
+
+    // ── Settings ──
+    "settings.section": "Impostazioni",
+    "settings.title": "Profilo e Preferenze",
+    "settings.source_lang": "Lingua madre",
+    "settings.target_lang": "Lingua obiettivo",
+    "settings.change_pair": "Cambia coppia di lingue",
+    "settings.tagline": "Atleta Cognitivo",
+    "settings.account": "Account",
+    "settings.signed_in": "Connesso come",
+    "settings.voice_title": "Voce del Narratore",
+    "settings.voice_desc": "Scegli il genere della voce per la narrazione audio durante le sessioni.",
+    "settings.voice_female": "Femminile",
+    "settings.voice_male": "Maschile",
+    "settings.display_name": "Nome Visualizzato",
+    "settings.save_profile": "Salva Profilo",
+    "settings.saved": "Salvato!",
+    "settings.whatsapp_hint": "Usato per le notifiche WhatsApp",
+    "home.voice_label": "Voce del narratore",
+
+    // ── Science / Philosophy Section ──
+    "science.label": "La Scienza",
+    "science.title": "Costruito sulle spalle dei giganti.",
+    "science.desc": "OLA non ha inventato un nuovo metodo. Abbiamo preso le due teorie di acquisizione delle lingue più comprovate della storia e le abbiamo codificate in ogni sessione.",
+    "science.krashen.name": "Stephen Krashen",
+    "science.krashen.role": "Linguista e Ricercatore · Ipotesi dell'Input",
+    "science.krashen.p1.title": "Input Comprensibile (i+1)",
+    "science.krashen.p1.desc": "Acquisiamo la lingua quando l'input è leggermente superiore al nostro livello attuale — non attraverso la memorizzazione. OLA mantiene ogni nuova frase un passo avanti.",
+    "science.krashen.p2.title": "Filtro Affettivo Basso",
+    "science.krashen.p2.desc": "Lo stress e l'ansia bloccano l'acquisizione. OLA rimuove voti, segni rossi e pressione — solo slancio continuo e gentile.",
+    "science.thomas.name": "Michel Thomas",
+    "science.thomas.role": "Maestro dell'Insegnamento delle Lingue · Metodo Building Blocks",
+    "science.thomas.p1.title": "La Lingua si Costruisce, Non si Memorizza",
+    "science.thomas.p1.desc": "I verbi modali — want, need, can, go — fungono da motori. Padroneggiare questi blocchi fondamentali genera frasi infinite dal primo giorno.",
+    "science.thomas.p2.title": "Pausa per la Produzione",
+    "science.thomas.p2.desc": "Il cervello impara producendo, non ricevendo. OLA non rivela mai la risposta prima che tu abbia tentato di parlare.",
+    "science.forgetting.label": "Curva dell'Oblio di Ebbinghaus",
+    "science.forgetting.title": "Senza revisione, la memoria evapora.",
+    "science.forgetting.stat1.value": "70%",
+    "science.forgetting.stat1.label": "dimenticato in 24 ore",
+    "science.forgetting.stat2.value": "80%",
+    "science.forgetting.stat2.label": "dimenticato in 7 giorni",
+    "science.forgetting.stat3.value": "4×",
+    "science.forgetting.stat3.label": "intervalli di revisione: 20 min · 1g · 7g · 30g",
+    "science.forgetting.answer": "L'algoritmo di OLA programma ogni frase per la revisione nel momento esatto in cui il tuo cervello sta per dimenticarla.",
+    "science.pyramid.stat": "80%",
+    "science.pyramid.stat.label": "di ritenzione praticando attivamente",
+    "science.pyramid.stat.vs": "vs 10% nella lettura passiva",
+    "science.pyramid.desc": "La Piramide dell'Apprendimento mostra che reteniamo l'80% di ciò che pratichiamo attivamente vs il 10% di ciò che leggiamo passivamente. Ogni sessione OLA è costruita attorno al parlato — non alla lettura.",
+
+    // ── Language names ──
+    "lang.en": "Inglese",
+    "lang.pt": "Portoghese",
+    "lang.es": "Spagnolo",
+    "lang.it": "Italiano",
+    "lang.fr": "Francese",
+    "lang.de": "Tedesco",
+
+    // ── Home — training badge ──
+    "home.training_label": "Allenando",
+
+    // ── Onboarding ──
+    "onboarding.step": "PASSO",
+    "onboarding.of": "DI",
+    "onboarding.source.question": "Quale lingua",
+    "onboarding.source.highlight": "parli già?",
+    "onboarding.target.question": "Quale lingua vuoi",
+    "onboarding.target.highlight": "imparare?",
+    "onboarding.primary_lang": "Lingua Principale",
+    "onboarding.target_lang": "Lingua Obiettivo",
+    "onboarding.continue": "Continua",
+    "onboarding.start": "Inizia ad imparare",
+    "onboarding.back": "← Torna alla lingua madre",
+    "onboarding.change_hint": "Puoi cambiarlo in qualsiasi momento in",
+    "onboarding.settings": "Impostazioni",
+    "onboarding.saving": "Salvando...",
+    "onboarding.notify.title": "Rimani aggiornato!",
+    "onboarding.notify.subtitle": "Ricevi promemoria giornalieri di allenamento, anche a app chiusa.",
+    "onboarding.notify.b1": "Promemoria giornaliero al momento giusto",
+    "onboarding.notify.b2": "Avviso quando la tua sequenza è a rischio",
+    "onboarding.notify.b3": "Novità e miglioramenti dell'app",
+    "onboarding.notify.enable": "Attiva notifiche",
+    "onboarding.notify.skip": "Non ora",
+    "onboarding.notify.granted": "Tutto pronto! Reindirizzamento...",
+  },
+  fr: {
+    // ── Marketing ──
+    "nav.brand": "OLA - Open Language Acquisition",
+    "nav.signin": "Se connecter",
+    "hero.title": "appartient à la salle de sport",
+    "hero.title2": "de la langue.",
+    "hero.subtitle": "Entraîne ton cerveau et ta bouche en même temps. 300 mots. 15 minutes par jour. Parole réelle.",
+    "hero.cta_start": "Commencer à apprendre",
+    "hero.cta_account": "J'ai déjà un compte",
+    "feature1.title": "300 mots",
+    "feature1.desc": "Vocabulaire essentiel pour 70% de la fluidité quotidienne.",
+    "feature2.title": "15 min",
+    "feature2.desc": "Intervalles haute intensité conçus pour l'athlète cognitif.",
+    "feature3.title": "Éval IA",
+    "feature3.desc": "Retour phonétique instantané pour affiner ton accent.",
+    "method.subtitle": "Notre Méthodologie",
+    "method.title": "La Science de la Vitesse.",
+    "method.desc": "La langue est un muscle. Comme tout muscle du corps, elle a besoin d'un entraînement fréquent, de répétitions et d'une utilisation active.",
+    "pillar1.title": "Acquisition Naturelle",
+    "pillar1.desc": "Arrête de mémoriser des règles. OLA favorise l'apprentissage comme un natif grâce à des contextes haute fréquence.",
+    "pillar2.title": "Répétition Espacée",
+    "pillar2.desc": "Nous combattons la courbe de l'oubli. Notre algorithme présente les mots au moment exact.",
+    "pillar3.title": "Entraînement Actif",
+    "pillar3.desc": "Notre approche est avant tout la parole, te forçant à produire du son pour relier la connaissance à la parole.",
+    "precision.subtitle": "Précision Phonétique",
+    "precision.title1": "Ta bouche est un muscle.",
+    "precision.title2": "Entraîne-la comme tel.",
+    "precision.desc": "Nous utilisons la reconnaissance vocale avancée pour garantir que chaque syllabe soit parfaite. Sans clics passifs.",
+    "footer.title": "Prêt à t'entraîner ?",
+    "footer.desc": "Commence ton sprint cognitif aujourd'hui. 15 minutes, c'est tout ce qu'il faut.",
+    "footer.cta": "Commencer gratuitement",
+
+    // ── Shell / Navigation ──
+    "nav.today": "Aujourd'hui",
+    "nav.blocks": "Blocs",
+    "nav.progress": "Progrès",
+    "nav.settings": "Paramètres",
+    "nav.start_session": "Démarrer la session",
+    "nav.sign_out": "Se déconnecter",
+    "nav.tagline": "L'Athlète Cognitif",
+
+    // ── Home ──
+    "home.greeting.morning": "Bonjour",
+    "home.greeting.afternoon": "Bon après-midi",
+    "home.greeting.evening": "Bonsoir",
+    "home.subtitle": "Prêt pour ton sprint cognitif ?",
+    "home.streak.label": "jours consécutifs",
+    "home.streak.sub": "Garde le feu allumé",
+    "home.streak.new": "Jour 1 !",
+    "home.streak.new_sub": "Lance ta série aujourd'hui",
+    "home.streak.alive_sub": "Entraîne-toi pour la garder !",
+    "home.streak.broken": "Série réinitialisée",
+    "home.streak.broken_sub": "Reviens — recommence !",
+    "home.session.badge": "Session du Jour",
+    "home.session.title": "Performance Cognitive au Sommet",
+    "home.session.revision": "Révision",
+    "home.session.talk": "Parole",
+    "home.session.new": "Nouveau",
+    "home.session.cta": "DÉMARRER LA SESSION",
+    "home.block.label": "Bloc Actif",
+    "home.block.queue": "Éléments en file",
+    "home.block.phrases": "phrases",
+    "home.block.view_curriculum": "Voir le curriculum",
+    "home.block.view_progress": "Voir ma progression",
+    "home.stats.words": "Mots appris",
+    "home.stats.repeated": "Mots répétés",
+    "home.stats.sessions": "Sessions terminées",
+    "home.stats.score": "Score moyen",
+
+    // ── Blocks ──
+    "blocks.section": "Curriculum",
+    "blocks.title": "Carte de 120 Blocs",
+    "blocks.desc": "Ton parcours d'apprentissage complet. Chaque bloc contient du vocabulaire et des phrases thématiques pour une acquisition progressive.",
+    "blocks.status.locked": "Verrouillé",
+    "blocks.status.active": "Actif",
+    "blocks.status.done": "Terminé",
+    "blocks.completion": "Complétion",
+    "blocks.block": "Bloc",
+    "blocks.repeat": "Répéter",
+
+    // ── Session Player ──
+    "session.complete": "Séance Terminée",
+    "session.finished_ok": "terminé avec succès !",
+    "session.phrases": "Phrases de la Séance",
+    "session.accuracy": "Score de Précision",
+    "session.continue": "Continuer",
+    "session.training_intensity": "Intensité d'Entraînement",
+    "session.listening": "Écoute...",
+    "session.hold_mic": "Appuie sur le micro pour parler...",
+    "session.tap_continue": "Appuie sur la flèche pour continuer",
+    "session.hold_speak": "Appuie pour parler",
+
+    // ── Progress ──
+    "progress.section": "Analyses",
+    "progress.title": "Tes Progrès",
+    "progress.desc": "Suis tes performances cognitives en rétention de vocabulaire, précision de prononciation et séries de sessions.",
+    "progress.tracked": "Éléments suivis",
+    "progress.strength": "Force moyenne",
+    "progress.fluency": "Fluidité moyenne",
+    "progress.mastered": "Éléments maîtrisés (niveau de révision ≥ 5)",
+
+    // ── Settings ──
+    "settings.section": "Paramètres",
+    "settings.title": "Profil et Préférences",
+    "settings.source_lang": "Langue native",
+    "settings.target_lang": "Langue cible",
+    "settings.change_pair": "Changer la paire de langues",
+    "settings.tagline": "Athlète Cognitif",
+    "settings.account": "Compte",
+    "settings.signed_in": "Connecté en tant que",
+    "settings.voice_title": "Voix du Narrateur",
+    "settings.voice_desc": "Choisis le genre de la voix pour la narration audio pendant les sessions.",
+    "settings.voice_female": "Féminine",
+    "settings.voice_male": "Masculine",
+    "settings.display_name": "Nom d'affichage",
+    "settings.save_profile": "Enregistrer le profil",
+    "settings.saved": "Enregistré !",
+    "settings.whatsapp_hint": "Utilisé pour les notifications WhatsApp",
+    "home.voice_label": "Voix du narrateur",
+
+    // ── Science / Philosophy Section ──
+    "science.label": "La Science",
+    "science.title": "Construit sur les épaules des géants.",
+    "science.desc": "OLA n'a pas inventé une nouvelle méthode. Nous avons pris les deux théories d'acquisition des langues les plus éprouvées de l'histoire et les avons codées dans chaque session.",
+    "science.krashen.name": "Stephen Krashen",
+    "science.krashen.role": "Linguiste et Chercheur · Hypothèse de l'Input",
+    "science.krashen.p1.title": "Input Compréhensible (i+1)",
+    "science.krashen.p1.desc": "Nous acquérons le langage quand l'input est légèrement au-dessus de notre niveau actuel — pas par mémorisation. OLA maintient chaque nouvelle phrase un cran au-dessus.",
+    "science.krashen.p2.title": "Filtre Affectif Bas",
+    "science.krashen.p2.desc": "Le stress et l'anxiété bloquent l'acquisition. OLA supprime les notes, les marques rouges et la pression — seulement un élan continu et bienveillant.",
+    "science.thomas.name": "Michel Thomas",
+    "science.thomas.role": "Maître de l'Enseignement des Langues · Méthode Building Blocks",
+    "science.thomas.p1.title": "La Langue se Construit, Elle ne se Mémorise Pas",
+    "science.thomas.p1.desc": "Les verbes modaux — want, need, can, go — font office de moteurs. Maîtriser ces blocs fondamentaux génère des phrases infinies dès le premier jour.",
+    "science.thomas.p2.title": "Pause pour la Production",
+    "science.thomas.p2.desc": "Le cerveau apprend en produisant, pas en recevant. OLA ne révèle jamais la réponse avant que tu aies essayé de parler.",
+    "science.forgetting.label": "Courbe de l'Oubli d'Ebbinghaus",
+    "science.forgetting.title": "Sans révision, la mémoire s'évapore.",
+    "science.forgetting.stat1.value": "70%",
+    "science.forgetting.stat1.label": "oublié en 24 heures",
+    "science.forgetting.stat2.value": "80%",
+    "science.forgetting.stat2.label": "oublié en 7 jours",
+    "science.forgetting.stat3.value": "4×",
+    "science.forgetting.stat3.label": "intervalles de révision : 20 min · 1j · 7j · 30j",
+    "science.forgetting.answer": "L'algorithme d'OLA planifie chaque phrase pour révision au moment exact où ton cerveau est sur le point de l'oublier.",
+    "science.pyramid.stat": "80%",
+    "science.pyramid.stat.label": "de rétention en pratiquant activement",
+    "science.pyramid.stat.vs": "vs 10% en lecture passive",
+    "science.pyramid.desc": "La Pyramide de l'Apprentissage montre que nous retenons 80% de ce que nous pratiquons activement vs 10% de ce que nous lisons passivement. Chaque session OLA est construite autour de la parole — pas de la lecture.",
+
+    // ── Language names ──
+    "lang.en": "Anglais",
+    "lang.pt": "Portugais",
+    "lang.es": "Espagnol",
+    "lang.it": "Italien",
+    "lang.fr": "Français",
+    "lang.de": "Allemand",
+
+    // ── Home — training badge ──
+    "home.training_label": "Entraînement",
+
+    // ── Onboarding ──
+    "onboarding.step": "ÉTAPE",
+    "onboarding.of": "SUR",
+    "onboarding.source.question": "Quelle langue",
+    "onboarding.source.highlight": "tu parles déjà ?",
+    "onboarding.target.question": "Quelle langue tu veux",
+    "onboarding.target.highlight": "apprendre ?",
+    "onboarding.primary_lang": "Langue Principale",
+    "onboarding.target_lang": "Langue Cible",
+    "onboarding.continue": "Continuer",
+    "onboarding.start": "Commencer à apprendre",
+    "onboarding.back": "← Retour à la langue native",
+    "onboarding.change_hint": "Tu peux changer ça à tout moment dans",
+    "onboarding.settings": "Paramètres",
+    "onboarding.saving": "Enregistrement...",
+    "onboarding.notify.title": "Reste connecté !",
+    "onboarding.notify.subtitle": "Reçois des rappels d'entraînement quotidiens, même app fermée.",
+    "onboarding.notify.b1": "Rappel quotidien au moment idéal",
+    "onboarding.notify.b2": "Alerte quand ta série est en danger",
+    "onboarding.notify.b3": "Nouveautés et améliorations de l'app",
+    "onboarding.notify.enable": "Activer les notifications",
+    "onboarding.notify.skip": "Pas maintenant",
+    "onboarding.notify.granted": "C'est bon ! Redirection...",
+  },
+  de: {
+    // ── Marketing ──
+    "nav.brand": "OLA - Open Language Acquisition",
+    "nav.signin": "Anmelden",
+    "hero.title": "gehört ins Fitnessstudio",
+    "hero.title2": "der Sprache.",
+    "hero.subtitle": "Trainiere dein Gehirn und deinen Mund gleichzeitig. 300 Wörter. 15 Minuten am Tag. Echtes Sprechen.",
+    "hero.cta_start": "Jetzt lernen",
+    "hero.cta_account": "Ich habe bereits ein Konto",
+    "feature1.title": "300 Wörter",
+    "feature1.desc": "Fokussierter Kernwortschatz für 70% der täglichen Sprachkompetenz.",
+    "feature2.title": "15 Min",
+    "feature2.desc": "Hochintensive Intervalle, entwickelt für den kognitiven Athleten.",
+    "feature3.title": "KI-Auswertung",
+    "feature3.desc": "Sofortiges phonetisches Feedback, um deinen Akzent zu schärfen.",
+    "method.subtitle": "Unsere Methodik",
+    "method.title": "Die Wissenschaft der Geschwindigkeit.",
+    "method.desc": "Die Zunge ist ein Muskel. Wie jeder Muskel im Körper braucht sie regelmäßiges Training, Wiederholung und aktiven Einsatz.",
+    "pillar1.title": "Natürlicher Erwerb",
+    "pillar1.desc": "Hör auf, Regeln auswendig zu lernen. OLA priorisiert das Lernen wie ein Muttersprachler durch hochfrequente Kontexte.",
+    "pillar2.title": "Spaced Repetition",
+    "pillar2.desc": "Wir kämpfen gegen die Vergessenskurve. Unser Algorithmus zeigt Wörter genau im richtigen Moment.",
+    "pillar3.title": "Aktives Training",
+    "pillar3.desc": "Unser Ansatz ist auf das Sprechen ausgerichtet und zwingt dich, Klang zu produzieren, um Wissen mit dem Sprechen zu verbinden.",
+    "precision.subtitle": "Phonetische Präzision",
+    "precision.title1": "Dein Mund ist ein Muskel.",
+    "precision.title2": "Trainiere ihn entsprechend.",
+    "precision.desc": "Wir verwenden fortschrittliche Spracherkennung, um sicherzustellen, dass jede Silbe perfekt sitzt. Kein passives Tippen.",
+    "footer.title": "Bereit zum Trainieren?",
+    "footer.desc": "Starte heute deinen kognitiven Sprint. 15 Minuten reichen aus.",
+    "footer.cta": "Kostenlos starten",
+
+    // ── Shell / Navigation ──
+    "nav.today": "Heute",
+    "nav.blocks": "Blöcke",
+    "nav.progress": "Fortschritt",
+    "nav.settings": "Einstellungen",
+    "nav.start_session": "Sitzung starten",
+    "nav.sign_out": "Abmelden",
+    "nav.tagline": "Der Kognitive Athlet",
+
+    // ── Home ──
+    "home.greeting.morning": "Guten Morgen",
+    "home.greeting.afternoon": "Guten Nachmittag",
+    "home.greeting.evening": "Guten Abend",
+    "home.subtitle": "Bereit für deinen kognitiven Sprint?",
+    "home.streak.label": "Tage in Folge",
+    "home.streak.sub": "Halte das Feuer am Brennen",
+    "home.streak.new": "Tag 1!",
+    "home.streak.new_sub": "Starte deine Serie heute",
+    "home.streak.alive_sub": "Trainiere heute, um sie zu halten!",
+    "home.streak.broken": "Serie zurückgesetzt",
+    "home.streak.broken_sub": "Komm zurück — starte neu!",
+    "home.session.badge": "Heutige Sitzung",
+    "home.session.title": "Kognitive Spitzenleistung",
+    "home.session.revision": "Wiederholung",
+    "home.session.talk": "Sprechen",
+    "home.session.new": "Neu",
+    "home.session.cta": "SITZUNG STARTEN",
+    "home.block.label": "Aktiver Block",
+    "home.block.queue": "Warteschlange",
+    "home.block.phrases": "Sätze",
+    "home.block.view_curriculum": "Lehrplan ansehen",
+    "home.block.view_progress": "Meinen Fortschritt sehen",
+    "home.stats.words": "Gelernte Wörter",
+    "home.stats.repeated": "Wiederholte Wörter",
+    "home.stats.sessions": "Abgeschlossene Sitzungen",
+    "home.stats.score": "Durchschn. Punktzahl",
+
+    // ── Blocks ──
+    "blocks.section": "Lehrplan",
+    "blocks.title": "120-Block-Karte",
+    "blocks.desc": "Dein vollständiger Lernpfad. Jeder Block enthält thematischen Wortschatz und Sätze für den progressiven Erwerb.",
+    "blocks.status.locked": "Gesperrt",
+    "blocks.status.active": "Aktiv",
+    "blocks.status.done": "Fertig",
+    "blocks.completion": "Abschluss",
+    "blocks.block": "Block",
+    "blocks.repeat": "Wiederholen",
+
+    // ── Session Player ──
+    "session.complete": "Sitzung Abgeschlossen",
+    "session.finished_ok": "erfolgreich abgeschlossen!",
+    "session.phrases": "Sitzungsphrasen",
+    "session.accuracy": "Genauigkeitspunktzahl",
+    "session.continue": "Weiter",
+    "session.training_intensity": "Trainingsintensität",
+    "session.listening": "Höre zu...",
+    "session.hold_mic": "Halte das Mikrofon zum Sprechen...",
+    "session.tap_continue": "Tippe auf den Pfeil zum Fortfahren",
+    "session.hold_speak": "Halten zum Sprechen",
+
+    // ── Progress ──
+    "progress.section": "Analysen",
+    "progress.title": "Dein Fortschritt",
+    "progress.desc": "Verfolge deine kognitive Leistung bei Wortschatz, Aussprache und Sitzungsserien.",
+    "progress.tracked": "Verfolgte Elemente",
+    "progress.strength": "Durchschnittliche Stärke",
+    "progress.fluency": "Durchschnittliche Flüssigkeit",
+    "progress.mastered": "Beherrschte Elemente (Wiederholungsstufe ≥ 5)",
+
+    // ── Settings ──
+    "settings.section": "Einstellungen",
+    "settings.title": "Profil & Einstellungen",
+    "settings.source_lang": "Muttersprache",
+    "settings.target_lang": "Zielsprache",
+    "settings.change_pair": "Sprachpaar ändern",
+    "settings.tagline": "Kognitiver Athlet",
+    "settings.account": "Konto",
+    "settings.signed_in": "Angemeldet als",
+    "settings.voice_title": "Erzählerstimme",
+    "settings.voice_desc": "Wähle das Geschlecht der Stimme für die Audioerzählung während der Übungen.",
+    "settings.voice_female": "Weiblich",
+    "settings.voice_male": "Männlich",
+    "settings.display_name": "Anzeigename",
+    "settings.save_profile": "Profil speichern",
+    "settings.saved": "Gespeichert!",
+    "settings.whatsapp_hint": "Für WhatsApp-Benachrichtigungen verwendet",
+    "home.voice_label": "Erzählerstimme",
+
+    // ── Science / Philosophy Section ──
+    "science.label": "Die Wissenschaft",
+    "science.title": "Auf den Schultern von Giganten.",
+    "science.desc": "OLA hat keine neue Methode erfunden. Wir haben die zwei bewährtesten Spracherwerbstheorien der Geschichte genommen und in jede Sitzung kodiert.",
+    "science.krashen.name": "Stephen Krashen",
+    "science.krashen.role": "Linguist & Forscher · Input-Hypothese",
+    "science.krashen.p1.title": "Verständlicher Input (i+1)",
+    "science.krashen.p1.desc": "Wir erwerben Sprache, wenn der Input leicht über unserem aktuellen Niveau liegt — nicht durch Auswendiglernen. OLA hält jeden neuen Satz einen Schritt voraus.",
+    "science.krashen.p2.title": "Niedriger Affektiver Filter",
+    "science.krashen.p2.desc": "Stress und Angst blockieren den Erwerb. OLA entfernt Noten, rote Markierungen und Druck — nur sanfter, vorwärts gerichteter Schwung.",
+    "science.thomas.name": "Michel Thomas",
+    "science.thomas.role": "Sprachlehrer-Meister · Bausteine-Methode",
+    "science.thomas.p1.title": "Sprache wird gebaut, nicht auswendig gelernt",
+    "science.thomas.p1.desc": "Modalverben — wollen, können, müssen, dürfen — wirken wie Motoren. Sie zu beherrschen erschließt ab dem ersten Tag unendlich viele Sätze.",
+    "science.thomas.p2.title": "Pause für die Produktion",
+    "science.thomas.p2.desc": "Das Gehirn lernt durch Produzieren, nicht durch Empfangen. OLA verrät die Antwort nie, bevor du versucht hast zu sprechen.",
+    "science.forgetting.label": "Ebbinghaus-Vergessenskurve",
+    "science.forgetting.title": "Ohne Wiederholung verflüchtigt sich die Erinnerung.",
+    "science.forgetting.stat1.value": "70%",
+    "science.forgetting.stat1.label": "vergessen nach 24 Stunden",
+    "science.forgetting.stat2.value": "80%",
+    "science.forgetting.stat2.label": "vergessen nach 7 Tagen",
+    "science.forgetting.stat3.value": "4×",
+    "science.forgetting.stat3.label": "Wiederholungsintervalle: 20 Min · 1T · 7T · 30T",
+    "science.forgetting.answer": "OLAs Algorithmus plant jede Phrase zur Wiederholung genau in dem Moment, wenn dein Gehirn sie fast vergessen hat.",
+    "science.pyramid.stat": "80%",
+    "science.pyramid.stat.label": "Behaltenquote durch aktives Üben",
+    "science.pyramid.stat.vs": "vs 10% durch passives Lesen",
+    "science.pyramid.desc": "Die Lernpyramide zeigt, dass wir 80% von dem behalten, was wir aktiv üben, gegenüber 10% von dem, was wir passiv lesen. Jede OLA-Sitzung ist rund ums Sprechen aufgebaut — nicht ums Lesen.",
+
+    // ── Language names ──
+    "lang.en": "Englisch",
+    "lang.pt": "Portugiesisch",
+    "lang.es": "Spanisch",
+    "lang.it": "Italienisch",
+    "lang.fr": "Französisch",
+    "lang.de": "Deutsch",
+
+    // ── Home — training badge ──
+    "home.training_label": "Training",
+
+    // ── Onboarding ──
+    "onboarding.step": "SCHRITT",
+    "onboarding.of": "VON",
+    "onboarding.source.question": "Welche Sprache",
+    "onboarding.source.highlight": "sprichst du bereits?",
+    "onboarding.target.question": "Welche Sprache möchtest du",
+    "onboarding.target.highlight": "lernen?",
+    "onboarding.primary_lang": "Muttersprache",
+    "onboarding.target_lang": "Zielsprache",
+    "onboarding.continue": "Weiter",
+    "onboarding.start": "Jetzt lernen",
+    "onboarding.back": "← Zurück zur Muttersprache",
+    "onboarding.change_hint": "Du kannst dies jederzeit in",
+    "onboarding.settings": "Einstellungen",
+    "onboarding.saving": "Wird gespeichert...",
+    "onboarding.notify.title": "Bleib auf dem Laufenden!",
+    "onboarding.notify.subtitle": "Erhalte tägliche Trainingserinnerungen — auch wenn die App geschlossen ist.",
+    "onboarding.notify.b1": "Tägliche Erinnerung zur perfekten Zeit",
+    "onboarding.notify.b2": "Warnung wenn dein Streak in Gefahr ist",
+    "onboarding.notify.b3": "App-Updates und neue Funktionen",
+    "onboarding.notify.enable": "Benachrichtigungen aktivieren",
+    "onboarding.notify.skip": "Nicht jetzt",
+    "onboarding.notify.granted": "Alles bereit! Weiterleitung...",
+  }
+};
+
+interface LanguageContextType {
+  language: LanguageCode;
+  setLanguage: (lang: LanguageCode) => void;
+  t: (key: string) => string;
+}
+
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+/** Maps source_language_code values from cookies to i18n LanguageCode */
+export function sourceLangToI18n(sourceLang: string): LanguageCode {
+  if (sourceLang.startsWith("pt")) return "pt";
+  if (sourceLang.startsWith("es")) return "es";
+  if (sourceLang.startsWith("it")) return "it";
+  if (sourceLang.startsWith("fr")) return "fr";
+  if (sourceLang.startsWith("de")) return "de";
+  return "en";
+}
+
+/** Maps i18n LanguageCode back to cookie source lang value */
+function i18nToSourceLang(lang: LanguageCode): string {
+  if (lang === "pt") return "pt-BR";
+  if (lang === "es") return "es";
+  if (lang === "it") return "it";
+  if (lang === "fr") return "fr";
+  if (lang === "de") return "de";
+  return "en";
+}
+
+/** Reads the ola_source_lang cookie from document.cookie (client only) */
+function getSourceLangCookie(): string | null {
+  if (typeof document === "undefined") return null;
+  const match = document.cookie.match(/(?:^|;\s*)ola_source_lang=([^;]+)/);
+  return match ? decodeURIComponent(match[1]) : null;
+}
+
+/** Writes both language cookies client-side */
+function setLanguageCookies(sourceLang: string, targetLang?: string) {
+  const maxAge = 60 * 60 * 24 * 365;
+  document.cookie = `ola_source_lang=${sourceLang}; path=/; max-age=${maxAge}; samesite=lax`;
+  if (targetLang) {
+    document.cookie = `ola_target_lang=${targetLang}; path=/; max-age=${maxAge}; samesite=lax`;
+  }
+}
+
+export function LanguageProvider({
+  children,
+  initialSourceLang = "",
+}: {
+  children: ReactNode;
+  initialSourceLang?: string;
+}) {
+  // Initialise from server-passed cookie to prevent SSR flash
+  const [language, setLanguageState] = useState<LanguageCode>(
+    initialSourceLang ? sourceLangToI18n(initialSourceLang) : "en"
+  );
+
+  useEffect(() => {
+    // Re-read client cookie in case it was updated by JS (e.g. test buttons)
+    const sourceLangCookie = getSourceLangCookie();
+    if (sourceLangCookie) {
+      setLanguageState(sourceLangToI18n(sourceLangCookie));
+    }
+  }, []);
+
+  /** Call this to switch UI language AND persist to cookie */
+  const setLanguage = (lang: LanguageCode) => {
+    setLanguageState(lang);
+    setLanguageCookies(i18nToSourceLang(lang));
+    document.documentElement.lang = lang;
+  };
+
+  const t = (key: string): string => {
+    return dictionaries[language]?.[key] || dictionaries["en"][key] || key;
+  };
+
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+}
+
+export function useLanguage() {
+  const context = useContext(LanguageContext);
+  if (context === undefined) {
+    throw new Error("useLanguage must be used within a LanguageProvider");
+  }
+  return context;
+}
+
+/** Client-side helper used by test buttons and onboarding to set language cookies without a full API call */
+export function applyLanguagePair(sourceLang: string, targetLang: string) {
+  setLanguageCookies(sourceLang, targetLang);
+}

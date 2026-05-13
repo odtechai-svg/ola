@@ -1,0 +1,3122 @@
+[
+  {
+    "order": 1,
+    "title": "Necessidade Básica (Verbo: Querer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich möchte.",
+        "translation": "Eu quero.",
+        "image_hint": "Alguém apontando para si e para algo"
+      },
+      {
+        "level": 2,
+        "text": "Ich möchte Wasser.",
+        "translation": "Eu quero água.",
+        "image_hint": "A pessoa com um copo d'água"
+      },
+      {
+        "level": 3,
+        "text": "Ich möchte jetzt Wasser.",
+        "translation": "Eu quero água agora.",
+        "image_hint": "Relógio indicando o momento atual"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-001-necessidade-b-sica-verbo-want"
+  },
+  {
+    "order": 2,
+    "title": "Ação de Movimento (Verbo: Ir)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich gehe.",
+        "translation": "Eu vou.",
+        "image_hint": "Pessoa caminhando"
+      },
+      {
+        "level": 2,
+        "text": "Ich gehe nach Hause.",
+        "translation": "Eu vou para casa.",
+        "image_hint": "Pessoa chegando em uma casa"
+      },
+      {
+        "level": 3,
+        "text": "Ich gehe mit meinem Freund nach Hause.",
+        "translation": "Eu vou para casa com meu amigo.",
+        "image_hint": "Duas pessoas caminhando para a casa"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-002-a-o-de-movimento-verbo-go"
+  },
+  {
+    "order": 3,
+    "title": "Capacidade (Verbo: Poder/Fazer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich kann.",
+        "translation": "Eu consigo.",
+        "image_hint": "Alguém fazendo sinal de \"positivo\" ou força"
+      },
+      {
+        "level": 2,
+        "text": "Ich kann das tun.",
+        "translation": "Eu consigo fazer isso.",
+        "image_hint": "Alguém completando uma tarefa simples"
+      },
+      {
+        "level": 3,
+        "text": "Ich kann das heute tun.",
+        "translation": "Eu consigo fazer isso hoje.",
+        "image_hint": "Calendário com o dia de hoje marcado"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-003-capacidade-verbo-can-do"
+  },
+  {
+    "order": 4,
+    "title": "Percepção (Verbo: Ver)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich sehe.",
+        "translation": "Eu vejo.",
+        "image_hint": "Olhos abertos ou alguém olhando"
+      },
+      {
+        "level": 2,
+        "text": "Ich sehe das Auto.",
+        "translation": "Eu vejo o carro.",
+        "image_hint": "Um carro na rua"
+      },
+      {
+        "level": 3,
+        "text": "Ich sehe das Auto, aber es ist weit weg.",
+        "translation": "Eu vejo o carro, mas ele está longe.",
+        "image_hint": "Carro pequeno ao fundo na estrada"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-004-percep-o-verbo-see"
+  },
+  {
+    "order": 5,
+    "title": "Posse/Estado (Verbo: Ter)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich habe.",
+        "translation": "Eu tenho.",
+        "image_hint": "Mãos segurando algo"
+      },
+      {
+        "level": 2,
+        "text": "Ich habe ein Buch.",
+        "translation": "Eu tenho um livro.",
+        "image_hint": "Alguém com um livro"
+      },
+      {
+        "level": 3,
+        "text": "Ich habe ein Buch und ich lese.",
+        "translation": "Eu tenho um livro e eu leio.",
+        "image_hint": "Pessoa lendo o livro"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-005-posse-estado-verbo-have"
+  },
+  {
+    "order": 6,
+    "title": "Comunicação (Verbo: Dizer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Du sagst.",
+        "translation": "Você diz.",
+        "image_hint": "Alguém falando/balão de fala"
+      },
+      {
+        "level": 2,
+        "text": "Du sagst \"Hallo\".",
+        "translation": "Você diz \"olá\".",
+        "image_hint": "Aceno de mão e a palavra escrita"
+      },
+      {
+        "level": 3,
+        "text": "Du sagst \"Hallo\", weil du gut bist.",
+        "translation": "Você diz \"olá\" porque você é bom.",
+        "image_hint": "Sorriso e sinal de amizade"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-006-comunica-o-verbo-say"
+  },
+  {
+    "order": 7,
+    "title": "Cognição (Verbo: Saber/Conhecer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich weiß.",
+        "translation": "Eu sei.",
+        "image_hint": "Lâmpada acesa sobre a cabeça"
+      },
+      {
+        "level": 2,
+        "text": "Ich weiß deinen Namen.",
+        "translation": "Eu sei o seu nome.",
+        "image_hint": "Crachá ou alguém se apresentando"
+      },
+      {
+        "level": 3,
+        "text": "Ich weiß deinen Namen, weil wir Freunde sind.",
+        "translation": "Eu sei o seu nome porque somos amigos.",
+        "image_hint": "Duas pessoas abraçadas"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-007-cogni-o-verbo-know"
+  },
+  {
+    "order": 8,
+    "title": "Localização (Verbo: Ser/Estar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Sie ist.",
+        "translation": "Ela está.",
+        "image_hint": "Uma mulher"
+      },
+      {
+        "level": 2,
+        "text": "Sie ist hier.",
+        "translation": "Ela está aqui.",
+        "image_hint": "Ela em um local específico marcado com \"X\""
+      },
+      {
+        "level": 3,
+        "text": "Sie ist hier bei der Arbeit.",
+        "translation": "Ela está aqui no trabalho.",
+        "image_hint": "Ela em um escritório/mesa"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-008-localiza-o-verbo-be"
+  },
+  {
+    "order": 9,
+    "title": "Pensamento (Verbo: Pensar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Wir denken.",
+        "translation": "Nós pensamos.",
+        "image_hint": "Grupo de pessoas com a mão no queixo"
+      },
+      {
+        "level": 2,
+        "text": "Wir denken an Essen.",
+        "translation": "Nós pensamos em comida.",
+        "image_hint": "Balão de pensamento com um prato de comida"
+      },
+      {
+        "level": 3,
+        "text": "Wir denken an Essen, wenn wir hungrig sind.",
+        "translation": "Nós pensamos em comida se estamos com fome.",
+        "image_hint": "Pessoa com a mão na barriga vazia"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-009-pensamento-verbo-think"
+  },
+  {
+    "order": 10,
+    "title": "Intenção/Futuro (Verbo: Ir/Fazer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Sie werden.",
+        "translation": "Eles vão.",
+        "image_hint": "Grupo apontando para o futuro"
+      },
+      {
+        "level": 2,
+        "text": "Sie werden es schaffen.",
+        "translation": "Eles vão conseguir.",
+        "image_hint": "Grupo construindo algo ou vencendo"
+      },
+      {
+        "level": 3,
+        "text": "Sie werden es morgen schaffen.",
+        "translation": "Eles vão conseguir amanhã.",
+        "image_hint": "Sol nascendo no horizonte"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-010-inten-o-futuro-verbo-will-make"
+  },
+  {
+    "order": 11,
+    "title": "O Verbo de Retorno (Vir)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Du kommst.",
+        "translation": "Você vem.",
+        "image_hint": "Alguém fazendo sinal de \"venha\""
+      },
+      {
+        "level": 2,
+        "text": "Du kommst hierher.",
+        "translation": "Você vem aqui.",
+        "image_hint": "Uma seta apontando para o chão onde o falante está"
+      },
+      {
+        "level": 3,
+        "text": "Du kommst jeden Tag hierher.",
+        "translation": "Você vem aqui todo dia.",
+        "image_hint": "Um calendário com todos os dias marcados"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-011-o-verbo-de-movimento-reversivo-come"
+  },
+  {
+    "order": 12,
+    "title": "Ação de Pegar/Levar (Pegar/Levar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich nehme.",
+        "translation": "Eu pego.",
+        "image_hint": "Uma mão pegando uma chave"
+      },
+      {
+        "level": 2,
+        "text": "Ich nehme das Auto.",
+        "translation": "Eu pego o carro.",
+        "image_hint": "Alguém entrando no carro ou segurando a chave do carro"
+      },
+      {
+        "level": 3,
+        "text": "Ich nehme das Auto zur Arbeit.",
+        "translation": "Eu pego o carro para o trabalho.",
+        "image_hint": "O carro em frente a um prédio de escritórios"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-012-a-o-de-pegar-levar-take"
+  },
+  {
+    "order": 13,
+    "title": "Tempo e Existência (Tempo/É)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Es ist.",
+        "translation": "É.",
+        "image_hint": "Um relógio ou um conceito neutro"
+      },
+      {
+        "level": 2,
+        "text": "Es ist Zeit.",
+        "translation": "É hora.",
+        "image_hint": "O relógio marcando a hora de um compromisso"
+      },
+      {
+        "level": 3,
+        "text": "Es ist Zeit zu sprechen.",
+        "translation": "É hora de falar.",
+        "image_hint": "Alguém com um microfone ou em uma reunião"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-013-tempo-e-exist-ncia-time-is"
+  },
+  {
+    "order": 14,
+    "title": "O Verbo de Dar (Dar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Gib mir.",
+        "translation": "Me dê.",
+        "image_hint": "Uma mão aberta esperando algo"
+      },
+      {
+        "level": 2,
+        "text": "Gib mir das Geld.",
+        "translation": "Me dê o dinheiro.",
+        "image_hint": "Alguém entregando uma nota ou moeda"
+      },
+      {
+        "level": 3,
+        "text": "Gib mir das Geld für das Essen.",
+        "translation": "Me dê o dinheiro para a comida.",
+        "image_hint": "Uma nota de dinheiro ao lado de um prato de comida"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-014-o-verbo-de-dar-give"
+  },
+  {
+    "order": 15,
+    "title": "Pensamento e Dúvida (Perguntar/Se)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich frage.",
+        "translation": "Eu pergunto.",
+        "image_hint": "Alguém levantando a mão na sala de aula"
+      },
+      {
+        "level": 2,
+        "text": "Ich frage warum.",
+        "translation": "Eu pergunto por quê.",
+        "image_hint": "Um ponto de interrogação acima da cabeça"
+      },
+      {
+        "level": 3,
+        "text": "Ich frage warum, wenn ich es nicht weiß.",
+        "translation": "Eu pergunto por quê se eu não sei.",
+        "image_hint": "Pessoa dando de ombros, sem entender"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-015-pensamento-e-d-vida-ask-if"
+  },
+  {
+    "order": 16,
+    "title": "Localização Relativa (Embaixo/Em cima)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Es ist hier.",
+        "translation": "Está aqui.",
+        "image_hint": "Um objeto em cima de uma mesa"
+      },
+      {
+        "level": 2,
+        "text": "Es ist auf dem Tisch.",
+        "translation": "Está em cima da mesa.",
+        "image_hint": "Zoom no objeto em cima da mesa"
+      },
+      {
+        "level": 3,
+        "text": "Es ist nicht unter dem Tisch.",
+        "translation": "Não está debaixo da mesa.",
+        "image_hint": "A mesma mesa, mas mostrando o espaço vazio embaixo dela"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-016-localiza-o-relativa-under-on"
+  },
+  {
+    "order": 17,
+    "title": "O Verbo de Ouvir (Ouvir/Sobre)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Wir hören.",
+        "translation": "Nós ouvimos.",
+        "image_hint": "Grupo de pessoas com a mão no ouvido"
+      },
+      {
+        "level": 2,
+        "text": "Wir hören dir zu.",
+        "translation": "Nós ouvimos você.",
+        "image_hint": "O grupo olhando para uma pessoa que fala"
+      },
+      {
+        "level": 3,
+        "text": "Wir hören dir über das Problem zu.",
+        "translation": "Nós ouvimos você sobre o problema.",
+        "image_hint": "O grupo com feição de preocupação ouvindo a explicação"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-017-o-verbo-de-ouvir-listen-about"
+  },
+  {
+    "order": 18,
+    "title": "Frequência e Ação (Frequentemente/Usar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich benutze.",
+        "translation": "Eu uso.",
+        "image_hint": "Alguém usando um celular ou ferramenta"
+      },
+      {
+        "level": 2,
+        "text": "Ich benutze das Telefon.",
+        "translation": "Eu uso o telefone.",
+        "image_hint": "Alguém digitando no celular"
+      },
+      {
+        "level": 3,
+        "text": "Ich benutze das Telefon oft.",
+        "translation": "Eu uso o telefone com frequência.",
+        "image_hint": "Vários ícones de relógio ao redor do celular"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-018-frequ-ncia-e-a-o-often-use"
+  },
+  {
+    "order": 19,
+    "title": "Condição e Sentimento (Sentir/Mas)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich fühle.",
+        "translation": "Eu sinto.",
+        "image_hint": "Alguém com a mão no coração"
+      },
+      {
+        "level": 2,
+        "text": "Ich fühle mich gut.",
+        "translation": "Eu me sinto bem.",
+        "image_hint": "Alguém sorrindo e feliz"
+      },
+      {
+        "level": 3,
+        "text": "Ich fühle mich gut, aber ich bin müde.",
+        "translation": "Eu me sinto bem, mas estou cansado.",
+        "image_hint": "Alguém sorrindo, mas bocejando/com sono"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-019-condi-o-e-sentimento-feel-but"
+  },
+  {
+    "order": 20,
+    "title": "Finalização e Resultado (Encontrar/Caminho)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Sie finden.",
+        "translation": "Eles encontram.",
+        "image_hint": "Alguém encontrando um tesouro ou uma chave perdida"
+      },
+      {
+        "level": 2,
+        "text": "Sie finden den Weg.",
+        "translation": "Eles encontram o caminho.",
+        "image_hint": "Alguém olhando um mapa ou bússola"
+      },
+      {
+        "level": 3,
+        "text": "Sie finden den Weg durch die Stadt.",
+        "translation": "Eles encontram o caminho pela cidade.",
+        "image_hint": "Uma linha traçada cruzando o mapa de uma cidade"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-020-finaliza-o-e-resultado-find-way"
+  },
+  {
+    "order": 21,
+    "title": "Intenção e Ajuda (Verbo: Ajudar / Precisar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich helfe.",
+        "translation": "Eu ajudo.",
+        "image_hint": "Alguém estendendo a mão"
+      },
+      {
+        "level": 2,
+        "text": "Ich helfe meiner Familie.",
+        "translation": "Eu ajudo minha família.",
+        "image_hint": "Pessoa ajudando um idoso ou criança"
+      },
+      {
+        "level": 3,
+        "text": "Ich helfe meiner Familie, weil sie mich brauchen.",
+        "translation": "Eu ajudo minha família porque eles precisam de mim.",
+        "image_hint": "Grupo familiar unido"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-021-inten-o-e-ajuda-verbo-help-need"
+  },
+  {
+    "order": 22,
+    "title": "Movimento e Destino (Verbo: Correr / Para)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Er läuft.",
+        "translation": "Ele corre.",
+        "image_hint": "Um homem correndo"
+      },
+      {
+        "level": 2,
+        "text": "Er läuft zur Schule.",
+        "translation": "Ele corre para a escola.",
+        "image_hint": "Homem correndo em direção a um prédio escolar"
+      },
+      {
+        "level": 3,
+        "text": "Er läuft zur Schule, bevor sie schließt.",
+        "translation": "Ele corre para a escola antes dela fechar.",
+        "image_hint": "Homem olhando o relógio e correndo para a porta"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-022-movimento-e-destino-verbo-run-to"
+  },
+  {
+    "order": 23,
+    "title": "Descoberta e Objeto (Verbo: Procurar / Encontrar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich suche.",
+        "translation": "Eu procuro.",
+        "image_hint": "Alguém procurando algo com uma lupa"
+      },
+      {
+        "level": 2,
+        "text": "Ich suche meine Schlüssel.",
+        "translation": "Eu procuro minhas chaves.",
+        "image_hint": "Pessoa procurando chaves no sofá"
+      },
+      {
+        "level": 3,
+        "text": "Ich suche meine Schlüssel, bis ich sie finde.",
+        "translation": "Eu procuro minhas chaves até encontrá-las.",
+        "image_hint": "Pessoa sorrindo com as chaves na mão"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-023-descoberta-e-objeto-verbo-look-for-find"
+  },
+  {
+    "order": 24,
+    "title": "Pensamento Coletivo (Verbo: Acreditar / Que)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Wir glauben.",
+        "translation": "Nós acreditamos.",
+        "image_hint": "Pessoas com expressão de confiança/fé"
+      },
+      {
+        "level": 2,
+        "text": "Wir glauben an diese Idee.",
+        "translation": "Nós acreditamos nessa ideia.",
+        "image_hint": "Grupo apontando para um quadro com um plano/ideia"
+      },
+      {
+        "level": 3,
+        "text": "Wir glauben, dass diese Idee gut ist.",
+        "translation": "Nós acreditamos que essa ideia é boa.",
+        "image_hint": "Sinal de \"joinha\" para o quadro"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-024-pensamento-coletivo-verbo-believe-that"
+  },
+  {
+    "order": 25,
+    "title": "Escrita e Memória (Verbo: Escrever / Sobre)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Sie schreibt.",
+        "translation": "Ela escreve.",
+        "image_hint": "Mulher escrevendo em um caderno"
+      },
+      {
+        "level": 2,
+        "text": "Sie schreibt über ihr Leben.",
+        "translation": "Ela escreve sobre a vida dela.",
+        "image_hint": "Fotos de infância e viagens ao lado do caderno"
+      },
+      {
+        "level": 3,
+        "text": "Sie schreibt über ihr Leben in einem Buch.",
+        "translation": "Ela escreve sobre a vida dela em um livro.",
+        "image_hint": "A mulher segurando um livro pronto"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-025-escrita-e-mem-ria-verbo-write-about"
+  },
+  {
+    "order": 26,
+    "title": "Quantidade e Posse (Verbo: Ter / Muitos)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Sie haben.",
+        "translation": "Eles têm.",
+        "image_hint": "Pessoas segurando caixas"
+      },
+      {
+        "level": 2,
+        "text": "Sie haben viele Dinge.",
+        "translation": "Eles têm muitas coisas.",
+        "image_hint": "Muitas caixas e objetos ao redor delas"
+      },
+      {
+        "level": 3,
+        "text": "Sie haben viele Dinge, aber keinen Platz.",
+        "translation": "Eles têm muitas coisas, mas sem espaço.",
+        "image_hint": "Pessoas espremidas entre as caixas"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-026-quantidade-e-posse-verbo-have-many"
+  },
+  {
+    "order": 27,
+    "title": "Tentativa e Erro (Verbo: Tentar / Novamente)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich versuche.",
+        "translation": "Eu tento.",
+        "image_hint": "Alguém tentando abrir um pote ou resolver um puzzle"
+      },
+      {
+        "level": 2,
+        "text": "Ich versuche das zu tun.",
+        "translation": "Eu tento fazer isso.",
+        "image_hint": "Foco na ação sendo executada"
+      },
+      {
+        "level": 3,
+        "text": "Ich versuche das immer wieder zu tun.",
+        "translation": "Eu tento fazer isso de novo e de novo.",
+        "image_hint": "Sequência de imagens da mesma pessoa repetindo a ação"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-027-tentativa-e-erro-verbo-try-again"
+  },
+  {
+    "order": 28,
+    "title": "Mudança de Estado (Verbo: Tornar-se / Pegar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Es wird.",
+        "translation": "Fica.",
+        "image_hint": "O céu mudando de cor"
+      },
+      {
+        "level": 2,
+        "text": "Es wird dunkel.",
+        "translation": "Fica escuro.",
+        "image_hint": "O pôr do sol, ficando noite"
+      },
+      {
+        "level": 3,
+        "text": "Es wird nach 18 Uhr dunkel.",
+        "translation": "Fica escuro depois das 6 da tarde.",
+        "image_hint": "Relógio marcando 18:00 e o céu escuro"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-028-mudan-a-de-estado-verbo-become-get"
+  },
+  {
+    "order": 29,
+    "title": "Comunicação Direta (Verbo: Dizer / Verdade)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Sag mir.",
+        "translation": "Me diga.",
+        "image_hint": "Pessoa com a mão na orelha esperando ouvir algo"
+      },
+      {
+        "level": 2,
+        "text": "Sag mir die Wahrheit.",
+        "translation": "Me diga a verdade.",
+        "image_hint": "Olhar sério e honesto entre duas pessoas"
+      },
+      {
+        "level": 3,
+        "text": "Sag mir immer die Wahrheit.",
+        "translation": "Me diga a verdade sempre.",
+        "image_hint": "Símbolo de infinito ou repetição"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-029-comunica-o-direta-verbo-tell-truth"
+  },
+  {
+    "order": 30,
+    "title": "Preferência (Verbo: Gostar / Melhor)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich mag.",
+        "translation": "Eu gosto.",
+        "image_hint": "Alguém comendo algo gostoso"
+      },
+      {
+        "level": 2,
+        "text": "Ich mag diesen Apfel.",
+        "translation": "Eu gosto dessa maçã.",
+        "image_hint": "Pessoa segurando uma maçã vermelha"
+      },
+      {
+        "level": 3,
+        "text": "Ich mag diesen Apfel lieber als den anderen.",
+        "translation": "Eu gosto mais dessa maçã do que daquela.",
+        "image_hint": "Pessoa comparando uma maçã bonita com uma estragada"
+      }
+    ],
+    "phase": "survival",
+    "slug": "block-030-prefer-ncia-verbo-like-better"
+  },
+  {
+    "order": 31,
+    "title": "Permanência (Verbo: Ficar / Lugar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Wir bleiben.",
+        "translation": "Nós ficamos.",
+        "image_hint": "Pessoas sentadas em um banco"
+      },
+      {
+        "level": 2,
+        "text": "Wir bleiben an diesem Ort.",
+        "translation": "Nós ficamos neste lugar.",
+        "image_hint": "O banco em um parque bonito"
+      },
+      {
+        "level": 3,
+        "text": "Wir bleiben tagsüber an diesem Ort.",
+        "translation": "Nós ficamos neste lugar durante o dia.",
+        "image_hint": "O sol brilhando sobre o parque"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-031-perman-ncia-verbo-stay-place"
+  },
+  {
+    "order": 32,
+    "title": "Trabalho e Ferramentas (Verbo: Trabalhar / Com)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Du arbeitest.",
+        "translation": "Você trabalha.",
+        "image_hint": "Alguém em frente a um computador"
+      },
+      {
+        "level": 2,
+        "text": "Du arbeitest mit einem Computer.",
+        "translation": "Você trabalha com um computador.",
+        "image_hint": "Foco nas mãos e no teclado"
+      },
+      {
+        "level": 3,
+        "text": "Du arbeitest jede Woche mit einem Computer.",
+        "translation": "Você trabalha com um computador toda semana.",
+        "image_hint": "Sete ícones de computador (um para cada dia)"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-032-trabalho-e-ferramentas-verbo-work-with"
+  },
+  {
+    "order": 33,
+    "title": "Início e Fim (Verbo: Começar / Terminar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich fange an.",
+        "translation": "Eu começo.",
+        "image_hint": "Alguém na linha de partida ou abrindo um livro"
+      },
+      {
+        "level": 2,
+        "text": "Ich fange die Arbeit an.",
+        "translation": "Eu começo o trabalho.",
+        "image_hint": "Pessoa começando a digitar ou construir algo"
+      },
+      {
+        "level": 3,
+        "text": "Ich fange die Arbeit an, wenn ich ankomme.",
+        "translation": "Eu começo o trabalho quando chego.",
+        "image_hint": "Pessoa abrindo a porta do escritório e sentando"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-033-in-cio-e-fim-verbo-start-finish"
+  },
+  {
+    "order": 34,
+    "title": "Parte e Todo (Substantivo: Parte / Mundo)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Das ist ein Teil.",
+        "translation": "Isso é uma parte.",
+        "image_hint": "Uma peça de um quebra-cabeça"
+      },
+      {
+        "level": 2,
+        "text": "Das ist ein Teil der Welt.",
+        "translation": "Isso é uma parte do mundo.",
+        "image_hint": "Um mapa de um país"
+      },
+      {
+        "level": 3,
+        "text": "Das ist ein Teil der Welt, wo ich lebe.",
+        "translation": "Essa é a parte do mundo onde eu moro.",
+        "image_hint": "Alguém apontando para a sua casa no mapa"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-034-parte-e-todo-substantivo-part-world"
+  },
+  {
+    "order": 35,
+    "title": "Chamado e Nome (Verbo: Chamar / Nome)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich rufe.",
+        "translation": "Eu chamo.",
+        "image_hint": "Alguém gritando ou usando o telefone"
+      },
+      {
+        "level": 2,
+        "text": "Ich rufe deinen Namen.",
+        "translation": "Eu chamo o seu nome.",
+        "image_hint": "Balão de fala com o nome de alguém"
+      },
+      {
+        "level": 3,
+        "text": "Ich rufe deinen Namen durch die Tür.",
+        "translation": "Eu chamo o seu nome pela porta.",
+        "image_hint": "Pessoa chamando outra que está atrás de uma porta fechada"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-035-chamado-e-nome-verbo-call-name"
+  },
+  {
+    "order": 36,
+    "title": "Compreensão (Verbo: Entender / Por quê)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Du verstehst.",
+        "translation": "Você entende.",
+        "image_hint": "Expressão de \"Ah, entendi!\" - o clique"
+      },
+      {
+        "level": 2,
+        "text": "Du verstehst das Problem.",
+        "translation": "Você entende o problema.",
+        "image_hint": "Alguém olhando para um motor quebrado ou conta difícil"
+      },
+      {
+        "level": 3,
+        "text": "Du verstehst das Problem jetzt.",
+        "translation": "Você entende o problema agora.",
+        "image_hint": "Pessoa sorrindo e começando a consertar/resolver"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-036-compreens-o-verbo-understand-why"
+  },
+  {
+    "order": 37,
+    "title": "Lembrança (Verbo: Lembrar / Rosto)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich erinnere mich.",
+        "translation": "Eu me lembro.",
+        "image_hint": "Pessoa tocando a têmpora, pensando"
+      },
+      {
+        "level": 2,
+        "text": "Ich erinnere mich an dein Gesicht.",
+        "translation": "Eu me lembro do seu rosto.",
+        "image_hint": "O rosto de uma pessoa embaçado ficando nítido"
+      },
+      {
+        "level": 3,
+        "text": "Ich erinnere mich an dein Gesicht aus der Schule.",
+        "translation": "Eu me lembro do seu rosto da escola.",
+        "image_hint": "Foto antiga de formatura/sala de aula"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-037-lembran-a-verbo-remember-face"
+  },
+  {
+    "order": 38,
+    "title": "Espaço e Distância (Adj: Alto / Baixo)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Es ist hoch.",
+        "translation": "Está alto.",
+        "image_hint": "Um pássaro voando alto"
+      },
+      {
+        "level": 2,
+        "text": "Der Vogel ist hoch.",
+        "translation": "O pássaro está alto.",
+        "image_hint": "O pássaro acima das nuvens"
+      },
+      {
+        "level": 3,
+        "text": "Der Vogel ist hoch über dem Haus.",
+        "translation": "O pássaro está alto acima da casa.",
+        "image_hint": "O pássaro lá no alto e uma casa pequena lá embaixo"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-038-espa-o-e-dist-ncia-adjetivo-high-low"
+  },
+  {
+    "order": 39,
+    "title": "Utilidade (Verbo: Usar / Caminho)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich benutze es.",
+        "translation": "Eu uso.",
+        "image_hint": "Alguém com um martelo ou ferramenta"
+      },
+      {
+        "level": 2,
+        "text": "Ich benutze es so.",
+        "translation": "Eu uso assim.",
+        "image_hint": "Demonstração do uso correto da ferramenta"
+      },
+      {
+        "level": 3,
+        "text": "Ich benutze es so, um Dinge zu reparieren.",
+        "translation": "Eu uso assim para consertar coisas.",
+        "image_hint": "O objeto sendo consertado"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-039-utilidade-verbo-use-way"
+  },
+  {
+    "order": 40,
+    "title": "Diferenciação (Adj: Mesmo / Diferente)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Sie sind gleich.",
+        "translation": "Eles são iguais.",
+        "image_hint": "Duas bolas vermelhas iguais"
+      },
+      {
+        "level": 2,
+        "text": "Diese Dinge sind gleich.",
+        "translation": "Essas coisas são iguais.",
+        "image_hint": "Dois celulares idênticos"
+      },
+      {
+        "level": 3,
+        "text": "Diese Dinge sind gleich, aber in verschiedenen Farben.",
+        "translation": "Essas coisas são iguais, mas de cores diferentes.",
+        "image_hint": "Um celular preto e um branco do mesmo modelo"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-040-diferencia-o-adjetivo-same-different"
+  },
+  {
+    "order": 41,
+    "title": "Movimento e Finalidade (Revisão: Ir, Trabalhar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich verlasse.",
+        "translation": "Eu saio.",
+        "image_hint": "Alguém saindo por uma porta"
+      },
+      {
+        "level": 2,
+        "text": "Ich verlasse das Haus.",
+        "translation": "Eu saio de casa.",
+        "image_hint": "Pessoa saindo de casa com uma mochila"
+      },
+      {
+        "level": 3,
+        "text": "Ich verlasse das Haus, um zur Arbeit zu gehen.",
+        "translation": "Eu saio de casa para ir trabalhar.",
+        "image_hint": "Pessoa caminhando de casa para o escritório"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-041-movimento-e-finalidade-revisitando-go-work"
+  },
+  {
+    "order": 42,
+    "title": "Percepção e Tempo (Revisão: Ver, Tempo)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich beobachte.",
+        "translation": "Eu assisto.",
+        "image_hint": "Alguém observando atentamente, como TV ou um jogo"
+      },
+      {
+        "level": 2,
+        "text": "Ich beobachte die Zeit.",
+        "translation": "Eu olho as horas.",
+        "image_hint": "Alguém olhando o relógio constantemente"
+      },
+      {
+        "level": 3,
+        "text": "Ich beobachte die Zeit, während ich warte.",
+        "translation": "Eu olho as horas enquanto espero.",
+        "image_hint": "Pessoa sentada em uma sala de espera olhando o relógio"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-042-percep-o-e-tempo-revisitando-see-time"
+  },
+  {
+    "order": 43,
+    "title": "Posse e Quantidade (Revisão: Ter, Muitos)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Es gibt.",
+        "translation": "Tem.",
+        "image_hint": "Um dedo apontando para a existência de algo"
+      },
+      {
+        "level": 2,
+        "text": "Es gibt Wasser.",
+        "translation": "Tem água.",
+        "image_hint": "Um copo ou garrafa sobre a mesa"
+      },
+      {
+        "level": 3,
+        "text": "Es gibt genug Wasser für viele Menschen.",
+        "translation": "Tem água suficiente para muitas pessoas.",
+        "image_hint": "Um galão grande de água e vários copos vazios ao redor"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-043-posse-e-quantidade-revisitando-have-many"
+  },
+  {
+    "order": 44,
+    "title": "Ação e Consequência (Revisão: Fazer, Bom)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Du hilfst.",
+        "translation": "Você ajuda.",
+        "image_hint": "Alguém oferecendo apoio"
+      },
+      {
+        "level": 2,
+        "text": "Du tust gute Dinge.",
+        "translation": "Você faz coisas boas.",
+        "image_hint": "Alguém plantando uma árvore ou ajudando um amigo"
+      },
+      {
+        "level": 3,
+        "text": "Du tust gute Dinge, weil du ein Freund bist.",
+        "translation": "Você faz coisas boas porque é um amigo.",
+        "image_hint": "Duas pessoas sorrindo e se abraçando"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-044-a-o-e-consequ-ncia-revisitando-do-good"
+  },
+  {
+    "order": 45,
+    "title": "Espaço e Localização (Revisão: Lugar, Encontrar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Es ist nah.",
+        "translation": "É perto.",
+        "image_hint": "Dois objetos bem próximos um do outro"
+      },
+      {
+        "level": 2,
+        "text": "Der Ort ist nah.",
+        "translation": "O lugar é perto.",
+        "image_hint": "Um mapa mostrando o destino a poucos metros"
+      },
+      {
+        "level": 3,
+        "text": "Ich kann den Ort finden, weil er nah ist.",
+        "translation": "Eu consigo achar o lugar porque é perto.",
+        "image_hint": "Pessoa vendo o prédio de destino logo à frente"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-045-espa-o-e-localiza-o-revisitando-place-find"
+  },
+  {
+    "order": 46,
+    "title": "Necessidade e Objeto (Revisão: Precisar, Dinheiro)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Wir kaufen.",
+        "translation": "Nós compramos.",
+        "image_hint": "Alguém entregando um cartão ou dinheiro no caixa"
+      },
+      {
+        "level": 2,
+        "text": "Wir kaufen Essen.",
+        "translation": "Nós compramos comida.",
+        "image_hint": "Carrinho de supermercado com frutas e pão"
+      },
+      {
+        "level": 3,
+        "text": "Wir brauchen Geld, um Essen zu kaufen.",
+        "translation": "Nós precisamos de dinheiro para comprar comida.",
+        "image_hint": "Pessoa olhando para a carteira e depois para a comida"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-046-necessidade-e-objeto-revisitando-need-money"
+  },
+  {
+    "order": 47,
+    "title": "Cognição e Dúvida (Revisão: Saber, Perguntar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich weiß nicht.",
+        "translation": "Eu não sei.",
+        "image_hint": "Pessoa com as mãos abertas e expressão de dúvida"
+      },
+      {
+        "level": 2,
+        "text": "Ich weiß den Weg nicht.",
+        "translation": "Eu não sei o caminho.",
+        "image_hint": "Pessoa em uma encruzilhada olhando para um mapa confuso"
+      },
+      {
+        "level": 3,
+        "text": "Ich bitte um Hilfe, wenn ich den Weg nicht weiß.",
+        "translation": "Eu peço ajuda quando não sei o caminho.",
+        "image_hint": "Pessoa parando um policial para pedir informação"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-047-cogni-o-e-d-vida-revisitando-know-ask"
+  },
+  {
+    "order": 48,
+    "title": "Sentimento e Razão (Revisão: Sentir, Por quê)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Du scheinst.",
+        "translation": "Você parece.",
+        "image_hint": "Alguém observando a expressão de outra pessoa"
+      },
+      {
+        "level": 2,
+        "text": "Du scheinst müde.",
+        "translation": "Você parece cansado.",
+        "image_hint": "Alguém bocejando com olheiras"
+      },
+      {
+        "level": 3,
+        "text": "Ich verstehe, warum du müde scheinst.",
+        "translation": "Eu entendo por que você parece cansado.",
+        "image_hint": "A pessoa apontando para uma pilha enorme de trabalho"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-048-sentimento-e-raz-o-revisitando-feel-why"
+  },
+  {
+    "order": 49,
+    "title": "Mudança e Futuro (Revisão: Tornar-se, Querer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Es ändert sich.",
+        "translation": "Muda.",
+        "image_hint": "Uma lagarta e uma borboleta"
+      },
+      {
+        "level": 2,
+        "text": "Die Welt verändert sich.",
+        "translation": "O mundo muda.",
+        "image_hint": "Um mapa múndi antigo e um digital moderno"
+      },
+      {
+        "level": 3,
+        "text": "Die Welt wird sich wieder verändern.",
+        "translation": "O mundo vai mudar de novo.",
+        "image_hint": "Um robô ou cidade futurista com um ponto de interrogação"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-049-mudan-a-e-futuro-revisitando-become-will"
+  },
+  {
+    "order": 50,
+    "title": "Comunicação e Intensidade (Revisão: Dizer, Realmente)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich meine.",
+        "translation": "Eu quero dizer.",
+        "image_hint": "Alguém tentando explicar melhor um ponto"
+      },
+      {
+        "level": 2,
+        "text": "Ich meine das wirklich.",
+        "translation": "Eu realmente quero dizer isso.",
+        "image_hint": "Olhar firme e sincero"
+      },
+      {
+        "level": 3,
+        "text": "Ich sage \"Hallo\", aber ich meine \"Ich liebe dich\".",
+        "translation": "Eu digo \"olá\", mas quero dizer \"eu te amo\".",
+        "image_hint": "Alguém dizendo olá com um coração no balão de pensamento"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-050-comunica-o-e-intensidade-revisitando-say-really"
+  },
+  {
+    "order": 51,
+    "title": "Permanência e Condição (Revisão: Ficar, Se)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich warte.",
+        "translation": "Eu espero.",
+        "image_hint": "Alguém sentado em um banco de praça"
+      },
+      {
+        "level": 2,
+        "text": "Ich warte auf dich.",
+        "translation": "Eu espero por você.",
+        "image_hint": "Pessoa olhando para o horizonte esperando alguém chegar"
+      },
+      {
+        "level": 3,
+        "text": "Ich bleibe hier, wenn du kommst.",
+        "translation": "Eu vou ficar aqui se você vier.",
+        "image_hint": "Pessoa apontando para o banco e para o relógio"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-051-perman-ncia-e-condi-o-revisitando-stay-if"
+  },
+  {
+    "order": 52,
+    "title": "Parte e Totalidade (Revisão: Parte, Vida)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Jeder Teil.",
+        "translation": "Cada parte.",
+        "image_hint": "Todas as peças de um motor espalhadas"
+      },
+      {
+        "level": 2,
+        "text": "Jeder Teil meines Lebens.",
+        "translation": "Cada parte da minha vida.",
+        "image_hint": "Colagem de fotos: infância, trabalho, família"
+      },
+      {
+        "level": 3,
+        "text": "Du bist ein Teil meines Lebens.",
+        "translation": "Você é uma parte da minha vida.",
+        "image_hint": "O usuário olhando para uma foto de um amigo/parceiro"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-052-parte-e-totalidade-revisitando-part-life"
+  },
+  {
+    "order": 53,
+    "title": "Preferência e Comparação (Revisão: Gostar, Melhor)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Das ist klein.",
+        "translation": "Isso é pequeno.",
+        "image_hint": "Uma semente na mão"
+      },
+      {
+        "level": 2,
+        "text": "Diese Sache ist klein.",
+        "translation": "Essa coisa é pequena.",
+        "image_hint": "Um celular muito antigo e pequeno"
+      },
+      {
+        "level": 3,
+        "text": "Ich mag es, weil klein besser ist.",
+        "translation": "Eu gosto porque pequeno é melhor.",
+        "image_hint": "Pessoa guardando o celular pequeno facilmente no bolso"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-053-prefer-ncia-e-compara-o-revisitando-like-better"
+  },
+  {
+    "order": 54,
+    "title": "Movimento e Acompanhamento (Revisão: Ir, Com)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Geh mit mir.",
+        "translation": "Caminhe comigo.",
+        "image_hint": "Uma mão estendida para caminhar junto"
+      },
+      {
+        "level": 2,
+        "text": "Geh mit mir durch die Stadt.",
+        "translation": "Caminhe comigo pela cidade.",
+        "image_hint": "Duas pessoas andando por uma rua movimentada"
+      },
+      {
+        "level": 3,
+        "text": "Wir gehen in den Park, um zu laufen.",
+        "translation": "Nós vamos ao parque caminhar.",
+        "image_hint": "As duas pessoas entrando em uma área verde"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-054-movimento-e-acompanhamento-revisitando-go-with"
+  },
+  {
+    "order": 55,
+    "title": "Intenção e Ação (Revisão: Querer, Fazer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich versuche zu machen.",
+        "translation": "Eu tento fazer.",
+        "image_hint": "Alguém com as mãos na massa, cozinhando"
+      },
+      {
+        "level": 2,
+        "text": "Ich möchte Essen machen.",
+        "translation": "Eu quero fazer comida.",
+        "image_hint": "Ingredientes sobre a mesa: tomate, massa"
+      },
+      {
+        "level": 3,
+        "text": "Ich versuche, Essen für meine Familie zu machen.",
+        "translation": "Eu tento fazer comida para minha família.",
+        "image_hint": "A pessoa servindo a mesa para a família"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-055-inten-o-e-a-o-revisitando-want-make"
+  },
+  {
+    "order": 56,
+    "title": "Verbo de Uso (Revisão: Usar, Frequentemente)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Benutze nicht.",
+        "translation": "Não use.",
+        "image_hint": "Sinal de proibido sobre uma mão mexendo em algo"
+      },
+      {
+        "level": 2,
+        "text": "Benutze dieses Telefon nicht.",
+        "translation": "Não use aquele telefone.",
+        "image_hint": "Um telefone com a tela quebrada ou perigoso"
+      },
+      {
+        "level": 3,
+        "text": "Ich benutze oft dieses stattdessen.",
+        "translation": "Eu geralmente uso esse aqui no lugar.",
+        "image_hint": "Pessoa apontando para um telefone novo e funcionando"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-056-verbo-de-uso-revisitando-use-often"
+  },
+  {
+    "order": 57,
+    "title": "Percepção Auditiva (Revisão: Ouvir, Voz)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich höre.",
+        "translation": "Eu ouço.",
+        "image_hint": "Alguém com a mão atrás da orelha"
+      },
+      {
+        "level": 2,
+        "text": "Ich höre eine Stimme.",
+        "translation": "Eu ouço uma voz.",
+        "image_hint": "Ondas sonoras vindo de uma direção"
+      },
+      {
+        "level": 3,
+        "text": "Ich höre deine Stimme jeden Tag.",
+        "translation": "Eu ouço a sua voz todo dia.",
+        "image_hint": "Alguém ouvindo um áudio no celular com um sorriso"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-057-percep-o-auditiva-revisitando-hear-voice"
+  },
+  {
+    "order": 58,
+    "title": "Espaço Vertical (Revisão: Embaixo, Alto)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Stell es.",
+        "translation": "Coloque.",
+        "image_hint": "Uma mão colocando um livro em algum lugar"
+      },
+      {
+        "level": 2,
+        "text": "Stell es unter den Tisch.",
+        "translation": "Coloque debaixo da mesa.",
+        "image_hint": "O livro sendo guardado em uma prateleira baixa sob a mesa"
+      },
+      {
+        "level": 3,
+        "text": "Stell es nicht hoch.",
+        "translation": "Não coloque lá no alto.",
+        "image_hint": "Alguém tentando alcançar uma prateleira muito alta e não conseguindo"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-058-espa-o-vertical-revisitando-under-high"
+  },
+  {
+    "order": 59,
+    "title": "Finalização (Revisão: Terminar, Agora)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Wir beenden.",
+        "translation": "Nós terminamos.",
+        "image_hint": "Corredores cruzando a linha de chegada"
+      },
+      {
+        "level": 2,
+        "text": "Wir beenden die Arbeit.",
+        "translation": "Nós terminamos o trabalho.",
+        "image_hint": "Alguém fechando o laptop com satisfação"
+      },
+      {
+        "level": 3,
+        "text": "Wir beenden die Arbeit jetzt und gehen nach Hause.",
+        "translation": "Nós terminamos o trabalho agora e vamos para casa.",
+        "image_hint": "Pessoa pegando a chave do carro e saindo do escritório"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-059-finaliza-o-revisitando-finish-now"
+  },
+  {
+    "order": 60,
+    "title": "Identidade e Nome (Revisão: Chamar, Nome)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Was ist...?",
+        "translation": "O que é...?",
+        "image_hint": "Um ponto de interrogação flutuante"
+      },
+      {
+        "level": 2,
+        "text": "Was ist der Name?",
+        "translation": "Qual é o nome?",
+        "image_hint": "Pessoa apontando para um objeto desconhecido"
+      },
+      {
+        "level": 3,
+        "text": "Wie nennt man diese Sache?",
+        "translation": "Como você chama essa coisa?",
+        "image_hint": "Pessoa segurando uma ferramenta estranha e perguntando a outra"
+      }
+    ],
+    "phase": "expansion",
+    "slug": "block-060-identidade-e-nome-revisitando-call-name"
+  },
+  {
+    "order": 61,
+    "title": "Opinião e Qualidade (Revisão: Pensar, Bom)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich denke schon.",
+        "translation": "Eu acho que sim.",
+        "image_hint": "Alguém balançando a cabeça positivamente"
+      },
+      {
+        "level": 2,
+        "text": "Ich denke, das ist gut.",
+        "translation": "Eu acho que isso é bom.",
+        "image_hint": "Alguém provando uma comida ou vendo um projeto"
+      },
+      {
+        "level": 3,
+        "text": "Ich denke, das ist gut für die Welt.",
+        "translation": "Eu acho que isso é bom para o mundo.",
+        "image_hint": "Uma lâmpada LED ou símbolo de reciclagem"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-061-opini-o-e-qualidade-revisitando-think-good"
+  },
+  {
+    "order": 62,
+    "title": "Possibilidade e Lugar (Revisão: Poder, Lugar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Du kannst bleiben.",
+        "translation": "Você pode ficar.",
+        "image_hint": "Alguém indicando uma cadeira/assento"
+      },
+      {
+        "level": 2,
+        "text": "Du kannst an diesem Ort bleiben.",
+        "translation": "Você pode ficar neste lugar.",
+        "image_hint": "Um hotel aconchegante ou uma sala"
+      },
+      {
+        "level": 3,
+        "text": "Du kannst hier bleiben, bis es Zeit zu gehen ist.",
+        "translation": "Você pode ficar aqui até a hora de ir.",
+        "image_hint": "Pessoa descansando e olhando para o relógio"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-062-possibilidade-e-lugar-revisitando-can-place"
+  },
+  {
+    "order": 63,
+    "title": "Movimento Coletivo (Revisão: Vir, Com)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Komm mit uns.",
+        "translation": "Venha com a gente.",
+        "image_hint": "Grupo de amigos chamando com a mão"
+      },
+      {
+        "level": 2,
+        "text": "Komm mit uns in die Stadt.",
+        "translation": "Venha com a gente para a cidade.",
+        "image_hint": "O grupo em frente a um trem ou ônibus"
+      },
+      {
+        "level": 3,
+        "text": "Wir fahren jede Woche in die Stadt.",
+        "translation": "Nós vamos para a cidade toda semana.",
+        "image_hint": "O grupo repetindo a viagem no calendário"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-063-movimento-coletivo-revisitando-come-with"
+  },
+  {
+    "order": 64,
+    "title": "Desejo e Tempo (Revisão: Querer, Agora)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich möchte sehen.",
+        "translation": "Eu quero ver.",
+        "image_hint": "Alguém tentando olhar por cima de um muro ou cortina"
+      },
+      {
+        "level": 2,
+        "text": "Ich möchte dich jetzt sehen.",
+        "translation": "Eu quero te ver agora.",
+        "image_hint": "Alguém fazendo uma chamada de vídeo no celular"
+      },
+      {
+        "level": 3,
+        "text": "Ich möchte dich sehen, weil ich meinen Freund vermisse.",
+        "translation": "Eu quero te ver porque sinto falta do meu amigo.",
+        "image_hint": "Foto de dois amigos juntos"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-064-desejo-e-tempo-revisitando-want-now"
+  },
+  {
+    "order": 65,
+    "title": "Ação e Conhecimento (Revisão: Fazer, Saber)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich tue, was ich weiß.",
+        "translation": "Eu faço o que eu sei.",
+        "image_hint": "Alguém consertando algo que domina"
+      },
+      {
+        "level": 2,
+        "text": "Ich tue, was ich bei der Arbeit weiß.",
+        "translation": "Eu faço o que eu sei no trabalho.",
+        "image_hint": "A pessoa em seu ambiente profissional"
+      },
+      {
+        "level": 3,
+        "text": "Ich mache meine Arbeit immer so.",
+        "translation": "Eu sempre faço meu trabalho assim.",
+        "image_hint": "A pessoa seguindo um processo padrão"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-065-a-o-e-conhecimento-revisitando-do-know"
+  },
+  {
+    "order": 66,
+    "title": "Posse e Necessidade (Revisão: Ter, Dinheiro)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich habe genug.",
+        "translation": "Eu tenho o suficiente.",
+        "image_hint": "Uma mão fazendo sinal de \"cheio\" ou \"satisfeito\""
+      },
+      {
+        "level": 2,
+        "text": "Ich habe genug Geld.",
+        "translation": "Eu tenho dinheiro suficiente.",
+        "image_hint": "Uma carteira com a quantia exata para uma conta"
+      },
+      {
+        "level": 3,
+        "text": "Ich habe genug Geld, um ein Haus zu kaufen.",
+        "translation": "Eu tenho dinheiro suficiente para comprar uma casa.",
+        "image_hint": "Pessoa segurando a chave de uma casa nova"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-066-posse-e-necessidade-revisitando-have-money"
+  },
+  {
+    "order": 67,
+    "title": "Percepção de Mudança (Revisão: Olhar, Diferente)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Du siehst anders aus.",
+        "translation": "Você está diferente.",
+        "image_hint": "Alguém que cortou o cabelo ou trocou de roupa"
+      },
+      {
+        "level": 2,
+        "text": "Dieser Ort sieht jetzt anders aus.",
+        "translation": "Esse lugar está diferente agora.",
+        "image_hint": "Uma rua que antes era vazia e agora tem prédios"
+      },
+      {
+        "level": 3,
+        "text": "Alles sieht nach vielen Jahren anders aus.",
+        "translation": "Tudo parece diferente depois de muitos anos.",
+        "image_hint": "Comparação de foto antiga (preto e branco) e atual"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-067-percep-o-de-mudan-a-revisitando-look-different"
+  },
+  {
+    "order": 68,
+    "title": "Comunicação de Problemas (Revisão: Dizer, Problema)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Sag mir warum.",
+        "translation": "Me diga por quê.",
+        "image_hint": "Alguém com expressão de interrogação"
+      },
+      {
+        "level": 2,
+        "text": "Sag mir, warum es ein Problem gibt.",
+        "translation": "Me diga por que tem um problema.",
+        "image_hint": "Alguém apontando para um computador travado"
+      },
+      {
+        "level": 3,
+        "text": "Ich muss das Problem kennen, um dir zu helfen.",
+        "translation": "Eu preciso saber o problema para te ajudar.",
+        "image_hint": "A pessoa abrindo uma caixa de ferramentas"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-068-comunica-o-de-problemas-revisitando-tell-problem"
+  },
+  {
+    "order": 69,
+    "title": "Esforço e Repetição (Revisão: Tentar, Novamente)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich werde versuchen.",
+        "translation": "Eu vou tentar.",
+        "image_hint": "Alguém se preparando para uma corrida ou desafio"
+      },
+      {
+        "level": 2,
+        "text": "Ich werde es morgen wieder versuchen.",
+        "translation": "Eu vou tentar de novo amanhã.",
+        "image_hint": "Pessoa indo dormir com um bilhete de \"tente de novo\" no despertador"
+      },
+      {
+        "level": 3,
+        "text": "Ich höre nie auf, bis ich fertig bin.",
+        "translation": "Eu nunca paro até terminar.",
+        "image_hint": "Pessoa cruzando a linha de chegada"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-069-esfor-o-e-repeti-o-revisitando-try-again"
+  },
+  {
+    "order": 70,
+    "title": "Sentido e Direção (Revisão: Sentir, Caminho)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich spüre den Weg.",
+        "translation": "Eu sinto o caminho.",
+        "image_hint": "Alguém tocando uma parede no escuro ou seguindo uma trilha"
+      },
+      {
+        "level": 2,
+        "text": "Ich spüre den Weg nach Hause.",
+        "translation": "Eu sinto o caminho de casa.",
+        "image_hint": "Alguém caminhando por uma rua familiar à noite"
+      },
+      {
+        "level": 3,
+        "text": "Ich kenne den Weg, weil ich hier wohne.",
+        "translation": "Eu sei o caminho porque moro aqui.",
+        "image_hint": "A pessoa apontando para a própria casa"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-070-sentido-e-dire-o-revisitando-feel-way"
+  },
+  {
+    "order": 71,
+    "title": "Uso e Frequência (Revisão: Usar, Frequentemente)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Wir benutzen es.",
+        "translation": "Nós usamos.",
+        "image_hint": "Pessoas usando um aplicativo ou eletrodoméstico"
+      },
+      {
+        "level": 2,
+        "text": "Wir benutzen es oft zu Hause.",
+        "translation": "Nós usamos bastante em casa.",
+        "image_hint": "Família reunida usando um tablet ou cafeteira"
+      },
+      {
+        "level": 3,
+        "text": "Es ist eine gute Sache für die Familie.",
+        "translation": "É uma coisa boa para a família.",
+        "image_hint": "Todos sorrindo ao redor do objeto"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-071-uso-e-frequ-ncia-revisitando-use-often"
+  },
+  {
+    "order": 72,
+    "title": "Parte do Todo (Revisão: Parte, Vida)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Nur ein Teil.",
+        "translation": "Apenas uma parte.",
+        "image_hint": "Uma fatia de uma pizza ou uma peça de motor"
+      },
+      {
+        "level": 2,
+        "text": "Nur ein Teil der Geschichte.",
+        "translation": "Apenas uma parte da história.",
+        "image_hint": "Alguém lendo apenas a primeira página de um livro"
+      },
+      {
+        "level": 3,
+        "text": "Du kennst nur einen Teil meines Lebens.",
+        "translation": "Você só conhece uma parte da minha vida.",
+        "image_hint": "Um iceberg (uma parte fora da água, a maioria escondida)"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-072-parte-do-todo-revisitando-part-life"
+  },
+  {
+    "order": 73,
+    "title": "Audição e Compreensão (Revisão: Ouvir, Entender)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich höre dich.",
+        "translation": "Eu te ouço.",
+        "image_hint": "Alguém com fones de ouvido ou atento"
+      },
+      {
+        "level": 2,
+        "text": "Ich höre dich, aber ich verstehe nicht.",
+        "translation": "Eu te ouço, mas não entendo.",
+        "image_hint": "Pessoa ouvindo alguém falar uma língua estrangeira"
+      },
+      {
+        "level": 3,
+        "text": "Kannst du bitte langsam sprechen?",
+        "translation": "Você pode falar devagar, por favor?",
+        "image_hint": "Sinal de \"devagar\" com as mãos"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-073-audi-o-e-compreens-o-revisitando-hear-understand"
+  },
+  {
+    "order": 74,
+    "title": "Existência e Quantidade (Revisão: Há, Muitos)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Es gibt viele.",
+        "translation": "Tem muitos.",
+        "image_hint": "Uma multidão ou muitos objetos"
+      },
+      {
+        "level": 2,
+        "text": "Es gibt viele Menschen hier.",
+        "translation": "Tem muitas pessoas aqui.",
+        "image_hint": "Uma praça cheia de gente"
+      },
+      {
+        "level": 3,
+        "text": "Viele Menschen warten darauf zu gehen.",
+        "translation": "Tem muitas pessoas esperando para ir.",
+        "image_hint": "Fila no aeroporto ou rodoviária"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-074-exist-ncia-e-quantidade-revisitando-there-is-many"
+  },
+  {
+    "order": 75,
+    "title": "Pensamento e Futuro (Revisão: Pensar, Querer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich denke, ich werde.",
+        "translation": "Acho que vou.",
+        "image_hint": "Pessoa com o dedo no queixo decidindo algo"
+      },
+      {
+        "level": 2,
+        "text": "Ich denke, ich nehme das Auto.",
+        "translation": "Acho que vou pegar o carro.",
+        "image_hint": "Pessoa segurando a chave do carro e olhando para a chuva"
+      },
+      {
+        "level": 3,
+        "text": "Ich nehme das Auto, wenn es anspringt.",
+        "translation": "Eu vou pegar o carro se ele ligar.",
+        "image_hint": "Pessoa tentando ligar a ignição"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-075-pensamento-e-futuro-revisitando-think-will"
+  },
+  {
+    "order": 76,
+    "title": "Localização e Estado (Revisão: Ser/Estar, Embaixo)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Es ist darunter.",
+        "translation": "Está debaixo.",
+        "image_hint": "Um gato embaixo da cama"
+      },
+      {
+        "level": 2,
+        "text": "Es ist unter dem Wasser.",
+        "translation": "Está debaixo da água.",
+        "image_hint": "Um mergulhador ou um peixe"
+      },
+      {
+        "level": 3,
+        "text": "Du kannst es sehen, wenn du nach unten schaust.",
+        "translation": "Você pode ver se olhar para baixo.",
+        "image_hint": "Alguém apontando para dentro de uma piscina ou mar"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-076-localiza-o-e-estado-revisitando-be-under"
+  },
+  {
+    "order": 77,
+    "title": "Trabalho e Ferramenta (Revisão: Trabalhar, Chamar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ruf mich nicht an.",
+        "translation": "Não me ligue.",
+        "image_hint": "Sinal de \"silêncio\" ou telefone desligado"
+      },
+      {
+        "level": 2,
+        "text": "Ruf mich nicht bei der Arbeit an.",
+        "translation": "Não me ligue no trabalho.",
+        "image_hint": "Pessoa concentrada em frente ao computador"
+      },
+      {
+        "level": 3,
+        "text": "Ich muss das heute fertigstellen.",
+        "translation": "Eu preciso terminar isso hoje.",
+        "image_hint": "Pessoa suando e trabalhando rápido contra o relógio"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-077-trabalho-e-ferramenta-revisitando-work-call"
+  },
+  {
+    "order": 78,
+    "title": "Dar e Receber (Revisão: Dar, Comida)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Gib etwas.",
+        "translation": "Dê um pouco.",
+        "image_hint": "Alguém repartindo um pão"
+      },
+      {
+        "level": 2,
+        "text": "Gib dem Kind etwas zu essen.",
+        "translation": "Dê comida para a criança.",
+        "image_hint": "Adulto entregando uma maçã para uma criança"
+      },
+      {
+        "level": 3,
+        "text": "Das Kind hat Hunger und muss essen.",
+        "translation": "A criança está com fome e precisa comer.",
+        "image_hint": "Criança com a mão na barriguinha"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-078-dar-e-receber-revisitando-give-food"
+  },
+  {
+    "order": 79,
+    "title": "Começo e Fim (Revisão: Começar, Tempo)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Wann beginnt es?",
+        "translation": "Quando começa?",
+        "image_hint": "Pessoa olhando para o palco de um teatro ou cinema"
+      },
+      {
+        "level": 2,
+        "text": "Es beginnt zur gleichen Zeit.",
+        "translation": "Começa no mesmo horário.",
+        "image_hint": "Dois relógios marcando 08:00"
+      },
+      {
+        "level": 3,
+        "text": "Es beginnt jeden Tag um 8 Uhr.",
+        "translation": "Começa todo dia às 8 da manhã.",
+        "image_hint": "Sol nascendo e o relógio despertando"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-079-come-o-e-fim-revisitando-start-time"
+  },
+  {
+    "order": 80,
+    "title": "Identidade e Verdade (Revisão: Dizer, Verdade)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Er sagt es.",
+        "translation": "Ele diz.",
+        "image_hint": "Alguém falando em um palanque ou para um amigo"
+      },
+      {
+        "level": 2,
+        "text": "Er sagt die Wahrheit.",
+        "translation": "Ele diz a verdade.",
+        "image_hint": "Alguém com a mão no peito, expressão honesta"
+      },
+      {
+        "level": 3,
+        "text": "Ich glaube ihm, weil er mein Freund ist.",
+        "translation": "Eu acredito nele porque ele é meu amigo.",
+        "image_hint": "Aperto de mão amigável"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-080-identidade-e-verdade-revisitando-say-truth"
+  },
+  {
+    "order": 81,
+    "title": "Contraste e Persistência (Revisão: Tentar, Ainda)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich versuche noch.",
+        "translation": "Eu ainda tento.",
+        "image_hint": "Alguém cansado, mas se levantando"
+      },
+      {
+        "level": 2,
+        "text": "Ich versuche noch zu verstehen.",
+        "translation": "Eu ainda tento entender.",
+        "image_hint": "Pessoa olhando para um livro complexo com a mão na testa"
+      },
+      {
+        "level": 3,
+        "text": "Obwohl es schwer ist, versuche ich es noch.",
+        "translation": "Embora seja difícil, eu ainda tento.",
+        "image_hint": "Uma montanha alta e a pessoa começando a subir"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-081-contraste-e-persist-ncia-revisitando-try-still"
+  },
+  {
+    "order": 82,
+    "title": "Frequência e Hábito (Revisão: Frequentemente, Usar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich benutze gewöhnlich.",
+        "translation": "Eu geralmente uso.",
+        "image_hint": "Pessoa pegando algo que usa todo dia, como óculos"
+      },
+      {
+        "level": 2,
+        "text": "Ich benutze gewöhnlich mein Telefon zur Arbeit.",
+        "translation": "Eu geralmente uso meu celular para trabalhar.",
+        "image_hint": "Pessoa enviando e-mails pelo celular no café"
+      },
+      {
+        "level": 3,
+        "text": "Ich mache das oft, wenn ich zu Hause bin.",
+        "translation": "Eu geralmente faço isso quando estou em casa.",
+        "image_hint": "Pessoa relaxada no sofá com o telefone"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-082-frequ-ncia-e-h-bito-revisitando-often-use"
+  },
+  {
+    "order": 83,
+    "title": "O Verbo de Parecer (Revisão: Parecer, Bom)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Es scheint.",
+        "translation": "Parece.",
+        "image_hint": "Alguém analisando algo de longe"
+      },
+      {
+        "level": 2,
+        "text": "Es scheint eine gute Idee zu sein.",
+        "translation": "Parece uma boa ideia.",
+        "image_hint": "Alguém olhando para um esboço de um projeto e sorrindo"
+      },
+      {
+        "level": 3,
+        "text": "Es scheint gut, aber wir brauchen mehr Zeit.",
+        "translation": "Parece bom, mas precisamos de mais tempo.",
+        "image_hint": "A pessoa apontando para um relógio de areia/ampulheta"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-083-o-verbo-de-parecer-revisitando-seem-good"
+  },
+  {
+    "order": 84,
+    "title": "Ação Concluída (Revisão: Terminar, Já)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich bin schon fertig.",
+        "translation": "Eu já terminei.",
+        "image_hint": "Alguém com os braços para cima em sinal de vitória"
+      },
+      {
+        "level": 2,
+        "text": "Ich bin mit meiner Arbeit schon fertig.",
+        "translation": "Eu já terminei meu trabalho.",
+        "image_hint": "Mesa limpa e computador desligado"
+      },
+      {
+        "level": 3,
+        "text": "Ich kann jetzt nach Hause gehen, weil ich schon fertig bin.",
+        "translation": "Eu posso ir para casa agora porque já terminei.",
+        "image_hint": "Pessoa pegando o casaco e saindo"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-084-a-o-conclu-da-revisitando-finish-already"
+  },
+  {
+    "order": 85,
+    "title": "Possibilidade e Escolha (Revisão: Talvez, Qual)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich könnte gehen.",
+        "translation": "Talvez eu vá.",
+        "image_hint": "Pessoa em dúvida entre duas portas"
+      },
+      {
+        "level": 2,
+        "text": "Ich könnte an den Ort gehen, den du kennst.",
+        "translation": "Talvez eu vá para o lugar que você conhece.",
+        "image_hint": "Imagem do parque ou café usado em blocos anteriores"
+      },
+      {
+        "level": 3,
+        "text": "Ich weiß nicht, welcher Weg besser ist.",
+        "translation": "Eu não sei qual caminho é melhor.",
+        "image_hint": "Pessoa olhando para um mapa com dois caminhos coloridos"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-085-possibilidade-e-escolha-revisitando-might-which"
+  },
+  {
+    "order": 86,
+    "title": "Cuidado e Atenção (Revisão: Olhar, Cuidado)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Sei vorsichtig.",
+        "translation": "Tenha cuidado.",
+        "image_hint": "Placa de \"piso molhado\" ou perigo"
+      },
+      {
+        "level": 2,
+        "text": "Sei mit dieser Sache vorsichtig.",
+        "translation": "Tenha cuidado com essa coisa.",
+        "image_hint": "Alguém segurando uma caixa de vidro frágil"
+      },
+      {
+        "level": 3,
+        "text": "Du musst schauen, wo du hingehst.",
+        "translation": "Você precisa olhar por onde anda.",
+        "image_hint": "Pessoa caminhando e olhando para o chão"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-086-cuidado-e-aten-o-revisitando-look-careful"
+  },
+  {
+    "order": 87,
+    "title": "Relações Humanas (Revisão: Amigo, Dizer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich werde sagen.",
+        "translation": "Eu vou contar.",
+        "image_hint": "Alguém cochichando ou falando ao telefone"
+      },
+      {
+        "level": 2,
+        "text": "Ich werde es meinem Freund sagen.",
+        "translation": "Eu vou contar para meu amigo.",
+        "image_hint": "Duas pessoas conversando em um banco"
+      },
+      {
+        "level": 3,
+        "text": "Ich werde ihm alles sagen, was ich weiß.",
+        "translation": "Eu vou contar para ele tudo que eu sei.",
+        "image_hint": "Um balão de fala cheio de pequenos ícones/ideias"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-087-rela-es-humanas-revisitando-friend-tell"
+  },
+  {
+    "order": 88,
+    "title": "Descoberta de Soluções (Revisão: Encontrar, Caminho)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Finde einen Weg.",
+        "translation": "Ache um jeito.",
+        "image_hint": "Alguém em um labirinto vendo a saída"
+      },
+      {
+        "level": 2,
+        "text": "Finde einen Weg, ihnen zu helfen.",
+        "translation": "Ache um jeito de ajudá-los.",
+        "image_hint": "Pessoa entregando uma ferramenta ou recurso para um grupo"
+      },
+      {
+        "level": 3,
+        "text": "Es gibt immer einen Weg, wenn man es versucht.",
+        "translation": "Sempre tem um jeito se você tentar.",
+        "image_hint": "Uma luz brilhando no fim de um túnel"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-088-descoberta-de-solu-es-revisitando-find-way"
+  },
+  {
+    "order": 89,
+    "title": "Pensamento Abstrato (Revisão: Pensar, Vida)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich denke an.",
+        "translation": "Eu penso sobre.",
+        "image_hint": "Pessoa olhando para as estrelas ou para o mar"
+      },
+      {
+        "level": 2,
+        "text": "Ich denke an mein Leben.",
+        "translation": "Eu penso sobre a minha vida.",
+        "image_hint": "Flashbacks de momentos felizes e de trabalho"
+      },
+      {
+        "level": 3,
+        "text": "Ich denke jeden Tag an mein Leben.",
+        "translation": "Eu penso sobre a minha vida todo dia.",
+        "image_hint": "Calendário com a silhueta da pessoa pensando em cada dia"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-089-pensamento-abstrato-revisitando-think-life"
+  },
+  {
+    "order": 90,
+    "title": "Mudança e Crescimento (Revisão: Tornar-se, Grande)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Es wird.",
+        "translation": "Se torna.",
+        "image_hint": "Uma semente virando broto"
+      },
+      {
+        "level": 2,
+        "text": "Das Problem wird groß.",
+        "translation": "O problema se torna grande.",
+        "image_hint": "Uma pequena rachadura virando um buraco grande"
+      },
+      {
+        "level": 3,
+        "text": "Es wird groß, weil wir nicht daran arbeiten.",
+        "translation": "Se torna grande porque não trabalhamos nisso.",
+        "image_hint": "Pessoa ignorando o problema enquanto ele cresce"
+      }
+    ],
+    "phase": "conversation",
+    "slug": "block-090-mudan-a-e-crescimento-revisitando-become-big"
+  },
+  {
+    "order": 91,
+    "title": "Estados Emocionais (Revisão: Sentir, Feliz/Triste)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich fühle.",
+        "translation": "Eu sinto.",
+        "image_hint": "Rosto neutro"
+      },
+      {
+        "level": 2,
+        "text": "Ich fühle mich heute glücklich.",
+        "translation": "Eu me sinto feliz hoje.",
+        "image_hint": "Rosto sorridente e sol brilhando"
+      },
+      {
+        "level": 3,
+        "text": "Ich fühle mich glücklich, wenn ich mit dir bin.",
+        "translation": "Eu me sinto feliz quando estou com você.",
+        "image_hint": "Duas pessoas rindo juntas"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-091-estados-emocionais-revisitando-feel-happy-sad"
+  },
+  {
+    "order": 92,
+    "title": "Espaço e Ordem (Revisão: Lugar, Ao lado)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Stell es neben.",
+        "translation": "Coloque ao lado.",
+        "image_hint": "Uma mão colocando uma cadeira ao lado de outra"
+      },
+      {
+        "level": 2,
+        "text": "Stell es neben das Wasser.",
+        "translation": "Coloque ao lado da água.",
+        "image_hint": "Colocar um copo ao lado de uma jarra"
+      },
+      {
+        "level": 3,
+        "text": "Der Ort ist nah am Tisch.",
+        "translation": "O lugar é perto da mesa.",
+        "image_hint": "Foto de um restaurante mostrando a proximidade dos objetos"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-092-espa-o-e-ordem-revisitando-place-next-to"
+  },
+  {
+    "order": 93,
+    "title": "Necessidade de Mudança (Revisão: Precisar, Mudar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich muss mich ändern.",
+        "translation": "Eu preciso mudar.",
+        "image_hint": "Pessoa olhando para um guarda-roupa ou para um hábito antigo"
+      },
+      {
+        "level": 2,
+        "text": "Ich muss meinen Weg ändern.",
+        "translation": "Eu preciso mudar meu jeito.",
+        "image_hint": "Pessoa mudando a direção em que está caminhando"
+      },
+      {
+        "level": 3,
+        "text": "Ich muss mich ändern, weil das schlecht ist.",
+        "translation": "Eu preciso mudar porque isso é ruim.",
+        "image_hint": "Pessoa olhando para algo quebrado ou uma situação negativa"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-093-necessidade-de-mudan-a-revisitando-need-change"
+  },
+  {
+    "order": 94,
+    "title": "Comunicação Verbal (Revisão: Falar, Bem)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Du sprichst.",
+        "translation": "Você fala.",
+        "image_hint": "Pessoa em um palco ou conversando"
+      },
+      {
+        "level": 2,
+        "text": "Du sprichst gut.",
+        "translation": "Você fala bem.",
+        "image_hint": "Público aplaudindo ou pessoa com sinal de \"legal\""
+      },
+      {
+        "level": 3,
+        "text": "Ich verstehe dich, weil du gut sprichst.",
+        "translation": "Eu entendo você porque você fala bem.",
+        "image_hint": "Alguém ouvindo com atenção e balançando a cabeça"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-094-comunica-o-verbal-revisitando-speak-well"
+  },
+  {
+    "order": 95,
+    "title": "Parte e Pertencimento (Revisão: Parte, Grupo)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich bin ein Teil.",
+        "translation": "Eu faço parte.",
+        "image_hint": "Uma peça de quebra-cabeça encaixando"
+      },
+      {
+        "level": 2,
+        "text": "Ich bin ein Teil dieser Gruppe.",
+        "translation": "Eu faço parte desse grupo.",
+        "image_hint": "Foto de equipe ou grupo de amigos"
+      },
+      {
+        "level": 3,
+        "text": "Diese Gruppe ist wichtig in meinem Leben.",
+        "translation": "Esse grupo é importante na minha vida.",
+        "image_hint": "Coração em volta da foto do grupo"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-095-parte-e-pertencimento-revisitando-part-group"
+  },
+  {
+    "order": 96,
+    "title": "Memória e Esquecimento (Revisão: Lembrar, Esquecer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Vergiss nicht.",
+        "translation": "Não esqueça.",
+        "image_hint": "Nó no dedo ou alarme no celular"
+      },
+      {
+        "level": 2,
+        "text": "Vergiss das Geld nicht.",
+        "translation": "Não esqueça o dinheiro.",
+        "image_hint": "Carteira em cima da mesa com um lembrete"
+      },
+      {
+        "level": 3,
+        "text": "Jetzt erinnere ich mich immer daran.",
+        "translation": "Eu sempre me lembro agora.",
+        "image_hint": "Pessoa saindo de casa e pegando a carteira com confiança"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-096-mem-ria-e-esquecimento-revisitando-remember-forget"
+  },
+  {
+    "order": 97,
+    "title": "Intenção e Movimento (Revisão: Querer, Trazer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich möchte mitbringen.",
+        "translation": "Eu quero trazer.",
+        "image_hint": "Alguém com uma sacola ou presente"
+      },
+      {
+        "level": 2,
+        "text": "Ich möchte meinen Freund hierher bringen.",
+        "translation": "Eu quero trazer meu amigo aqui.",
+        "image_hint": "Pessoa apontando para o lugar onde está e pensando no amigo"
+      },
+      {
+        "level": 3,
+        "text": "Er wird diesen Ort mögen.",
+        "translation": "Ele vai gostar desse lugar.",
+        "image_hint": "O amigo sorrindo na imaginação da pessoa"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-097-inten-o-e-movimento-revisitando-want-bring"
+  },
+  {
+    "order": 98,
+    "title": "Percepção Auditiva (Revisão: Ouvir, Escutar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Hör zu!",
+        "translation": "Escute!",
+        "image_hint": "Pessoa com o dedo na boca pedindo silêncio"
+      },
+      {
+        "level": 2,
+        "text": "Hör der Welt zu.",
+        "translation": "Escute o mundo.",
+        "image_hint": "Pessoa em meio à natureza ou cidade ouvindo os sons"
+      },
+      {
+        "level": 3,
+        "text": "Du kannst viele Dinge hören, wenn du still bist.",
+        "translation": "Você pode ouvir muitas coisas se ficar quieto.",
+        "image_hint": "Pessoa imóvel e serena ouvindo passarinho ou vento"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-098-percep-o-auditiva-revisitando-hear-listen"
+  },
+  {
+    "order": 99,
+    "title": "Tempo Futuro e Certeza (Revisão: Querer, Acontecer)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Es wird passieren.",
+        "translation": "Vai acontecer.",
+        "image_hint": "Uma semente prestes a brotar ou um evento marcado"
+      },
+      {
+        "level": 2,
+        "text": "Es wird bald passieren.",
+        "translation": "Vai acontecer em breve.",
+        "image_hint": "Relógio marcando quase a hora"
+      },
+      {
+        "level": 3,
+        "text": "Wir wissen, dass es heute passieren wird.",
+        "translation": "Nós sabemos que vai acontecer hoje.",
+        "image_hint": "Alguém apontando para a data de hoje no calendário"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-099-tempo-futuro-e-certeza-revisitando-will-happen"
+  },
+  {
+    "order": 100,
+    "title": "Conclusão do Primeiro Ciclo (Revisão: Tudo, Feito)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Alles ist.",
+        "translation": "Tudo é.",
+        "image_hint": "Braços abertos englobando tudo ao redor"
+      },
+      {
+        "level": 2,
+        "text": "Alles ist getan.",
+        "translation": "Tudo está feito.",
+        "image_hint": "Lista de tarefas toda marcada com \"check\""
+      },
+      {
+        "level": 3,
+        "text": "Ich fühle mich gut, weil alles getan ist.",
+        "translation": "Eu me sinto bem porque tudo está feito.",
+        "image_hint": "Pessoa relaxando com os pés para cima"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-100-conclus-o-do-primeiro-ciclo-revisitando-everything-done"
+  },
+  {
+    "order": 101,
+    "title": "Escolha e Consequência (Qual / Melhor)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Welches?",
+        "translation": "Qual?",
+        "image_hint": "Pessoa apontando para duas opções"
+      },
+      {
+        "level": 2,
+        "text": "Welcher Weg ist besser?",
+        "translation": "Qual caminho é melhor?",
+        "image_hint": "Bifurcação em uma estrada"
+      },
+      {
+        "level": 3,
+        "text": "Ich muss wissen, welcher Weg besser ist.",
+        "translation": "Eu preciso saber qual caminho é melhor para ir.",
+        "image_hint": "Pessoa olhando para o GPS no celular"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-101-escolha-e-consequ-ncia-which-better"
+  },
+  {
+    "order": 102,
+    "title": "Perspectiva e Tempo (Ainda / Ainda não)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Noch nicht.",
+        "translation": "Ainda não.",
+        "image_hint": "Um sinal de \"espere\" ou relógio batendo"
+      },
+      {
+        "level": 2,
+        "text": "Ich bin noch nicht zu Hause.",
+        "translation": "Eu ainda não estou em casa.",
+        "image_hint": "Pessoa ainda no ônibus ou carro"
+      },
+      {
+        "level": 3,
+        "text": "Ich bin noch bei der Arbeit, aber ich werde bald gehen.",
+        "translation": "Eu ainda estou no trabalho, mas vou sair logo.",
+        "image_hint": "Pessoa fechando o escritório tarde da noite"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-102-perspectiva-e-tempo-still-not-yet"
+  },
+  {
+    "order": 103,
+    "title": "Possibilidade e Ajuda (Talvez / Dar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich könnte.",
+        "translation": "Talvez.",
+        "image_hint": "Alguém com expressão de \"talvez\""
+      },
+      {
+        "level": 2,
+        "text": "Ich könnte dich anrufen.",
+        "translation": "Talvez eu te ligue.",
+        "image_hint": "Pessoa segurando o telefone e pensando"
+      },
+      {
+        "level": 3,
+        "text": "Ich könnte dich anrufen, wenn ich Zeit habe.",
+        "translation": "Talvez eu te ligue se eu tiver tempo.",
+        "image_hint": "Agenda cheia com um espaço livre no fim do dia"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-103-possibilidade-e-ajuda-might-give"
+  },
+  {
+    "order": 104,
+    "title": "Diferenciação e Valor (Diferente / Dinheiro)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Es ist anders.",
+        "translation": "É diferente.",
+        "image_hint": "Dois objetos distintos lado a lado"
+      },
+      {
+        "level": 2,
+        "text": "Diese Sache ist anders.",
+        "translation": "Essa coisa é diferente.",
+        "image_hint": "Comparação entre algo barato e algo de luxo"
+      },
+      {
+        "level": 3,
+        "text": "Es kostet mehr Geld, weil es anders ist.",
+        "translation": "Custa mais dinheiro porque é diferente.",
+        "image_hint": "Etiqueta de preço alta em um objeto artesanal"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-104-diferencia-o-e-valor-different-money"
+  },
+  {
+    "order": 105,
+    "title": "Intenção e Movimento (Tentar / Seguir)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Folg mir.",
+        "translation": "Me siga.",
+        "image_hint": "Alguém fazendo sinal para ser seguido"
+      },
+      {
+        "level": 2,
+        "text": "Folg dem Weg, den ich dir zeige.",
+        "translation": "Siga o caminho que eu te mostrar.",
+        "image_hint": "Guia apontando para uma trilha"
+      },
+      {
+        "level": 3,
+        "text": "Du wirst den Ort finden, wenn du mir folgst.",
+        "translation": "Você vai achar o lugar se me seguir.",
+        "image_hint": "Destino aparecendo ao fim do caminho"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-105-inten-o-e-movimento-try-follow"
+  },
+  {
+    "order": 106,
+    "title": "Cognição e Verdade (Acreditar / Real)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ist es real?",
+        "translation": "É real?",
+        "image_hint": "Alguém tocando algo para ver se existe"
+      },
+      {
+        "level": 2,
+        "text": "Ich glaube, es ist real.",
+        "translation": "Eu acredito que é real.",
+        "image_hint": "Olhar de admiração diante de algo incrível"
+      },
+      {
+        "level": 3,
+        "text": "Ich glaube es, weil ich es sehen kann.",
+        "translation": "Eu acredito porque consigo ver.",
+        "image_hint": "Alguém olhando bem de perto para o objeto"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-106-cogni-o-e-verdade-believe-real"
+  },
+  {
+    "order": 107,
+    "title": "Uso de Ferramentas (Usar / Encontrar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Benutze das.",
+        "translation": "Use isso.",
+        "image_hint": "Alguém entregando uma chave ou controle remoto"
+      },
+      {
+        "level": 2,
+        "text": "Benutze das, um das Problem zu finden.",
+        "translation": "Use isso para achar o problema.",
+        "image_hint": "Lanterna iluminando um motor"
+      },
+      {
+        "level": 3,
+        "text": "Es ist die einzige Möglichkeit, jetzt zu helfen.",
+        "translation": "É o único jeito de ajudar agora.",
+        "image_hint": "Pessoa consertando o problema com sucesso"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-107-uso-de-ferramentas-use-find"
+  },
+  {
+    "order": 108,
+    "title": "Relação de Espaço (Entre / Pessoas)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Zwischen ihnen.",
+        "translation": "Entre eles.",
+        "image_hint": "Um objeto no meio de dois outros"
+      },
+      {
+        "level": 2,
+        "text": "Zwischen diesen zwei Menschen.",
+        "translation": "Entre essas duas pessoas.",
+        "image_hint": "Uma criança entre os pais"
+      },
+      {
+        "level": 3,
+        "text": "Es gibt eine große Liebe zwischen ihnen.",
+        "translation": "Existe um grande amor entre eles.",
+        "image_hint": "Um coração unindo as três pessoas"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-108-rela-o-de-espa-o-between-people"
+  },
+  {
+    "order": 109,
+    "title": "Condição e Frequência (Sempre / Se)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Tu es immer.",
+        "translation": "Sempre faça.",
+        "image_hint": "Escovar os dentes ou algo rotineiro"
+      },
+      {
+        "level": 2,
+        "text": "Tu es immer so.",
+        "translation": "Sempre faça assim.",
+        "image_hint": "Manual de instruções aberto"
+      },
+      {
+        "level": 3,
+        "text": "Es wird funktionieren, wenn du es immer so machst.",
+        "translation": "Vai funcionar se você sempre fizer assim.",
+        "image_hint": "O resultado final perfeito"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-109-condi-o-e-frequ-ncia-always-if"
+  },
+  {
+    "order": 110,
+    "title": "Fim e Início (Terminar / Começar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Beende zuerst.",
+        "translation": "Termine primeiro.",
+        "image_hint": "Número \"1\" em destaque antes do \"2\""
+      },
+      {
+        "level": 2,
+        "text": "Beende zuerst diesen Teil.",
+        "translation": "Termine essa parte primeiro.",
+        "image_hint": "Alguém terminando a base de uma construção"
+      },
+      {
+        "level": 3,
+        "text": "Dann kannst du den neuen beginnen.",
+        "translation": "Depois você pode começar o novo.",
+        "image_hint": "Alguém pegando novos materiais para a próxima etapa"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-110-fim-e-in-cio-finish-start"
+  },
+  {
+    "order": 111,
+    "title": "O 'Porquê' das Coisas (Razão / Por quê)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Der Grund ist.",
+        "translation": "O motivo é.",
+        "image_hint": "Alguém explicando algo com as mãos"
+      },
+      {
+        "level": 2,
+        "text": "Das ist der Grund warum.",
+        "translation": "Esse é o motivo.",
+        "image_hint": "Um quadro negro com uma seta ligando causa e efeito"
+      },
+      {
+        "level": 3,
+        "text": "Du bist der Grund, warum ich glücklich bin.",
+        "translation": "Você é o motivo de eu ser feliz.",
+        "image_hint": "Pessoa sorrindo para um amigo"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-111-o-porqu-das-coisas-reason-why"
+  },
+  {
+    "order": 112,
+    "title": "Quantidade Abstrata (Suficiente / Tudo)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ist es genug?",
+        "translation": "É o suficiente?",
+        "image_hint": "Alguém olhando para um prato ou tanque de combustível"
+      },
+      {
+        "level": 2,
+        "text": "Ich habe genug für alles.",
+        "translation": "Eu tenho o suficiente para tudo.",
+        "image_hint": "Pessoa com mala pronta e carteira organizada"
+      },
+      {
+        "level": 3,
+        "text": "Ich brauche nicht mehr als das.",
+        "translation": "Eu não preciso de mais do que isso.",
+        "image_hint": "Pessoa fechando a mala com tranquilidade"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-112-quantidade-abstrata-enough-everything"
+  },
+  {
+    "order": 113,
+    "title": "O Verbo de Parecer (Parecer / Mesmo)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Es sieht aus wie.",
+        "translation": "Parece.",
+        "image_hint": "Alguém comparando duas fotos"
+      },
+      {
+        "level": 2,
+        "text": "Es sieht aus wie dieselbe Sache.",
+        "translation": "Parece a mesma coisa.",
+        "image_hint": "Duas chaves quase idênticas"
+      },
+      {
+        "level": 3,
+        "text": "Aber sie sind unterschiedlich, wenn man genau schaut.",
+        "translation": "Mas eles são diferentes se você olhar de perto.",
+        "image_hint": "Lupa mostrando detalhes diferentes"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-113-o-verbo-de-parecer-look-like-same"
+  },
+  {
+    "order": 114,
+    "title": "Expressão de Desejo Futuro (Gostaria / Ir)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Ich würde gerne.",
+        "translation": "Eu gostaria.",
+        "image_hint": "Alguém sonhando acordado com uma nuvem sobre a cabeça"
+      },
+      {
+        "level": 2,
+        "text": "Ich würde gerne dorthin gehen.",
+        "translation": "Eu gostaria de ir lá.",
+        "image_hint": "Foto de uma praia ou cidade famosa"
+      },
+      {
+        "level": 3,
+        "text": "Vielleicht können wir nächstes Jahr gehen.",
+        "translation": "Talvez ano que vem a gente possa ir.",
+        "image_hint": "Calendário do ano que vem com um círculo"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-114-express-o-de-desejo-futuro-would-like-go"
+  },
+  {
+    "order": 115,
+    "title": "Comunicação e Silêncio (Ouvir / Palavra)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Keine Worte.",
+        "translation": "Sem palavras.",
+        "image_hint": "Pessoa com o dedo nos lábios"
+      },
+      {
+        "level": 2,
+        "text": "Ich habe keine Worte zu sagen.",
+        "translation": "Eu não tenho palavras para dizer.",
+        "image_hint": "Pessoa emocionada ou surpresa"
+      },
+      {
+        "level": 3,
+        "text": "Hör einfach auf mein Herz.",
+        "translation": "Apenas escute meu coração.",
+        "image_hint": "Mão no peito e expressão sincera"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-115-comunica-o-e-sil-ncio-listen-word"
+  },
+  {
+    "order": 116,
+    "title": "Mudança e Vida (Mudar / Vida)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Veränderung ist gut.",
+        "translation": "Mudança é bom.",
+        "image_hint": "Planta crescendo ou lagarta virando borboleta"
+      },
+      {
+        "level": 2,
+        "text": "Eine große Veränderung in meinem Leben.",
+        "translation": "Uma grande mudança na minha vida.",
+        "image_hint": "Mudança de casa ou novo emprego"
+      },
+      {
+        "level": 3,
+        "text": "Alles ist neu und ich fühle mich großartig.",
+        "translation": "Tudo é novo e eu me sinto ótimo.",
+        "image_hint": "Pessoa de braços abertos na frente de uma nova vista"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-116-mudan-a-e-vida-change-life"
+  },
+  {
+    "order": 117,
+    "title": "Localização e Direção (Através / Lugar)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Geh durch.",
+        "translation": "Passe por.",
+        "image_hint": "Carro entrando em um túnel"
+      },
+      {
+        "level": 2,
+        "text": "Geh durch die Stadt.",
+        "translation": "Passe pela cidade.",
+        "image_hint": "Linha cruzando o mapa urbano"
+      },
+      {
+        "level": 3,
+        "text": "Es ist der schnelle Weg zum Park.",
+        "translation": "É o caminho rápido para o parque.",
+        "image_hint": "O parque aparecendo do outro lado da cidade"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-117-localiza-o-e-dire-o-through-place"
+  },
+  {
+    "order": 118,
+    "title": "Certeza e Dúvida (Certeza / Saber)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Bist du sicher?",
+        "translation": "Você tem certeza?",
+        "image_hint": "Alguém perguntando com a sobrancelha levantada"
+      },
+      {
+        "level": 2,
+        "text": "Ich bin sicher über das.",
+        "translation": "Eu tenho certeza disso.",
+        "image_hint": "Alguém assinando um documento com firmeza"
+      },
+      {
+        "level": 3,
+        "text": "Ich weiß, dass das das Richtige ist.",
+        "translation": "Eu sei que isso é a coisa certa a fazer.",
+        "image_hint": "Sinal de \"positivo\" e olhar confiante"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-118-certeza-e-d-vida-sure-know"
+  },
+  {
+    "order": 119,
+    "title": "Necessidade Coletiva (Precisar / Um ao outro)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Wir brauchen.",
+        "translation": "Nós precisamos.",
+        "image_hint": "Duas pessoas tentando carregar algo pesado"
+      },
+      {
+        "level": 2,
+        "text": "Wir brauchen einander.",
+        "translation": "Nós precisamos um do outro.",
+        "image_hint": "Duas pessoas se dando as mãos para subir um degrau"
+      },
+      {
+        "level": 3,
+        "text": "Wir sind stark, wenn wir zusammen sind.",
+        "translation": "Nós somos fortes quando estamos juntos.",
+        "image_hint": "Punhos cerrados juntos em sinal de união"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-119-necessidade-coletiva-need-each-other"
+  },
+  {
+    "order": 120,
+    "title": "O Fechamento do Ciclo (Tudo / Feito)",
+    "levels": [
+      {
+        "level": 1,
+        "text": "Es ist getan.",
+        "translation": "Está feito.",
+        "image_hint": "Ponto final em um texto ou carimbo de \"concluído\""
+      },
+      {
+        "level": 2,
+        "text": "Alles, was wir wollten, ist getan.",
+        "translation": "Tudo que a gente queria está feito.",
+        "image_hint": "A casa pronta ou o projeto finalizado"
+      },
+      {
+        "level": 3,
+        "text": "Jetzt können wir eine neue Geschichte beginnen.",
+        "translation": "Agora podemos começar uma nova história.",
+        "image_hint": "Pessoa fechando um livro e pegando um novo em branco"
+      }
+    ],
+    "phase": "fluency",
+    "slug": "block-120-o-fechamento-do-ciclo-everything-done"
+  }
+]
