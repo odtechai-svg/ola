@@ -54,7 +54,8 @@ function Bar({ pct, color = "bg-primary" }: { pct: number; color?: string }) {
 
 export default async function AdminPage() {
   const user = await requireUser();
-  if (!user.isAdmin) redirect("/home");
+  const adminEmail = process.env.PB_ADMIN_EMAIL || "odtechai@gmail.com";
+  if (!user.email || user.email !== adminEmail) redirect("/home");
 
   const cookieStore = await cookies();
   const sourceLang = cookieStore.get("ola_source_lang")?.value || "pt-BR";

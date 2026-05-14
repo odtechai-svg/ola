@@ -27,6 +27,7 @@ export async function POST(request: Request) {
     const cookieStore = await cookies();
     cookieStore.set("pb_auth", auth.token, COOKIE_OPTS);
     cookieStore.set("pb_user_id", auth.record.id, COOKIE_OPTS);
+    cookieStore.set("pb_user_email", auth.record.email || "", COOKIE_OPTS);
     return NextResponse.json({ ok: true });
   } catch (e: any) {
     const msg = e?.response?.data?.email?.message || e?.message || "Erro ao criar conta.";
