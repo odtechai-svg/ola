@@ -48,6 +48,11 @@ export async function POST(request: Request) {
       newStreak = 1;
     }
 
+    // ── Daily Blocks Counter (Desafio 15) ──────────────────────────────────
+    const blocksTodayDate = cookieStore.get("ola_blocks_today_date")?.value;
+    const blocksTodayRaw = parseInt(cookieStore.get("ola_blocks_today")?.value || "0", 10);
+    const blocksTodayDone = blocksTodayDate === today ? Math.min(blocksTodayRaw + 1, 3) : 1;
+
     // ── Cookie writes (always, for demo mode + cache) ──────────────────────
     cookieStore.set("ola_current_block_order", nextOrder.toString(), cookieOptions);
     cookieStore.set("ola_sessions_done", sessionsDone.toString(), cookieOptions);
@@ -56,6 +61,8 @@ export async function POST(request: Request) {
     cookieStore.set("ola_words_repeated", wordsRepeated.toString(), cookieOptions);
     cookieStore.set("ola_last_session_date", today, cookieOptions);
     cookieStore.set("ola_streak_days", newStreak.toString(), cookieOptions);
+    cookieStore.set("ola_blocks_today", blocksTodayDone.toString(), cookieOptions);
+    cookieStore.set("ola_blocks_today_date", today, cookieOptions);
 
     // ── PocketBase write (real users only) ─────────────────────────────────
     if (user) {

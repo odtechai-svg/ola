@@ -101,6 +101,7 @@ export async function getDashboardProfile(userId: string): Promise<{
   enrollment: EnrollmentSummary | null;
   queueCount: number;
   blockTitle: string;
+  blocksTodayDone: number;
 }> {
   const { source, target } = await getLanguagePairFromCookies();
   const cookieStore = await cookies();
@@ -146,6 +147,11 @@ export async function getDashboardProfile(userId: string): Promise<{
   yesterdayDate.setDate(yesterdayDate.getDate() - 1);
   const yesterdayStr = yesterdayDate.toISOString().slice(0, 10);
 
+  const blocksTodayDate = cookieStore.get("ola_blocks_today_date")?.value;
+  const blocksTodayDone = blocksTodayDate === todayStr
+    ? Math.min(parseInt(cookieStore.get("ola_blocks_today")?.value || "0", 10), 3)
+    : 0;
+
   let streakState: StreakState;
   let streakDays: number;
 
@@ -187,6 +193,7 @@ export async function getDashboardProfile(userId: string): Promise<{
     },
     queueCount: phraseCount,
     blockTitle,
+    blocksTodayDone,
   };
 }
 

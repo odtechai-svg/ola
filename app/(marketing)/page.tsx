@@ -35,6 +35,13 @@ export default function LandingPage() {
 
 
 
+          {/* Challenge Badge */}
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">
+            <span className="text-primary font-black text-sm tracking-widest uppercase">
+              {t("hero.badge")}
+            </span>
+          </div>
+
           {/* Main Display Heading */}
           <h1 className="font-headline font-black text-5xl md:text-7xl lg:text-8xl tracking-tighter leading-[0.9] text-on-surface max-w-3xl">
             OLA <br />

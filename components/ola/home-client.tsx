@@ -18,6 +18,7 @@ interface HomeClientProps {
   avgScore: number;
   wordsRepeated: number;
   defaultVoiceGender: string;
+  blocksTodayDone: number;
 }
 
 function getGreetingKey(): string {
@@ -51,6 +52,7 @@ export function HomeClient({
   avgScore,
   wordsRepeated,
   defaultVoiceGender,
+  blocksTodayDone,
 }: HomeClientProps) {
   const { t } = useLanguage();
   const [voiceGender, setVoiceGender] = useState(defaultVoiceGender);
@@ -177,49 +179,62 @@ export function HomeClient({
           </div>
         </div>
 
-        {/* Block Progress Card */}
+        {/* Desafio 15 Card */}
         <div className="md:col-span-4 bg-surface-container-low rounded-lg p-8 flex flex-col justify-between ghost-border">
           <div>
             <span className="text-xs font-bold text-on-surface-variant uppercase tracking-widest">
-              {t("home.block.label")}
+              {t("home.challenge.label")}
             </span>
             <div className="flex items-center justify-between mt-2">
               <h4 className="text-2xl font-bold text-on-surface">
-                {t("blocks.block")} {currentBlockOrder}
+                {blocksTodayDone === 3 ? t("home.challenge.done_all") : `${blocksTodayDone} / 3`}
               </h4>
               <span
-                className="material-symbols-outlined text-5xl text-tertiary/70"
+                className={`material-symbols-outlined text-5xl ${blocksTodayDone === 3 ? "text-primary" : "text-on-surface-variant/40"}`}
                 style={{ fontVariationSettings: "'FILL' 1" }}
               >
-                auto_stories
+                {blocksTodayDone === 3 ? "trophy" : "flag"}
               </span>
             </div>
             <p className="text-on-surface-variant text-sm mt-1">
-              {sourceLanguageCode} → {targetLanguageCode}
+              {t("home.challenge.today")}
             </p>
-            {blockTitle && (
-              <p className="text-tertiary text-xs font-semibold mt-2 leading-snug">{blockTitle}</p>
-            )}
           </div>
-          <div className="mt-8">
-            <div className="flex justify-between items-end mb-3">
-              <span className="text-4xl font-black text-secondary">
-                {queueCount}
-              </span>
-              <span className="text-xs font-bold text-on-surface-variant uppercase">
-                {t("home.block.phrases")}
-              </span>
-            </div>
-            <div className="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
-              <div
-                className="h-full bg-gradient-to-r from-secondary-dim to-secondary rounded-full transition-all"
-                style={{ width: `${Math.min((queueCount / 5) * 100, 100)}%` }}
-              />
-            </div>
+
+          {/* 3 block slots */}
+          <div className="flex gap-3 mt-6">
+            {[0, 1, 2].map((i) => {
+              const done = i < blocksTodayDone;
+              return (
+                <div
+                  key={i}
+                  className={`flex-1 h-16 rounded-xl flex flex-col items-center justify-center gap-1 transition-all ${
+                    done
+                      ? "bg-primary/15 border border-primary/30"
+                      : "bg-surface-container-highest border border-outline-variant/10"
+                  }`}
+                >
+                  <span
+                    className={`material-symbols-outlined text-xl ${done ? "text-primary" : "text-on-surface-variant/30"}`}
+                    style={{ fontVariationSettings: done ? "'FILL' 1" : "'FILL' 0" }}
+                  >
+                    {done ? "check_circle" : "radio_button_unchecked"}
+                  </span>
+                  <span className={`text-[10px] font-bold uppercase tracking-wide ${done ? "text-primary/70" : "text-on-surface-variant/30"}`}>
+                    {currentBlockOrder - blocksTodayDone + i}
+                  </span>
+                </div>
+              );
+            })}
           </div>
+
+          <p className={`text-xs mt-4 italic leading-relaxed ${blocksTodayDone === 3 ? "text-primary font-semibold" : "text-on-surface-variant"}`}>
+            {blocksTodayDone === 3 ? "🏆 " : ""}{t(blocksTodayDone === 3 ? "home.challenge.congrats" : "home.challenge.motivation")}
+          </p>
+
           <Link
             href="/blocks"
-            className="mt-6 flex items-center justify-center gap-2 text-on-surface-variant hover:text-secondary transition-colors text-sm font-bold uppercase tracking-wider group"
+            className="mt-4 flex items-center justify-center gap-2 text-on-surface-variant hover:text-secondary transition-colors text-sm font-bold uppercase tracking-wider group"
           >
             {t("home.block.view_progress")}
             <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">

@@ -28,10 +28,11 @@ const dictionaries: Dictionaries = {
     "hero.cta_account": "I already have an account",
     "feature1.title": "300 words",
     "feature1.desc": "Focused core vocabulary for 70% of daily fluency.",
-    "feature2.title": "15 min",
-    "feature2.desc": "High-intensity intervals designed for the cognitive athlete.",
+    "feature2.title": "Challenge 15",
+    "feature2.desc": "3 sessions of 5 min each. 15 minutes total. Speak a new language in 30 days.",
     "feature3.title": "AI eval",
     "feature3.desc": "Instant phonetic feedback to sharpen your accent.",
+    "hero.badge": "🏆 Challenge 15 — Speak a new language in 30 days",
     "method.subtitle": "Our Methodology",
     "method.title": "The Science of Speed.",
     "method.desc": "The tongue is a muscle. Just like any muscle in the body, it needs frequent training, repetition, and active use.",
@@ -178,6 +179,13 @@ const dictionaries: Dictionaries = {
     // ── Home — training badge ──
     "home.training_label": "Training",
 
+    // ── Desafio 15 ──
+    "home.challenge.label": "CHALLENGE 15",
+    "home.challenge.today": "blocks done today",
+    "home.challenge.done_all": "Mission complete!",
+    "home.challenge.motivation": "Without review, 70% is forgotten in 24h. Train now!",
+    "home.challenge.congrats": "All 3 blocks done today. See you tomorrow!",
+
     // ── Onboarding ──
     "onboarding.step": "STEP",
     "onboarding.of": "OF",
@@ -213,10 +221,11 @@ const dictionaries: Dictionaries = {
     "hero.cta_account": "Já tenho uma conta",
     "feature1.title": "300 palavras",
     "feature1.desc": "Vocabulário central focado para 70% da fluência diária.",
-    "feature2.title": "15 min",
-    "feature2.desc": "Intervalos de alta intensidade criados para o atleta cognitivo.",
+    "feature2.title": "Desafio 15",
+    "feature2.desc": "3 sessões de 5 min por dia. 15 minutos total. Fale um novo idioma em 30 dias.",
     "feature3.title": "Avaliação IA",
     "feature3.desc": "Feedback fonético instantâneo para aperfeiçoar o seu sotaque.",
+    "hero.badge": "🏆 Desafio 15 — Fale um novo idioma em 30 dias",
     "method.subtitle": "Nossa Metodologia",
     "method.title": "A Ciência da Velocidade.",
     "method.desc": "A língua é um músculo. Como qualquer músculo no corpo, precisa de treino frequente, repetição e uso ativo.",
@@ -363,6 +372,13 @@ const dictionaries: Dictionaries = {
     // ── Home — training badge ──
     "home.training_label": "Treinando",
 
+    // ── Desafio 15 ──
+    "home.challenge.label": "DESAFIO 15",
+    "home.challenge.today": "blocos feitos hoje",
+    "home.challenge.done_all": "Missão cumprida!",
+    "home.challenge.motivation": "Sem revisão, 70% é esquecido em 24h. Treine agora!",
+    "home.challenge.congrats": "3 blocos feitos hoje. Até amanhã!",
+
     // ── Onboarding ──
     "onboarding.step": "PASSO",
     "onboarding.of": "DE",
@@ -398,10 +414,11 @@ const dictionaries: Dictionaries = {
     "hero.cta_account": "Ya tengo una cuenta",
     "feature1.title": "300 palabras",
     "feature1.desc": "Vocabulario central enfocado para el 70% de fluidez diaria.",
-    "feature2.title": "15 min",
-    "feature2.desc": "Intervalos de alta intensidad diseñados para el atleta cognitivo.",
+    "feature2.title": "Desafío 15",
+    "feature2.desc": "3 sesiones de 5 min al día. 15 minutos total. Habla un nuevo idioma en 30 días.",
     "feature3.title": "Evaluación IA",
     "feature3.desc": "Retroalimentación fonética instantánea para afilar tu acento.",
+    "hero.badge": "🏆 Desafío 15 — Habla un nuevo idioma en 30 días",
     "method.subtitle": "Nuestra Metodología",
     "method.title": "La Ciencia de la Velocidad.",
     "method.desc": "La lengua es un músculo. Como cualquier músculo del cuerpo, necesita entrenamiento frecuente, repetición y uso activo.",
@@ -548,6 +565,13 @@ const dictionaries: Dictionaries = {
     // ── Home — training badge ──
     "home.training_label": "Entrenando",
 
+    // ── Desafio 15 ──
+    "home.challenge.label": "DESAFÍO 15",
+    "home.challenge.today": "bloques hechos hoy",
+    "home.challenge.done_all": "¡Misión cumplida!",
+    "home.challenge.motivation": "Sin revisión, olvidas el 70% en 24h. ¡Entrena ahora!",
+    "home.challenge.congrats": "3 bloques hechos hoy. ¡Hasta mañana!",
+
     // ── Onboarding ──
     "onboarding.step": "PASO",
     "onboarding.of": "DE",
@@ -583,10 +607,11 @@ const dictionaries: Dictionaries = {
     "hero.cta_account": "Ho già un account",
     "feature1.title": "300 parole",
     "feature1.desc": "Vocabolario essenziale per il 70% della fluidità quotidiana.",
-    "feature2.title": "15 min",
-    "feature2.desc": "Intervalli ad alta intensità progettati per l'atleta cognitivo.",
+    "feature2.title": "Sfida 15",
+    "feature2.desc": "3 sessioni da 5 min al giorno. 15 minuti totali. Parla una nuova lingua in 30 giorni.",
     "feature3.title": "Valutazione IA",
     "feature3.desc": "Feedback fonetico istantaneo per perfezionare il tuo accento.",
+    "hero.badge": "🏆 Sfida 15 — Parla una nuova lingua in 30 giorni",
     "method.subtitle": "La Nostra Metodologia",
     "method.title": "La Scienza della Velocità.",
     "method.desc": "La lingua è un muscolo. Come qualsiasi muscolo del corpo, ha bisogno di allenamento frequente, ripetizione e uso attivo.",
@@ -733,6 +758,13 @@ const dictionaries: Dictionaries = {
     // ── Home — training badge ──
     "home.training_label": "Allenando",
 
+    // ── Desafio 15 ──
+    "home.challenge.label": "SFIDA 15",
+    "home.challenge.today": "blocchi fatti oggi",
+    "home.challenge.done_all": "Missione compiuta!",
+    "home.challenge.motivation": "Senza revisione, dimentichi il 70% in 24h. Allenati ora!",
+    "home.challenge.congrats": "3 blocchi fatti oggi. A domani!",
+
     // ── Onboarding ──
     "onboarding.step": "PASSO",
     "onboarding.of": "DI",
@@ -768,10 +800,11 @@ const dictionaries: Dictionaries = {
     "hero.cta_account": "J'ai déjà un compte",
     "feature1.title": "300 mots",
     "feature1.desc": "Vocabulaire essentiel pour 70% de la fluidité quotidienne.",
-    "feature2.title": "15 min",
-    "feature2.desc": "Intervalles haute intensité conçus pour l'athlète cognitif.",
+    "feature2.title": "Défi 15",
+    "feature2.desc": "3 séances de 5 min par jour. 15 minutes au total. Parle une nouvelle langue en 30 jours.",
     "feature3.title": "Éval IA",
     "feature3.desc": "Retour phonétique instantané pour affiner ton accent.",
+    "hero.badge": "🏆 Défi 15 — Parle une nouvelle langue en 30 jours",
     "method.subtitle": "Notre Méthodologie",
     "method.title": "La Science de la Vitesse.",
     "method.desc": "La langue est un muscle. Comme tout muscle du corps, elle a besoin d'un entraînement fréquent, de répétitions et d'une utilisation active.",
@@ -918,6 +951,13 @@ const dictionaries: Dictionaries = {
     // ── Home — training badge ──
     "home.training_label": "Entraînement",
 
+    // ── Desafio 15 ──
+    "home.challenge.label": "DÉFI 15",
+    "home.challenge.today": "blocs faits aujourd'hui",
+    "home.challenge.done_all": "Mission accomplie !",
+    "home.challenge.motivation": "Sans révision, tu oublies 70% en 24h. Entraîne-toi !",
+    "home.challenge.congrats": "3 blocs faits aujourd'hui. À demain !",
+
     // ── Onboarding ──
     "onboarding.step": "ÉTAPE",
     "onboarding.of": "SUR",
@@ -953,10 +993,11 @@ const dictionaries: Dictionaries = {
     "hero.cta_account": "Ich habe bereits ein Konto",
     "feature1.title": "300 Wörter",
     "feature1.desc": "Fokussierter Kernwortschatz für 70% der täglichen Sprachkompetenz.",
-    "feature2.title": "15 Min",
-    "feature2.desc": "Hochintensive Intervalle, entwickelt für den kognitiven Athleten.",
+    "feature2.title": "Challenge 15",
+    "feature2.desc": "3 Einheiten à 5 Min pro Tag. 15 Minuten gesamt. Sprich eine neue Sprache in 30 Tagen.",
     "feature3.title": "KI-Auswertung",
     "feature3.desc": "Sofortiges phonetisches Feedback, um deinen Akzent zu schärfen.",
+    "hero.badge": "🏆 Challenge 15 — Sprich eine neue Sprache in 30 Tagen",
     "method.subtitle": "Unsere Methodik",
     "method.title": "Die Wissenschaft der Geschwindigkeit.",
     "method.desc": "Die Zunge ist ein Muskel. Wie jeder Muskel im Körper braucht sie regelmäßiges Training, Wiederholung und aktiven Einsatz.",
@@ -1102,6 +1143,13 @@ const dictionaries: Dictionaries = {
 
     // ── Home — training badge ──
     "home.training_label": "Training",
+
+    // ── Desafio 15 ──
+    "home.challenge.label": "CHALLENGE 15",
+    "home.challenge.today": "Blöcke heute erledigt",
+    "home.challenge.done_all": "Mission erfüllt!",
+    "home.challenge.motivation": "Ohne Wiederholung vergisst du 70% in 24h. Trainiere jetzt!",
+    "home.challenge.congrats": "Alle 3 Blöcke heute erledigt. Bis morgen!",
 
     // ── Onboarding ──
     "onboarding.step": "SCHRITT",

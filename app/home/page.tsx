@@ -7,7 +7,7 @@ import { HomeClient } from "@/components/ola/home-client";
 
 export default async function HomePage() {
   const user = await requireUser();
-  const { profile, enrollment, queueCount, blockTitle } = await getDashboardProfile(user.id);
+  const { profile, enrollment, queueCount, blockTitle, blocksTodayDone } = await getDashboardProfile(user.id);
 
   if (!enrollment) {
     redirect("/onboarding");
@@ -32,6 +32,7 @@ export default async function HomePage() {
         avgScore={(profile as any)?.avgScore ?? 0}
         wordsRepeated={(profile as any)?.wordsRepeated ?? 0}
         defaultVoiceGender={voiceGender}
+        blocksTodayDone={blocksTodayDone}
       />
     </Shell>
   );
