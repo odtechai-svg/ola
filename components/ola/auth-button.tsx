@@ -1,19 +1,13 @@
 "use client";
 
-import { createClient } from "@/lib/supabase/client";
 import { useLanguage } from "@/lib/i18n-context";
 
 export function AuthButton() {
   const { t } = useLanguage();
 
   async function signOut() {
-    const supabase = createClient();
-    await supabase.auth.signOut();
+    await fetch("/api/auth/logout", { method: "POST" });
     window.location.href = "/";
-  }
-
-  if (typeof window !== "undefined" && !process.env.NEXT_PUBLIC_SUPABASE_URL) {
-    return <span className="text-xs text-error">Missing Supabase env</span>;
   }
 
   return (
