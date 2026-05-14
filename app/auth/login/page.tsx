@@ -1,29 +1,41 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { HeaderActions } from "@/components/ola/header-actions";
-import { applyLanguagePair } from "@/lib/i18n-context";
+import { useLanguage } from "@/lib/i18n-context";
 
-const TEST_PROFILES = [
-  { label: "BR 🇧🇷 → EN 🇺🇸", sub: "Brazilian learning English",    source: "pt-BR", target: "en"   },
-  { label: "US 🇺🇸 → PT 🇧🇷", sub: "American learning Portuguese",  source: "en",    target: "pt-BR" },
-  { label: "ES 🇪🇸 → PT 🇧🇷", sub: "Spanish learning Portuguese",   source: "es",    target: "pt-BR" },
-  { label: "BR 🇧🇷 → ES 🇪🇸", sub: "Brazilian learning Spanish",    source: "pt-BR", target: "es"   },
-  { label: "BR 🇧🇷 → IT 🇮🇹", sub: "Brazilian learning Italian",    source: "pt-BR", target: "it"   },
-  { label: "BR 🇧🇷 → FR 🇫🇷", sub: "Brazilian learning French",     source: "pt-BR", target: "fr"   },
-  { label: "BR 🇧🇷 → DE 🇩🇪", sub: "Brazilian learning German",     source: "pt-BR", target: "de"   },
-];
+const VAPID_PUBLIC_KEY = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY!;
+
+function urlBase64ToUint8Array(base64String: string) {
+  const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
+  const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/");
+  const rawData = window.atob(base64);
+  return Uint8Array.from([...rawData].map((c) => c.charCodeAt(0)));
+}
 
 type Mode = "login" | "register";
+type Step = "form" | "notify";
 
 export default function LoginPage() {
+  const { t } = useLanguage();
   const [mode, setMode] = useState<Mode>("login");
+  const [step, setStep] = useState<Step>("form");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [notifyState, setNotifyState] = useState<"idle" | "loading" | "granted">("idle");
+  const [pushSupported, setPushSupported] = useState(false);
+
+  useEffect(() => {
+    setPushSupported(
+      "serviceWorker" in navigator &&
+      "PushManager" in window &&
+      Notification.permission !== "denied"
+    );
+  }, []);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -43,16 +55,99 @@ export default function LoginPage() {
 
     if (!res.ok) {
       setMessage(data.error || "Algo deu errado.");
+      return;
+    }
+
+    // After register: show notification opt-in if supported
+    if (mode === "register" && pushSupported && Notification.permission === "default") {
+      setStep("notify");
     } else {
       window.location.href = "/home";
     }
   }
 
-  function handleSimulate(source: string, target: string) {
-    applyLanguagePair(source, target);
-    window.location.href = "/home";
+  async function handleEnableNotifications() {
+    setNotifyState("loading");
+    try {
+      if ("serviceWorker" in navigator) {
+        await navigator.serviceWorker.register("/sw.js");
+      }
+      const reg = await navigator.serviceWorker.ready;
+      const sub = await reg.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY),
+      });
+      await fetch("/api/push/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ subscription: sub.toJSON() }),
+      });
+      setNotifyState("granted");
+      setTimeout(() => { window.location.href = "/home"; }, 1200);
+    } catch {
+      window.location.href = "/home";
+    }
   }
 
+  // ── Notification opt-in screen ──────────────────────────────────────────
+  if (step === "notify") {
+    return (
+      <div className="min-h-screen bg-surface text-on-surface font-sans relative overflow-hidden flex items-center justify-center px-6">
+        <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="w-full max-w-md relative z-10 space-y-8">
+          <div className="text-center space-y-4">
+            <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
+              <span className="material-symbols-outlined text-4xl text-primary">notifications_active</span>
+            </div>
+            <h1 className="text-4xl font-extrabold tracking-tight text-on-surface">
+              {t("onboarding.notify.title")}
+            </h1>
+            <p className="text-on-surface-variant">{t("onboarding.notify.subtitle")}</p>
+          </div>
+
+          <div className="space-y-3">
+            {[
+              { icon: "schedule",              key: "onboarding.notify.b1" },
+              { icon: "local_fire_department", key: "onboarding.notify.b2" },
+              { icon: "new_releases",          key: "onboarding.notify.b3" },
+            ].map(({ icon, key }) => (
+              <div key={key} className="flex items-center gap-4 bg-surface-container-low p-4 rounded-xl ghost-border">
+                <span className="material-symbols-outlined text-primary text-xl shrink-0">{icon}</span>
+                <p className="text-sm font-medium text-on-surface">{t(key)}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <button
+              onClick={handleEnableNotifications}
+              disabled={notifyState === "loading" || notifyState === "granted"}
+              className="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-lg py-5 rounded-full inner-glow hover:opacity-90 transition-all active:scale-[0.97] shadow-lg disabled:opacity-70 flex items-center justify-center gap-2"
+            >
+              <span className="material-symbols-outlined">
+                {notifyState === "loading" ? "sync" : notifyState === "granted" ? "check_circle" : "notifications_active"}
+              </span>
+              {notifyState === "granted"
+                ? t("onboarding.notify.granted")
+                : notifyState === "loading"
+                ? t("onboarding.saving")
+                : t("onboarding.notify.enable")}
+            </button>
+            <button
+              onClick={() => { window.location.href = "/home"; }}
+              className="w-full py-4 rounded-full text-on-surface-variant font-semibold text-sm hover:text-on-surface transition-colors"
+            >
+              {t("onboarding.notify.skip")}
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // ── Login / Register form ────────────────────────────────────────────────
   return (
     <div className="min-h-screen bg-surface text-on-surface font-sans relative overflow-hidden">
       <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
@@ -152,29 +247,6 @@ export default function LoginPage() {
               )}
             </button>
           </form>
-
-          {/* Dev Quick Access */}
-          <div className="pt-10 border-t border-surface-container-high mt-10">
-            <h3 className="text-xs font-black uppercase tracking-widest text-outline-variant mb-6 text-center">
-              Dev Quick Access — Simulate Language Pair
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {TEST_PROFILES.map((profile) => (
-                <button
-                  key={profile.label}
-                  type="button"
-                  onClick={() => handleSimulate(profile.source, profile.target)}
-                  className="flex items-center justify-between bg-surface-container px-6 py-4 rounded-2xl hover:bg-surface-container-high transition-colors group"
-                >
-                  <div className="flex flex-col items-start">
-                    <span className="text-sm font-bold">{profile.label}</span>
-                    <span className="text-[10px] text-on-surface-variant uppercase tracking-tighter">{profile.sub}</span>
-                  </div>
-                  <span className="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">login</span>
-                </button>
-              ))}
-            </div>
-          </div>
         </div>
       </main>
     </div>
