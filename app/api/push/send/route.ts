@@ -20,10 +20,12 @@ export async function POST(request: Request) {
       data: { url: url || "/home" },
     });
 
-    // Admin can send to all; regular users can only trigger for themselves
-    const targets = user.isAdmin && !targetUserId
-      ? getAllSubscriptions()
-      : [getSubscription(targetUserId || user.id)].filter(Boolean) as any[];
+    const adminEmail = process.env.PB_ADMIN_EMAIL || "odtechai@gmail.com";
+    const isAdmin = user.email === adminEmail;
+
+    const targets = isAdmin && !targetUserId
+      ? await getAllSubscriptions()
+      : [await getSubscription(targetUserId || user.id, user.token)].filter(Boolean) as any[];
 
     const results = await Promise.allSettled(
       targets.map((s: any) =>

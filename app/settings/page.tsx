@@ -16,11 +16,11 @@ export default async function SettingsPage() {
       <SettingsClient
         displayName={profile?.displayName ?? "Learner"}
         userEmail={user.email ?? ""}
-        whatsapp={user.whatsapp ?? ""}
+        whatsapp={""}
         sourceLanguage={profile?.sourceLanguage ?? ""}
         targetLanguage={profile?.targetLanguage ?? ""}
         defaultVoiceGender={voiceGender}
-        isAdmin={user.isAdmin ?? false}
+        isAdmin={user.email === (process.env.PB_ADMIN_EMAIL || "odtechai@gmail.com")}
       />
     </Shell>
   );
