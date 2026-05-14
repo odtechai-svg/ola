@@ -10,7 +10,7 @@ export async function POST(request: Request) {
     const sourceLang = cookieStore.get("ola_source_lang")?.value || "pt-BR";
     const { subscription } = await request.json();
     if (!subscription) return NextResponse.json({ error: "Missing subscription" }, { status: 400 });
-    saveSubscription(user.id, subscription, sourceLang);
+    await saveSubscription(user.id, subscription, sourceLang, user.token);
     return NextResponse.json({ ok: true });
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: 500 });
@@ -20,7 +20,7 @@ export async function POST(request: Request) {
 export async function DELETE() {
   try {
     const user = await requireUser();
-    removeSubscription(user.id);
+    await removeSubscription(user.id, user.token);
     return NextResponse.json({ ok: true });
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: 500 });

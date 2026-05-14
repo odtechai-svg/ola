@@ -18,7 +18,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const allSubs = getAllSubscriptions();
+  const allSubs = await getAllSubscriptions();
   if (allSubs.length === 0) {
     return NextResponse.json({ ok: true, sent: 0, skipped: 0, message: "No subscribers" });
   }

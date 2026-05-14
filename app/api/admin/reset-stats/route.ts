@@ -1,25 +1,36 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import { requireUser } from "@/lib/server/auth";
-import { markSessionDone } from "@/lib/push/store";
+import { getCurrentUser } from "@/lib/server/auth";
+import { createPbClient } from "@/lib/pocketbase/server";
 
 export async function POST() {
   try {
-    const user = await requireUser();
-    if (!user.isAdmin) {
-      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-    }
-
     const cookieStore = await cookies();
-    const opts = { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" as const };
+    const persistOpts = { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" as const };
 
-    cookieStore.set("ola_sessions_done",       "0", opts);
-    cookieStore.set("ola_total_phrases",        "0", opts);
-    cookieStore.set("ola_total_score_sum",      "0", opts);
-    cookieStore.set("ola_current_block_order",  "1", opts);
-    cookieStore.set("ola_words_repeated",       "0", opts);
+    cookieStore.set("ola_sessions_done", "0", persistOpts);
+    cookieStore.set("ola_total_phrases", "0", persistOpts);
+    cookieStore.set("ola_total_score_sum", "0", persistOpts);
+    cookieStore.set("ola_current_block_order", "1", persistOpts);
+    cookieStore.set("ola_words_repeated", "0", persistOpts);
     cookieStore.delete("ola_streak_days");
     cookieStore.delete("ola_last_session_date");
+
+    const user = await getCurrentUser();
+    if (user) {
+      try {
+        const pb = createPbClient(user.token);
+        const existing = await pb
+          .collection("user_progress")
+          .getList(1, 1, { filter: `user_id = "${user.id}"` })
+          .catch(() => ({ items: [] as any[] }));
+        if (existing.items.length > 0) {
+          await pb.collection("user_progress").delete(existing.items[0].id);
+        }
+      } catch (e) {
+        console.error("[OLA] reset-stats PocketBase error:", e);
+      }
+    }
 
     return NextResponse.json({ ok: true });
   } catch (e: any) {

@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { cookies } from "next/headers";
 import { BlockSummary, LanguageOption, SessionSummary, UserProfile } from "@/lib/contracts/domain";
+import { createPbClient } from "@/lib/pocketbase/server";
 
 export interface EnrollmentSummary {
   id: string;
@@ -102,24 +103,48 @@ export async function getDashboardProfile(userId: string): Promise<{
   blockTitle: string;
 }> {
   const { source, target } = await getLanguagePairFromCookies();
-  const currentBlockOrder = await getBlockOrderFromCookies();
-  const { sessionsDone, totalPhrases, avgScore, wordsRepeated } = await getStatsFromCookies();
+  const cookieStore = await cookies();
+
+  // Try to load progress from PocketBase; fall back to cookies (demo mode)
+  let pbProgress: any = null;
+  const token = cookieStore.get("pb_auth")?.value;
+  if (token && userId && userId !== "anonymous") {
+    try {
+      const pb = createPbClient(token);
+      const result = await pb.collection("user_progress").getList(1, 1, {
+        filter: `user_id = "${userId}"`,
+      });
+      pbProgress = result.items[0] || null;
+    } catch {}
+  }
+
+  const currentBlockOrder = pbProgress?.block_order
+    ?? parseInt(cookieStore.get("ola_current_block_order")?.value || "1", 10);
+  const sessionsDone = pbProgress?.sessions_done
+    ?? parseInt(cookieStore.get("ola_sessions_done")?.value || "0", 10);
+  const totalPhrases = pbProgress?.total_phrases
+    ?? parseInt(cookieStore.get("ola_total_phrases")?.value || "0", 10);
+  const totalScoreSum = pbProgress?.total_score_sum
+    ?? parseFloat(cookieStore.get("ola_total_score_sum")?.value || "0");
+  const avgScore = sessionsDone > 0 ? Math.round((totalScoreSum / sessionsDone) * 100) : 0;
+  const wordsRepeated = pbProgress?.words_repeated
+    ?? parseInt(cookieStore.get("ola_words_repeated")?.value || "0", 10);
+  const streakDaysPb = pbProgress?.streak_days
+    ?? parseInt(cookieStore.get("ola_streak_days")?.value || "0", 10);
+  const lastSessionDate = pbProgress?.last_session_date
+    ? String(pbProgress.last_session_date).slice(0, 10)
+    : cookieStore.get("ola_last_session_date")?.value;
+  const displayName = cookieStore.get("ola_display_name")?.value || "Atleta";
 
   const blocksData = await getLocalBlocksData(source, target);
   const currentBlock = blocksData.find((b: any) => b.order === currentBlockOrder) || blocksData[0] || {};
   const blockTitle: string = currentBlock.title || "";
   const phraseCount: number = currentBlock.levels?.length ?? 3;
 
-  const cookieStore = await cookies();
-  const displayName = cookieStore.get("ola_display_name")?.value || "Max Carvalho";
-
   const todayStr = new Date().toISOString().slice(0, 10);
   const yesterdayDate = new Date();
   yesterdayDate.setDate(yesterdayDate.getDate() - 1);
   const yesterdayStr = yesterdayDate.toISOString().slice(0, 10);
-
-  const streakDaysCookie = parseInt(cookieStore.get("ola_streak_days")?.value || "0", 10);
-  const lastSessionDate = cookieStore.get("ola_last_session_date")?.value;
 
   let streakState: StreakState;
   let streakDays: number;
@@ -129,10 +154,10 @@ export async function getDashboardProfile(userId: string): Promise<{
     streakDays = 0;
   } else if (lastSessionDate === todayStr) {
     streakState = "today";
-    streakDays = streakDaysCookie;
+    streakDays = streakDaysPb;
   } else if (lastSessionDate === yesterdayStr) {
     streakState = "alive";
-    streakDays = streakDaysCookie;
+    streakDays = streakDaysPb;
   } else {
     streakState = "broken";
     streakDays = 0;
@@ -140,7 +165,7 @@ export async function getDashboardProfile(userId: string): Promise<{
 
   return {
     profile: {
-      id: userId || "fa7ef70f-e61a-40c7-a9e4-15429f7a0f5a",
+      id: userId || "anonymous",
       displayName,
       sourceLanguage: source,
       targetLanguage: target,
@@ -153,12 +178,12 @@ export async function getDashboardProfile(userId: string): Promise<{
       wordsRepeated,
     },
     enrollment: {
-      id: "mock-enrollment-id",
+      id: "enrollment-id",
       languagePairId: `${source}→${target}`,
       sourceLanguageCode: source,
       targetLanguageCode: target,
       currentBlockOrder,
-      currentBlockId: `mock-block-${currentBlockOrder}`
+      currentBlockId: `block-${currentBlockOrder}`,
     },
     queueCount: phraseCount,
     blockTitle,
@@ -190,7 +215,16 @@ async function getLocalBlocksData(source?: string, target?: string) {
 
 export async function getBlocksForActiveEnrollment(userId: string): Promise<BlockSummary[]> {
   const blocksData = await getLocalBlocksData();
-  const currentBlockOrder = await getBlockOrderFromCookies();
+  const cookieStore = await cookies();
+  const token = cookieStore.get("pb_auth")?.value;
+  let currentBlockOrder = await getBlockOrderFromCookies();
+  if (token && userId && userId !== "anonymous") {
+    try {
+      const pb = createPbClient(token);
+      const result = await pb.collection("user_progress").getList(1, 1, { filter: `user_id = "${userId}"` });
+      if (result.items[0]?.block_order) currentBlockOrder = result.items[0].block_order;
+    } catch {}
+  }
 
   return (blocksData ?? []).map((block: any) => {
     const status = block.order < currentBlockOrder

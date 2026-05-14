@@ -11,13 +11,12 @@
     "db:notes": "echo 'Run supabase/database_pack/migrations/000_master_setup.sql in Supabase SQL Editor'"
   },
   "dependencies": {
-    "@supabase/ssr": "^0.5.2",
-    "@supabase/supabase-js": "^2.49.1",
     "@types/web-push": "^3.6.4",
     "clsx": "^2.1.1",
     "lucide-react": "^0.511.0",
     "next": "15.2.2",
     "next-themes": "^0.4.6",
+    "pocketbase": "^0.26.9",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "web-push": "^3.6.7",
