@@ -19,6 +19,7 @@ export async function POST(request: Request) {
     cookieStore.set("pb_auth", auth.token, COOKIE_OPTS);
     cookieStore.set("pb_user_id", auth.record.id, COOKIE_OPTS);
     cookieStore.set("pb_user_email", auth.record.email || "", COOKIE_OPTS);
+    cookieStore.set("ola_display_name", (auth.record as any).name || "", COOKIE_OPTS);
     return NextResponse.json({ ok: true });
   } catch {
     return NextResponse.json({ error: "Email ou senha incorretos." }, { status: 401 });
