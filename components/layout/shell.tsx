@@ -20,7 +20,7 @@ export function Shell({ children, isAdmin = true }: { children: ReactNode; isAdm
   const nav = [
     { href: "/home", labelKey: "nav.today", icon: "today" },
     { href: "/blocks", labelKey: "nav.blocks", icon: "widgets" },
-    { href: "/progress", labelKey: "nav.progress", icon: "analytics" },
+    { href: "/stats", labelKey: "nav.progress", icon: "analytics" },
     { href: "/settings", labelKey: "nav.settings", icon: "settings" },
   ];
 
