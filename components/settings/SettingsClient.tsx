@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useLanguage } from "@/lib/i18n-context";
 import { PushToggle } from "@/components/settings/PushToggle";
+import { AuthButton } from "@/components/ola/auth-button";
 
 interface SettingsClientProps {
   displayName: string;
@@ -196,6 +197,11 @@ export function SettingsClient({
 
       {/* Push Notifications Card */}
       <PushToggle />
+
+      {/* Sign out — visible on mobile where sidebar is hidden */}
+      <div className="lg:hidden">
+        <AuthButton />
+      </div>
 
       {/* Admin: Reset Stats */}
       {isAdmin && (

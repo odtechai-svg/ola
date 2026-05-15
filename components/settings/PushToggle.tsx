@@ -18,7 +18,21 @@ export function PushToggle() {
   const isDenied    = state === "denied";
   const unsupported = state === "unsupported";
 
-  if (unsupported) return null;
+  if (unsupported) return (
+    <div className="bg-surface-container-low p-8 rounded-lg ghost-border space-y-3">
+      <div className="flex items-center gap-3">
+        <span className="material-symbols-outlined text-on-surface-variant">notifications</span>
+        <h3 className="text-lg font-bold text-on-surface">Push Notifications</h3>
+      </div>
+      <div className="flex items-start gap-3 bg-surface-container p-4 rounded-lg">
+        <span className="material-symbols-outlined text-primary shrink-0 mt-0.5">ios_share</span>
+        <p className="text-sm text-on-surface-variant leading-relaxed">
+          Para ativar notificações no iOS, adicione o OLA à tela inicial: toque em{" "}
+          <strong className="text-on-surface">Compartilhar → Adicionar à Tela de Início</strong>, depois abra pelo ícone.
+        </p>
+      </div>
+    </div>
+  );
 
   return (
     <div className="bg-surface-container-low p-8 rounded-lg ghost-border space-y-4">

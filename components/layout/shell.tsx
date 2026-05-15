@@ -87,12 +87,34 @@ export function Shell({ children, isAdmin = true }: { children: ReactNode; isAdm
       </main>
 
       {/* ── BottomNavBar (Mobile) ── */}
-      <nav className="lg:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-surface-container-lowest/80 backdrop-blur-xl z-50 rounded-t-[2rem] shadow-[0_-8px_40px_-12px_rgba(0,0,0,0.5)]">
-        {nav.map((item) => (
+      <nav className="lg:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-2 pb-6 pt-3 bg-surface-container-lowest/80 backdrop-blur-xl z-50 rounded-t-[2rem] shadow-[0_-8px_40px_-12px_rgba(0,0,0,0.5)]">
+        {nav.slice(0, 2).map((item) => (
           <Link
             key={item.href}
             href={item.href as any}
-            className="flex flex-col items-center justify-center text-on-surface-variant px-5 py-2 hover:text-primary transition-colors active:scale-90 duration-200"
+            className="flex flex-col items-center justify-center text-on-surface-variant px-3 py-2 hover:text-primary transition-colors active:scale-90 duration-200"
+          >
+            <span className="material-symbols-outlined">{item.icon}</span>
+            <span className="text-[11px] font-semibold tracking-wide uppercase mt-1">{t(item.labelKey)}</span>
+          </Link>
+        ))}
+
+        {/* Central Start Session FAB */}
+        <Link
+          href="/session/live"
+          className="flex flex-col items-center justify-center -mt-5 active:scale-90 duration-200"
+        >
+          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary-container flex items-center justify-center shadow-lg shadow-primary/30 inner-glow">
+            <span className="material-symbols-outlined text-on-primary text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>play_arrow</span>
+          </div>
+          <span className="text-[10px] font-bold text-primary tracking-wide uppercase mt-1">{t("nav.start_session")}</span>
+        </Link>
+
+        {nav.slice(2).map((item) => (
+          <Link
+            key={item.href}
+            href={item.href as any}
+            className="flex flex-col items-center justify-center text-on-surface-variant px-3 py-2 hover:text-primary transition-colors active:scale-90 duration-200"
           >
             <span className="material-symbols-outlined">{item.icon}</span>
             <span className="text-[11px] font-semibold tracking-wide uppercase mt-1">{t(item.labelKey)}</span>
