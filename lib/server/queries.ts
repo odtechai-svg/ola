@@ -106,35 +106,40 @@ export async function getDashboardProfile(userId: string): Promise<{
   const { source, target } = await getLanguagePairFromCookies();
   const cookieStore = await cookies();
 
-  // Try to load progress from PocketBase; fall back to cookies (demo mode)
+  // Try to load progress from PocketBase filtered by language pair
   let pbProgress: any = null;
   const token = cookieStore.get("pb_auth")?.value;
   if (token && userId && userId !== "anonymous") {
     try {
       const pb = createPbClient(token);
       const result = await pb.collection("user_progress").getList(1, 1, {
-        filter: `user_id = "${userId}"`,
+        filter: `user_id = "${userId}" && source_lang = "${source}" && target_lang = "${target}"`,
       });
       pbProgress = result.items[0] || null;
     } catch {}
   }
 
+  // Validate whether cookies belong to the current language pair
+  const currentPair = `${source}→${target}`;
+  const cookieProgressPair = cookieStore.get("ola_progress_lang_pair")?.value;
+  const cookiesMatchPair = !cookieProgressPair || cookieProgressPair === currentPair;
+
   const currentBlockOrder = pbProgress?.block_order
-    ?? parseInt(cookieStore.get("ola_current_block_order")?.value || "1", 10);
+    ?? (cookiesMatchPair ? parseInt(cookieStore.get("ola_current_block_order")?.value || "1", 10) : 1);
   const sessionsDone = pbProgress?.sessions_done
-    ?? parseInt(cookieStore.get("ola_sessions_done")?.value || "0", 10);
+    ?? (cookiesMatchPair ? parseInt(cookieStore.get("ola_sessions_done")?.value || "0", 10) : 0);
   const totalPhrases = pbProgress?.total_phrases
-    ?? parseInt(cookieStore.get("ola_total_phrases")?.value || "0", 10);
+    ?? (cookiesMatchPair ? parseInt(cookieStore.get("ola_total_phrases")?.value || "0", 10) : 0);
   const totalScoreSum = pbProgress?.total_score_sum
-    ?? parseFloat(cookieStore.get("ola_total_score_sum")?.value || "0");
+    ?? (cookiesMatchPair ? parseFloat(cookieStore.get("ola_total_score_sum")?.value || "0") : 0);
   const avgScore = sessionsDone > 0 ? Math.round((totalScoreSum / sessionsDone) * 100) : 0;
   const wordsRepeated = pbProgress?.words_repeated
-    ?? parseInt(cookieStore.get("ola_words_repeated")?.value || "0", 10);
+    ?? (cookiesMatchPair ? parseInt(cookieStore.get("ola_words_repeated")?.value || "0", 10) : 0);
   const streakDaysPb = pbProgress?.streak_days
-    ?? parseInt(cookieStore.get("ola_streak_days")?.value || "0", 10);
+    ?? (cookiesMatchPair ? parseInt(cookieStore.get("ola_streak_days")?.value || "0", 10) : 0);
   const lastSessionDate = pbProgress?.last_session_date
     ? String(pbProgress.last_session_date).slice(0, 10)
-    : cookieStore.get("ola_last_session_date")?.value;
+    : (cookiesMatchPair ? cookieStore.get("ola_last_session_date")?.value : undefined);
   const displayName = cookieStore.get("ola_display_name")?.value || "Atleta";
 
   const blocksData = await getLocalBlocksData(source, target);
@@ -227,8 +232,11 @@ export async function getBlocksForActiveEnrollment(userId: string): Promise<Bloc
   let currentBlockOrder = await getBlockOrderFromCookies();
   if (token && userId && userId !== "anonymous") {
     try {
+      const { source: s, target: t } = await getLanguagePairFromCookies();
       const pb = createPbClient(token);
-      const result = await pb.collection("user_progress").getList(1, 1, { filter: `user_id = "${userId}"` });
+      const result = await pb.collection("user_progress").getList(1, 1, {
+        filter: `user_id = "${userId}" && source_lang = "${s}" && target_lang = "${t}"`,
+      });
       if (result.items[0]?.block_order) currentBlockOrder = result.items[0].block_order;
     } catch {}
   }

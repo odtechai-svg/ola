@@ -63,6 +63,9 @@ export async function POST(request: Request) {
     cookieStore.set("ola_streak_days", newStreak.toString(), cookieOptions);
     cookieStore.set("ola_blocks_today", blocksTodayDone.toString(), cookieOptions);
     cookieStore.set("ola_blocks_today_date", today, cookieOptions);
+    const sourceLang = cookieStore.get("ola_source_lang")?.value || "pt-BR";
+    const targetLang = cookieStore.get("ola_target_lang")?.value || "en";
+    cookieStore.set("ola_progress_lang_pair", `${sourceLang}→${targetLang}`, cookieOptions);
 
     // ── PocketBase write (real users only) ─────────────────────────────────
     if (user) {
@@ -70,7 +73,7 @@ export async function POST(request: Request) {
         const pb = createPbClient(user.token);
         const existing = await pb
           .collection("user_progress")
-          .getList(1, 1, { filter: `user_id = "${user.id}"` })
+          .getList(1, 1, { filter: `user_id = "${user.id}" && source_lang = "${sourceLang}" && target_lang = "${targetLang}"` })
           .catch(() => ({ items: [] as any[] }));
 
         const progressData = {
@@ -82,8 +85,8 @@ export async function POST(request: Request) {
           words_repeated: wordsRepeated,
           streak_days: newStreak,
           last_session_date: today,
-          source_lang: cookieStore.get("ola_source_lang")?.value || "pt-BR",
-          target_lang: cookieStore.get("ola_target_lang")?.value || "en",
+          source_lang: sourceLang,
+          target_lang: targetLang,
           voice_gender: cookieStore.get("ola_voice_gender")?.value || "female",
         };
 
