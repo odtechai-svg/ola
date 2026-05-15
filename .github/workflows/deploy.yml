@@ -1,0 +1,15 @@
+name: Deploy to Coolify
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Coolify deployment
+        run: |
+          curl -fsSL \
+            "http://76.13.169.20:8000/api/v1/deploy?uuid=gubyyr8zz3e9irh056gaa5m1&force=false" \
+            -o /dev/null -w "HTTP status: %{http_code}\n"
