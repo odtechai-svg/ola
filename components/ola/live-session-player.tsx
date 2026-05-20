@@ -218,12 +218,28 @@ export function LiveSessionPlayer({
             <span className="material-symbols-outlined text-[22px]">replay</span>
             {t("blocks.repeat")}
           </button>
-          <Link
-            href="/home"
-            className="bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold py-4 px-12 rounded-full inner-glow shadow-[0_0_40px_rgba(163,166,255,0.2)] hover:shadow-[0_0_60px_rgba(163,166,255,0.3)] hover:-translate-y-1 active:translate-y-0 active:scale-95 transition-all text-lg"
-          >
-            {t("session.continue")}
-          </Link>
+
+          {/* Next block or back to home depending on daily challenge progress */}
+          {blocksTodayDone > 0 && blocksTodayDone < 3 ? (
+            <Link
+              href="/session/live"
+              className="flex items-center gap-2 bg-gradient-to-br from-secondary to-secondary-dim text-on-secondary font-bold py-4 px-10 rounded-full shadow-[0_0_40px_rgba(0,220,180,0.25)] hover:shadow-[0_0_60px_rgba(0,220,180,0.35)] hover:-translate-y-1 active:translate-y-0 active:scale-95 transition-all text-lg"
+            >
+              {t("session.next_block")}
+              <span className="material-symbols-outlined text-[22px]" style={{ fontVariationSettings: "'FILL' 1" }}>arrow_forward</span>
+            </Link>
+          ) : (
+            <Link
+              href="/home"
+              className="flex items-center gap-2 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold py-4 px-10 rounded-full inner-glow shadow-[0_0_40px_rgba(163,166,255,0.2)] hover:shadow-[0_0_60px_rgba(163,166,255,0.3)] hover:-translate-y-1 active:translate-y-0 active:scale-95 transition-all text-lg"
+            >
+              {blocksTodayDone >= 3
+                ? <span className="material-symbols-outlined text-[22px]" style={{ fontVariationSettings: "'FILL' 1" }}>emoji_events</span>
+                : <span className="material-symbols-outlined text-[22px]">home</span>
+              }
+              {t("session.continue")}
+            </Link>
+          )}
         </div>
       </div>
     );
