@@ -11,9 +11,10 @@ export const metadata = {
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const cookieStore = await cookies();
   const sourceLang = cookieStore.get("ola_source_lang")?.value ?? "";
+  const htmlLang = sourceLang ? sourceLang.substring(0, 2) : "pt";
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={htmlLang} suppressHydrationWarning>
       <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" />
       </head>

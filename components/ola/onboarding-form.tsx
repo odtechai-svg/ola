@@ -28,8 +28,8 @@ const flags: Record<string, string> = {
 
 export function OnboardingForm({
   languageOptions,
-  defaultSource = "en",
-  defaultTarget = "pt-BR",
+  defaultSource = "pt-BR",
+  defaultTarget = "en",
   step = 1,
   totalSteps = 3,
 }: {

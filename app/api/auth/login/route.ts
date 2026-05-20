@@ -20,6 +20,11 @@ export async function POST(request: Request) {
     cookieStore.set("pb_user_id", auth.record.id, COOKIE_OPTS);
     cookieStore.set("pb_user_email", auth.record.email || "", COOKIE_OPTS);
     cookieStore.set("ola_display_name", (auth.record as any).name || "", COOKIE_OPTS);
+    // Restore language defaults for users without cookies (new device / cleared cookies)
+    if (!cookieStore.get("ola_source_lang")?.value) {
+      cookieStore.set("ola_source_lang", "pt-BR", { ...COOKIE_OPTS, maxAge: 60 * 60 * 24 * 365 });
+      cookieStore.set("ola_target_lang", "en",    { ...COOKIE_OPTS, maxAge: 60 * 60 * 24 * 365 });
+    }
     return NextResponse.json({ ok: true });
   } catch {
     return NextResponse.json({ error: "Email ou senha incorretos." }, { status: 401 });

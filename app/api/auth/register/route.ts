@@ -29,6 +29,9 @@ export async function POST(request: Request) {
     cookieStore.set("pb_user_id", auth.record.id, COOKIE_OPTS);
     cookieStore.set("pb_user_email", auth.record.email || "", COOKIE_OPTS);
     cookieStore.set("ola_display_name", auth.record.name || name || "", COOKIE_OPTS);
+    // Set default language for new users (Brazilian app — pt-BR learning en)
+    cookieStore.set("ola_source_lang", "pt-BR", { ...COOKIE_OPTS, maxAge: 60 * 60 * 24 * 365 });
+    cookieStore.set("ola_target_lang", "en",    { ...COOKIE_OPTS, maxAge: 60 * 60 * 24 * 365 });
     return NextResponse.json({ ok: true });
   } catch (e: any) {
     const msg = e?.response?.data?.email?.message || e?.message || "Erro ao criar conta.";

@@ -1360,9 +1360,9 @@ export function LanguageProvider({
   children: ReactNode;
   initialSourceLang?: string;
 }) {
-  // Initialise from server-passed cookie to prevent SSR flash
+  // Initialise from server-passed cookie to prevent SSR flash; default to PT for Brazilian users
   const [language, setLanguageState] = useState<LanguageCode>(
-    initialSourceLang ? sourceLangToI18n(initialSourceLang) : "en"
+    initialSourceLang ? sourceLangToI18n(initialSourceLang) : "pt"
   );
 
   useEffect(() => {
