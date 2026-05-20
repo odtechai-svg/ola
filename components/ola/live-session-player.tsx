@@ -6,6 +6,7 @@ import { SessionSummary } from "@/lib/contracts/domain";
 import { chooseExercise } from "@/lib/engines/session-orchestrator";
 import { AudioManager } from "@/lib/api/AudioManager";
 import { useLanguage } from "@/lib/i18n-context";
+import { ClassroomTutorial, hasSeenClassroomTutorial } from "@/components/ola/classroom-tutorial";
 
 export function LiveSessionPlayer({
   summary,
@@ -26,6 +27,7 @@ export function LiveSessionPlayer({
   const [isRecording, setIsRecording] = useState(false);
   const [sessionScores, setSessionScores] = useState<number[]>([]);
   const [blocksTodayDone, setBlocksTodayDone] = useState(0);
+  const [showTutorial, setShowTutorial] = useState(false);
   const recognitionRef = useRef<any>(null);
   const autoPlayedIndexRef = useRef(-1);
   const isRetryRef = useRef(false);
@@ -33,6 +35,13 @@ export function LiveSessionPlayer({
 
   useEffect(() => {
     return () => { isMountedRef.current = false; };
+  }, []);
+
+  // Show tutorial only on first visit
+  useEffect(() => {
+    if (!hasSeenClassroomTutorial()) {
+      setShowTutorial(true);
+    }
   }, []);
 
   useEffect(() => {
@@ -68,8 +77,9 @@ export function LiveSessionPlayer({
     return () => { AudioManager.stop(); };
   }, []);
 
-  // ── Auto-play TTS when navigating to a new item ──
+  // ── Auto-play TTS when navigating to a new item (paused during tutorial) ──
   useEffect(() => {
+    if (showTutorial) return;
     if (autoPlayedIndexRef.current === index) return;
     autoPlayedIndexRef.current = index;
 
@@ -119,7 +129,7 @@ export function LiveSessionPlayer({
     }, 400);
 
     return () => clearTimeout(timer);
-  }, [index, summary, languagePairId]);
+  }, [index, showTutorial, summary, languagePairId]);
 
   // ── Session Complete ──
   const avgScorePct = sessionScores.length > 0
@@ -565,6 +575,17 @@ export function LiveSessionPlayer({
       {/* Background blurs */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-secondary/5 blur-[150px] rounded-full pointer-events-none" />
+
+      {/* First-time tutorial overlay */}
+      {showTutorial && (
+        <ClassroomTutorial
+          onComplete={() => {
+            setShowTutorial(false);
+            // Reset auto-play ref so audio triggers after tutorial
+            autoPlayedIndexRef.current = -1;
+          }}
+        />
+      )}
     </div>
   );
 }
