@@ -109,6 +109,11 @@ const dictionaries: Dictionaries = {
     "session.hold_mic": "Hold the microphone to speak...",
     "session.tap_continue": "Tap arrow to continue",
     "session.hold_speak": "Hold to speak",
+    "session.retry_or_continue": "RETRY OR TAP → TO CONTINUE",
+    "session.challenge_label": "Challenge 15 — today",
+    "session.challenge_remaining_one": "block remaining to complete the challenge!",
+    "session.challenge_remaining_many": "blocks remaining to complete the challenge!",
+    "session.challenge_all_done": "🏆 Daily challenge complete!",
 
     // ── Progress / Stats ──
     "progress.section": "Analytics",
@@ -324,6 +329,11 @@ const dictionaries: Dictionaries = {
     "session.hold_mic": "Segure o microfone para falar...",
     "session.tap_continue": "Toque na seta para continuar",
     "session.hold_speak": "Segure para falar",
+    "session.retry_or_continue": "REPITA OU TOQUE → PARA CONTINUAR",
+    "session.challenge_label": "Desafio 15 — hoje",
+    "session.challenge_remaining_one": "bloco restante para completar o desafio!",
+    "session.challenge_remaining_many": "blocos restantes para completar o desafio!",
+    "session.challenge_all_done": "🏆 Desafio do dia concluído!",
 
     // ── Progress / Stats ──
     "progress.section": "Análises",
@@ -539,6 +549,11 @@ const dictionaries: Dictionaries = {
     "session.hold_mic": "Mantén el micrófono para hablar...",
     "session.tap_continue": "Toca la flecha para continuar",
     "session.hold_speak": "Mantén para hablar",
+    "session.retry_or_continue": "REPITE O PULSA → PARA CONTINUAR",
+    "session.challenge_label": "Desafío 15 — hoy",
+    "session.challenge_remaining_one": "bloque restante para completar el desafío!",
+    "session.challenge_remaining_many": "bloques restantes para completar el desafío!",
+    "session.challenge_all_done": "🏆 ¡Desafío diario completado!",
 
     // ── Progress / Stats ──
     "stats.section": "Análisis",
@@ -754,6 +769,11 @@ const dictionaries: Dictionaries = {
     "session.hold_mic": "Tieni premuto il microfono per parlare...",
     "session.tap_continue": "Tocca la freccia per continuare",
     "session.hold_speak": "Tieni per parlare",
+    "session.retry_or_continue": "RIPROVA O PREMI → PER CONTINUARE",
+    "session.challenge_label": "Sfida 15 — oggi",
+    "session.challenge_remaining_one": "blocco rimanente per completare la sfida!",
+    "session.challenge_remaining_many": "blocchi rimanenti per completare la sfida!",
+    "session.challenge_all_done": "🏆 Sfida giornaliera completata!",
 
     // ── Progress / Stats ──
     "stats.section": "Analisi",
@@ -969,6 +989,11 @@ const dictionaries: Dictionaries = {
     "session.hold_mic": "Appuie sur le micro pour parler...",
     "session.tap_continue": "Appuie sur la flèche pour continuer",
     "session.hold_speak": "Appuie pour parler",
+    "session.retry_or_continue": "RÉESSAIE OU → POUR CONTINUER",
+    "session.challenge_label": "Défi 15 — aujourd'hui",
+    "session.challenge_remaining_one": "bloc restant pour compléter le défi!",
+    "session.challenge_remaining_many": "blocs restants pour compléter le défi!",
+    "session.challenge_all_done": "🏆 Défi du jour accompli!",
 
     // ── Progress / Stats ──
     "stats.section": "Analyses",
@@ -1184,6 +1209,11 @@ const dictionaries: Dictionaries = {
     "session.hold_mic": "Halte das Mikrofon zum Sprechen...",
     "session.tap_continue": "Tippe auf den Pfeil zum Fortfahren",
     "session.hold_speak": "Halten zum Sprechen",
+    "session.retry_or_continue": "NOCHMALS ODER → WEITER",
+    "session.challenge_label": "Challenge 15 — heute",
+    "session.challenge_remaining_one": "Block verbleibend für die Herausforderung!",
+    "session.challenge_remaining_many": "Blöcke verbleibend für die Herausforderung!",
+    "session.challenge_all_done": "🏆 Tagesherausforderung abgeschlossen!",
 
     // ── Progress / Stats ──
     "stats.section": "Analysen",

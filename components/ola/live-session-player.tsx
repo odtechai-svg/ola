@@ -25,7 +25,15 @@ export function LiveSessionPlayer({
   const [isBufferingTTS, setIsBufferingTTS] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
   const [sessionScores, setSessionScores] = useState<number[]>([]);
+  const [blocksTodayDone, setBlocksTodayDone] = useState(0);
   const recognitionRef = useRef<any>(null);
+  const autoPlayedIndexRef = useRef(-1);
+  const isRetryRef = useRef(false);
+  const isMountedRef = useRef(true);
+
+  useEffect(() => {
+    return () => { isMountedRef.current = false; };
+  }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -57,10 +65,61 @@ export function LiveSessionPlayer({
 
   // Cleanup audio when component unmounts
   useEffect(() => {
-    return () => {
-      AudioManager.stop();
-    };
+    return () => { AudioManager.stop(); };
   }, []);
+
+  // ── Auto-play TTS when navigating to a new item ──
+  useEffect(() => {
+    if (autoPlayedIndexRef.current === index) return;
+    autoPlayedIndexRef.current = index;
+
+    const currentItem = summary.items[index];
+    if (!currentItem) return;
+
+    const timer = setTimeout(async () => {
+      if (!isMountedRef.current) return;
+      try {
+        AudioManager.stop();
+        if (isMountedRef.current) { setIsBufferingTTS(true); setIsPlayingTTS(false); }
+
+        const targetLang = languagePairId.split('→')[1] || "pt-BR";
+        const voiceGender = document.cookie
+          .split("; ")
+          .find((row) => row.startsWith("ola_voice_gender="))
+          ?.split("=")[1] || "female";
+
+        const response = await fetch("/api/tts", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            text: currentItem.expectedText.substring(0, 5000),
+            lang: targetLang,
+            gender: voiceGender,
+          }),
+        });
+
+        if (!isMountedRef.current) return;
+        const data = await response.json();
+        if (!response.ok || !data?.audioContent) throw new Error("TTS error");
+
+        const binaryString = atob(data.audioContent);
+        const bytes = new Uint8Array(binaryString.length);
+        for (let i = 0; i < binaryString.length; i++) {
+          bytes[i] = binaryString.charCodeAt(i);
+        }
+        const audioBlob = new Blob([bytes], { type: "audio/mpeg" });
+
+        if (!isMountedRef.current) return;
+        AudioManager.play(audioBlob, () => { if (isMountedRef.current) setIsPlayingTTS(false); });
+        setIsPlayingTTS(true);
+        setIsBufferingTTS(false);
+      } catch {
+        if (isMountedRef.current) { setIsPlayingTTS(false); setIsBufferingTTS(false); }
+      }
+    }, 400);
+
+    return () => clearTimeout(timer);
+  }, [index, summary, languagePairId]);
 
   // ── Session Complete ──
   const avgScorePct = sessionScores.length > 0
@@ -68,9 +127,9 @@ export function LiveSessionPlayer({
     : 0;
 
   if (!item) {
+    const remaining = 3 - blocksTodayDone;
     return (
       <div className="min-h-[80vh] flex flex-col items-center justify-center text-center px-8 relative overflow-hidden">
-        {/* Glow effect */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="w-24 h-24 rounded-full bg-secondary/10 flex items-center justify-center mb-6 relative z-10 animate-bounce">
@@ -89,7 +148,7 @@ export function LiveSessionPlayer({
         </p>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 gap-4 w-full max-w-sm mb-10 relative z-10">
+        <div className="grid grid-cols-2 gap-4 w-full max-w-sm mb-8 relative z-10">
           <div className="glass-card py-6 px-4 rounded-2xl ghost-border flex flex-col items-center justify-center shadow-lg hover:bg-surface-container-low transition-colors">
             <span className="material-symbols-outlined text-primary mb-2 text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>neurology</span>
             <span className="text-4xl font-black text-on-surface">{summary.items.length}</span>
@@ -102,9 +161,48 @@ export function LiveSessionPlayer({
           </div>
         </div>
 
+        {/* Desafio 15 Progress */}
+        {blocksTodayDone > 0 && (
+          <div className="w-full max-w-sm mb-8 relative z-10">
+            <p className="text-[10px] uppercase tracking-[0.2em] font-black text-on-surface-variant mb-3 text-center">
+              {t("session.challenge_label")}
+            </p>
+            <div className="flex gap-3">
+              {[1, 2, 3].map((n) => {
+                const done = n <= blocksTodayDone;
+                return (
+                  <div
+                    key={n}
+                    className={`flex-1 flex flex-col items-center gap-2 py-4 rounded-2xl transition-all ${
+                      done ? "bg-secondary/15 border border-secondary/30" : "bg-surface-container-low border border-outline-variant/20"
+                    }`}
+                  >
+                    <span
+                      className={`material-symbols-outlined text-2xl ${done ? "text-secondary" : "text-outline-variant"}`}
+                      style={{ fontVariationSettings: done ? "'FILL' 1" : "'FILL' 0" }}
+                    >
+                      {done ? "check_circle" : "radio_button_unchecked"}
+                    </span>
+                    <span className={`text-xs font-bold ${done ? "text-secondary" : "text-outline-variant"}`}>
+                      {n}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+            <p className={`text-center text-sm font-bold mt-3 ${blocksTodayDone >= 3 ? "text-secondary" : "text-on-surface-variant"}`}>
+              {blocksTodayDone >= 3
+                ? t("session.challenge_all_done")
+                : remaining === 1
+                ? `${remaining} ${t("session.challenge_remaining_one")}`
+                : `${remaining} ${t("session.challenge_remaining_many")}`}
+            </p>
+          </div>
+        )}
+
         <div className="flex items-center gap-4 relative z-10">
           <button
-            onClick={() => { setIndex(0); setSessionScores([]); setSpoken(""); setResult(null); }}
+            onClick={() => { setIndex(0); setSessionScores([]); setSpoken(""); setResult(null); autoPlayedIndexRef.current = -1; }}
             className="flex items-center gap-2 border border-outline-variant/30 text-on-surface-variant font-bold py-4 px-8 rounded-full hover:bg-surface-container-high active:scale-95 transition-all text-lg"
           >
             <span className="material-symbols-outlined text-[22px]">replay</span>
@@ -124,8 +222,7 @@ export function LiveSessionPlayer({
   async function handleEvaluate(finalTranscript?: string) {
     setSaving(true);
     setResult(null);
-    
-    // Auto-pass if no transcript was captured (e.g. quick tap or Safari no support)
+
     const transcriptToEvaluate = finalTranscript || spoken || item.expectedText;
 
     const response = await fetch("/api/session/evaluate", {
@@ -151,18 +248,29 @@ export function LiveSessionPlayer({
     }
 
     if (data.evaluation?.finalScore !== undefined) {
-      setSessionScores(prev => [...prev, data.evaluation.finalScore]);
+      const score = data.evaluation.finalScore;
+      setSessionScores(prev => {
+        if (isRetryRef.current) {
+          // Replace last score on re-attempt
+          isRetryRef.current = false;
+          return prev.length > 0 ? [...prev.slice(0, -1), score] : [score];
+        }
+        return [...prev, score];
+      });
     }
 
-    setResult(
-      `Score ${Math.round(data.evaluation.finalScore * 100)}%. ${data.evaluation.feedback}`
-    );
+    setResult(`Score ${Math.round(data.evaluation.finalScore * 100)}%. ${data.evaluation.feedback}`);
   }
 
   function handlePointerDown() {
     AudioManager.stop();
     setIsRecording(true);
     setSpoken("");
+    // If user already spoke and is retrying, mark as retry to replace score
+    if (result !== null) {
+      isRetryRef.current = true;
+      setResult(null);
+    }
     if (recognitionRef.current) {
       try {
         recognitionRef.current.start();
@@ -183,39 +291,35 @@ export function LiveSessionPlayer({
     if (!isRecording) return;
     setIsRecording(false);
     if (recognitionRef.current) {
-      try {
-        recognitionRef.current.stop();
-      } catch {}
+      try { recognitionRef.current.stop(); } catch {}
     }
-    // We pass `spoken` string as it is right now. Due to React state batching,
-    // this will capture whatever was transcribed right before they let go. 
-    // If it's empty, it auto-passes for easy debugging.
     handleEvaluate(spoken);
   }
 
   async function handleNext() {
     AudioManager.stop();
     const nextIndex = index + 1;
-    
-    // If we reached the end of the session, bump the block counter and save stats
+
+    // Fire-and-forget on last item; capture blocksTodayDone from response
     if (nextIndex === summary.items.length) {
-      const avgScore = sessionScores.length > 0 
-        ? sessionScores.reduce((a, b) => a + b, 0) / sessionScores.length 
+      const avgScore = sessionScores.length > 0
+        ? sessionScores.reduce((a, b) => a + b, 0) / sessionScores.length
         : 0;
 
-      fetch("/api/session/complete", { 
+      fetch("/api/session/complete", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          score: avgScore,
-          phrasesCount: summary.items.length
-        })
-      }).catch(console.error);
+        body: JSON.stringify({ score: avgScore, phrasesCount: summary.items.length }),
+      })
+        .then(r => r.json())
+        .then(data => { if (isMountedRef.current && data.blocksTodayDone) setBlocksTodayDone(data.blocksTodayDone); })
+        .catch(console.error);
     }
-    
+
     setIndex(nextIndex);
     setSpoken("");
     setResult(null);
+    isRetryRef.current = false;
   }
 
   async function handlePlayTTS() {
@@ -244,12 +348,11 @@ export function LiveSessionPlayer({
           gender: voiceGender,
         }),
       });
-      
+
       const data = await response.json();
       if (!response.ok) throw new Error(data.error?.message || data.error || "Failed to fetch audio");
       if (!data?.audioContent) throw new Error("Sem áudio na resposta");
 
-      // Decode base64 to binary to Blob
       const binaryString = atob(data.audioContent);
       const bytes = new Uint8Array(binaryString.length);
       for (let i = 0; i < binaryString.length; i++) {
@@ -264,9 +367,10 @@ export function LiveSessionPlayer({
       console.error("Erro TTS:", err);
       setIsPlayingTTS(false);
       setIsBufferingTTS(false);
-      alert(`Erro na narração: ${err.message}`);
     }
   }
+
+  const canProceed = result !== null;
 
   return (
     <div className="h-screen flex flex-col relative bg-surface">
@@ -357,14 +461,14 @@ export function LiveSessionPlayer({
 
       {/* ── Controls: Fixed Bottom ── */}
       <footer className="fixed bottom-0 left-0 w-full p-8 md:p-12 flex flex-col items-center gap-4 pointer-events-none bg-gradient-to-t from-surface via-surface/80 to-transparent">
-        {/* Result */}
+        {/* Result feedback */}
         {result && (
           <div className="pointer-events-auto rounded-2xl bg-surface-container-high p-4 text-sm text-on-surface-variant max-w-md w-full ghost-border mb-2">
             {result}
           </div>
         )}
 
-        {/* Live Transcript Display (Instead of input) */}
+        {/* Live Transcript Display */}
         <div className="pointer-events-auto w-full max-w-md h-12 flex items-center justify-center">
           {spoken ? (
             <p className="text-on-surface font-medium text-lg text-center truncate px-4 bg-surface-container-low rounded-xl py-2 ghost-border">
@@ -397,66 +501,63 @@ export function LiveSessionPlayer({
             )}
           </button>
 
-          {/* Main action button: HOLD TO SPEAK or NEXT */}
-          {!result ? (
-            <button
-              onPointerDown={handlePointerDown}
-              onPointerUp={handlePointerUp}
-              onPointerLeave={handlePointerUp}
-              onTouchStart={(e) => { e.preventDefault(); handlePointerDown(); }}
-              onTouchEnd={(e) => { e.preventDefault(); handlePointerUp(); }}
-              className={`relative w-[88px] h-[88px] md:w-[100px] md:h-[100px] rounded-full flex items-center justify-center text-on-primary shadow-mic-glow transition-all
-                ${isRecording 
-                  ? "bg-primary scale-95 shadow-inner" 
-                  : "bg-gradient-to-br from-primary to-primary-dim hover:scale-105"
-                }
-                ${saving ? "opacity-60 pointer-events-none" : ""}
-                ${isRecording && !saving ? "animate-pulse" : ""}
-              `}
-              title="Hold to speak"
+          {/* Central mic button — always stays as mic, allows re-speaking */}
+          <button
+            onPointerDown={handlePointerDown}
+            onPointerUp={handlePointerUp}
+            onPointerLeave={handlePointerUp}
+            onTouchStart={(e) => { e.preventDefault(); handlePointerDown(); }}
+            onTouchEnd={(e) => { e.preventDefault(); handlePointerUp(); }}
+            className={`relative w-[88px] h-[88px] md:w-[100px] md:h-[100px] rounded-full flex items-center justify-center text-on-primary shadow-mic-glow transition-all
+              ${isRecording
+                ? "bg-primary scale-95 shadow-inner"
+                : "bg-gradient-to-br from-primary to-primary-dim hover:scale-105"
+              }
+              ${saving ? "opacity-60 pointer-events-none" : ""}
+              ${isRecording && !saving ? "animate-pulse" : ""}
+            `}
+            title="Hold to speak"
+          >
+            <span
+              className="material-symbols-outlined text-[40px] md:text-[48px]"
+              style={{ fontVariationSettings: "'FILL' 1" }}
             >
-              <span
-                className="material-symbols-outlined text-[40px] md:text-[48px]"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
-                {saving ? "hourglass_top" : isRecording ? "mic" : "mic_none"}
-              </span>
-              
-              {/* Mic aura effect when recording */}
-              {isRecording && (
-                <>
-                  <div className="absolute inset-0 rounded-full border-4 border-primary opacity-50 animate-ping pointer-events-none" />
-                  <div className="absolute -inset-4 rounded-full bg-primary/20 blur-xl pointer-events-none animate-pulse-ring" />
-                </>
-              )}
-            </button>
-          ) : (
-            <button
-              onClick={handleNext}
-              className="relative w-[88px] h-[88px] md:w-[100px] md:h-[100px] bg-gradient-to-br from-secondary to-secondary-dim rounded-full flex items-center justify-center text-on-secondary shadow-mic-glow active:scale-95 transition-all animate-[scale-in_0.3s_ease-out]"
-            >
-              <span
-                className="material-symbols-outlined text-[40px] md:text-[48px]"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
-                arrow_forward
-              </span>
-            </button>
-          )}
+              {saving ? "hourglass_top" : isRecording ? "mic" : "mic_none"}
+            </span>
 
-          {/* Skip button */}
+            {/* Mic aura when recording */}
+            {isRecording && (
+              <>
+                <div className="absolute inset-0 rounded-full border-4 border-primary opacity-50 animate-ping pointer-events-none" />
+                <div className="absolute -inset-4 rounded-full bg-primary/20 blur-xl pointer-events-none animate-pulse-ring" />
+              </>
+            )}
+          </button>
+
+          {/* Skip/Next button — turns green when user has spoken */}
           <button
             onClick={handleNext}
-            className="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant ghost-border hover:bg-surface-container-highest active:scale-90 transition-all shadow-lg"
+            className={`relative w-14 h-14 rounded-full flex items-center justify-center transition-all shadow-lg ${
+              canProceed
+                ? "bg-secondary text-on-secondary scale-110 shadow-[0_0_24px_rgba(0,220,180,0.3)] animate-[scale-in_0.3s_ease-out]"
+                : "bg-surface-container-high text-on-surface-variant ghost-border hover:bg-surface-container-highest active:scale-90"
+            }`}
           >
-            <span className="material-symbols-outlined text-[28px]">skip_next</span>
+            <span className="material-symbols-outlined text-[28px]"
+              style={{ fontVariationSettings: canProceed ? "'FILL' 1" : "'FILL' 0" }}
+            >
+              skip_next
+            </span>
+            {canProceed && (
+              <div className="absolute inset-0 rounded-full border-2 border-secondary/60 animate-pulse pointer-events-none" />
+            )}
           </button>
         </div>
 
-        {/* Label */}
+        {/* Instruction label */}
         <div className="pointer-events-auto px-6 py-2 rounded-full bg-surface-container-low/80 backdrop-blur-md ghost-border">
           <span className="text-xs font-bold tracking-[0.15em] text-on-surface-variant uppercase">
-            {result ? t("session.tap_continue") : t("session.hold_speak")}
+            {canProceed ? t("session.retry_or_continue") : t("session.hold_speak")}
           </span>
         </div>
       </footer>

@@ -105,6 +105,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       ok: true,
       currentBlockOrder: nextOrder,
+      blocksTodayDone,
       stats: { sessionsDone, totalPhrases, avgScore: Math.round((totalScoreSum / sessionsDone) * 100) },
     });
   } catch (error: any) {
