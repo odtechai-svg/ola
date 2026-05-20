@@ -152,8 +152,10 @@ export async function getDashboardProfile(userId: string): Promise<{
   yesterdayDate.setDate(yesterdayDate.getDate() - 1);
   const yesterdayStr = yesterdayDate.toISOString().slice(0, 10);
 
-  const blocksTodayDate = cookieStore.get("ola_blocks_today_date")?.value;
-  const blocksTodayDone = blocksTodayDate === todayStr
+  const blocksTodayDate   = cookieStore.get("ola_blocks_today_date")?.value;
+  const blocksTodayUserId = cookieStore.get("ola_blocks_today_user")?.value;
+  const blocksOwnedByUser = !userId || userId === "anonymous" || blocksTodayUserId === userId;
+  const blocksTodayDone   = (blocksTodayDate === todayStr && blocksOwnedByUser)
     ? Math.min(parseInt(cookieStore.get("ola_blocks_today")?.value || "0", 10), 3)
     : 0;
 

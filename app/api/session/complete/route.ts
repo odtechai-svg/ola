@@ -49,9 +49,14 @@ export async function POST(request: Request) {
     }
 
     // ── Daily Blocks Counter (Desafio 15) ──────────────────────────────────
-    const blocksTodayDate = cookieStore.get("ola_blocks_today_date")?.value;
-    const blocksTodayRaw = parseInt(cookieStore.get("ola_blocks_today")?.value || "0", 10);
-    const blocksTodayDone = blocksTodayDate === today ? Math.min(blocksTodayRaw + 1, 3) : 1;
+    // Validate that the stored counter belongs to the current user (same browser, different user = reset)
+    const blocksTodayDate   = cookieStore.get("ola_blocks_today_date")?.value;
+    const blocksTodayUserId = cookieStore.get("ola_blocks_today_user")?.value;
+    const blocksOwnedByUser = user ? blocksTodayUserId === user.id : true;
+    const blocksTodayRaw    = (blocksTodayDate === today && blocksOwnedByUser)
+      ? parseInt(cookieStore.get("ola_blocks_today")?.value || "0", 10)
+      : 0;
+    const blocksTodayDone   = Math.min(blocksTodayRaw + 1, 3);
 
     // ── Cookie writes (always, for demo mode + cache) ──────────────────────
     cookieStore.set("ola_current_block_order", nextOrder.toString(), cookieOptions);
@@ -63,6 +68,7 @@ export async function POST(request: Request) {
     cookieStore.set("ola_streak_days", newStreak.toString(), cookieOptions);
     cookieStore.set("ola_blocks_today", blocksTodayDone.toString(), cookieOptions);
     cookieStore.set("ola_blocks_today_date", today, cookieOptions);
+    if (user) cookieStore.set("ola_blocks_today_user", user.id, cookieOptions);
     const sourceLang = cookieStore.get("ola_source_lang")?.value || "pt-BR";
     const targetLang = cookieStore.get("ola_target_lang")?.value || "en";
     cookieStore.set("ola_progress_lang_pair", `${sourceLang}→${targetLang}`, cookieOptions);
