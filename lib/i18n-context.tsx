@@ -115,6 +115,10 @@ const dictionaries: Dictionaries = {
     "session.challenge_remaining_one": "block remaining to complete the challenge!",
     "session.challenge_remaining_many": "blocks remaining to complete the challenge!",
     "session.challenge_all_done": "🏆 Daily challenge complete!",
+    "session.feedback.excellent": "Perfect!;Outstanding!;Nailed it!;Great pronunciation!;Superb!",
+    "session.feedback.good": "Great job!;Well done!;Almost perfect!;Keep it up!",
+    "session.feedback.ok": "Good start!;Getting better!;Keep trying!;You've got this!",
+    "session.feedback.retry": "Take a breath and try again!;Every attempt counts!;Practice makes perfect!",
 
     // ── Progress / Stats ──
     "progress.section": "Analytics",
@@ -336,6 +340,10 @@ const dictionaries: Dictionaries = {
     "session.challenge_remaining_one": "bloco restante para completar o desafio!",
     "session.challenge_remaining_many": "blocos restantes para completar o desafio!",
     "session.challenge_all_done": "🏆 Desafio do dia concluído!",
+    "session.feedback.excellent": "Perfeito!;Incrível!;Você mandou bem!;Que pronúncia!;Arrasou!",
+    "session.feedback.good": "Muito bem!;Ótimo!;Quase lá!;Tá crescendo!",
+    "session.feedback.ok": "Bom começo!;Vai melhorar!;Continue tentando!;Não desista!",
+    "session.feedback.retry": "Respire fundo e tente novamente!;Cada tentativa conta!;A prática leva à perfeição!",
 
     // ── Progress / Stats ──
     "progress.section": "Análises",
@@ -557,6 +565,10 @@ const dictionaries: Dictionaries = {
     "session.challenge_remaining_one": "bloque restante para completar el desafío!",
     "session.challenge_remaining_many": "bloques restantes para completar el desafío!",
     "session.challenge_all_done": "🏆 ¡Desafío diario completado!",
+    "session.feedback.excellent": "¡Perfecto!;¡Increíble!;¡Lo clavaste!;¡Qué pronunciación!;¡Genial!",
+    "session.feedback.good": "¡Muy bien!;¡Excelente!;¡Casi perfecto!;¡Sigue así!",
+    "session.feedback.ok": "¡Buen comienzo!;¡Vas mejorando!;¡Sigue intentando!;¡Tú puedes!",
+    "session.feedback.retry": "¡Respira hondo e inténtalo de nuevo!;¡Cada intento cuenta!;¡La práctica hace al maestro!",
 
     // ── Progress / Stats ──
     "stats.section": "Análisis",
@@ -778,6 +790,10 @@ const dictionaries: Dictionaries = {
     "session.challenge_remaining_one": "blocco rimanente per completare la sfida!",
     "session.challenge_remaining_many": "blocchi rimanenti per completare la sfida!",
     "session.challenge_all_done": "🏆 Sfida giornaliera completata!",
+    "session.feedback.excellent": "Perfetto!;Incredibile!;Ce l'hai fatta!;Che pronuncia!;Ottimo!",
+    "session.feedback.good": "Molto bene!;Ottimo lavoro!;Quasi perfetto!;Continua così!",
+    "session.feedback.ok": "Buon inizio!;Stai migliorando!;Continua a provare!;Ce la fai!",
+    "session.feedback.retry": "Respira e riprova!;Ogni tentativo conta!;La pratica rende perfetti!",
 
     // ── Progress / Stats ──
     "stats.section": "Analisi",
@@ -999,6 +1015,10 @@ const dictionaries: Dictionaries = {
     "session.challenge_remaining_one": "bloc restant pour compléter le défi!",
     "session.challenge_remaining_many": "blocs restants pour compléter le défi!",
     "session.challenge_all_done": "🏆 Défi du jour accompli!",
+    "session.feedback.excellent": "Parfait !;Incroyable !;Tu l'as eu !;Quelle prononciation !;Superbe !",
+    "session.feedback.good": "Très bien !;Super travail !;Presque parfait !;Continue comme ça !",
+    "session.feedback.ok": "Bon début !;Tu t'améliores !;Continue d'essayer !;Tu y es presque !",
+    "session.feedback.retry": "Inspire et réessaie !;Chaque tentative compte !;C'est en forgeant qu'on devient forgeron !",
 
     // ── Progress / Stats ──
     "stats.section": "Analyses",
@@ -1220,6 +1240,10 @@ const dictionaries: Dictionaries = {
     "session.challenge_remaining_one": "Block verbleibend für die Herausforderung!",
     "session.challenge_remaining_many": "Blöcke verbleibend für die Herausforderung!",
     "session.challenge_all_done": "🏆 Tagesherausforderung abgeschlossen!",
+    "session.feedback.excellent": "Perfekt!;Unglaublich!;Geschafft!;Tolle Aussprache!;Hervorragend!",
+    "session.feedback.good": "Sehr gut!;Toll gemacht!;Fast perfekt!;Weiter so!",
+    "session.feedback.ok": "Guter Anfang!;Du wirst besser!;Bleib dran!;Du schaffst das!",
+    "session.feedback.retry": "Tief Luft holen und nochmal!;Jeder Versuch zählt!;Übung macht den Meister!",
 
     // ── Progress / Stats ──
     "stats.section": "Analysen",

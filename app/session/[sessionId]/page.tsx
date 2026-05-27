@@ -18,6 +18,8 @@ export default async function SessionPage({ params }: { params: Promise<{ sessio
       summary={payload.summary}
       sessionId={payload.sessionId}
       languagePairId={payload.languagePairId}
+      startingBlockOrder={payload.startingBlockOrder}
+      totalBlocks={payload.totalBlocks}
     />
   );
 }

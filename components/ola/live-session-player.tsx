@@ -12,10 +12,14 @@ export function LiveSessionPlayer({
   summary,
   sessionId,
   languagePairId,
+  startingBlockOrder,
+  totalBlocks,
 }: {
   summary: SessionSummary;
   sessionId: string;
   languagePairId: string;
+  startingBlockOrder: number;
+  totalBlocks: number;
 }) {
   const { t } = useLanguage();
   const [index, setIndex] = useState(0);
@@ -27,6 +31,7 @@ export function LiveSessionPlayer({
   const [isRecording, setIsRecording] = useState(false);
   const [sessionScores, setSessionScores] = useState<number[]>([]);
   const [blocksTodayDone, setBlocksTodayDone] = useState(0);
+  const [nextBlockOrder, setNextBlockOrder] = useState(startingBlockOrder + 1);
   const [showTutorial, setShowTutorial] = useState(false);
   const recognitionRef = useRef<any>(null);
   const autoPlayedIndexRef = useRef(-1);
@@ -174,15 +179,21 @@ export function LiveSessionPlayer({
         {/* Desafio 15 Progress */}
         {blocksTodayDone > 0 && (
           <div className="w-full max-w-sm mb-8 relative z-10">
-            <p className="text-[10px] uppercase tracking-[0.2em] font-black text-on-surface-variant mb-3 text-center">
-              {t("session.challenge_label")}
-            </p>
+            <div className="flex items-center justify-between mb-3">
+              <p className="text-[10px] uppercase tracking-[0.2em] font-black text-on-surface-variant">
+                {t("session.challenge_label")}
+              </p>
+              <p className="text-[10px] font-bold text-on-surface-variant">
+                {nextBlockOrder - 1} / {totalBlocks}
+              </p>
+            </div>
             <div className="flex gap-3">
-              {[1, 2, 3].map((n) => {
-                const done = n <= blocksTodayDone;
+              {[0, 1, 2].map((offset) => {
+                const blockNum = nextBlockOrder - blocksTodayDone + offset;
+                const done = offset < blocksTodayDone;
                 return (
                   <div
-                    key={n}
+                    key={offset}
                     className={`flex-1 flex flex-col items-center gap-2 py-4 rounded-2xl transition-all ${
                       done ? "bg-secondary/15 border border-secondary/30" : "bg-surface-container-low border border-outline-variant/20"
                     }`}
@@ -193,8 +204,8 @@ export function LiveSessionPlayer({
                     >
                       {done ? "check_circle" : "radio_button_unchecked"}
                     </span>
-                    <span className={`text-xs font-bold ${done ? "text-secondary" : "text-outline-variant"}`}>
-                      {n}
+                    <span className={`text-[11px] font-black tracking-wide ${done ? "text-secondary" : "text-outline-variant"}`}>
+                      Bl. {blockNum}
                     </span>
                   </div>
                 );
@@ -277,15 +288,19 @@ export function LiveSessionPlayer({
       const score = data.evaluation.finalScore;
       setSessionScores(prev => {
         if (isRetryRef.current) {
-          // Replace last score on re-attempt
           isRetryRef.current = false;
           return prev.length > 0 ? [...prev.slice(0, -1), score] : [score];
         }
         return [...prev, score];
       });
-    }
 
-    setResult(`Score ${Math.round(data.evaluation.finalScore * 100)}%. ${data.evaluation.feedback}`);
+      const tier = score >= 0.85 ? "excellent" : score >= 0.65 ? "good" : score >= 0.40 ? "ok" : "retry";
+      const phrases = t(`session.feedback.${tier}`).split(";");
+      const phrase = phrases[Math.floor(Math.random() * phrases.length)];
+      setResult(phrase);
+    } else {
+      setResult(t("session.feedback.retry").split(";")[0]);
+    }
   }
 
   function handlePointerDown() {
@@ -338,7 +353,11 @@ export function LiveSessionPlayer({
         body: JSON.stringify({ score: avgScore, phrasesCount: summary.items.length }),
       })
         .then(r => r.json())
-        .then(data => { if (isMountedRef.current && data.blocksTodayDone) setBlocksTodayDone(data.blocksTodayDone); })
+        .then(data => {
+          if (!isMountedRef.current) return;
+          if (data.blocksTodayDone) setBlocksTodayDone(data.blocksTodayDone);
+          if (data.currentBlockOrder) setNextBlockOrder(data.currentBlockOrder);
+        })
         .catch(console.error);
     }
 
@@ -489,8 +508,8 @@ export function LiveSessionPlayer({
       <footer className="fixed bottom-0 left-0 w-full p-8 md:p-12 flex flex-col items-center gap-4 pointer-events-none bg-gradient-to-t from-surface via-surface/80 to-transparent">
         {/* Result feedback */}
         {result && (
-          <div className="pointer-events-auto rounded-2xl bg-surface-container-high p-4 text-sm text-on-surface-variant max-w-md w-full ghost-border mb-2">
-            {result}
+          <div className="pointer-events-auto rounded-2xl bg-secondary/10 border border-secondary/25 px-6 py-3 text-center max-w-md w-full mb-2 animate-[scale-in_0.25s_ease-out]">
+            <span className="text-secondary font-black text-xl tracking-tight">{result}</span>
           </div>
         )}
 

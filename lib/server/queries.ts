@@ -284,7 +284,7 @@ export async function getSessionBreakdown(): Promise<{ novo: number; fala: numbe
   return { novo, fala, revisao };
 }
 
-export async function buildLiveSession(userId: string): Promise<{ sessionId: string; languagePairId: string; summary: SessionSummary; }> {
+export async function buildLiveSession(userId: string): Promise<{ sessionId: string; languagePairId: string; startingBlockOrder: number; totalBlocks: number; summary: SessionSummary; }> {
   const { source, target } = await getLanguagePairFromCookies();
   const blocksData = await getLocalBlocksData(source, target);
   const currentBlockOrder = await getBlockOrderFromCookies();
@@ -309,10 +309,12 @@ export async function buildLiveSession(userId: string): Promise<{ sessionId: str
   }));
 
   const sessionId = "mock-session-id-" + Date.now();
-  
+
   return {
     sessionId,
     languagePairId: `${source}→${target}`,
+    startingBlockOrder: currentBlockOrder,
+    totalBlocks: blocksData.length,
     summary: {
       sessionId,
       totalItems: items.length,
