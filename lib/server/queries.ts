@@ -287,7 +287,22 @@ export async function getSessionBreakdown(): Promise<{ novo: number; fala: numbe
 export async function buildLiveSession(userId: string): Promise<{ sessionId: string; languagePairId: string; startingBlockOrder: number; totalBlocks: number; summary: SessionSummary; }> {
   const { source, target } = await getLanguagePairFromCookies();
   const blocksData = await getLocalBlocksData(source, target);
-  const currentBlockOrder = await getBlockOrderFromCookies();
+  let currentBlockOrder = await getBlockOrderFromCookies();
+
+  // PocketBase takes precedence over cookies for cross-device correctness
+  if (userId && userId !== "anonymous") {
+    try {
+      const cookieStore = await cookies();
+      const token = cookieStore.get("pb_auth")?.value;
+      if (token) {
+        const pb = createPbClient(token);
+        const result = await pb.collection("user_progress").getList(1, 1, {
+          filter: `user_id = "${userId}" && source_lang = "${source}" && target_lang = "${target}"`,
+        });
+        if (result.items[0]?.block_order) currentBlockOrder = result.items[0].block_order;
+      }
+    } catch {}
+  }
   
   // Find the queue items from the current block
   const currentBlock = blocksData.find((b: any) => b.order === currentBlockOrder) || blocksData[0] || { levels: [] };
