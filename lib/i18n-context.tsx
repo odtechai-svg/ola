@@ -200,6 +200,21 @@ const dictionaries: Dictionaries = {
     "science.pyramid.stat.vs": "vs 10% from passive reading",
     "science.pyramid.desc": "The Learning Pyramid shows that we retain 80% of what we actively practice vs 10% of what we passively read. Every OLA session is built around speaking — not reading.",
 
+    // ── Neuroscience Section ──
+    "neuro.label": "NEUROSCIENCE OF LEARNING",
+    "neuro.title": "Your brain learns while you sleep.",
+    "neuro.desc": "Circadian rhythm science reveals that the timing of practice is as important as the method itself.",
+    "neuro.card1.badge": "REM SLEEP",
+    "neuro.card1.title": "Memory consolidates overnight",
+    "neuro.card1.desc": "REM sleep is when the brain processes and locks in what you practiced. Each OLA session plants vocabulary that your brain silently cultivates while you sleep.",
+    "neuro.card2.badge": "CORTISOL · 8AM",
+    "neuro.card2.title": "The golden focus window",
+    "neuro.card2.desc": "Cortisol peaks at 8am, activating the prefrontal cortex — our executive center — at full capacity. 15 minutes in the morning outperforms an hour at night.",
+    "neuro.card3.badge": "DAILY CONSISTENCY",
+    "neuro.card3.title": "Small every day beats big occasionally",
+    "neuro.card3.desc": "Short daily sessions synchronize learning with the biological clock. OLA's 15-minute Challenge isn't an arbitrary rule — it's applied neuroscience.",
+    "neuro.source": "Based on: University of Pennsylvania · Journal of Neuroscience · Circadian Rhythms and Cognition",
+
     // ── Language names (for display in the user's native language) ──
     "lang.en": "English",
     "lang.pt": "Portuguese",
@@ -424,6 +439,21 @@ const dictionaries: Dictionaries = {
     "science.pyramid.stat.label": "de retenção praticando ativamente",
     "science.pyramid.stat.vs": "vs 10% na leitura passiva",
     "science.pyramid.desc": "A Pirâmide de Aprendizagem mostra que retemos 80% do que praticamos ativamente vs 10% do que lemos passivamente. Cada sessão OLA é construída em torno da fala — não da leitura.",
+
+    // ── Seção Neurociência ──
+    "neuro.label": "NEUROCIÊNCIA DO APRENDIZADO",
+    "neuro.title": "Seu cérebro aprende enquanto você dorme.",
+    "neuro.desc": "A ciência dos ritmos circadianos revela que o momento do estudo é tão importante quanto o método.",
+    "neuro.card1.badge": "SONO REM",
+    "neuro.card1.title": "Memória se consolida dormindo",
+    "neuro.card1.desc": "O sono REM é quando o cérebro processa e fixa o que você praticou. Cada sessão OLA planta vocabulário que seu cérebro cultiva silenciosamente enquanto você dorme.",
+    "neuro.card2.badge": "CORTISOL · 8H",
+    "neuro.card2.title": "A janela de ouro do foco",
+    "neuro.card2.desc": "O cortisol atinge o pico às 8h, ativando o córtex pré-frontal — nossa central executiva — em capacidade máxima. 15 minutos pela manhã valem mais do que uma hora à noite.",
+    "neuro.card3.badge": "CONSISTÊNCIA DIÁRIA",
+    "neuro.card3.title": "Pequeno todo dia supera grande esporádico",
+    "neuro.card3.desc": "Sessões curtas diárias sincronizam o aprendizado com o relógio biológico. O Desafio 15 do OLA não é uma regra arbitrária — é neurociência aplicada.",
+    "neuro.source": "Baseado em: Universidade da Pensilvânia · Journal of Neuroscience · Ritmos Circadianos e Cognição",
 
     // ── Language names ──
     "lang.en": "Inglês",
@@ -650,6 +680,21 @@ const dictionaries: Dictionaries = {
     "science.pyramid.stat.vs": "vs 10% en lectura pasiva",
     "science.pyramid.desc": "La Pirámide del Aprendizaje muestra que retenemos el 80% de lo que practicamos activamente vs el 10% de lo que leemos pasivamente. Cada sesión de OLA está construida en torno al habla — no a la lectura.",
 
+    // ── Sección Neurociencia ──
+    "neuro.label": "NEUROCIENCIA DEL APRENDIZAJE",
+    "neuro.title": "Tu cerebro aprende mientras duermes.",
+    "neuro.desc": "La ciencia de los ritmos circadianos revela que el momento del estudio es tan importante como el método.",
+    "neuro.card1.badge": "SUEÑO REM",
+    "neuro.card1.title": "La memoria se consolida durmiendo",
+    "neuro.card1.desc": "El sueño REM es cuando el cerebro procesa y fija lo que practicaste. Cada sesión OLA planta vocabulario que tu cerebro cultiva silenciosamente mientras duermes.",
+    "neuro.card2.badge": "CORTISOL · 8H",
+    "neuro.card2.title": "La ventana dorada del enfoque",
+    "neuro.card2.desc": "El cortisol alcanza su pico a las 8h, activando el córtex prefrontal — nuestro centro ejecutivo — a plena capacidad. 15 minutos por la mañana valen más que una hora de noche.",
+    "neuro.card3.badge": "CONSISTENCIA DIARIA",
+    "neuro.card3.title": "Poco cada día supera mucho esporádico",
+    "neuro.card3.desc": "Las sesiones cortas diarias sincronizan el aprendizaje con el reloj biológico. El Desafío 15 de OLA no es una regla arbitraria — es neurociencia aplicada.",
+    "neuro.source": "Basado en: Universidad de Pensilvania · Journal of Neuroscience · Ritmos Circadianos y Cognición",
+
     // ── Language names ──
     "lang.en": "Inglés",
     "lang.pt": "Portugués",
@@ -874,6 +919,21 @@ const dictionaries: Dictionaries = {
     "science.pyramid.stat.label": "di ritenzione praticando attivamente",
     "science.pyramid.stat.vs": "vs 10% nella lettura passiva",
     "science.pyramid.desc": "La Piramide dell'Apprendimento mostra che reteniamo l'80% di ciò che pratichiamo attivamente vs il 10% di ciò che leggiamo passivamente. Ogni sessione OLA è costruita attorno al parlato — non alla lettura.",
+
+    // ── Sezione Neuroscienze ──
+    "neuro.label": "NEUROSCIENZE DELL'APPRENDIMENTO",
+    "neuro.title": "Il tuo cervello impara mentre dormi.",
+    "neuro.desc": "La scienza dei ritmi circadiani rivela che il momento dello studio è importante quanto il metodo stesso.",
+    "neuro.card1.badge": "SONNO REM",
+    "neuro.card1.title": "La memoria si consolida dormendo",
+    "neuro.card1.desc": "Il sonno REM è quando il cervello elabora e fissa ciò che hai praticato. Ogni sessione OLA pianta vocabolario che il tuo cervello coltiva silenziosamente mentre dormi.",
+    "neuro.card2.badge": "CORTISOLO · ORE 8",
+    "neuro.card2.title": "La finestra d'oro della concentrazione",
+    "neuro.card2.desc": "Il cortisolo raggiunge il picco alle 8, attivando la corteccia prefrontale — il nostro centro esecutivo — a piena capacità. 15 minuti al mattino valgono più di un'ora di sera.",
+    "neuro.card3.badge": "COSTANZA QUOTIDIANA",
+    "neuro.card3.title": "Poco ogni giorno supera tanto di rado",
+    "neuro.card3.desc": "Sessioni brevi quotidiane sincronizzano l'apprendimento con l'orologio biologico. La Sfida 15 di OLA non è una regola arbitraria — è neuroscienze applicate.",
+    "neuro.source": "Basato su: Università della Pennsylvania · Journal of Neuroscience · Ritmi Circadiani e Cognizione",
 
     // ── Language names ──
     "lang.en": "Inglese",
@@ -1100,6 +1160,21 @@ const dictionaries: Dictionaries = {
     "science.pyramid.stat.vs": "vs 10% en lecture passive",
     "science.pyramid.desc": "La Pyramide de l'Apprentissage montre que nous retenons 80% de ce que nous pratiquons activement vs 10% de ce que nous lisons passivement. Chaque session OLA est construite autour de la parole — pas de la lecture.",
 
+    // ── Section Neurosciences ──
+    "neuro.label": "NEUROSCIENCES DE L'APPRENTISSAGE",
+    "neuro.title": "Votre cerveau apprend pendant que vous dormez.",
+    "neuro.desc": "La science des rythmes circadiens révèle que le moment de la pratique est aussi important que la méthode elle-même.",
+    "neuro.card1.badge": "SOMMEIL REM",
+    "neuro.card1.title": "La mémoire se consolide en dormant",
+    "neuro.card1.desc": "Le sommeil REM est quand le cerveau traite et grave ce que vous avez pratiqué. Chaque session OLA plante du vocabulaire que votre cerveau cultive silencieusement pendant votre sommeil.",
+    "neuro.card2.badge": "CORTISOL · 8H",
+    "neuro.card2.title": "La fenêtre dorée de la concentration",
+    "neuro.card2.desc": "Le cortisol atteint son pic à 8h, activant le cortex préfrontal — notre centre exécutif — à pleine capacité. 15 minutes le matin valent mieux qu'une heure le soir.",
+    "neuro.card3.badge": "RÉGULARITÉ QUOTIDIENNE",
+    "neuro.card3.title": "Peu chaque jour surpasse beaucoup parfois",
+    "neuro.card3.desc": "Les sessions courtes quotidiennes synchronisent l'apprentissage avec l'horloge biologique. Le Défi 15 d'OLA n'est pas une règle arbitraire — c'est la neuroscience appliquée.",
+    "neuro.source": "Basé sur : Université de Pennsylvanie · Journal of Neuroscience · Rythmes Circadiens et Cognition",
+
     // ── Language names ──
     "lang.en": "Anglais",
     "lang.pt": "Portugais",
@@ -1324,6 +1399,21 @@ const dictionaries: Dictionaries = {
     "science.pyramid.stat.label": "Behaltenquote durch aktives Üben",
     "science.pyramid.stat.vs": "vs 10% durch passives Lesen",
     "science.pyramid.desc": "Die Lernpyramide zeigt, dass wir 80% von dem behalten, was wir aktiv üben, gegenüber 10% von dem, was wir passiv lesen. Jede OLA-Sitzung ist rund ums Sprechen aufgebaut — nicht ums Lesen.",
+
+    // ── Neurowissenschaften-Abschnitt ──
+    "neuro.label": "NEUROWISSENSCHAFTEN DES LERNENS",
+    "neuro.title": "Ihr Gehirn lernt während Sie schlafen.",
+    "neuro.desc": "Die Wissenschaft der zirkadianen Rhythmen zeigt, dass der Zeitpunkt des Übens genauso wichtig ist wie die Methode selbst.",
+    "neuro.card1.badge": "REM-SCHLAF",
+    "neuro.card1.title": "Erinnerungen festigen sich im Schlaf",
+    "neuro.card1.desc": "Der REM-Schlaf ist die Phase, in der das Gehirn Gelerntes verarbeitet und verankert. Jede OLA-Sitzung pflanzt Vokabular, das Ihr Gehirn still und leise im Schlaf kultiviert.",
+    "neuro.card2.badge": "CORTISOL · 8 UHR",
+    "neuro.card2.title": "Das goldene Fenster der Konzentration",
+    "neuro.card2.desc": "Cortisol erreicht um 8 Uhr seinen Höhepunkt und aktiviert den präfrontalen Kortex — unser Exekutivzentrum — mit voller Kapazität. 15 Minuten morgens übertreffen eine Stunde abends.",
+    "neuro.card3.badge": "TÄGLICHE KONTINUITÄT",
+    "neuro.card3.title": "Wenig täglich schlägt viel gelegentlich",
+    "neuro.card3.desc": "Kurze tägliche Einheiten synchronisieren das Lernen mit der biologischen Uhr. Die 15-Minuten-Challenge von OLA ist keine willkürliche Regel — es ist angewandte Neurowissenschaft.",
+    "neuro.source": "Basierend auf: Universität Pennsylvania · Journal of Neuroscience · Zirkadiane Rhythmen und Kognition",
 
     // ── Language names ──
     "lang.en": "Englisch",

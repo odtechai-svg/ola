@@ -210,6 +210,64 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* ── Neuroscience Section ── */}
+      <section className="w-full max-w-7xl mx-auto px-6 py-24 border-t border-outline-variant/10">
+        <div className="text-center mb-16">
+          <span className="text-tertiary font-bold uppercase tracking-[0.2em] text-sm">{t("neuro.label")}</span>
+          <h2 className="text-4xl md:text-6xl font-black text-on-surface mt-4 tracking-tight max-w-3xl mx-auto">
+            {t("neuro.title")}
+          </h2>
+          <p className="text-on-surface-variant text-lg mt-6 max-w-2xl mx-auto font-medium">
+            {t("neuro.desc")}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          {/* Card 1 — REM Sleep */}
+          <div className="relative bg-surface-container-low rounded-2xl p-8 ghost-border overflow-hidden group hover:bg-surface-container transition-colors">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-tertiary/5 rounded-full blur-2xl group-hover:bg-tertiary/10 transition-colors" />
+            <span className="inline-block text-[10px] font-black tracking-[0.2em] text-tertiary uppercase mb-4 bg-tertiary/10 px-3 py-1 rounded-full">
+              {t("neuro.card1.badge")}
+            </span>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="material-symbols-outlined text-3xl text-tertiary" style={{ fontVariationSettings: "'FILL' 1" }}>bedtime</span>
+              <h3 className="text-xl font-black text-on-surface leading-tight">{t("neuro.card1.title")}</h3>
+            </div>
+            <p className="text-on-surface-variant text-sm leading-relaxed">{t("neuro.card1.desc")}</p>
+          </div>
+
+          {/* Card 2 — Cortisol / Morning */}
+          <div className="relative bg-surface-container-low rounded-2xl p-8 ghost-border overflow-hidden group hover:bg-surface-container transition-colors">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full blur-2xl group-hover:bg-secondary/10 transition-colors" />
+            <span className="inline-block text-[10px] font-black tracking-[0.2em] text-secondary uppercase mb-4 bg-secondary/10 px-3 py-1 rounded-full">
+              {t("neuro.card2.badge")}
+            </span>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="material-symbols-outlined text-3xl text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>wb_sunny</span>
+              <h3 className="text-xl font-black text-on-surface leading-tight">{t("neuro.card2.title")}</h3>
+            </div>
+            <p className="text-on-surface-variant text-sm leading-relaxed">{t("neuro.card2.desc")}</p>
+          </div>
+
+          {/* Card 3 — Daily Consistency */}
+          <div className="relative bg-surface-container-low rounded-2xl p-8 ghost-border overflow-hidden group hover:bg-surface-container transition-colors">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors" />
+            <span className="inline-block text-[10px] font-black tracking-[0.2em] text-primary uppercase mb-4 bg-primary/10 px-3 py-1 rounded-full">
+              {t("neuro.card3.badge")}
+            </span>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="material-symbols-outlined text-3xl text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>local_fire_department</span>
+              <h3 className="text-xl font-black text-on-surface leading-tight">{t("neuro.card3.title")}</h3>
+            </div>
+            <p className="text-on-surface-variant text-sm leading-relaxed">{t("neuro.card3.desc")}</p>
+          </div>
+        </div>
+
+        <p className="text-center text-[11px] text-on-surface-variant/50 font-medium tracking-wide">
+          {t("neuro.source")}
+        </p>
+      </section>
+
       {/* ── Phonetic Precision Section ── */}
       <section className="w-full max-w-7xl mx-auto px-6 py-24">
         <div className="relative overflow-hidden rounded-xl bg-surface-container-low min-h-[400px] flex items-center">
