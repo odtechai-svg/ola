@@ -13,7 +13,6 @@ export interface EnrollmentSummary {
   currentBlockId?: string | null;
 }
 
-// Map of source→target to JSON file
 const CURRICULUM_FILE_MAP: Record<string, string> = {
   "pt-BR→en": "curriculum_blocks_en.json",
   "en→pt-BR": "curriculum_blocks_ptbr.json",
@@ -47,52 +46,64 @@ const CURRICULUM_FILE_MAP: Record<string, string> = {
   "de→fr":    "curriculum_blocks_de_fr.json",
 };
 
-async function getLanguagePairFromCookies(): Promise<{ source: string; target: string }> {
+export async function getLanguageOptions(): Promise<LanguageOption[]> {
+  return [
+    { code: "pt-BR", name: "Português (Brasil)", nativeName: "Português (Brasil)" },
+    { code: "en",    name: "English",            nativeName: "English" },
+    { code: "es",    name: "Español",            nativeName: "Español" },
+    { code: "it",    name: "Italiano",           nativeName: "Italiano" },
+    { code: "fr",    name: "Français",           nativeName: "Français" },
+    { code: "de",    name: "Deutsch",            nativeName: "Deutsch" },
+  ];
+}
+
+// ── PocketBase helper ─────────────────────────────────────────────────────────
+// Always fetches the most recently updated progress record for this user,
+// with NO language-pair filter — the record itself tells us the correct pair.
+export async function getPbProgress(userId: string, token: string): Promise<any | null> {
+  try {
+    const pb = createPbClient(token);
+    const result = await pb.collection("user_progress").getList(1, 1, {
+      filter: `user_id = "${userId}"`,
+      sort: "-updated",
+    });
+    return result.items[0] || null;
+  } catch {
+    return null;
+  }
+}
+
+// Resolves language pair: PB record first, cookie fallback for anonymous users.
+async function resolveLanguagePair(pbProgress: any | null): Promise<{ source: string; target: string }> {
+  if (pbProgress?.source_lang) {
+    return { source: pbProgress.source_lang, target: pbProgress.target_lang || "en" };
+  }
   try {
     const cookieStore = await cookies();
-    const source = cookieStore.get("ola_source_lang")?.value || "pt-BR";
-    const target = cookieStore.get("ola_target_lang")?.value || "en";
-    return { source, target };
+    return {
+      source: cookieStore.get("ola_source_lang")?.value || "pt-BR",
+      target: cookieStore.get("ola_target_lang")?.value || "en",
+    };
   } catch {
     return { source: "pt-BR", target: "en" };
   }
 }
 
-export async function getLanguageOptions(): Promise<LanguageOption[]> {
-  return [
-    { code: "pt-BR", name: "Português (Brasil)", nativeName: "Português (Brasil)" },
-    { code: "en", name: "English", nativeName: "English" },
-    { code: "es", name: "Español", nativeName: "Español" },
-    { code: "it", name: "Italiano", nativeName: "Italiano" },
-    { code: "fr", name: "Français", nativeName: "Français" },
-    { code: "de", name: "Deutsch", nativeName: "Deutsch" },
-  ];
-}
+function getLocalBlocksData(source: string, target: string) {
+  const key = `${source}→${target}`;
+  const fileName = CURRICULUM_FILE_MAP[key] || "curriculum_blocks_en.json";
+  const filePath = path.join(process.cwd(), "supabase/seeds", fileName);
 
-async function getBlockOrderFromCookies(): Promise<number> {
-  try {
-    const cookieStore = await cookies();
-    const order = cookieStore.get("ola_current_block_order")?.value;
-    return order ? parseInt(order, 10) : 1;
-  } catch {
-    return 1;
+  if (!fs.existsSync(filePath)) {
+    console.warn(`[OLA] Curriculum file not found: ${filePath}, falling back to en.json`);
+    const fallback = path.join(process.cwd(), "supabase/seeds/curriculum_blocks_en.json");
+    if (!fs.existsSync(fallback)) return [];
+    return JSON.parse(fs.readFileSync(fallback, "utf-8"));
   }
+  return JSON.parse(fs.readFileSync(filePath, "utf-8"));
 }
 
-async function getStatsFromCookies() {
-  try {
-    const cookieStore = await cookies();
-    const sessionsDone = parseInt(cookieStore.get("ola_sessions_done")?.value || "0", 10);
-    const totalPhrases = parseInt(cookieStore.get("ola_total_phrases")?.value || "0", 10);
-    const totalScoreSum = parseFloat(cookieStore.get("ola_total_score_sum")?.value || "0");
-    const avgScore = sessionsDone > 0 ? Math.round((totalScoreSum / sessionsDone) * 100) : 0;
-    const wordsRepeated = parseInt(cookieStore.get("ola_words_repeated")?.value || "0", 10);
-
-    return { sessionsDone, totalPhrases, avgScore, wordsRepeated };
-  } catch {
-    return { sessionsDone: 0, totalPhrases: 0, avgScore: 0, wordsRepeated: 0 };
-  }
-}
+// ── Dashboard ─────────────────────────────────────────────────────────────────
 
 type StreakState = "new" | "today" | "alive" | "broken";
 
@@ -103,55 +114,37 @@ export async function getDashboardProfile(userId: string): Promise<{
   blockTitle: string;
   blocksTodayDone: number;
 }> {
-  const { source, target } = await getLanguagePairFromCookies();
   const cookieStore = await cookies();
-
-  // Try to load progress from PocketBase filtered by language pair
-  let pbProgress: any = null;
   const token = cookieStore.get("pb_auth")?.value;
-  if (token && userId && userId !== "anonymous") {
-    try {
-      const pb = createPbClient(token);
-      const result = await pb.collection("user_progress").getList(1, 1, {
-        filter: `user_id = "${userId}" && source_lang = "${source}" && target_lang = "${target}"`,
-      });
-      pbProgress = result.items[0] || null;
-    } catch {}
-  }
+  const isAuth = !!(token && userId && userId !== "anonymous");
 
-  // Validate whether cookies belong to the current language pair
-  const currentPair = `${source}→${target}`;
-  const cookieProgressPair = cookieStore.get("ola_progress_lang_pair")?.value;
-  const cookiesMatchPair = !cookieProgressPair || cookieProgressPair === currentPair;
+  const pbProgress = isAuth ? await getPbProgress(userId, token!) : null;
+  const { source, target } = await resolveLanguagePair(pbProgress);
 
   const currentBlockOrder = pbProgress?.block_order
-    ?? (cookiesMatchPair ? parseInt(cookieStore.get("ola_current_block_order")?.value || "1", 10) : 1);
+    ?? parseInt(cookieStore.get("ola_current_block_order")?.value || "1", 10);
   const sessionsDone = pbProgress?.sessions_done
-    ?? (cookiesMatchPair ? parseInt(cookieStore.get("ola_sessions_done")?.value || "0", 10) : 0);
+    ?? parseInt(cookieStore.get("ola_sessions_done")?.value || "0", 10);
   const totalPhrases = pbProgress?.total_phrases
-    ?? (cookiesMatchPair ? parseInt(cookieStore.get("ola_total_phrases")?.value || "0", 10) : 0);
+    ?? parseInt(cookieStore.get("ola_total_phrases")?.value || "0", 10);
   const totalScoreSum = pbProgress?.total_score_sum
-    ?? (cookiesMatchPair ? parseFloat(cookieStore.get("ola_total_score_sum")?.value || "0") : 0);
+    ?? parseFloat(cookieStore.get("ola_total_score_sum")?.value || "0");
   const avgScore = sessionsDone > 0 ? Math.round((totalScoreSum / sessionsDone) * 100) : 0;
   const wordsRepeated = pbProgress?.words_repeated
-    ?? (cookiesMatchPair ? parseInt(cookieStore.get("ola_words_repeated")?.value || "0", 10) : 0);
-  const streakDaysPb = pbProgress?.streak_days
-    ?? (cookiesMatchPair ? parseInt(cookieStore.get("ola_streak_days")?.value || "0", 10) : 0);
+    ?? parseInt(cookieStore.get("ola_words_repeated")?.value || "0", 10);
+  const streakDays = pbProgress?.streak_days
+    ?? parseInt(cookieStore.get("ola_streak_days")?.value || "0", 10);
   const lastSessionDate = pbProgress?.last_session_date
     ? String(pbProgress.last_session_date).slice(0, 10)
-    : (cookiesMatchPair ? cookieStore.get("ola_last_session_date")?.value : undefined);
+    : cookieStore.get("ola_last_session_date")?.value;
   const displayName = cookieStore.get("ola_display_name")?.value || "Atleta";
-
-  const blocksData = await getLocalBlocksData(source, target);
-  const currentBlock = blocksData.find((b: any) => b.order === currentBlockOrder) || blocksData[0] || {};
-  const blockTitle: string = currentBlock.title || "";
-  const phraseCount: number = currentBlock.levels?.length ?? 3;
 
   const todayStr = new Date().toISOString().slice(0, 10);
   const yesterdayDate = new Date();
   yesterdayDate.setDate(yesterdayDate.getDate() - 1);
   const yesterdayStr = yesterdayDate.toISOString().slice(0, 10);
 
+  // blocks_today is a per-device daily counter — cookie is fine here
   const blocksTodayDate   = cookieStore.get("ola_blocks_today_date")?.value;
   const blocksTodayUserId = cookieStore.get("ola_blocks_today_user")?.value;
   const blocksOwnedByUser = !userId || userId === "anonymous" || blocksTodayUserId === userId;
@@ -160,21 +153,21 @@ export async function getDashboardProfile(userId: string): Promise<{
     : 0;
 
   let streakState: StreakState;
-  let streakDays: number;
-
+  let finalStreakDays: number;
   if (!lastSessionDate) {
-    streakState = "new";
-    streakDays = 0;
+    streakState = "new";    finalStreakDays = 0;
   } else if (lastSessionDate === todayStr) {
-    streakState = "today";
-    streakDays = streakDaysPb;
+    streakState = "today";  finalStreakDays = streakDays;
   } else if (lastSessionDate === yesterdayStr) {
-    streakState = "alive";
-    streakDays = streakDaysPb;
+    streakState = "alive";  finalStreakDays = streakDays;
   } else {
-    streakState = "broken";
-    streakDays = 0;
+    streakState = "broken"; finalStreakDays = 0;
   }
+
+  const blocksData = getLocalBlocksData(source, target);
+  const currentBlock = blocksData.find((b: any) => b.order === currentBlockOrder) || blocksData[0] || {};
+  const blockTitle: string  = currentBlock.title || "";
+  const phraseCount: number = currentBlock.levels?.length ?? 3;
 
   return {
     profile: {
@@ -183,7 +176,7 @@ export async function getDashboardProfile(userId: string): Promise<{
       sourceLanguage: source,
       targetLanguage: target,
       currentBlockOrder,
-      streakDays,
+      streakDays: finalStreakDays,
       streakState,
       sessionsDone,
       avgScore,
@@ -204,123 +197,91 @@ export async function getDashboardProfile(userId: string): Promise<{
   };
 }
 
-// Parses the correct local JSON seed data based on language pair
-async function getLocalBlocksData(source?: string, target?: string) {
-  if (!source || !target) {
-    const pair = await getLanguagePairFromCookies();
-    source = pair.source;
-    target = pair.target;
-  }
-
-  const key = `${source}→${target}`;
-  const fileName = CURRICULUM_FILE_MAP[key] || "curriculum_blocks_en.json";
-  const filePath = path.join(process.cwd(), "supabase/seeds", fileName);
-
-  if (!fs.existsSync(filePath)) {
-    console.warn(`[OLA] Curriculum file not found: ${filePath}, falling back to en.json`);
-    const fallback = path.join(process.cwd(), "supabase/seeds/curriculum_blocks_en.json");
-    if (!fs.existsSync(fallback)) return [];
-    return JSON.parse(fs.readFileSync(fallback, "utf-8"));
-  }
-
-  const data = fs.readFileSync(filePath, "utf-8");
-  return JSON.parse(data);
-}
-
 export async function getBlocksForActiveEnrollment(userId: string): Promise<BlockSummary[]> {
-  const blocksData = await getLocalBlocksData();
   const cookieStore = await cookies();
   const token = cookieStore.get("pb_auth")?.value;
-  let currentBlockOrder = await getBlockOrderFromCookies();
-  if (token && userId && userId !== "anonymous") {
-    try {
-      const { source: s, target: t } = await getLanguagePairFromCookies();
-      const pb = createPbClient(token);
-      const result = await pb.collection("user_progress").getList(1, 1, {
-        filter: `user_id = "${userId}" && source_lang = "${s}" && target_lang = "${t}"`,
-      });
-      if (result.items[0]?.block_order) currentBlockOrder = result.items[0].block_order;
-    } catch {}
-  }
+  const isAuth = !!(token && userId && userId !== "anonymous");
 
+  const pbProgress = isAuth ? await getPbProgress(userId, token!) : null;
+  const { source, target } = await resolveLanguagePair(pbProgress);
+  const currentBlockOrder = pbProgress?.block_order
+    ?? parseInt(cookieStore.get("ola_current_block_order")?.value || "1", 10);
+
+  const blocksData = getLocalBlocksData(source, target);
   return (blocksData ?? []).map((block: any) => {
-    const status = block.order < currentBlockOrder
-      ? "completed"
-      : block.order === currentBlockOrder
-        ? "active"
-        : "locked";
-
+    const status = block.order < currentBlockOrder ? "completed"
+      : block.order === currentBlockOrder        ? "active"
+      : "locked";
     return {
-      id: block.slug || `block-${block.order}`,
-      order: block.order,
-      slug: block.slug || `block-${block.order}`,
-      title: block.title,
-      phase: block.phase || "survival",
+      id:                block.slug || `block-${block.order}`,
+      order:             block.order,
+      slug:              block.slug || `block-${block.order}`,
+      title:             block.title,
+      phase:             block.phase || "survival",
       status,
-      completionPercent: status === "completed" ? 100 : status === "active" ? 25 : 0
+      completionPercent: status === "completed" ? 100 : status === "active" ? 25 : 0,
     };
   });
 }
 
-export async function getSessionBreakdown(): Promise<{ novo: number; fala: number; revisao: number }> {
-  const blocksData   = await getLocalBlocksData();
-  const blockOrder   = await getBlockOrderFromCookies();
-  const cookieStore  = await cookies();
-  const sessionsDone = parseInt(cookieStore.get("ola_sessions_done")?.value || "0", 10);
+export async function getSessionBreakdown(userId?: string): Promise<{ novo: number; fala: number; revisao: number }> {
+  const cookieStore = await cookies();
+  const token = cookieStore.get("pb_auth")?.value;
+  const isAuth = !!(token && userId && userId !== "anonymous");
 
-  const currentBlock  = blocksData.find((b: any) => b.order === blockOrder) || blocksData[0] || { levels: [] };
-  const totalInBlock  = currentBlock.levels?.length ?? 3;
+  const pbProgress = isAuth ? await getPbProgress(userId!, token!) : null;
+  const { source, target } = await resolveLanguagePair(pbProgress);
+  const blockOrder = pbProgress?.block_order
+    ?? parseInt(cookieStore.get("ola_current_block_order")?.value || "1", 10);
+  const sessionsDone = pbProgress?.sessions_done
+    ?? parseInt(cookieStore.get("ola_sessions_done")?.value || "0", 10);
 
-  // Items from previous blocks queued for spaced-repetition review (grows with progress)
+  const blocksData = getLocalBlocksData(source, target);
+  const currentBlock = blocksData.find((b: any) => b.order === blockOrder) || blocksData[0] || { levels: [] };
+  const totalInBlock = currentBlock.levels?.length ?? 3;
+
   const revisao = Math.min((blockOrder - 1) * 2, 10);
-
-  // New items shrink as the user repeats the block; after 3+ sessions on same block, all are familiar
   const sessionsOnBlock = sessionsDone % Math.max(blockOrder, 1);
-  const novo  = Math.max(totalInBlock - Math.min(sessionsOnBlock, totalInBlock), 0);
-
-  // Speaking items = block total minus what's still new
-  const fala  = totalInBlock - novo;
+  const novo = Math.max(totalInBlock - Math.min(sessionsOnBlock, totalInBlock), 0);
+  const fala = totalInBlock - novo;
 
   return { novo, fala, revisao };
 }
 
-export async function buildLiveSession(userId: string): Promise<{ sessionId: string; languagePairId: string; startingBlockOrder: number; totalBlocks: number; summary: SessionSummary; }> {
-  const { source, target } = await getLanguagePairFromCookies();
-  const blocksData = await getLocalBlocksData(source, target);
-  let currentBlockOrder = await getBlockOrderFromCookies();
+export async function buildLiveSession(userId: string): Promise<{
+  sessionId: string;
+  languagePairId: string;
+  startingBlockOrder: number;
+  totalBlocks: number;
+  summary: SessionSummary;
+}> {
+  const cookieStore = await cookies();
+  const token = cookieStore.get("pb_auth")?.value;
+  const isAuth = !!(token && userId && userId !== "anonymous");
 
-  // PocketBase takes precedence over cookies for cross-device correctness
-  if (userId && userId !== "anonymous") {
-    try {
-      const cookieStore = await cookies();
-      const token = cookieStore.get("pb_auth")?.value;
-      if (token) {
-        const pb = createPbClient(token);
-        const result = await pb.collection("user_progress").getList(1, 1, {
-          filter: `user_id = "${userId}" && source_lang = "${source}" && target_lang = "${target}"`,
-        });
-        if (result.items[0]?.block_order) currentBlockOrder = result.items[0].block_order;
-      }
-    } catch {}
-  }
-  
-  // Find the queue items from the current block
+  const pbProgress = isAuth ? await getPbProgress(userId, token!) : null;
+  const { source, target } = await resolveLanguagePair(pbProgress);
+  const currentBlockOrder = pbProgress?.block_order
+    ?? parseInt(cookieStore.get("ola_current_block_order")?.value || "1", 10);
+
+  const blocksData = getLocalBlocksData(source, target);
   const currentBlock = blocksData.find((b: any) => b.order === currentBlockOrder) || blocksData[0] || { levels: [] };
+
   const items = currentBlock.levels.map((level: any, index: number) => ({
-    memoryId: `mem-${index}`,
-    sentenceId: `sent-${index}`,
-    blockId: currentBlock.slug || "mocked-block",
-    blockTitle: currentBlock.title || "Current block",
-    prompt: level.translation || level.text,  // Show translation as prompt (native language hint)
-    expectedText: level.text,                 // The sentence they need to speak/learn
-    sourceGloss: level.translation || level.text,
-    imageHint: level.image_hint || "Use a simple contextual visual here.",
-    imageUrl: `/blocks/bl${String(currentBlockOrder).padStart(3, "0")}-l${index + 1}.webp`,
-    audioUrl: undefined,
-    strength: Math.random() > 0.5 ? 0.8 : undefined,
-    fluencyScore: Math.random() > 0.5 ? 0.9 : undefined,
-    queueReason: "new_content",
-    suggestedExercise: "speak"
+    memoryId:          `mem-${index}`,
+    sentenceId:        `sent-${index}`,
+    blockId:           currentBlock.slug || "mocked-block",
+    blockTitle:        currentBlock.title || "Current block",
+    prompt:            level.translation || level.text,
+    expectedText:      level.text,
+    sourceGloss:       level.translation || level.text,
+    imageHint:         level.image_hint || "Use a simple contextual visual here.",
+    imageUrl:          `/blocks/bl${String(currentBlockOrder).padStart(3, "0")}-l${index + 1}.webp`,
+    audioUrl:          undefined,
+    strength:          Math.random() > 0.5 ? 0.8 : undefined,
+    fluencyScore:      Math.random() > 0.5 ? 0.9 : undefined,
+    queueReason:       "new_content",
+    suggestedExercise: "speak",
   }));
 
   const sessionId = "mock-session-id-" + Date.now();
@@ -334,7 +295,7 @@ export async function buildLiveSession(userId: string): Promise<{ sessionId: str
       sessionId,
       totalItems: items.length,
       targetMinutes: 15,
-      items
-    }
+      items,
+    },
   };
 }
