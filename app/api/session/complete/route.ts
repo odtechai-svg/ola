@@ -55,31 +55,32 @@ export async function POST(request: Request) {
     else if (lastSessionDate === yesterdayStr) newStreak = currentStreak + 1;
     else                                      newStreak = 1;
 
-    // ── Daily blocks counter (Desafio 15 — per-device, cookie is intentional) ─
-    const blocksTodayDate   = cookieStore.get("ola_blocks_today_date")?.value;
-    const blocksTodayUserId = cookieStore.get("ola_blocks_today_user")?.value;
-    const blocksOwnedByUser = user ? blocksTodayUserId === user.id : true;
-    const blocksTodayRaw    = (blocksTodayDate === today && blocksOwnedByUser)
-      ? parseInt(cookieStore.get("ola_blocks_today")?.value || "0", 10)
-      : 0;
-    const blocksTodayDone   = Math.min(blocksTodayRaw + 1, 3);
+    // ── Daily blocks counter (Desafio 15) — read from PB so it's cross-device ─
+    const pbBlocksTodayDate  = pbProgress?.blocks_today_date
+      ? String(pbProgress.blocks_today_date).slice(0, 10)
+      : undefined;
+    const pbBlocksTodayCount = pbProgress?.blocks_today_count ?? 0;
+    const prevBlocksToday    = pbBlocksTodayDate === today ? pbBlocksTodayCount : 0;
+    const blocksTodayDone    = Math.min(prevBlocksToday + 1, 3);
 
     // ── PocketBase write ──────────────────────────────────────────────────────
     if (user) {
       try {
         const pb = createPbClient(user.token);
         const progressData = {
-          user_id:           user.id,
-          source_lang:       sourceLang,
-          target_lang:       targetLang,
-          block_order:       nextOrder,
-          sessions_done:     sessionsDone,
-          total_phrases:     totalPhrases,
-          total_score_sum:   totalScoreSum,
-          words_repeated:    wordsRepeated,
-          streak_days:       newStreak,
-          last_session_date: today,
-          voice_gender:      cookieStore.get("ola_voice_gender")?.value || "female",
+          user_id:             user.id,
+          source_lang:         sourceLang,
+          target_lang:         targetLang,
+          block_order:         nextOrder,
+          sessions_done:       sessionsDone,
+          total_phrases:       totalPhrases,
+          total_score_sum:     totalScoreSum,
+          words_repeated:      wordsRepeated,
+          streak_days:         newStreak,
+          last_session_date:   today,
+          blocks_today_count:  blocksTodayDone,
+          blocks_today_date:   today,
+          voice_gender:        cookieStore.get("ola_voice_gender")?.value || "female",
         };
 
         if (pbProgress) {
@@ -94,11 +95,7 @@ export async function POST(request: Request) {
       }
     }
 
-    // ── Cookie writes (daily counter + lang sync only) ────────────────────────
-    cookieStore.set("ola_blocks_today",      blocksTodayDone.toString(), cookieOptions);
-    cookieStore.set("ola_blocks_today_date", today,                      cookieOptions);
-    if (user) cookieStore.set("ola_blocks_today_user", user.id,          cookieOptions);
-    // Keep lang cookies in sync so onboarding and server layout stay accurate
+    // ── Cookie writes (lang sync only — blocks_today now lives in PB) ──────────
     cookieStore.set("ola_source_lang", sourceLang, cookieOptions);
     cookieStore.set("ola_target_lang", targetLang, cookieOptions);
 

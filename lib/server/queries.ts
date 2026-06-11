@@ -142,11 +142,12 @@ export async function getDashboardProfile(userId: string): Promise<{
   yesterdayDate.setDate(yesterdayDate.getDate() - 1);
   const yesterdayStr = yesterdayDate.toISOString().slice(0, 10);
 
-  // blocks_today is a per-device daily counter — cookie is intentional here
-  const blocksTodayDate   = cookieStore.get("ola_blocks_today_date")?.value;
-  const blocksTodayUserId = cookieStore.get("ola_blocks_today_user")?.value;
-  const blocksTodayDone   = (blocksTodayDate === todayStr && blocksTodayUserId === userId)
-    ? Math.min(parseInt(cookieStore.get("ola_blocks_today")?.value || "0", 10), 3)
+  // blocks_today comes from PB so it's consistent across all devices
+  const pbBlocksTodayDate  = pbProgress?.blocks_today_date
+    ? String(pbProgress.blocks_today_date).slice(0, 10)
+    : undefined;
+  const blocksTodayDone    = pbBlocksTodayDate === todayStr
+    ? Math.min(pbProgress?.blocks_today_count ?? 0, 3)
     : 0;
 
   let streakState: StreakState;

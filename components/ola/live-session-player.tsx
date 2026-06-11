@@ -341,24 +341,28 @@ export function LiveSessionPlayer({
     AudioManager.stop();
     const nextIndex = index + 1;
 
-    // Fire-and-forget on last item; capture blocksTodayDone from response
+    // On the last item: wait for session/complete before transitioning.
+    // This ensures PocketBase is updated before the completion screen
+    // renders so "Nova Sessão" always starts the correct next block.
     if (nextIndex === summary.items.length) {
+      setSaving(true);
       const avgScore = sessionScores.length > 0
         ? sessionScores.reduce((a, b) => a + b, 0) / sessionScores.length
         : 0;
-
-      fetch("/api/session/complete", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ score: avgScore, phrasesCount: summary.items.length }),
-      })
-        .then(r => r.json())
-        .then(data => {
-          if (!isMountedRef.current) return;
-          if (data.blocksTodayDone) setBlocksTodayDone(data.blocksTodayDone);
-          if (data.currentBlockOrder) setNextBlockOrder(data.currentBlockOrder);
-        })
-        .catch(console.error);
+      try {
+        const res = await fetch("/api/session/complete", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ score: avgScore, phrasesCount: summary.items.length }),
+        });
+        const data = await res.json();
+        if (!isMountedRef.current) return;
+        if (data.blocksTodayDone) setBlocksTodayDone(data.blocksTodayDone);
+        if (data.currentBlockOrder) setNextBlockOrder(data.currentBlockOrder);
+      } catch (e) {
+        console.error(e);
+      }
+      setSaving(false);
     }
 
     setIndex(nextIndex);
