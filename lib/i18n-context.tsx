@@ -171,7 +171,7 @@ const dictionaries: Dictionaries = {
     "home.voice_label": "Narrator voice",
 
     // ── Science / Philosophy Section ──
-    "science.label": "The Science",
+    "science.label": "Renowned Methodologies",
     "science.title": "Built on giants' shoulders.",
     "science.desc": "OLA didn't invent a new method. We took the two most proven language acquisition theories in history and encoded them into every single session.",
     "science.krashen.name": "Stephen Krashen",
@@ -411,7 +411,7 @@ const dictionaries: Dictionaries = {
     "home.voice_label": "Voz do narrador",
 
     // ── Science / Philosophy Section ──
-    "science.label": "A Ciência",
+    "science.label": "Metodologias Conceituadas",
     "science.title": "Construído sobre os ombros de gigantes.",
     "science.desc": "OLA não inventou um método novo. Pegamos as duas teorias de aquisição de idiomas mais comprovadas da história e as codificamos em cada sessão.",
     "science.krashen.name": "Stephen Krashen",
@@ -651,7 +651,7 @@ const dictionaries: Dictionaries = {
     "home.voice_label": "Voz del narrador",
 
     // ── Science / Philosophy Section ──
-    "science.label": "La Ciencia",
+    "science.label": "Metodologías Reconocidas",
     "science.title": "Construido sobre los hombros de gigantes.",
     "science.desc": "OLA no inventó un nuevo método. Tomamos las dos teorías de adquisición de idiomas más comprobadas de la historia y las codificamos en cada sesión.",
     "science.krashen.name": "Stephen Krashen",
@@ -891,7 +891,7 @@ const dictionaries: Dictionaries = {
     "home.voice_label": "Voce del narratore",
 
     // ── Science / Philosophy Section ──
-    "science.label": "La Scienza",
+    "science.label": "Metodologie Rinomate",
     "science.title": "Costruito sulle spalle dei giganti.",
     "science.desc": "OLA non ha inventato un nuovo metodo. Abbiamo preso le due teorie di acquisizione delle lingue più comprovate della storia e le abbiamo codificate in ogni sessione.",
     "science.krashen.name": "Stephen Krashen",
@@ -1131,7 +1131,7 @@ const dictionaries: Dictionaries = {
     "home.voice_label": "Voix du narrateur",
 
     // ── Science / Philosophy Section ──
-    "science.label": "La Science",
+    "science.label": "Méthodologies Reconnues",
     "science.title": "Construit sur les épaules des géants.",
     "science.desc": "OLA n'a pas inventé une nouvelle méthode. Nous avons pris les deux théories d'acquisition des langues les plus éprouvées de l'histoire et les avons codées dans chaque session.",
     "science.krashen.name": "Stephen Krashen",
@@ -1371,7 +1371,7 @@ const dictionaries: Dictionaries = {
     "home.voice_label": "Erzählerstimme",
 
     // ── Science / Philosophy Section ──
-    "science.label": "Die Wissenschaft",
+    "science.label": "Anerkannte Methoden",
     "science.title": "Auf den Schultern von Giganten.",
     "science.desc": "OLA hat keine neue Methode erfunden. Wir haben die zwei bewährtesten Spracherwerbstheorien der Geschichte genommen und in jede Sitzung kodiert.",
     "science.krashen.name": "Stephen Krashen",

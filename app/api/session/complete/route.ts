@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 import { markSessionDone } from "@/lib/push/store";
 import { getCurrentUser } from "@/lib/server/auth";
 import { createPbClient } from "@/lib/pocketbase/server";
-import { getPbProgress } from "@/lib/server/queries";
+import { getPbProgressForPair } from "@/lib/server/queries";
 import wordRepetitionsData from "@/lib/data/word-repetitions.json";
 
 export async function POST(request: Request) {
@@ -13,26 +13,28 @@ export async function POST(request: Request) {
     const cookieStore = await cookies();
     const cookieOptions = { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" as const };
 
-    // ── Read current state from PocketBase ────────────────────────────────────
-    const pbProgress = user ? await getPbProgress(user.id, user.token) : null;
+    // Language pair comes from cookies — these are always set at login (synced
+    // from PB) and at onboarding. Using them here ensures we read and write the
+    // correct PB record even when the user has progress in multiple languages.
+    const sourceLang = cookieStore.get("ola_source_lang")?.value ?? "pt-BR";
+    const targetLang = cookieStore.get("ola_target_lang")?.value ?? "en";
 
-    // Language pair: PB record first, then onboarding cookies (first session only)
-    const sourceLang = pbProgress?.source_lang
-      ?? cookieStore.get("ola_source_lang")?.value ?? "pt-BR";
-    const targetLang = pbProgress?.target_lang
-      ?? cookieStore.get("ola_target_lang")?.value ?? "en";
+    // Fetch the exact record for this language pair
+    const pbProgress = user
+      ? await getPbProgressForPair(user.id, user.token, sourceLang, targetLang)
+      : null;
 
-    // Progress counters default to 0 when there is no PB record yet (first session)
+    // Progress counters — default to 0 for a brand new language pair
     const currentOrder      = pbProgress?.block_order     ?? 1;
     const prevSessionsDone  = pbProgress?.sessions_done   ?? 0;
     const prevTotalPhrases  = pbProgress?.total_phrases   ?? 0;
     const prevTotalScoreSum = pbProgress?.total_score_sum ?? 0;
     const prevWordsRepeated = pbProgress?.words_repeated  ?? 0;
 
-    const nextOrder      = currentOrder + 1;
-    const sessionsDone   = prevSessionsDone + 1;
-    const totalPhrases   = prevTotalPhrases + phrasesCount;
-    const totalScoreSum  = prevTotalScoreSum + score;
+    const nextOrder     = currentOrder + 1;
+    const sessionsDone  = prevSessionsDone + 1;
+    const totalPhrases  = prevTotalPhrases + phrasesCount;
+    const totalScoreSum = prevTotalScoreSum + score;
 
     const blockData = (wordRepetitionsData as { blockOrder: number; blockRepetitions: number }[])
       .find((b) => b.blockOrder === currentOrder);
@@ -50,12 +52,12 @@ export async function POST(request: Request) {
     const currentStreak = pbProgress?.streak_days ?? 0;
 
     let newStreak: number;
-    if (!lastSessionDate)                    newStreak = 1;
-    else if (lastSessionDate === today)       newStreak = currentStreak;
+    if (!lastSessionDate)                     newStreak = 1;
+    else if (lastSessionDate === today)        newStreak = currentStreak;
     else if (lastSessionDate === yesterdayStr) newStreak = currentStreak + 1;
-    else                                      newStreak = 1;
+    else                                       newStreak = 1;
 
-    // ── Daily blocks counter (Desafio 15) — read from PB so it's cross-device ─
+    // ── Daily blocks counter (Desafio 15) ─────────────────────────────────────
     const pbBlocksTodayDate  = pbProgress?.blocks_today_date
       ? String(pbProgress.blocks_today_date).slice(0, 10)
       : undefined;
@@ -94,10 +96,6 @@ export async function POST(request: Request) {
         console.error("[OLA] PocketBase write failed:", e);
       }
     }
-
-    // ── Cookie writes (lang sync only — blocks_today now lives in PB) ──────────
-    cookieStore.set("ola_source_lang", sourceLang, cookieOptions);
-    cookieStore.set("ola_target_lang", targetLang, cookieOptions);
 
     return NextResponse.json({
       ok: true,

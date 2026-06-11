@@ -57,9 +57,9 @@ export async function getLanguageOptions(): Promise<LanguageOption[]> {
   ];
 }
 
-// ── PocketBase helper ─────────────────────────────────────────────────────────
-// Fetches the most recently updated progress record for this user.
-// No language-pair filter: the record itself is the source of truth for the pair.
+// ── PocketBase helpers ────────────────────────────────────────────────────────
+
+// Used ONLY at login to restore the most recently active language pair.
 export async function getPbProgress(userId: string, token: string): Promise<any | null> {
   try {
     const pb = createPbClient(token);
@@ -73,14 +73,29 @@ export async function getPbProgress(userId: string, token: string): Promise<any 
   }
 }
 
-// Resolves language pair from PB progress record.
-// Falls back to onboarding cookies only when the user has no progress record yet
-// (i.e. they just chose a language but haven't completed their first session).
-async function resolveLanguagePair(pbProgress: any | null): Promise<{ source: string; target: string }> {
-  if (pbProgress?.source_lang) {
-    return { source: pbProgress.source_lang, target: pbProgress.target_lang || "en" };
+// Used by ALL read/write operations after login.
+// Queries the exact record for the user's current language pair (from cookies).
+// This avoids the "most recently updated" confusion when a user has multiple pairs.
+export async function getPbProgressForPair(
+  userId: string,
+  token: string,
+  source: string,
+  target: string,
+): Promise<any | null> {
+  try {
+    const pb = createPbClient(token);
+    const result = await pb.collection("user_progress").getList(1, 1, {
+      filter: `user_id = "${userId}" && source_lang = "${source}" && target_lang = "${target}"`,
+    });
+    return result.items[0] || null;
+  } catch {
+    return null;
   }
-  // Onboarding fallback: language was chosen but no session completed yet
+}
+
+// Language pair comes from cookies — set at login (from PB) and at onboarding.
+// Cookies are reliable after login because the login route always syncs them from PB.
+async function getActivePair(): Promise<{ source: string; target: string }> {
   try {
     const cookieStore = await cookies();
     return {
@@ -119,12 +134,10 @@ export async function getDashboardProfile(userId: string): Promise<{
 }> {
   const cookieStore = await cookies();
   const token = cookieStore.get("pb_auth")?.value;
+  const { source, target } = await getActivePair();
 
-  const pbProgress = token ? await getPbProgress(userId, token) : null;
-  const { source, target } = await resolveLanguagePair(pbProgress);
+  const pbProgress = token ? await getPbProgressForPair(userId, token, source, target) : null;
 
-  // All progress values come from PocketBase.
-  // Defaults (0, 1) apply only to users who have never completed a session.
   const currentBlockOrder = pbProgress?.block_order    ?? 1;
   const sessionsDone      = pbProgress?.sessions_done  ?? 0;
   const totalScoreSum     = pbProgress?.total_score_sum ?? 0;
@@ -142,11 +155,10 @@ export async function getDashboardProfile(userId: string): Promise<{
   yesterdayDate.setDate(yesterdayDate.getDate() - 1);
   const yesterdayStr = yesterdayDate.toISOString().slice(0, 10);
 
-  // blocks_today comes from PB so it's consistent across all devices
-  const pbBlocksTodayDate  = pbProgress?.blocks_today_date
+  const pbBlocksTodayDate = pbProgress?.blocks_today_date
     ? String(pbProgress.blocks_today_date).slice(0, 10)
     : undefined;
-  const blocksTodayDone    = pbBlocksTodayDate === todayStr
+  const blocksTodayDone = pbBlocksTodayDate === todayStr
     ? Math.min(pbProgress?.blocks_today_count ?? 0, 3)
     : 0;
 
@@ -198,9 +210,9 @@ export async function getDashboardProfile(userId: string): Promise<{
 export async function getBlocksForActiveEnrollment(userId: string): Promise<BlockSummary[]> {
   const cookieStore = await cookies();
   const token = cookieStore.get("pb_auth")?.value;
+  const { source, target } = await getActivePair();
 
-  const pbProgress = token ? await getPbProgress(userId, token) : null;
-  const { source, target } = await resolveLanguagePair(pbProgress);
+  const pbProgress = token ? await getPbProgressForPair(userId, token, source, target) : null;
   const currentBlockOrder = pbProgress?.block_order ?? 1;
 
   const blocksData = getLocalBlocksData(source, target);
@@ -223,9 +235,9 @@ export async function getBlocksForActiveEnrollment(userId: string): Promise<Bloc
 export async function getSessionBreakdown(userId?: string): Promise<{ novo: number; fala: number; revisao: number }> {
   const cookieStore = await cookies();
   const token = cookieStore.get("pb_auth")?.value;
+  const { source, target } = await getActivePair();
 
-  const pbProgress = (token && userId) ? await getPbProgress(userId, token) : null;
-  const { source, target } = await resolveLanguagePair(pbProgress);
+  const pbProgress = (token && userId) ? await getPbProgressForPair(userId, token, source, target) : null;
   const blockOrder   = pbProgress?.block_order   ?? 1;
   const sessionsDone = pbProgress?.sessions_done ?? 0;
 
@@ -250,9 +262,9 @@ export async function buildLiveSession(userId: string): Promise<{
 }> {
   const cookieStore = await cookies();
   const token = cookieStore.get("pb_auth")?.value;
+  const { source, target } = await getActivePair();
 
-  const pbProgress = token ? await getPbProgress(userId, token) : null;
-  const { source, target } = await resolveLanguagePair(pbProgress);
+  const pbProgress = token ? await getPbProgressForPair(userId, token, source, target) : null;
   const currentBlockOrder = pbProgress?.block_order ?? 1;
 
   const blocksData = getLocalBlocksData(source, target);
