@@ -2,6 +2,14 @@ import "./globals.css";
 import { ReactNode } from "react";
 import { cookies } from "next/headers";
 import { Providers } from "@/components/providers";
+import { Playfair_Display } from "next/font/google";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "700", "800", "900"],
+  style: ["normal", "italic"],
+});
 
 export const metadata = {
   title: "OLA — Open Language Acquisition",

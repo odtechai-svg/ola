@@ -14,6 +14,7 @@ export default {
         headline: ["Inter"],
         body: ["Inter"],
         label: ["Inter"],
+        editorial: ["Playfair Display", "Georgia", "serif"],
       },
       colors: {
         surface:                   { DEFAULT: "rgb(var(--color-surface) / <alpha-value>)", dim: "rgb(var(--color-surface-dim) / <alpha-value>)", bright: "rgb(var(--color-surface-bright) / <alpha-value>)" },

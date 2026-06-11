@@ -43,7 +43,7 @@ export default function LandingPage() {
           </div>
 
           {/* Main Display Heading */}
-          <h1 className="font-headline font-black text-5xl md:text-7xl lg:text-8xl tracking-tighter leading-[0.9] text-on-surface max-w-3xl">
+          <h1 className="font-editorial font-black text-5xl md:text-7xl lg:text-8xl tracking-tighter leading-[0.9] text-on-surface max-w-3xl">
             OLA <br />
             <span className="text-primary italic">{t("hero.title")}</span> <br />
             {t("hero.title2")}
@@ -93,6 +93,64 @@ export default function LandingPage() {
           </div>
         </div>
       </main>
+
+      {/* ── Neuroscience Section ── */}
+      <section className="w-full max-w-7xl mx-auto px-6 py-24 border-t border-outline-variant/10">
+        <div className="text-center mb-16">
+          <span className="text-tertiary font-bold uppercase tracking-[0.2em] text-sm">{t("neuro.label")}</span>
+          <h2 className="text-4xl md:text-6xl font-black text-on-surface mt-4 tracking-tight max-w-3xl mx-auto">
+            {t("neuro.title")}
+          </h2>
+          <p className="text-on-surface-variant text-lg mt-6 max-w-2xl mx-auto font-medium">
+            {t("neuro.desc")}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          {/* Card 1 — Cortisol / Morning */}
+          <div className="relative bg-surface-container-low rounded-2xl p-8 ghost-border overflow-hidden group hover:bg-surface-container transition-colors">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full blur-2xl group-hover:bg-secondary/10 transition-colors" />
+            <span className="inline-block text-[10px] font-black tracking-[0.2em] text-secondary uppercase mb-4 bg-secondary/10 px-3 py-1 rounded-full">
+              {t("neuro.card2.badge")}
+            </span>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="material-symbols-outlined text-3xl text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>wb_sunny</span>
+              <h3 className="text-xl font-black text-on-surface leading-tight">{t("neuro.card2.title")}</h3>
+            </div>
+            <p className="text-on-surface-variant text-sm leading-relaxed">{t("neuro.card2.desc")}</p>
+          </div>
+
+          {/* Card 2 — Daily Consistency */}
+          <div className="relative bg-surface-container-low rounded-2xl p-8 ghost-border overflow-hidden group hover:bg-surface-container transition-colors">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors" />
+            <span className="inline-block text-[10px] font-black tracking-[0.2em] text-primary uppercase mb-4 bg-primary/10 px-3 py-1 rounded-full">
+              {t("neuro.card3.badge")}
+            </span>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="material-symbols-outlined text-3xl text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>local_fire_department</span>
+              <h3 className="text-xl font-black text-on-surface leading-tight">{t("neuro.card3.title")}</h3>
+            </div>
+            <p className="text-on-surface-variant text-sm leading-relaxed">{t("neuro.card3.desc")}</p>
+          </div>
+
+          {/* Card 3 — REM Sleep */}
+          <div className="relative bg-surface-container-low rounded-2xl p-8 ghost-border overflow-hidden group hover:bg-surface-container transition-colors">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-tertiary/5 rounded-full blur-2xl group-hover:bg-tertiary/10 transition-colors" />
+            <span className="inline-block text-[10px] font-black tracking-[0.2em] text-tertiary uppercase mb-4 bg-tertiary/10 px-3 py-1 rounded-full">
+              {t("neuro.card1.badge")}
+            </span>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="material-symbols-outlined text-3xl text-tertiary" style={{ fontVariationSettings: "'FILL' 1" }}>bedtime</span>
+              <h3 className="text-xl font-black text-on-surface leading-tight">{t("neuro.card1.title")}</h3>
+            </div>
+            <p className="text-on-surface-variant text-sm leading-relaxed">{t("neuro.card1.desc")}</p>
+          </div>
+        </div>
+
+        <p className="text-center text-[11px] text-on-surface-variant/50 font-medium tracking-wide">
+          {t("neuro.source")}
+        </p>
+      </section>
 
       {/* ── Scientific Pillars Section ── */}
       <section className="w-full max-w-7xl mx-auto px-6 pt-16 pb-24 border-t border-outline-variant/10">
@@ -210,64 +268,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── Neuroscience Section ── */}
-      <section className="w-full max-w-7xl mx-auto px-6 py-24 border-t border-outline-variant/10">
-        <div className="text-center mb-16">
-          <span className="text-tertiary font-bold uppercase tracking-[0.2em] text-sm">{t("neuro.label")}</span>
-          <h2 className="text-4xl md:text-6xl font-black text-on-surface mt-4 tracking-tight max-w-3xl mx-auto">
-            {t("neuro.title")}
-          </h2>
-          <p className="text-on-surface-variant text-lg mt-6 max-w-2xl mx-auto font-medium">
-            {t("neuro.desc")}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          {/* Card 1 — REM Sleep */}
-          <div className="relative bg-surface-container-low rounded-2xl p-8 ghost-border overflow-hidden group hover:bg-surface-container transition-colors">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-tertiary/5 rounded-full blur-2xl group-hover:bg-tertiary/10 transition-colors" />
-            <span className="inline-block text-[10px] font-black tracking-[0.2em] text-tertiary uppercase mb-4 bg-tertiary/10 px-3 py-1 rounded-full">
-              {t("neuro.card1.badge")}
-            </span>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="material-symbols-outlined text-3xl text-tertiary" style={{ fontVariationSettings: "'FILL' 1" }}>bedtime</span>
-              <h3 className="text-xl font-black text-on-surface leading-tight">{t("neuro.card1.title")}</h3>
-            </div>
-            <p className="text-on-surface-variant text-sm leading-relaxed">{t("neuro.card1.desc")}</p>
-          </div>
-
-          {/* Card 2 — Cortisol / Morning */}
-          <div className="relative bg-surface-container-low rounded-2xl p-8 ghost-border overflow-hidden group hover:bg-surface-container transition-colors">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full blur-2xl group-hover:bg-secondary/10 transition-colors" />
-            <span className="inline-block text-[10px] font-black tracking-[0.2em] text-secondary uppercase mb-4 bg-secondary/10 px-3 py-1 rounded-full">
-              {t("neuro.card2.badge")}
-            </span>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="material-symbols-outlined text-3xl text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>wb_sunny</span>
-              <h3 className="text-xl font-black text-on-surface leading-tight">{t("neuro.card2.title")}</h3>
-            </div>
-            <p className="text-on-surface-variant text-sm leading-relaxed">{t("neuro.card2.desc")}</p>
-          </div>
-
-          {/* Card 3 — Daily Consistency */}
-          <div className="relative bg-surface-container-low rounded-2xl p-8 ghost-border overflow-hidden group hover:bg-surface-container transition-colors">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors" />
-            <span className="inline-block text-[10px] font-black tracking-[0.2em] text-primary uppercase mb-4 bg-primary/10 px-3 py-1 rounded-full">
-              {t("neuro.card3.badge")}
-            </span>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="material-symbols-outlined text-3xl text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>local_fire_department</span>
-              <h3 className="text-xl font-black text-on-surface leading-tight">{t("neuro.card3.title")}</h3>
-            </div>
-            <p className="text-on-surface-variant text-sm leading-relaxed">{t("neuro.card3.desc")}</p>
-          </div>
-        </div>
-
-        <p className="text-center text-[11px] text-on-surface-variant/50 font-medium tracking-wide">
-          {t("neuro.source")}
-        </p>
-      </section>
-
       {/* ── Phonetic Precision Section ── */}
       <section className="w-full max-w-7xl mx-auto px-6 py-24">
         <div className="relative overflow-hidden rounded-xl bg-surface-container-low min-h-[400px] flex items-center">
@@ -276,7 +276,7 @@ export default function LandingPage() {
               <span className="text-secondary font-bold uppercase tracking-widest text-xs">
                 {t("precision.subtitle")}
               </span>
-              <h2 className="text-4xl md:text-5xl font-black text-on-surface leading-tight">
+              <h2 className="font-editorial text-4xl md:text-5xl font-black text-on-surface leading-tight">
                 {t("precision.title1")} <br />
                 <span className="text-outline">{t("precision.title2")}</span>
               </h2>
@@ -286,16 +286,41 @@ export default function LandingPage() {
             </div>
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000" />
-              <div className="relative aspect-video bg-surface-container-highest rounded-lg flex items-center justify-center overflow-hidden">
-                <div className="flex gap-1 items-end h-12">
-                  {[4, 8, 12, 6, 10, 3].map((h, i) => (
-                    <div
-                      key={i}
-                      className="w-1.5 bg-secondary rounded-full"
-                      style={{ height: `${h * 4}px`, opacity: 0.3 + (h / 12) * 0.7 }}
-                    />
-                  ))}
-                </div>
+              <div className="relative aspect-video bg-surface-container-highest rounded-lg overflow-hidden">
+                <svg viewBox="0 0 400 215" xmlns="http://www.w3.org/2000/svg" className="w-full h-full px-4 py-3">
+                  {/* Axes */}
+                  <line x1="48" y1="12" x2="48" y2="168" stroke="currentColor" strokeOpacity={0.15} strokeWidth={1} />
+                  <line x1="48" y1="168" x2="388" y2="168" stroke="currentColor" strokeOpacity={0.15} strokeWidth={1} />
+                  {/* Y labels */}
+                  <text x="43" y="16" textAnchor="end" fontSize="9" fill="currentColor" fillOpacity={0.45}>100%</text>
+                  <line x1="48" y1="90" x2="388" y2="90" stroke="currentColor" strokeOpacity={0.07} strokeWidth={1} strokeDasharray="3,3" />
+                  <text x="43" y="93" textAnchor="end" fontSize="9" fill="currentColor" fillOpacity={0.45}>50%</text>
+                  <text x="43" y="170" textAnchor="end" fontSize="9" fill="currentColor" fillOpacity={0.45}>0%</text>
+                  {/* Review vertical lines */}
+                  <line x1="150" y1="12" x2="150" y2="168" stroke="rgb(var(--color-secondary))" strokeOpacity={0.3} strokeWidth={1} strokeDasharray="3,3" />
+                  <line x1="255" y1="12" x2="255" y2="168" stroke="rgb(var(--color-secondary))" strokeOpacity={0.3} strokeWidth={1} strokeDasharray="3,3" />
+                  <line x1="360" y1="12" x2="360" y2="168" stroke="rgb(var(--color-secondary))" strokeOpacity={0.3} strokeWidth={1} strokeDasharray="3,3" />
+                  {/* Review labels */}
+                  <text x="150" y="182" textAnchor="middle" fontSize="8" fill="rgb(var(--color-secondary))" fillOpacity={0.65}>Rev. 1</text>
+                  <text x="255" y="182" textAnchor="middle" fontSize="8" fill="rgb(var(--color-secondary))" fillOpacity={0.65}>Rev. 2</text>
+                  <text x="360" y="182" textAnchor="middle" fontSize="8" fill="rgb(var(--color-secondary))" fillOpacity={0.65}>Rev. 3</text>
+                  {/* Forgetting curve — no review */}
+                  <path d="M 48 14 Q 165 148 388 158" fill="none" stroke="rgb(var(--color-error))" strokeWidth={1.8} strokeOpacity={0.6} />
+                  {/* OLA curve — 3 spaced reviews */}
+                  <path d="M 48 14 Q 112 100 143 98 L 157 42 Q 215 92 248 90 L 262 36 Q 318 83 353 80 L 367 30" fill="none" stroke="rgb(var(--color-secondary))" strokeWidth={2.5} />
+                  {/* Review dots */}
+                  <circle cx="150" cy="98" r="3.5" fill="rgb(var(--color-secondary))" />
+                  <circle cx="255" cy="90" r="3.5" fill="rgb(var(--color-secondary))" />
+                  <circle cx="360" cy="80" r="3.5" fill="rgb(var(--color-secondary))" />
+                  {/* Legend */}
+                  <line x1="58" y1="198" x2="72" y2="198" stroke="rgb(var(--color-error))" strokeWidth={2} strokeOpacity={0.6} />
+                  <text x="76" y="201" fontSize="9" fill="currentColor" fillOpacity={0.5}>Sem revisão</text>
+                  <line x1="163" y1="198" x2="177" y2="198" stroke="rgb(var(--color-secondary))" strokeWidth={2.5} />
+                  <text x="181" y="201" fontSize="9" fill="currentColor" fillOpacity={0.75}>Com OLA (3 repetições)</text>
+                  {/* Axis labels */}
+                  <text x="-88" y="8" fontSize="8" fill="currentColor" fillOpacity={0.35} transform="rotate(-90)">Retenção</text>
+                  <text x="218" y="210" textAnchor="middle" fontSize="8" fill="currentColor" fillOpacity={0.35}>Tempo →</text>
+                </svg>
               </div>
             </div>
           </div>
