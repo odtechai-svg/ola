@@ -58,8 +58,8 @@ export async function getLanguageOptions(): Promise<LanguageOption[]> {
 }
 
 // ── PocketBase helper ─────────────────────────────────────────────────────────
-// Always fetches the most recently updated progress record for this user,
-// with NO language-pair filter — the record itself tells us the correct pair.
+// Fetches the most recently updated progress record for this user.
+// No language-pair filter: the record itself is the source of truth for the pair.
 export async function getPbProgress(userId: string, token: string): Promise<any | null> {
   try {
     const pb = createPbClient(token);
@@ -73,11 +73,14 @@ export async function getPbProgress(userId: string, token: string): Promise<any 
   }
 }
 
-// Resolves language pair: PB record first, cookie fallback for anonymous users.
+// Resolves language pair from PB progress record.
+// Falls back to onboarding cookies only when the user has no progress record yet
+// (i.e. they just chose a language but haven't completed their first session).
 async function resolveLanguagePair(pbProgress: any | null): Promise<{ source: string; target: string }> {
   if (pbProgress?.source_lang) {
     return { source: pbProgress.source_lang, target: pbProgress.target_lang || "en" };
   }
+  // Onboarding fallback: language was chosen but no session completed yet
   try {
     const cookieStore = await cookies();
     return {
@@ -116,27 +119,22 @@ export async function getDashboardProfile(userId: string): Promise<{
 }> {
   const cookieStore = await cookies();
   const token = cookieStore.get("pb_auth")?.value;
-  const isAuth = !!(token && userId && userId !== "anonymous");
 
-  const pbProgress = isAuth ? await getPbProgress(userId, token!) : null;
+  const pbProgress = token ? await getPbProgress(userId, token) : null;
   const { source, target } = await resolveLanguagePair(pbProgress);
 
-  const currentBlockOrder = pbProgress?.block_order
-    ?? parseInt(cookieStore.get("ola_current_block_order")?.value || "1", 10);
-  const sessionsDone = pbProgress?.sessions_done
-    ?? parseInt(cookieStore.get("ola_sessions_done")?.value || "0", 10);
-  const totalPhrases = pbProgress?.total_phrases
-    ?? parseInt(cookieStore.get("ola_total_phrases")?.value || "0", 10);
-  const totalScoreSum = pbProgress?.total_score_sum
-    ?? parseFloat(cookieStore.get("ola_total_score_sum")?.value || "0");
-  const avgScore = sessionsDone > 0 ? Math.round((totalScoreSum / sessionsDone) * 100) : 0;
-  const wordsRepeated = pbProgress?.words_repeated
-    ?? parseInt(cookieStore.get("ola_words_repeated")?.value || "0", 10);
-  const streakDays = pbProgress?.streak_days
-    ?? parseInt(cookieStore.get("ola_streak_days")?.value || "0", 10);
-  const lastSessionDate = pbProgress?.last_session_date
+  // All progress values come from PocketBase.
+  // Defaults (0, 1) apply only to users who have never completed a session.
+  const currentBlockOrder = pbProgress?.block_order    ?? 1;
+  const sessionsDone      = pbProgress?.sessions_done  ?? 0;
+  const totalScoreSum     = pbProgress?.total_score_sum ?? 0;
+  const avgScore          = sessionsDone > 0 ? Math.round((totalScoreSum / sessionsDone) * 100) : 0;
+  const totalPhrases      = pbProgress?.total_phrases  ?? 0;
+  const wordsRepeated     = pbProgress?.words_repeated ?? 0;
+  const streakDays        = pbProgress?.streak_days    ?? 0;
+  const lastSessionDate   = pbProgress?.last_session_date
     ? String(pbProgress.last_session_date).slice(0, 10)
-    : cookieStore.get("ola_last_session_date")?.value;
+    : undefined;
   const displayName = cookieStore.get("ola_display_name")?.value || "Atleta";
 
   const todayStr = new Date().toISOString().slice(0, 10);
@@ -144,11 +142,10 @@ export async function getDashboardProfile(userId: string): Promise<{
   yesterdayDate.setDate(yesterdayDate.getDate() - 1);
   const yesterdayStr = yesterdayDate.toISOString().slice(0, 10);
 
-  // blocks_today is a per-device daily counter — cookie is fine here
+  // blocks_today is a per-device daily counter — cookie is intentional here
   const blocksTodayDate   = cookieStore.get("ola_blocks_today_date")?.value;
   const blocksTodayUserId = cookieStore.get("ola_blocks_today_user")?.value;
-  const blocksOwnedByUser = !userId || userId === "anonymous" || blocksTodayUserId === userId;
-  const blocksTodayDone   = (blocksTodayDate === todayStr && blocksOwnedByUser)
+  const blocksTodayDone   = (blocksTodayDate === todayStr && blocksTodayUserId === userId)
     ? Math.min(parseInt(cookieStore.get("ola_blocks_today")?.value || "0", 10), 3)
     : 0;
 
@@ -171,7 +168,7 @@ export async function getDashboardProfile(userId: string): Promise<{
 
   return {
     profile: {
-      id: userId || "anonymous",
+      id: userId,
       displayName,
       sourceLanguage: source,
       targetLanguage: target,
@@ -200,12 +197,10 @@ export async function getDashboardProfile(userId: string): Promise<{
 export async function getBlocksForActiveEnrollment(userId: string): Promise<BlockSummary[]> {
   const cookieStore = await cookies();
   const token = cookieStore.get("pb_auth")?.value;
-  const isAuth = !!(token && userId && userId !== "anonymous");
 
-  const pbProgress = isAuth ? await getPbProgress(userId, token!) : null;
+  const pbProgress = token ? await getPbProgress(userId, token) : null;
   const { source, target } = await resolveLanguagePair(pbProgress);
-  const currentBlockOrder = pbProgress?.block_order
-    ?? parseInt(cookieStore.get("ola_current_block_order")?.value || "1", 10);
+  const currentBlockOrder = pbProgress?.block_order ?? 1;
 
   const blocksData = getLocalBlocksData(source, target);
   return (blocksData ?? []).map((block: any) => {
@@ -227,14 +222,11 @@ export async function getBlocksForActiveEnrollment(userId: string): Promise<Bloc
 export async function getSessionBreakdown(userId?: string): Promise<{ novo: number; fala: number; revisao: number }> {
   const cookieStore = await cookies();
   const token = cookieStore.get("pb_auth")?.value;
-  const isAuth = !!(token && userId && userId !== "anonymous");
 
-  const pbProgress = isAuth ? await getPbProgress(userId!, token!) : null;
+  const pbProgress = (token && userId) ? await getPbProgress(userId, token) : null;
   const { source, target } = await resolveLanguagePair(pbProgress);
-  const blockOrder = pbProgress?.block_order
-    ?? parseInt(cookieStore.get("ola_current_block_order")?.value || "1", 10);
-  const sessionsDone = pbProgress?.sessions_done
-    ?? parseInt(cookieStore.get("ola_sessions_done")?.value || "0", 10);
+  const blockOrder   = pbProgress?.block_order   ?? 1;
+  const sessionsDone = pbProgress?.sessions_done ?? 0;
 
   const blocksData = getLocalBlocksData(source, target);
   const currentBlock = blocksData.find((b: any) => b.order === blockOrder) || blocksData[0] || { levels: [] };
@@ -257,12 +249,10 @@ export async function buildLiveSession(userId: string): Promise<{
 }> {
   const cookieStore = await cookies();
   const token = cookieStore.get("pb_auth")?.value;
-  const isAuth = !!(token && userId && userId !== "anonymous");
 
-  const pbProgress = isAuth ? await getPbProgress(userId, token!) : null;
+  const pbProgress = token ? await getPbProgress(userId, token) : null;
   const { source, target } = await resolveLanguagePair(pbProgress);
-  const currentBlockOrder = pbProgress?.block_order
-    ?? parseInt(cookieStore.get("ola_current_block_order")?.value || "1", 10);
+  const currentBlockOrder = pbProgress?.block_order ?? 1;
 
   const blocksData = getLocalBlocksData(source, target);
   const currentBlock = blocksData.find((b: any) => b.order === currentBlockOrder) || blocksData[0] || { levels: [] };
