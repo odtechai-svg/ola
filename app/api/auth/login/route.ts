@@ -23,37 +23,44 @@ export async function POST(request: Request) {
     cookieStore.set("pb_user_email", auth.record.email || "", COOKIE_OPTS);
     cookieStore.set("ola_display_name", (auth.record as any).name || "", COOKIE_OPTS);
 
-    // Restore language defaults for new device / cleared cookies
-    const sourceLang = cookieStore.get("ola_source_lang")?.value || "pt-BR";
-    const targetLang = cookieStore.get("ola_target_lang")?.value || "en";
-    if (!cookieStore.get("ola_source_lang")?.value) {
-      cookieStore.set("ola_source_lang", sourceLang, YEAR);
-      cookieStore.set("ola_target_lang", targetLang, YEAR);
-    }
-
-    // Restore progress from PocketBase for cross-device sync
+    // Restore all progress from PocketBase — no lang-pair filter so a new
+    // device always recovers the correct language pair from the most recent record.
     try {
       const pbAuth = createPbClient(auth.token);
       const progressResult = await pbAuth.collection("user_progress").getList(1, 1, {
-        filter: `user_id = "${auth.record.id}" && source_lang = "${sourceLang}" && target_lang = "${targetLang}"`,
+        filter: `user_id = "${auth.record.id}"`,
         sort: "-updated",
       });
       const progress = progressResult.items[0];
       if (progress) {
-        cookieStore.set("ola_current_block_order", String(progress.block_order || 1), YEAR);
-        cookieStore.set("ola_sessions_done",   String(progress.sessions_done  || 0), YEAR);
-        cookieStore.set("ola_total_phrases",   String(progress.total_phrases  || 0), YEAR);
-        cookieStore.set("ola_total_score_sum", String(progress.total_score_sum || 0), YEAR);
-        cookieStore.set("ola_words_repeated",  String(progress.words_repeated || 0), YEAR);
-        cookieStore.set("ola_streak_days",     String(progress.streak_days    || 0), YEAR);
+        const restoredSource = progress.source_lang || "pt-BR";
+        const restoredTarget = progress.target_lang || "en";
+        cookieStore.set("ola_source_lang",         restoredSource, YEAR);
+        cookieStore.set("ola_target_lang",         restoredTarget, YEAR);
+        cookieStore.set("ola_current_block_order", String(progress.block_order    || 1), YEAR);
+        cookieStore.set("ola_sessions_done",       String(progress.sessions_done  || 0), YEAR);
+        cookieStore.set("ola_total_phrases",       String(progress.total_phrases  || 0), YEAR);
+        cookieStore.set("ola_total_score_sum",     String(progress.total_score_sum || 0), YEAR);
+        cookieStore.set("ola_words_repeated",      String(progress.words_repeated || 0), YEAR);
+        cookieStore.set("ola_streak_days",         String(progress.streak_days    || 0), YEAR);
         if (progress.last_session_date) {
           cookieStore.set("ola_last_session_date", String(progress.last_session_date).slice(0, 10), YEAR);
         }
-        cookieStore.set("ola_progress_lang_pair", `${sourceLang}→${targetLang}`, YEAR);
-        cookieStore.set("ola_blocks_today_user", auth.record.id, YEAR);
+        cookieStore.set("ola_progress_lang_pair", `${restoredSource}→${restoredTarget}`, YEAR);
+        cookieStore.set("ola_blocks_today_user",  auth.record.id, YEAR);
+      } else {
+        // Brand new user — set language defaults only if cookies don't exist yet
+        if (!cookieStore.get("ola_source_lang")?.value) {
+          cookieStore.set("ola_source_lang", "pt-BR", YEAR);
+          cookieStore.set("ola_target_lang", "en",    YEAR);
+        }
       }
     } catch (e) {
       console.error("[OLA] Failed to restore progress from PocketBase on login:", e);
+      if (!cookieStore.get("ola_source_lang")?.value) {
+        cookieStore.set("ola_source_lang", "pt-BR", YEAR);
+        cookieStore.set("ola_target_lang", "en",    YEAR);
+      }
     }
 
     return NextResponse.json({ ok: true });
