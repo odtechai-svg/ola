@@ -25,6 +25,13 @@ export async function GET(request: Request) {
       progressList
     });
   } catch (e: any) {
-    return NextResponse.json({ error: e.message }, { status: 500 });
+    return NextResponse.json({
+      error: e.message,
+      status: e.status,
+      response: e.response,
+      pbUrl: process.env.POCKETBASE_URL ? `${process.env.POCKETBASE_URL.substring(0, 15)}...` : "undefined",
+      adminEmail: process.env.PB_ADMIN_EMAIL || "undefined",
+      hasAdminPassword: !!process.env.PB_ADMIN_PASSWORD
+    }, { status: 500 });
   }
 }
