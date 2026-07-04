@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Trigger Coolify deployment
         run: |
-          curl -sSL \
+          curl -fsSL \
             -H "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}" \
             "http://76.13.169.20:8000/api/v1/deploy?uuid=gubyyr8zz3e9irh056gaa5m1&force=false" \
             -w "\nHTTP status: %{http_code}\n"
