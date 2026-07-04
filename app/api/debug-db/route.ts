@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import { createPbClient } from "@/lib/pocketbase/server";
+import { createPbClient, createAdminPbClient } from "@/lib/pocketbase/server";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -10,32 +10,58 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
+  let adminError: any = null;
+  let adminCollections: any = null;
+  let adminProgressList: any = null;
+
+  try {
+    const pbAdmin = await createAdminPbClient();
+    adminCollections = (await pbAdmin.collections.getFullList()).map(c => ({ name: c.name, fields: (c as any).fields || (c as any).schema }));
+    adminProgressList = await pbAdmin.collection("user_progress").getFullList({
+      sort: "-updated",
+    });
+  } catch (e: any) {
+    adminError = {
+      message: e.message,
+      status: e.status,
+      response: e.response,
+    };
+  }
+
+  let userError: any = null;
+  let userProgressList: any = null;
+  let userId: string | undefined;
+
   try {
     const cookieStore = await cookies();
     const token = cookieStore.get("pb_auth")?.value;
-    const userId = cookieStore.get("pb_user_id")?.value;
+    userId = cookieStore.get("pb_user_id")?.value;
 
-    if (!token || !userId) {
-      return NextResponse.json({ error: "Not logged in (cookies missing)" }, { status: 400 });
+    if (token && userId) {
+      const pbUser = createPbClient(token);
+      userProgressList = await pbUser.collection("user_progress").getFullList({
+        filter: `user_id = "${userId}"`,
+        sort: "-updated",
+      });
+    } else {
+      userError = "Not logged in (cookies missing)";
     }
-
-    const pb = createPbClient(token);
-    
-    // Get all user_progress records for this user
-    const progressList = await pb.collection("user_progress").getFullList({
-      filter: `user_id = "${userId}"`,
-      sort: "-updated",
-    });
-
-    return NextResponse.json({
-      userId,
-      progressList
-    });
   } catch (e: any) {
-    return NextResponse.json({
-      error: e.message,
+    userError = {
+      message: e.message,
       status: e.status,
       response: e.response,
-    }, { status: 500 });
+    };
   }
+
+  return NextResponse.json({
+    adminSuccess: !!adminProgressList,
+    adminCollections,
+    adminProgressList,
+    adminError,
+    userSuccess: !!userProgressList,
+    userId,
+    userProgressList,
+    userError,
+  });
 }
