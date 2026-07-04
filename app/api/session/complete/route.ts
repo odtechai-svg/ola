@@ -79,7 +79,7 @@ export async function POST(request: Request) {
           total_score_sum:     totalScoreSum,
           words_repeated:      wordsRepeated,
           streak_days:         newStreak,
-          last_session_date:   today,
+          last_session_date:   new Date().toISOString(),
           blocks_today_count:  blocksTodayDone,
           blocks_today_date:   today,
           voice_gender:        cookieStore.get("ola_voice_gender")?.value || "female",

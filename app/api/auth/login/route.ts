@@ -29,7 +29,7 @@ export async function POST(request: Request) {
       const pbAuth = createPbClient(auth.token);
       const progressResult = await pbAuth.collection("user_progress").getList(1, 1, {
         filter: `user_id = "${auth.record.id}"`,
-        sort: "-updated",
+        sort: "-last_session_date,-id",
       });
       const progress = progressResult.items[0];
       if (progress) {

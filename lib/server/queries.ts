@@ -65,7 +65,7 @@ export async function getPbProgress(userId: string, token: string): Promise<any 
     const pb = createPbClient(token);
     const result = await pb.collection("user_progress").getList(1, 1, {
       filter: `user_id = "${userId}"`,
-      sort: "-updated",
+      sort: "-last_session_date,-id",
     });
     return result.items[0] || null;
   } catch {

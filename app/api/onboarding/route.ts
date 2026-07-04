@@ -52,10 +52,11 @@ export async function POST(request: Request) {
       });
 
       if (existing.items.length > 0) {
-        // Touch the record — bumps `updated` timestamp so login finds it first
+        // Touch the record — bumps `last_session_date` timestamp so login finds it first
         await pb.collection("user_progress").update(existing.items[0].id, {
-          source_lang: sourceLanguageCode,
-          target_lang: targetLanguageCode,
+          source_lang:       sourceLanguageCode,
+          target_lang:       targetLanguageCode,
+          last_session_date: new Date().toISOString(),
         });
       } else {
         // New language pair — create a fresh record
@@ -71,6 +72,7 @@ export async function POST(request: Request) {
           streak_days:        0,
           blocks_today_count: 0,
           blocks_today_date:  "",
+          last_session_date:  new Date().toISOString(),
         });
       }
     } catch (e) {
