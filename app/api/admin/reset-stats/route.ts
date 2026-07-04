@@ -5,6 +5,13 @@ import { createPbClient } from "@/lib/pocketbase/server";
 
 export async function POST() {
   try {
+    const user = await getCurrentUser();
+    const adminEmail = process.env.PB_ADMIN_EMAIL || "odtechai@gmail.com";
+
+    if (!user || user.email !== adminEmail) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
     const cookieStore = await cookies();
     const persistOpts = { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" as const };
 
@@ -16,7 +23,6 @@ export async function POST() {
     cookieStore.delete("ola_streak_days");
     cookieStore.delete("ola_last_session_date");
 
-    const user = await getCurrentUser();
     if (user) {
       try {
         const pb = createPbClient(user.token);

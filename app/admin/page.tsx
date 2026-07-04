@@ -53,7 +53,13 @@ function Bar({ pct, color = "bg-primary" }: { pct: number; color?: string }) {
 }
 
 export default async function AdminPage() {
-  const user = await requireUser();
+  let user;
+  try {
+    user = await requireUser();
+  } catch (e) {
+    redirect("/auth/login");
+  }
+
   const adminEmail = process.env.PB_ADMIN_EMAIL || "odtechai@gmail.com";
   if (!user.email || user.email !== adminEmail) redirect("/home");
 

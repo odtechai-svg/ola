@@ -36,9 +36,18 @@ export function SettingsClient({
   async function handleReset() {
     if (resetStatus === "idle") { setResetStatus("confirming"); return; }
     setResetStatus("resetting");
-    await fetch("/api/admin/reset-stats", { method: "POST" });
-    setResetStatus("done");
-    setTimeout(() => setResetStatus("idle"), 3000);
+    try {
+      const res = await fetch("/api/admin/reset-stats", { method: "POST" });
+      if (!res.ok) {
+        throw new Error("Reset failed");
+      }
+      setResetStatus("done");
+    } catch (e) {
+      console.error("[SettingsClient] Reset stats failed:", e);
+      setResetStatus("idle");
+    } finally {
+      setTimeout(() => setResetStatus("idle"), 3000);
+    }
   }
   const [saved,    setSaved]    = useState(false);
 
