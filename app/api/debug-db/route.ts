@@ -17,9 +17,7 @@ export async function GET(request: Request) {
   try {
     const pbAdmin = await createAdminPbClient();
     adminCollections = (await pbAdmin.collections.getFullList()).map(c => ({ name: c.name, fields: (c as any).fields || (c as any).schema }));
-    adminProgressList = await pbAdmin.collection("user_progress").getFullList({
-      sort: "-updated",
-    });
+    adminProgressList = await pbAdmin.collection("user_progress").getFullList();
   } catch (e: any) {
     adminError = {
       message: e.message,
@@ -41,7 +39,6 @@ export async function GET(request: Request) {
       const pbUser = createPbClient(token);
       userProgressList = await pbUser.collection("user_progress").getFullList({
         filter: `user_id = "${userId}"`,
-        sort: "-updated",
       });
     } else {
       userError = "Not logged in (cookies missing)";
