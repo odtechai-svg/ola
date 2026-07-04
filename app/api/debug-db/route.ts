@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { createAdminPbClient } from "@/lib/pocketbase/server";
+import { cookies } from "next/headers";
+import { createPbClient } from "@/lib/pocketbase/server";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -10,18 +11,24 @@ export async function GET(request: Request) {
   }
 
   try {
-    const pb = await createAdminPbClient();
+    const cookieStore = await cookies();
+    const token = cookieStore.get("pb_auth")?.value;
+    const userId = cookieStore.get("pb_user_id")?.value;
+
+    if (!token || !userId) {
+      return NextResponse.json({ error: "Not logged in (cookies missing)" }, { status: 400 });
+    }
+
+    const pb = createPbClient(token);
     
-    // Get collections schemas to inspect fields
-    const collections = await pb.collections.getFullList();
-    
-    // Get user_progress list
+    // Get all user_progress records for this user
     const progressList = await pb.collection("user_progress").getFullList({
+      filter: `user_id = "${userId}"`,
       sort: "-updated",
     });
 
     return NextResponse.json({
-      collections: collections.map(c => ({ name: c.name, fields: c.fields })),
+      userId,
       progressList
     });
   } catch (e: any) {
@@ -29,9 +36,6 @@ export async function GET(request: Request) {
       error: e.message,
       status: e.status,
       response: e.response,
-      pbUrl: process.env.POCKETBASE_URL ? `${process.env.POCKETBASE_URL.substring(0, 15)}...` : "undefined",
-      adminEmail: process.env.PB_ADMIN_EMAIL || "undefined",
-      hasAdminPassword: !!process.env.PB_ADMIN_PASSWORD
     }, { status: 500 });
   }
 }
