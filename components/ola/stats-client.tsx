@@ -9,6 +9,7 @@ interface StatsClientProps {
   blocksCompleted: number;
   wordsLearned: number;
   minutesTrained: number;
+  daysCompleted: number;
   sourceLang: string;
   targetLang: string;
 }
@@ -20,6 +21,7 @@ export function StatsClient({
   blocksCompleted,
   wordsLearned,
   minutesTrained,
+  daysCompleted,
   sourceLang,
   targetLang,
 }: StatsClientProps) {
@@ -30,12 +32,12 @@ export function StatsClient({
   const blockPct = Math.min(100, Math.round((blocksCompleted / 120) * 100));
 
   const topCards = [
-    { icon: "event_available",   label: t("stats.sessions"),       value: sessionsDone,          color: "primary"   },
+    { icon: "check_circle",      label: t("stats.blocks_done"),    value: blocksCompleted,       color: "primary"   },
     { icon: "forum",             label: t("stats.phrases"),        value: totalPhrases,          color: "secondary" },
     { icon: "workspace_premium", label: t("stats.accuracy_score"), value: `${avgScore}%`,        color: "tertiary"  },
     { icon: "dictionary",        label: t("stats.words"),          value: wordsLearned,          color: "primary"   },
     { icon: "timer",             label: t("stats.minutes"),        value: minutesTrained,        color: "secondary" },
-    { icon: "check_circle",      label: t("stats.blocks_done"),    value: blocksCompleted,       color: "tertiary"  },
+    { icon: "event_available",   label: t("stats.days_done"),      value: daysCompleted,         color: "tertiary"  },
   ];
 
   const motivationText =

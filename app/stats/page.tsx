@@ -18,6 +18,7 @@ export default async function StatsPage() {
   const blocksCompleted = Math.max(0, enrollment.currentBlockOrder - 1);
   const wordsLearned = profile?.uniqueWords ?? 0;
   const minutesTrained = sessionsDone * 15;
+  const daysCompleted = Math.floor(blocksCompleted / 3);
 
   return (
     <Shell>
@@ -28,6 +29,7 @@ export default async function StatsPage() {
         blocksCompleted={blocksCompleted}
         wordsLearned={wordsLearned}
         minutesTrained={minutesTrained}
+        daysCompleted={daysCompleted}
         sourceLang={enrollment.sourceLanguageCode}
         targetLang={enrollment.targetLanguageCode}
       />
