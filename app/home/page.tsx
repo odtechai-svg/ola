@@ -29,6 +29,7 @@ export default async function HomePage() {
         blockTitle={blockTitle}
         sessionsDone={(profile as any)?.sessionsDone ?? 0}
         totalPhrases={(profile as any)?.totalPhrases ?? 0}
+        uniqueWords={(profile as any)?.uniqueWords ?? 0}
         avgScore={(profile as any)?.avgScore ?? 0}
         wordsRepeated={(profile as any)?.wordsRepeated ?? 0}
         defaultVoiceGender={voiceGender}

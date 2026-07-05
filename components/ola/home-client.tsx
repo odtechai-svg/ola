@@ -15,6 +15,7 @@ interface HomeClientProps {
   blockTitle: string;
   sessionsDone: number;
   totalPhrases: number;
+  uniqueWords: number;
   avgScore: number;
   wordsRepeated: number;
   defaultVoiceGender: string;
@@ -49,6 +50,7 @@ export function HomeClient({
   blockTitle,
   sessionsDone,
   totalPhrases,
+  uniqueWords,
   avgScore,
   wordsRepeated,
   defaultVoiceGender,
@@ -247,7 +249,7 @@ export function HomeClient({
         <div className="md:col-span-12 grid grid-cols-2 sm:grid-cols-4 gap-6">
           <StatCard
             icon="menu_book"
-            value={`${totalPhrases * 5}`}
+            value={`${uniqueWords}`}
             label={t("home.stats.words")}
             color="primary"
           />

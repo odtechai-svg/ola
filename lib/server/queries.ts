@@ -121,12 +121,38 @@ function getLocalBlocksData(source: string, target: string) {
   return JSON.parse(fs.readFileSync(filePath, "utf-8"));
 }
 
-// ── Dashboard ─────────────────────────────────────────────────────────────────
+function getUniqueWordsCount(blocksData: any[], completedBlockOrder: number): number {
+  const uniqueWords = new Set<string>();
+  
+  for (const block of blocksData) {
+    if (block.order <= completedBlockOrder) {
+      for (const level of block.levels || []) {
+        if (level.text) {
+          const words = level.text.toLowerCase().match(/[\wÀ-ÿ']+/g) || [];
+          for (const word of words) {
+            if (word) {
+              uniqueWords.add(word);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  return uniqueWords.size;
+}
 
 type StreakState = "new" | "today" | "alive" | "broken";
 
 export async function getDashboardProfile(userId: string): Promise<{
-  profile: (UserProfile & { sessionsDone: number; avgScore: number; totalPhrases: number; wordsRepeated: number; streakState: StreakState }) | null;
+  profile: (UserProfile & { 
+    sessionsDone: number; 
+    avgScore: number; 
+    totalPhrases: number; 
+    wordsRepeated: number; 
+    streakState: StreakState;
+    uniqueWords: number;
+  }) | null;
   enrollment: EnrollmentSummary | null;
   queueCount: number;
   blockTitle: string;
@@ -178,6 +204,7 @@ export async function getDashboardProfile(userId: string): Promise<{
   const currentBlock = blocksData.find((b: any) => b.order === currentBlockOrder) || blocksData[0] || {};
   const blockTitle: string  = currentBlock.title || "";
   const phraseCount: number = currentBlock.levels?.length ?? 3;
+  const uniqueWords = getUniqueWordsCount(blocksData, currentBlockOrder - 1);
 
   return {
     profile: {
@@ -192,6 +219,7 @@ export async function getDashboardProfile(userId: string): Promise<{
       avgScore,
       totalPhrases,
       wordsRepeated,
+      uniqueWords,
     },
     enrollment: {
       id: "enrollment-id",
