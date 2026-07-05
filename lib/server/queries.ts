@@ -253,7 +253,10 @@ export async function getSessionBreakdown(userId?: string): Promise<{ novo: numb
   return { novo, fala, revisao };
 }
 
-export async function buildLiveSession(userId: string): Promise<{
+export async function buildLiveSession(
+  userId: string,
+  requestedBlock?: number,
+): Promise<{
   sessionId: string;
   languagePairId: string;
   startingBlockOrder: number;
@@ -265,7 +268,7 @@ export async function buildLiveSession(userId: string): Promise<{
   const { source, target } = await getActivePair();
 
   const pbProgress = token ? await getPbProgressForPair(userId, token, source, target) : null;
-  const currentBlockOrder = pbProgress?.block_order ?? 1;
+  const currentBlockOrder = requestedBlock || (pbProgress?.block_order ?? 1);
 
   const blocksData = getLocalBlocksData(source, target);
   const currentBlock = blocksData.find((b: any) => b.order === currentBlockOrder) || blocksData[0] || { levels: [] };

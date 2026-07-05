@@ -16,9 +16,7 @@ export function BlockGrid({ blocks }: { blocks: BlockSummary[] }) {
   const router = useRouter();
 
   function handleRepeat(order: number) {
-    const maxAge = 60 * 60 * 24 * 365;
-    document.cookie = `ola_current_block_order=${order}; path=/; max-age=${maxAge}; samesite=lax`;
-    router.push("/session/live");
+    router.push(`/session/live?block=${order}`);
   }
 
   const statusConfig: Record<BlockSummary["status"], { bg: string; text: string; labelKey: string }> = {

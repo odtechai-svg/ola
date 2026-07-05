@@ -9,7 +9,7 @@ import wordRepetitionsData from "@/lib/data/word-repetitions.json";
 export async function POST(request: Request) {
   try {
     const user = await getCurrentUser();
-    const { score = 0, phrasesCount = 0 } = await request.json().catch(() => ({}));
+    const { score = 0, phrasesCount = 0, blockOrder } = await request.json().catch(() => ({}));
     const cookieStore = await cookies();
     const cookieOptions = { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" as const };
 
@@ -31,7 +31,13 @@ export async function POST(request: Request) {
     const prevTotalScoreSum = pbProgress?.total_score_sum ?? 0;
     const prevWordsRepeated = pbProgress?.words_repeated  ?? 0;
 
-    const nextOrder     = currentOrder + 1;
+    // Advance block order only if they completed their current or a newer block.
+    // Repeating older blocks should increment sessions/phrases but NOT advance curriculum progress.
+    let nextOrder = currentOrder;
+    if (blockOrder === undefined || blockOrder === null || blockOrder >= currentOrder) {
+      nextOrder = currentOrder + 1;
+    }
+
     const sessionsDone  = prevSessionsDone + 1;
     const totalPhrases  = prevTotalPhrases + phrasesCount;
     const totalScoreSum = prevTotalScoreSum + score;

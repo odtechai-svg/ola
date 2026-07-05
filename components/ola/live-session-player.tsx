@@ -338,6 +338,7 @@ export function LiveSessionPlayer({
   }
 
   async function handleNext() {
+    if (saving) return;
     AudioManager.stop();
     const nextIndex = index + 1;
 
@@ -353,7 +354,11 @@ export function LiveSessionPlayer({
         const res = await fetch("/api/session/complete", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ score: avgScore, phrasesCount: summary.items.length }),
+          body: JSON.stringify({ 
+            score: avgScore, 
+            phrasesCount: summary.items.length,
+            blockOrder: startingBlockOrder
+          }),
         });
         const data = await res.json();
         if (!isMountedRef.current) return;
