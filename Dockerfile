@@ -22,8 +22,9 @@ ENV NEXT_PUBLIC_SUPABASE_URL=$NEXT_PUBLIC_SUPABASE_URL
 ENV NEXT_PUBLIC_SUPABASE_ANON_KEY=$NEXT_PUBLIC_SUPABASE_ANON_KEY
 ENV NEXT_PUBLIC_VAPID_PUBLIC_KEY=$NEXT_PUBLIC_VAPID_PUBLIC_KEY
 ENV NEXT_TELEMETRY_DISABLED=1
-# Limit Node heap to avoid OOM on constrained VPS (build traces are the main culprit)
-ENV NODE_OPTIONS="--max-old-space-size=768"
+# Increase Node heap and limit parallel workers to reduce peak RAM during build
+ENV NODE_OPTIONS="--max-old-space-size=1536"
+ENV NEXT_PRIVATE_BUILD_WORKERS=1
 
 RUN npm run build
 
