@@ -77,16 +77,11 @@ export async function GET(request: Request) {
     let updatedRecordsCount = 0;
 
     for (const record of records) {
-      const needsUpdate = record.total_phrases === undefined || record.total_phrases === null ||
-                          record.total_score_sum === undefined || record.total_score_sum === null;
+      const needsUpdate = !record.total_phrases || !record.total_score_sum;
       if (needsUpdate) {
         const sessions = record.sessions_done || 0;
-        const totalPhrases = (record.total_phrases !== undefined && record.total_phrases !== null) 
-          ? record.total_phrases 
-          : (sessions * 13);
-        const totalScoreSum = (record.total_score_sum !== undefined && record.total_score_sum !== null) 
-          ? record.total_score_sum 
-          : (sessions * 0.95); // default 95% avg score
+        const totalPhrases = record.total_phrases || (sessions * 13);
+        const totalScoreSum = record.total_score_sum || (sessions * 0.95); // default 95% avg score
         
         await pb.collection("user_progress").update(record.id, {
           total_phrases: totalPhrases,
