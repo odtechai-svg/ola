@@ -51,6 +51,13 @@ export function SettingsClient({
   }
   const [saved,    setSaved]    = useState(false);
 
+  // Password change state
+  const [oldPwd,   setOldPwd]   = useState("");
+  const [newPwd,   setNewPwd]   = useState("");
+  const [cfmPwd,   setCfmPwd]   = useState("");
+  const [pwdSaving, setPwdSaving] = useState(false);
+  const [pwdMsg,   setPwdMsg]   = useState<{ text: string; ok: boolean } | null>(null);
+
   async function handleVoiceSelect(value: string) {
     if (value === gender || saving) return;
     setSaving(true);
@@ -74,6 +81,34 @@ export function SettingsClient({
     setSaving(false);
     setSaved(true);
     setTimeout(() => setSaved(false), 2500);
+  }
+
+  async function handleChangePassword() {
+    setPwdSaving(true);
+    setPwdMsg(null);
+
+    const res = await fetch("/api/settings/password", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        oldPassword: oldPwd,
+        newPassword: newPwd,
+        newPasswordConfirm: cfmPwd,
+      }),
+    });
+    const data = await res.json();
+    setPwdSaving(false);
+
+    if (!res.ok) {
+      setPwdMsg({ text: data.error || "Erro ao alterar senha.", ok: false });
+      return;
+    }
+
+    setPwdMsg({ text: t("settings.password_changed"), ok: true });
+    setOldPwd("");
+    setNewPwd("");
+    setCfmPwd("");
+    setTimeout(() => setPwdMsg(null), 3000);
   }
 
   const voiceOptions = [
@@ -176,6 +211,76 @@ export function SettingsClient({
           <span className="material-symbols-outlined text-lg">swap_horiz</span>
           {t("settings.change_pair")}
         </Link>
+      </div>
+
+      {/* Security Card — Change Password */}
+      <div className="bg-surface-container-low p-8 rounded-lg ghost-border space-y-5">
+        <div className="flex items-center gap-3">
+          <span className="material-symbols-outlined text-primary">lock</span>
+          <h3 className="text-lg font-bold text-on-surface">{t("settings.security_title")}</h3>
+        </div>
+        <p className="text-on-surface-variant text-sm">{t("settings.security_desc")}</p>
+
+        <div className="space-y-4">
+          <div>
+            <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1">
+              {t("settings.current_password")}
+            </label>
+            <input
+              type="password"
+              value={oldPwd}
+              onChange={(e) => setOldPwd(e.target.value)}
+              placeholder="••••••••"
+              className="w-full bg-surface-container rounded-lg px-4 py-3 text-on-surface font-medium ghost-border focus:outline-none focus:ring-2 focus:ring-primary/40"
+            />
+          </div>
+          <div>
+            <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1">
+              {t("settings.new_password")}
+            </label>
+            <input
+              type="password"
+              value={newPwd}
+              onChange={(e) => setNewPwd(e.target.value)}
+              placeholder="Mínimo 8 caracteres"
+              className="w-full bg-surface-container rounded-lg px-4 py-3 text-on-surface font-medium ghost-border focus:outline-none focus:ring-2 focus:ring-primary/40"
+            />
+          </div>
+          <div>
+            <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1">
+              {t("settings.confirm_password")}
+            </label>
+            <input
+              type="password"
+              value={cfmPwd}
+              onChange={(e) => setCfmPwd(e.target.value)}
+              placeholder="Repita a nova senha"
+              className="w-full bg-surface-container rounded-lg px-4 py-3 text-on-surface font-medium ghost-border focus:outline-none focus:ring-2 focus:ring-primary/40"
+            />
+          </div>
+        </div>
+
+        {pwdMsg && (
+          <div className={`rounded-lg p-3 text-sm flex items-center gap-2 ${
+            pwdMsg.ok ? "bg-secondary/10 text-secondary" : "bg-error/10 text-error"
+          }`}>
+            <span className="material-symbols-outlined text-base">
+              {pwdMsg.ok ? "check_circle" : "error"}
+            </span>
+            {pwdMsg.text}
+          </div>
+        )}
+
+        <button
+          onClick={handleChangePassword}
+          disabled={pwdSaving || !oldPwd || !newPwd || !cfmPwd}
+          className="flex items-center gap-2 bg-primary/10 text-primary font-bold px-6 py-3 rounded-full hover:bg-primary/20 active:scale-95 transition-all disabled:opacity-50"
+        >
+          <span className="material-symbols-outlined text-lg">
+            {pwdSaving ? "sync" : "lock_reset"}
+          </span>
+          {pwdSaving ? "Aguarde..." : t("settings.change_password")}
+        </button>
       </div>
 
       {/* Voice Card */}
