@@ -4,32 +4,7 @@ import { Shell } from "@/components/layout/shell";
 import { requireUser } from "@/lib/server/auth";
 import { AdminPushButton } from "@/components/admin/AdminPushButton";
 import { makeAdminT } from "@/lib/i18n/admin-dict";
-
-// ── Mock product analytics ──────────────────────────────────────────────────
-const KPIs = {
-  totalUsers: 1_247, dau: 89, mau: 312, dauMauRatio: 28.5,
-  totalSessions: 8_847, totalPhrases: 48_392,
-  avgSessionMin: 14.3, avgSessionsPerWeek: 4.2, avgAccuracy: 76, nps: 72,
-  retention: { d1: 68, d7: 41, d30: 23 },
-};
-
-const langPairs = [
-  { pair: "pt-BR → English",  pct: 43, users: 536 },
-  { pair: "en → Portuguese",  pct: 18, users: 224 },
-  { pair: "pt-BR → Spanish",  pct: 14, users: 175 },
-  { pair: "es → Portuguese",  pct:  8, users: 100 },
-  { pair: "pt-BR → French",   pct:  7, users:  87 },
-  { pair: "Other pairs",      pct: 10, users: 125 },
-];
-
-const targetLangs = [
-  { lang: "English",  pct: 61, flag: "🇺🇸" },
-  { lang: "Spanish",  pct: 22, flag: "🇪🇸" },
-  { lang: "French",   pct:  9, flag: "🇫🇷" },
-  { lang: "German",   pct:  5, flag: "🇩🇪" },
-  { lang: "Italian",  pct:  3, flag: "🇮🇹" },
-];
-// ────────────────────────────────────────────────────────────────────────────
+import { getAdminMetrics } from "@/lib/server/admin-metrics";
 
 function StatCard({ icon, label, value, sub, highlight = false }: {
   icon: string; label: string; value: string | number; sub?: string; highlight?: boolean;
@@ -69,14 +44,15 @@ export default async function AdminPage() {
 
   const month = new Date().toLocaleDateString("pt-BR", { month: "long", year: "numeric" });
 
-  const segments = [
-    { label: t("seg_power"),   desc: t("seg_power_d"),   pct: 23, color: "bg-primary"   },
-    { label: t("seg_regular"), desc: t("seg_regular_d"), pct: 41, color: "bg-secondary" },
-    { label: t("seg_casual"),  desc: t("seg_casual_d"),  pct: 28, color: "bg-tertiary"  },
-    { label: t("seg_risk"),    desc: t("seg_risk_d"),    pct:  8, color: "bg-error"     },
-  ];
+  // ── Fetch real metrics from PocketBase ──────────────────────────────────
+  const metrics = await getAdminMetrics();
 
-  const npsColor = KPIs.nps >= 70 ? "text-secondary" : KPIs.nps >= 50 ? "text-primary" : "text-tertiary";
+  const segments = [
+    { label: t("seg_power"),   desc: t("seg_power_d"),   pct: metrics.segments[0]?.pct ?? 0, color: "bg-primary"   },
+    { label: t("seg_regular"), desc: t("seg_regular_d"), pct: metrics.segments[1]?.pct ?? 0, color: "bg-secondary" },
+    { label: t("seg_casual"),  desc: t("seg_casual_d"),  pct: metrics.segments[2]?.pct ?? 0, color: "bg-tertiary"  },
+    { label: t("seg_risk"),    desc: t("seg_risk_d"),    pct: metrics.segments[3]?.pct ?? 0, color: "bg-error"     },
+  ];
 
   return (
     <Shell isAdmin={true}>
@@ -99,10 +75,10 @@ export default async function AdminPage() {
         <div>
           <p className="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-3">{t("core_metrics")}</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <StatCard icon="group"          label={t("total_users")} value={KPIs.totalUsers.toLocaleString("pt-BR")} sub={t("wow")} highlight />
-            <StatCard icon="today"          label={t("dau")}         value={KPIs.dau}           sub={t("dau_sub")} />
-            <StatCard icon="calendar_month" label={t("mau")}         value={KPIs.mau}           sub={t("mau_sub")} />
-            <StatCard icon="speed"          label={t("dau_mau")}     value={`${KPIs.dauMauRatio}%`} sub={t("dau_mau_sub")} />
+            <StatCard icon="group"          label={t("total_users")} value={metrics.totalUsers.toLocaleString("pt-BR")} highlight />
+            <StatCard icon="today"          label={t("dau")}         value={metrics.dau}      sub={t("dau_sub")} />
+            <StatCard icon="calendar_month" label={t("mau")}         value={metrics.mau}      sub={t("mau_sub")} />
+            <StatCard icon="speed"          label={t("dau_mau")}     value={`${metrics.dauMauRatio}%`} sub={t("dau_mau_sub")} />
           </div>
         </div>
 
@@ -110,12 +86,12 @@ export default async function AdminPage() {
         <div>
           <p className="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-3">{t("usage")}</p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <StatCard icon="event_available"    label={t("sessions")}       value={KPIs.totalSessions.toLocaleString("pt-BR")} />
-            <StatCard icon="forum"              label={t("phrases")}        value={KPIs.totalPhrases.toLocaleString("pt-BR")} />
-            <StatCard icon="timer"              label={t("avg_session")}    value={`${KPIs.avgSessionMin} min`} sub={t("session_target")} />
-            <StatCard icon="repeat"             label={t("sessions_week")}  value={KPIs.avgSessionsPerWeek} sub={t("habit_zone")} />
-            <StatCard icon="workspace_premium"  label={t("avg_accuracy")}   value={`${KPIs.avgAccuracy}%`}  sub={t("speech_rec")} />
-            <StatCard icon="recommend"          label={t("nps")}            value={KPIs.nps} sub={t("nps_sub")} highlight />
+            <StatCard icon="event_available"   label={t("sessions")}      value={metrics.totalSessions.toLocaleString("pt-BR")} />
+            <StatCard icon="forum"             label={t("phrases")}       value={metrics.totalPhrases.toLocaleString("pt-BR")} />
+            <StatCard icon="timer"             label={t("avg_session")}   value="~15 min" sub={t("session_target")} />
+            <StatCard icon="repeat"            label={t("sessions_week")} value={metrics.avgSessionsPerWeek} sub={t("habit_zone")} />
+            <StatCard icon="workspace_premium" label={t("avg_accuracy")}  value={`${metrics.avgAccuracy}%`}  sub={t("speech_rec")} />
+            <StatCard icon="recommend"         label="Engajamento"        value={`${metrics.dauMauRatio}%`}  sub="DAU/MAU" highlight />
           </div>
         </div>
 
@@ -126,9 +102,9 @@ export default async function AdminPage() {
             <p className="text-sm text-on-surface-variant mt-1">{t("retention_desc")}</p>
           </div>
           {[
-            { label: t("d1"),  pct: KPIs.retention.d1, benchmark: 60 },
-            { label: t("d7"),  pct: KPIs.retention.d7, benchmark: 30 },
-            { label: t("d30"), pct: KPIs.retention.d30, benchmark: 15 },
+            { label: t("d1"),  pct: metrics.retention.d1,  benchmark: 60 },
+            { label: t("d7"),  pct: metrics.retention.d7,  benchmark: 30 },
+            { label: t("d30"), pct: metrics.retention.d30, benchmark: 15 },
           ].map(({ label, pct, benchmark }) => (
             <div key={label} className="space-y-1.5">
               <div className="flex items-center justify-between text-sm">
@@ -138,7 +114,7 @@ export default async function AdminPage() {
               <div className="relative h-2.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
                 <div className="h-full bg-primary/20 rounded-full" style={{ width: `${benchmark}%` }} />
                 <div className={`absolute top-0 left-0 h-full rounded-full ${pct >= benchmark ? "bg-secondary" : "bg-primary"}`}
-                  style={{ width: `${pct}%` }} />
+                  style={{ width: `${Math.min(pct, 100)}%` }} />
               </div>
               <p className="text-xs text-on-surface-variant">
                 {t("benchmark")}: {benchmark}% — OLA está {pct >= benchmark ? t("above") : t("below")} benchmark
@@ -148,39 +124,43 @@ export default async function AdminPage() {
         </div>
 
         {/* Language pairs */}
-        <div className="bg-surface-container-low p-6 rounded-xl ghost-border space-y-4">
-          <div>
-            <p className="text-xs font-bold text-on-surface-variant uppercase tracking-widest">{t("lang_pairs")}</p>
-            <p className="text-sm text-on-surface-variant mt-1">{t("lang_pairs_desc")}</p>
-          </div>
-          <div className="space-y-3">
-            {langPairs.map(({ pair, pct, users }) => (
-              <div key={pair} className="space-y-1">
-                <div className="flex items-center justify-between text-sm">
-                  <span className="font-bold text-on-surface">{pair}</span>
-                  <span className="text-on-surface-variant font-medium">
-                    {users.toLocaleString("pt-BR")} {t("users")} · <span className="text-primary font-black">{pct}%</span>
-                  </span>
+        {metrics.langPairs.length > 0 && (
+          <div className="bg-surface-container-low p-6 rounded-xl ghost-border space-y-4">
+            <div>
+              <p className="text-xs font-bold text-on-surface-variant uppercase tracking-widest">{t("lang_pairs")}</p>
+              <p className="text-sm text-on-surface-variant mt-1">{t("lang_pairs_desc")}</p>
+            </div>
+            <div className="space-y-3">
+              {metrics.langPairs.map(({ pair, pct, users }) => (
+                <div key={pair} className="space-y-1">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="font-bold text-on-surface">{pair}</span>
+                    <span className="text-on-surface-variant font-medium">
+                      {users.toLocaleString("pt-BR")} {t("users")} · <span className="text-primary font-black">{pct}%</span>
+                    </span>
+                  </div>
+                  <Bar pct={Math.min(pct * 2, 100)} />
                 </div>
-                <Bar pct={pct * 2} />
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Most studied target languages */}
-        <div className="bg-surface-container-low p-6 rounded-xl ghost-border space-y-4">
-          <p className="text-xs font-bold text-on-surface-variant uppercase tracking-widest">{t("target_langs")}</p>
-          <div className="flex flex-wrap gap-3">
-            {targetLangs.map(({ lang, pct, flag }) => (
-              <div key={lang} className="flex-1 min-w-[100px] bg-surface-container p-4 rounded-xl text-center">
-                <p className="text-3xl">{flag}</p>
-                <p className="font-black text-on-surface mt-2">{pct}%</p>
-                <p className="text-xs text-on-surface-variant mt-0.5">{lang}</p>
-              </div>
-            ))}
+        {metrics.targetLangs.length > 0 && (
+          <div className="bg-surface-container-low p-6 rounded-xl ghost-border space-y-4">
+            <p className="text-xs font-bold text-on-surface-variant uppercase tracking-widest">{t("target_langs")}</p>
+            <div className="flex flex-wrap gap-3">
+              {metrics.targetLangs.map(({ lang, pct, flag }) => (
+                <div key={lang} className="flex-1 min-w-[100px] bg-surface-container p-4 rounded-xl text-center">
+                  <p className="text-3xl">{flag}</p>
+                  <p className="font-black text-on-surface mt-2">{pct}%</p>
+                  <p className="text-xs text-on-surface-variant mt-0.5">{lang}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* User segments */}
         <div className="bg-surface-container-low p-6 rounded-xl ghost-border space-y-4">
@@ -199,7 +179,7 @@ export default async function AdminPage() {
                   <span className="font-black text-on-surface">{pct}%</span>
                 </div>
                 <div className="h-2.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
-                  <div className={`h-full ${color} rounded-full opacity-80`} style={{ width: `${pct * 2.2}%` }} />
+                  <div className={`h-full ${color} rounded-full opacity-80`} style={{ width: `${Math.min(pct * 2.2, 100)}%` }} />
                 </div>
               </div>
             ))}
@@ -215,9 +195,9 @@ export default async function AdminPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-4">
             {[
-              { stat: "1.247", label: t("inv1_label"), sub: t("inv1_sub") },
-              { stat: "4,2×",  label: t("inv2_label"), sub: t("inv2_sub") },
-              { stat: "72 NPS",label: t("inv3_label"), sub: t("inv3_sub") },
+              { stat: metrics.totalUsers.toLocaleString("pt-BR"), label: t("inv1_label"), sub: t("inv1_sub") },
+              { stat: `${metrics.avgSessionsPerWeek}×`,           label: t("inv2_label"), sub: t("inv2_sub") },
+              { stat: `${metrics.avgAccuracy}%`,                  label: "Precisão Média", sub: "Reconhecimento de fala" },
             ].map(({ stat, label, sub }) => (
               <div key={label} className="text-center">
                 <p className="text-4xl font-black text-primary">{stat}</p>
@@ -259,10 +239,11 @@ export default async function AdminPage() {
         </div>
 
         <div className="flex items-center gap-2 text-xs text-on-surface-variant pb-4">
-          <span className="material-symbols-outlined text-sm">info</span>
-          <span>{t("disclaimer")}</span>
+          <span className="material-symbols-outlined text-sm">database</span>
+          <span>Métricas em tempo real do banco de dados PocketBase · Duração de sessão e NPS são estimativas.</span>
         </div>
       </div>
     </Shell>
   );
 }
+
