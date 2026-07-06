@@ -3,6 +3,7 @@ import { cookies } from "next/headers";
 import { Shell } from "@/components/layout/shell";
 import { requireUser } from "@/lib/server/auth";
 import { AdminPushButton } from "@/components/admin/AdminPushButton";
+import { AdminPasswordReset } from "@/components/admin/AdminPasswordReset";
 import { makeAdminT } from "@/lib/i18n/admin-dict";
 import { getAdminMetrics } from "@/lib/server/admin-metrics";
 
@@ -237,6 +238,9 @@ export default async function AdminPage() {
           </div>
           <AdminPushButton />
         </div>
+
+        {/* Admin: Reset User Password */}
+        <AdminPasswordReset />
 
         <div className="flex items-center gap-2 text-xs text-on-surface-variant pb-4">
           <span className="material-symbols-outlined text-sm">database</span>

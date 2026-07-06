@@ -25,14 +25,9 @@ export default function LoginPage() {
     setMessage(null);
 
     if (mode === "forgot") {
-      await fetch("/api/auth/forgot-password", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
       setLoading(false);
       setMsgType("success");
-      setMessage("Se esse e-mail estiver cadastrado, você receberá um link de recuperação. Verifique sua caixa de entrada.");
+      setMessage("Para redefinir sua senha, entre em contato pelo e-mail odtechai@gmail.com ou envie uma mensagem no WhatsApp informando o e-mail da sua conta.");
       return;
     }
 
