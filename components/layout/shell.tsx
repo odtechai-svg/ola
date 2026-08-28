@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ReactNode, useEffect, useState } from "react";
 import { AuthButton } from "@/components/ola/auth-button";
 import { HeaderActions } from "@/components/ola/header-actions";
+import { CommunityEcosystemSection } from "@/components/ola/community-ecosystem-section";
 import { useLanguage } from "@/lib/i18n-context";
 
 export function Shell({ children, isAdmin = true }: { children: ReactNode; isAdmin?: boolean }) {
@@ -84,6 +85,8 @@ export function Shell({ children, isAdmin = true }: { children: ReactNode; isAdm
         <div className="px-6 py-4 max-w-7xl mx-auto w-full flex-1">
           {children}
         </div>
+
+        <CommunityEcosystemSection />
       </main>
 
       {/* ── BottomNavBar (Mobile) ── */}

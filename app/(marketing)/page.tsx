@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { HeaderActions } from "@/components/ola/header-actions";
+import { CommunityEcosystemSection } from "@/components/ola/community-ecosystem-section";
 import { useLanguage } from "@/lib/i18n-context";
 
 export default function LandingPage() {
@@ -342,6 +343,9 @@ export default function LandingPage() {
           {t("footer.cta")}
         </Link>
       </section>
+
+      {/* ── Community Feedback, Free Ecosystem & ODTech AI ── */}
+      <CommunityEcosystemSection />
     </div>
   );
 }
