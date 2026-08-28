@@ -41,7 +41,7 @@ export async function POST(req: Request) {
     // SMTP credentials from environment
     const smtpHost = process.env.SMTP_HOST || "smtp.hostinger.com";
     const smtpPort = Number(process.env.SMTP_PORT) || 465;
-    const smtpUser = process.env.SMTP_USER || process.env.EMAIL_USER || "contato@odtechai.com";
+    const smtpUser = process.env.SMTP_USER || process.env.EMAIL_USER || "max@odtechai.com";
     const smtpPass = process.env.SMTP_PASS || process.env.EMAIL_PASS || process.env.HOSTINGER_EMAIL_PASS;
     const recipients = process.env.SMTP_TO || "contato@odtechai.com, max@odtechai.com";
 
